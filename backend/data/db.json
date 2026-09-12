@@ -1,0 +1,1125 @@
+{
+  "users": [
+    {
+      "id": "usr_admin_master",
+      "name": "Quản Trị Viên (Admin Master)",
+      "email": "admin@natcomputer.vn",
+      "phone": "0886976868",
+      "password": "123",
+      "role": "admin",
+      "address": "Trụ sở NAT Computer, Cầu Giấy, Hà Nội",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80"
+    },
+    {
+      "id": "usr_customer_1",
+      "name": "Trần Tuấn Anh",
+      "email": "tuananh@gmail.com",
+      "phone": "0988668868",
+      "password": "password123",
+      "role": "customer",
+      "address": "123 Cầu Giấy, Hà Nội",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80"
+    },
+    {
+      "id": "usr_1787505853338",
+      "name": "Nguyễn Văn Test",
+      "email": "testcustomer_1787505853319@natcomputer.vn",
+      "phone": "0912345678",
+      "role": "customer",
+      "address": "456 Trần Duy Hưng, Cầu Giấy, Hà Nội",
+      "createdAt": "2026-08-23T17:24:13.339Z"
+    },
+    {
+      "id": "usr_1787506293102",
+      "name": "Ngô Anh Tú",
+      "email": "07730716229@natcomputer.vn",
+      "phone": "07730716229",
+      "role": "customer",
+      "address": "456 Trần Duy Hưng, Cầu Giấy, Hà Nội",
+      "createdAt": "2026-08-23T17:31:33.161Z"
+    },
+    {
+      "id": "usr_1787506588708",
+      "name": "Khách Hàng Thật",
+      "email": "user_real_1787506588625@gmail.com",
+      "phone": "0987654321",
+      "role": "customer",
+      "address": "456 Trần Duy Hưng, Cầu Giấy, Hà Nội",
+      "createdAt": "2026-08-23T17:36:28.771Z"
+    },
+    {
+      "id": "usr_gg_1787564006929",
+      "name": "Google Test User",
+      "email": "test.google@natcomputer.vn",
+      "phone": "0886976868",
+      "role": "customer",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb",
+      "address": "Đăng nhập qua Google"
+    },
+    {
+      "id": "usr_1789022655929",
+      "name": "Khách hàng mới",
+      "email": "cust_1789022655921@nat.vn",
+      "phone": "0901234567",
+      "role": "customer",
+      "address": "456 Trần Duy Hưng, Cầu Giấy, Hà Nội",
+      "createdAt": "2026-09-10T06:44:15.931Z"
+    },
+    {
+      "id": "usr_1789022695431",
+      "name": "Khách hàng mới",
+      "email": "cust_1789022695421@nat.vn",
+      "phone": "0901234567",
+      "password": "$2b$10$n.prr7Vj.27oSOcCjfb8Uu6U07aIL9OFvTsUXJ6QtbWugO5RxyJn2",
+      "role": "customer",
+      "address": "456 Trần Duy Hưng, Cầu Giấy, Hà Nội",
+      "createdAt": "2026-09-10T06:44:55.508Z"
+    },
+    {
+      "id": "usr_1789022708465",
+      "name": "Khách hàng mới",
+      "email": "cust_1789022708458@nat.vn",
+      "phone": "0901234567",
+      "password": "$2b$10$gh0EP86txHGEl5Qrx2a4dujjXuDvKEO.jjRAO34TAXWlyaZ9L66JC",
+      "role": "customer",
+      "address": "456 Trần Duy Hưng, Cầu Giấy, Hà Nội",
+      "createdAt": "2026-09-10T06:45:08.543Z"
+    },
+    {
+      "id": "usr_1789022756838",
+      "name": "Khách hàng mới",
+      "email": "cust_1789022756831@nat.vn",
+      "phone": "0901234567",
+      "password": "$2b$10$XNvjAlL3A3.1/VyLXmytVeDniPg4Swjde9OVex4uP4RLfMi6TzLH2",
+      "role": "customer",
+      "address": "456 Trần Duy Hưng, Cầu Giấy, Hà Nội",
+      "createdAt": "2026-09-10T06:45:56.916Z"
+    },
+    {
+      "id": "usr_1789023287525",
+      "name": "Khách hàng mới",
+      "email": "cust_1789023287510@nat.vn",
+      "phone": "0901234567",
+      "password": "$2b$10$YCEE15r7rRVLUSMpbb1grOh8mALaY.HEqDx2S3SK9n5O/yldp5ELy",
+      "role": "customer",
+      "address": "456 Trần Duy Hưng, Cầu Giấy, Hà Nội",
+      "createdAt": "2026-09-10T06:54:47.598Z"
+    },
+    {
+      "id": "usr_1789023318872",
+      "name": "Khách hàng mới",
+      "email": "cust_1789023318856@nat.vn",
+      "phone": "0901234567",
+      "password": "$2b$10$zlY94luetN2jlUyYI9f9NeyM9fxvuH2eThGt.fxQsz2rv2reXLqLS",
+      "role": "customer",
+      "address": "456 Trần Duy Hưng, Cầu Giấy, Hà Nội",
+      "createdAt": "2026-09-10T06:55:18.945Z"
+    },
+    {
+      "id": "usr_1789023457607",
+      "name": "Khách hàng mới",
+      "email": "cust_1789023457601@nat.vn",
+      "phone": "0901234567",
+      "password": "$2b$10$OQ1KPg228GW1SjtukePPMOmk3waOlO1RZVPWAJk7S3jWp3AKX3SUS",
+      "role": "customer",
+      "address": "456 Trần Duy Hưng, Cầu Giấy, Hà Nội",
+      "createdAt": "2026-09-10T06:57:37.685Z"
+    },
+    {
+      "id": "usr_1789023645498",
+      "name": "Khách hàng mới",
+      "email": "cust_1789023645492@nat.vn",
+      "phone": "0901234567",
+      "password": "$2b$10$gPTSymRxDxWxxxcIJsPCCel7vZIcqboptMfBrv3YQZAkwJakB7kga",
+      "role": "customer",
+      "address": "456 Trần Duy Hưng, Cầu Giấy, Hà Nội",
+      "createdAt": "2026-09-10T07:00:45.571Z"
+    },
+    {
+      "id": "usr_1789023662808",
+      "name": "Khách hàng mới",
+      "email": "cust_1789023662803@nat.vn",
+      "phone": "0901234567",
+      "password": "$2b$10$Yfc5YRfbsXhgxTurOlgPt.rrCktXCx9Z3c9UBbb16syFuC/MgCNle",
+      "role": "customer",
+      "address": "456 Trần Duy Hưng, Cầu Giấy, Hà Nội",
+      "createdAt": "2026-09-10T07:01:02.891Z"
+    },
+    {
+      "id": "usr_1789203107118",
+      "name": "Khách hàng mới",
+      "email": "cust_1789203107113@nat.vn",
+      "phone": "0901234567",
+      "password": "$2b$10$5WlqraDdrcy8RG774ZApquCzNCnBd6JEWs5QvnK35AuBDlQVAkoNu",
+      "role": "customer",
+      "address": "456 Trần Duy Hưng, Cầu Giấy, Hà Nội",
+      "createdAt": "2026-09-12T08:51:47.201Z"
+    }
+  ],
+  "categories": [
+    {
+      "id": "cat_pc_gaming",
+      "name": "PC Gaming Cao Cấp",
+      "slug": "gaming",
+      "description": "Dàn máy chiến game đỉnh cao eSports, AAA 4K"
+    },
+    {
+      "id": "cat_pc_workstation",
+      "name": "PC Workstation Đồ Họa 3D",
+      "slug": "workstation",
+      "description": "Máy trạm dựng hình 3DsMax, Render 4K/8K, AI Deep Learning"
+    },
+    {
+      "id": "cat_pc_amd",
+      "name": "PC AMD Gaming",
+      "slug": "pc-amd",
+      "description": "Ryzen 7000/9000 Series 3D V-Cache đỉnh cao"
+    },
+    {
+      "id": "cat_pc_mini",
+      "name": "PC Mini Nhỏ Gọn",
+      "slug": "pc-mini",
+      "description": "Thiết kế ITX tinh xảo, tiết kiệm diện tích"
+    },
+    {
+      "id": "cat_pc_office",
+      "name": "PC Văn Phòng & Doanh Nghiệp",
+      "slug": "office",
+      "description": "Máy tính đồng bộ vận hành êm ái, độ bền cao"
+    },
+    {
+      "id": "cat_pc_ai",
+      "name": "PC AI - Trí Tuệ Nhân Tạo",
+      "slug": "pc-ai",
+      "description": "Xử lý mô hình LLM, Stable Diffusion, Deep Learning"
+    },
+    {
+      "id": "cat_components",
+      "name": "Linh Kiện Máy Tính",
+      "slug": "components",
+      "description": "CPU, VGA, RAM, SSD, Nguồn, Case, Tản nhiệt chính hãng"
+    },
+    {
+      "id": "cat_monitors",
+      "name": "Màn Hình Máy Tính",
+      "slug": "monitors",
+      "description": "Màn hình IPS, OLED, 144Hz - 240Hz sắc nét"
+    },
+    {
+      "id": "cat_gaming_gear",
+      "name": "Gaming Gear",
+      "slug": "gaming-gear",
+      "description": "Bàn phím cơ, Chuột gaming, Tai nghe, Ghế, Tay cầm, Stream"
+    },
+    {
+      "id": "cat_pc_combo",
+      "name": "Full Bộ PC Kèm Màn Hình",
+      "slug": "pc-combo",
+      "description": "Bộ máy trọn gói kèm màn hình, phím chuột đầy đủ"
+    },
+    {
+      "id": "cat_speakers",
+      "name": "Loa Máy Tính",
+      "slug": "speakers",
+      "description": "Loa gaming, Soundbar âm thanh vòm sống động"
+    },
+    {
+      "id": "cat_software",
+      "name": "Phần Mềm",
+      "slug": "software",
+      "description": "Windows bản quyền, Office, Diệt virus"
+    },
+    {
+      "id": "cat_network",
+      "name": "Card Mạng Không Dây",
+      "slug": "network",
+      "description": "Card Wifi 6E, Wifi 7, Bluetooth tốc độ cao"
+    },
+    {
+      "id": "cat_virtualization",
+      "name": "PC Giả Lập Ảo Hóa",
+      "slug": "virtualization",
+      "description": "Chạy nhiều tab giả lập NoxPlayer, LDPlayer mượt mà"
+    }
+  ],
+  "banners": [
+    {
+      "id": "ban_hero_1",
+      "title": "BUILD PC GAMING 3D CÔNG NGHỆ MỚI",
+      "subtitle": "Trải nghiệm lắp ráp trực quan xoay 360 độ và tư vấn trí tuệ nhân tạo AI",
+      "imageUrl": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=1600&q=80",
+      "linkUrl": "/build",
+      "badge": "TÍNH NĂNG ĐỘC QUYỀN",
+      "isActive": true
+    },
+    {
+      "id": "ban_hero_2",
+      "title": "DEAL GAMING BÙNG NỔ — GIẢM ĐẾN 40%",
+      "subtitle": "Tặng kèm màn hình Gaming 240Hz & Bộ quà tặng Gear trị giá 5.000.000đ",
+      "imageUrl": "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=1600&q=80",
+      "linkUrl": "/hotsale",
+      "badge": "HOT SUMMER DEAL",
+      "isActive": true
+    }
+  ],
+  "products": [
+    {
+      "id": "gear-keyboard-akko-rgb",
+      "name": "Bàn Phím Cơ AKKO 3087 v2 DS Switch Pink Hotswap RGB",
+      "category": "gaming-gear",
+      "price": 1290000,
+      "originalPrice": 1590000,
+      "rating": 4.9,
+      "badge": "HOT GEAR",
+      "image": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=600&q=80",
+      "description": "Keycap PBT Double-Shot bền bỉ, Akko Switch CS Jelly Pink gõ êm mượt, LED RGB 16.8 triệu màu.",
+      "specs": {
+        "cpu": "Akko CS Pink Switch",
+        "gpu": "Hotswap 5 pin",
+        "ram": "PBT Double-Shot OEM",
+        "ssd": "Dây Type-C tháo rời"
+      }
+    },
+    {
+      "id": "gear-mouse-logitech-superlight",
+      "name": "Chuột Không Dây Logitech G Pro X Superlight 2 Wireless",
+      "category": "gaming-gear",
+      "price": 3290000,
+      "originalPrice": 3890000,
+      "rating": 4.95,
+      "badge": "ESPORTS PRO",
+      "image": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=600&q=80",
+      "description": "Trọng lượng siêu nhẹ dưới 60g, cảm biến HERO 2 độ phân giải 32.000 DPI, switch quang cơ Hybrid.",
+      "specs": {
+        "cpu": "HERO 2 32.000 DPI",
+        "gpu": "LIGHTSPEED 2K Polling",
+        "ram": "Trọng lượng 60g",
+        "ssd": "Pin 95 giờ liên tục"
+      }
+    },
+    {
+      "id": "gear-headset-hyperx-cloud2",
+      "name": "Tai Nghe Chơi Game HyperX Cloud II Wireless 7.1",
+      "category": "gaming-gear",
+      "price": 2690000,
+      "originalPrice": 3190000,
+      "rating": 4.88,
+      "badge": "BEST SOUND",
+      "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80",
+      "description": "Âm thanh vòm giả lập 7.1 sống động, đệm mút hoạt tính êm ái, pin 30 giờ và micro khử ồn.",
+      "specs": {
+        "cpu": "Driver 53mm Neodymium",
+        "gpu": "Âm vòm 7.1 Virtual",
+        "ram": "Đệm Memory Foam",
+        "ssd": "Wireless 2.4GHz không trễ"
+      }
+    },
+    {
+      "id": "gear-chair-andaseat-kaiser",
+      "name": "Ghế Gaming Cao Cấp AndaSeat Kaiser 3 Ergonomic Size L",
+      "category": "gaming-gear",
+      "price": 8990000,
+      "originalPrice": 10500000,
+      "rating": 4.92,
+      "badge": "ERGONOMIC",
+      "image": "https://images.unsplash.com/photo-1580481077197-28564d6dbef2?auto=format&fit=crop&w=600&q=80",
+      "description": "Da PVC DuraXtra cao cấp chống trầy, đệm từ tính công thái học 4 hướng đỡ lưng hoàn hảo.",
+      "specs": {
+        "cpu": "Khung thép nguyên khối",
+        "gpu": "Da PVC DuraXtra cao cấp",
+        "ram": "Tay vịn 4D từ tính",
+        "ssd": "Piston Class 4 tải 150kg"
+      }
+    },
+    {
+      "id": "pc-1787506588786",
+      "name": "PC THIẾT KẾ ĐỒ HỌA 3D CHUYÊN DỤNG",
+      "category": "workstation",
+      "price": 48900000,
+      "originalPrice": 52000000,
+      "rating": 5,
+      "badge": "NEW 2026",
+      "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800&q=80",
+      "description": "Máy trạm dựng hình 3D và render video cao cấp",
+      "specs": {
+        "cpu": "Core i9",
+        "gpu": "RTX 4080",
+        "ram": "64GB",
+        "ssd": "2TB"
+      }
+    },
+    {
+      "id": "pc-1787505853371",
+      "name": "PC NAT AI SUPERSTUDIO RTX 5090",
+      "category": "custom-pc-1787505853353",
+      "price": 99000000,
+      "originalPrice": 105000000,
+      "rating": 5,
+      "badge": "NEW FLAGSHIP",
+      "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800&q=80",
+      "description": "Siêu máy trạm AI xử lý mô hình Deep Learning 2026",
+      "specs": {
+        "cpu": "Core Ultra 9 285K",
+        "gpu": "RTX 5090 32GB",
+        "ram": "128GB DDR5",
+        "ssd": "4TB NVMe"
+      }
+    },
+    {
+      "id": "pc-ai-pro-4090",
+      "name": "NAT CYBER AI PRO 4090",
+      "category": "workstation",
+      "price": 89900000,
+      "originalPrice": 96700000,
+      "rating": 4.95,
+      "badge": "AI ULTRA POWER",
+      "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800&q=80",
+      "description": "Cấu hình đồ họa siêu cấp chuyên xử lý mô hình Deep Learning AI, Render 8K Octane, V-Ray, Unreal Engine 5 đỉnh cao nhất.",
+      "specs": {
+        "cpu": "Intel Core i9-14900KS",
+        "gpu": "NVIDIA RTX 4090 24GB GDDR6X",
+        "ram": "64GB DDR5 RGB 6000MHz",
+        "ssd": "2TB NVMe Gen4 High Speed",
+        "mainboard": "ASUS ROG MAXIMUS Z790 HERO",
+        "psu": "1000W 80 Plus Gold ATX 3.0",
+        "cooler": "AIO 360mm ARGB Liquid",
+        "case": "Case Kính"
+      }
+    },
+    {
+      "id": "pc-gaming-ultra-4070ti",
+      "name": "NAT GAMING BEAST 4070 Ti SUPER",
+      "category": "gaming",
+      "price": 45900000,
+      "originalPrice": 49900000,
+      "rating": 4.88,
+      "badge": "HOT SELLER",
+      "image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=800&q=80",
+      "description": "Chiến mượt 100% các tựa game eSports & AAA 2K/4K max settings như Black Myth Wukong, Cyberpunk 2077, GTA V, Valorant.",
+      "specs": {
+        "cpu": "AMD Ryzen 7 7800X3D",
+        "gpu": "NVIDIA RTX 4070 Ti SUPER 16GB",
+        "ram": "32GB DDR5 5600MHz RGB",
+        "ssd": "1TB NVMe Gen4",
+        "mainboard": "MSI MAG B650 TOMAHAWK WIFI",
+        "psu": "850W 80 Plus Gold",
+        "cooler": "Dual Tower ARGB Air Cooler"
+      }
+    },
+    {
+      "id": "pc-gaming-i5-4060",
+      "name": "NAT GAMING ESPORTS I5 13400F / RTX 4060",
+      "category": "gaming",
+      "price": 21990000,
+      "originalPrice": 24500000,
+      "rating": 4.82,
+      "badge": "BEST VALUE",
+      "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80",
+      "description": "Cấu hình quốc dân chiến mượt mọi game Online Liên Minh, CS2, FO4, Valorant và GTA V mức thiết lập cao.",
+      "specs": {
+        "cpu": "Intel Core i5-13400F",
+        "gpu": "NVIDIA RTX 4060 8GB GDDR6",
+        "ram": "16GB DDR4 3200MHz",
+        "ssd": "512GB NVMe PCIe 4.0",
+        "mainboard": "ASUS PRIME B760M-K",
+        "psu": "650W 80 Plus Bronze",
+        "cooler": "Thermalright Assassin X 120"
+      }
+    },
+    {
+      "id": "pc-workstation-threadripper",
+      "name": "NAT WORKSTATION 3D THREADRIPPER 7960X",
+      "category": "workstation",
+      "price": 145000000,
+      "originalPrice": 155000000,
+      "rating": 5,
+      "badge": "RENDER MONSTER",
+      "image": "https://images.unsplash.com/photo-1624705002806-5d72df19c3ad?w=800&q=80",
+      "description": "Máy trạm đồ họa 24 nhân 48 luồng chuyên nghiệp cho kiến trúc, dựng phim điện ảnh Hollywood 8K.",
+      "specs": {
+        "cpu": "AMD Ryzen Threadripper 7960X 24C/48T",
+        "gpu": "NVIDIA RTX 4090 24GB OC",
+        "ram": "128GB DDR5 ECC Quad-Channel",
+        "ssd": "4TB NVMe Gen5 Raid 0",
+        "mainboard": "ASUS Pro WS TRX50-SAGE WIFI",
+        "psu": "1300W Platinum ATX 3.0",
+        "cooler": "Custom Loop Liquid Cooling"
+      }
+    },
+    {
+      "id": "pc-office-i5-pro",
+      "name": "NAT OFFICE PRO INTEL I5 13400 / 32GB RAM",
+      "category": "office",
+      "price": 13990000,
+      "originalPrice": 15900000,
+      "rating": 4.75,
+      "badge": "BỀN BỈ 24/7",
+      "image": "https://images.unsplash.com/photo-1547394765-185e1e68f34e?w=800&q=80",
+      "description": "Máy tính đồng bộ vận hành êm ái, xử lý đa tác vụ văn phòng, kế toán, lập trình và chỉnh sửa ảnh Photoshop mượt mà.",
+      "specs": {
+        "cpu": "Intel Core i5-13400",
+        "gpu": "Intel UHD Graphics 730",
+        "ram": "32GB DDR4 3200MHz",
+        "ssd": "1TB NVMe PCIe 4.0",
+        "mainboard": "MSI PRO H610M-E",
+        "psu": "550W 80 Plus",
+        "cooler": "Stock Cooler Quiet"
+      }
+    },
+    {
+      "id": "comp-vga-rtx-4090",
+      "name": "Card Màn Hình ASUS ROG Strix GeForce RTX 4090 24GB",
+      "category": "components",
+      "price": 56990000,
+      "originalPrice": 61500000,
+      "rating": 4.95,
+      "badge": "SIÊU PHẨM",
+      "image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=800&q=80",
+      "description": "Vua của card đồ họa gaming và trí tuệ nhân tạo thế giới, tản nhiệt buồng hơi siêu mát.",
+      "specs": {
+        "vga": "RTX 4090 24GB GDDR6X 384-bit",
+        "bus": "PCIe 4.0 x16",
+        "ports": "2x HDMI 2.1a, 3x DisplayPort 1.4a",
+        "power": "850W PSU Recommended"
+      }
+    }
+  ],
+  "orders": [
+    {
+      "id": "NAT-635721",
+      "customerName": "Tú Ngô",
+      "customerEmail": "tungo342005@gmail.com",
+      "customerPhone": "0886976868",
+      "shippingAddress": "718 Trần Cao Vân",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PAID",
+      "orderStatus": "PROCESSING",
+      "totalAmount": 5950000,
+      "appliedCoupon": null,
+      "discountAmount": 0,
+      "items": [
+        {
+          "id": "comp-ram-ddr5",
+          "name": "Bộ Nhớ RAM Corsair Dominator Titanium 64GB (2x32GB) DDR5 6000MHz",
+          "category": "components",
+          "price": 5950000,
+          "originalPrice": 6500000,
+          "rating": 4.8,
+          "badge": "DDR5 RGB",
+          "image": "https://images.unsplash.com/photo-1562976540-1502c2145186?w=800&q=80",
+          "description": "Kit RAM tản nhiệt nhôm nguyên khối cao cấp với dải LED RGB đồng bộ iCUE.",
+          "specs": {
+            "cpu": "2x32GB Kit Dual Channel",
+            "gpu": "6000MHz CL30",
+            "ram": "64GB DDR5",
+            "ssd": "Intel XMP 3.0 / AMD EXPO"
+          },
+          "quantity": 1
+        }
+      ],
+      "createdAt": "2026-09-12T09:28:07.867Z"
+    },
+    {
+      "id": "NAT-112933",
+      "customerName": "Realtime Tester",
+      "customerEmail": "realtime@test.vn",
+      "customerPhone": "0987654321",
+      "shippingAddress": "456 Trần Duy Hưng, Cầu Giấy, Hà Nội",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PAID",
+      "orderStatus": "PROCESSING",
+      "totalAmount": 32000000,
+      "appliedCoupon": null,
+      "discountAmount": 0,
+      "items": [
+        {
+          "id": "pc-rt",
+          "name": "PC ULTRA RTX 4090",
+          "price": 32000000,
+          "quantity": 1
+        }
+      ],
+      "createdAt": "2026-09-12T08:51:46.469Z"
+    },
+    {
+      "id": "NAT-267848",
+      "customerName": "Realtime Tester",
+      "customerEmail": "realtime@test.vn",
+      "customerPhone": "0987654321",
+      "shippingAddress": "456 Trần Duy Hưng, Cầu Giấy, Hà Nội",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PAID",
+      "orderStatus": "PROCESSING",
+      "totalAmount": 32000000,
+      "appliedCoupon": null,
+      "discountAmount": 0,
+      "items": [
+        {
+          "id": "pc-rt",
+          "name": "PC ULTRA RTX 4090",
+          "price": 32000000,
+          "quantity": 1
+        }
+      ],
+      "createdAt": "2026-09-12T08:49:42.921Z"
+    },
+    {
+      "id": "NAT-777760",
+      "customerName": "Tú Ngô",
+      "customerEmail": "tungo342005@gmail.com",
+      "customerPhone": "0886976868",
+      "shippingAddress": "Số 188 Đường Cầu Giấy, Phường Dịch Vọng",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PAID",
+      "orderStatus": "PROCESSING",
+      "totalAmount": 1290000,
+      "appliedCoupon": null,
+      "discountAmount": 0,
+      "items": [
+        {
+          "id": "gear-keyboard-akko-rgb",
+          "name": "Bàn Phím Cơ AKKO 3087 v2 DS Switch Pink Hotswap RGB",
+          "category": "gaming-gear",
+          "price": 1290000,
+          "originalPrice": 1590000,
+          "rating": 4.9,
+          "badge": "HOT GEAR",
+          "image": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=600&q=80",
+          "description": "Keycap PBT Double-Shot bền bỉ, Akko Switch CS Jelly Pink gõ êm mượt, LED RGB 16.8 triệu màu.",
+          "specs": {
+            "cpu": "Akko CS Pink Switch",
+            "gpu": "Hotswap 5 pin",
+            "ram": "PBT Double-Shot OEM",
+            "ssd": "Dây Type-C tháo rời"
+          },
+          "quantity": 1
+        }
+      ],
+      "createdAt": "2026-09-10T09:02:38.095Z"
+    },
+    {
+      "id": "NAT-246366",
+      "customerName": "Tú Ngô",
+      "customerEmail": "tungo342005@gmail.com",
+      "customerPhone": "0886976868",
+      "shippingAddress": "Số 188 Đường Cầu Giấy, Phường Dịch Vọng",
+      "paymentMethod": "cod",
+      "paymentStatus": "PAID",
+      "orderStatus": "PROCESSING",
+      "totalAmount": 67780000,
+      "appliedCoupon": "CHAO2026",
+      "discountAmount": 200000,
+      "items": [
+        {
+          "id": "deal-ultra-7-5070",
+          "name": "PC TTG GAMING LUXURY ULTRA 7 270K PLUS - RTX 5070",
+          "category": "gaming",
+          "price": 67980000,
+          "originalPrice": 69900000,
+          "rating": 4.95,
+          "badge": "DEAL HOT",
+          "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800&q=80",
+          "description": "Cấu hình đỉnh cao trang bị Intel Core Ultra 7 kết hợp RTX 5070 thế hệ mới nhất.",
+          "specs": {
+            "cpu": "Intel Core Ultra 7 270K",
+            "gpu": "NVIDIA GeForce RTX 5070 12GB",
+            "psu": "Corsair RM850e 850W Gold",
+            "ram": "32GB DDR5 6000MHz RGB",
+            "ssd": "1TB NVMe Gen4",
+            "mainboard": "MSI Z890 GAMING PLUS WIFI"
+          },
+          "quantity": 1
+        }
+      ],
+      "createdAt": "2026-09-10T09:01:52.562Z"
+    },
+    {
+      "id": "NAT-589684",
+      "customerName": "Tuấn Nguyễn",
+      "customerEmail": "tuan.nguyen@gmail.com",
+      "customerPhone": "0886976868",
+      "shippingAddress": "123 Cầu Giấy, Hà Nội",
+      "paymentMethod": "MoMo",
+      "paymentStatus": "PAID",
+      "orderStatus": "PROCESSING",
+      "totalAmount": 25000000,
+      "appliedCoupon": null,
+      "discountAmount": 0,
+      "items": [
+        {
+          "id": "pc-1",
+          "name": "PC GAMING ULTRA",
+          "quantity": 1,
+          "price": 25000000
+        }
+      ],
+      "createdAt": "2026-08-30T10:37:38.852Z"
+    },
+    {
+      "id": "NAT-585790",
+      "customerName": "Tuấn Nguyễn",
+      "customerEmail": "tuan.nguyen@gmail.com",
+      "customerPhone": "0886976868",
+      "shippingAddress": "123 Cầu Giấy, Hà Nội",
+      "paymentMethod": "MoMo",
+      "paymentStatus": "PAID",
+      "orderStatus": "PROCESSING",
+      "totalAmount": 25000000,
+      "appliedCoupon": null,
+      "discountAmount": 0,
+      "items": [
+        {
+          "id": "pc-1",
+          "name": "PC GAMING ULTRA",
+          "quantity": 1,
+          "price": 25000000
+        }
+      ],
+      "createdAt": "2026-08-24T10:32:45.323Z"
+    },
+    {
+      "id": "NAT-282095",
+      "customerName": "Tuấn Nguyễn",
+      "customerEmail": "tuan.nguyen@gmail.com",
+      "customerPhone": "0886976868",
+      "shippingAddress": "123 Cầu Giấy, Hà Nội",
+      "paymentMethod": "MoMo",
+      "paymentStatus": "PAID",
+      "orderStatus": "PROCESSING",
+      "totalAmount": 25000000,
+      "items": [
+        {
+          "id": "pc-1",
+          "name": "PC GAMING ULTRA",
+          "quantity": 1,
+          "price": 25000000
+        }
+      ],
+      "createdAt": "2026-08-24T09:33:27.007Z"
+    },
+    {
+      "id": "NAT-473255",
+      "customerName": "Tuấn Nguyễn",
+      "customerEmail": "tuan.nguyen@gmail.com",
+      "customerPhone": "0886976868",
+      "shippingAddress": "123 Cầu Giấy, Hà Nội",
+      "paymentMethod": "MoMo",
+      "paymentStatus": "PAID",
+      "orderStatus": "PROCESSING",
+      "totalAmount": 25000000,
+      "items": [
+        {
+          "id": "pc-1",
+          "name": "PC GAMING ULTRA",
+          "quantity": 1,
+          "price": 25000000
+        }
+      ],
+      "createdAt": "2026-08-24T09:20:12.093Z"
+    },
+    {
+      "id": "NAT-326449",
+      "customerName": "Tuấn Nguyễn",
+      "customerEmail": "tuan.nguyen@gmail.com",
+      "customerPhone": "0886976868",
+      "shippingAddress": "123 Cầu Giấy, Hà Nội",
+      "paymentMethod": "MoMo",
+      "paymentStatus": "PAID",
+      "orderStatus": "PROCESSING",
+      "totalAmount": 25000000,
+      "items": [
+        {
+          "id": "pc-1",
+          "name": "PC GAMING ULTRA",
+          "quantity": 1,
+          "price": 25000000
+        }
+      ],
+      "createdAt": "2026-08-24T08:57:16.299Z"
+    },
+    {
+      "id": "NAT-743963",
+      "customerName": "Tuấn Nguyễn",
+      "customerEmail": "tuan.nguyen@gmail.com",
+      "customerPhone": "0886976868",
+      "shippingAddress": "123 Cầu Giấy, Hà Nội",
+      "paymentMethod": "MoMo",
+      "paymentStatus": "PAID",
+      "orderStatus": "PROCESSING",
+      "totalAmount": 25000000,
+      "items": [
+        {
+          "id": "pc-1",
+          "name": "PC GAMING ULTRA",
+          "quantity": 1,
+          "price": 25000000
+        }
+      ],
+      "createdAt": "2026-08-23T17:14:58.273Z"
+    },
+    {
+      "id": "NAT-571537",
+      "customerName": "Tuấn Nguyễn",
+      "customerEmail": "tuan.nguyen@gmail.com",
+      "customerPhone": "0886976868",
+      "shippingAddress": "123 Cầu Giấy, Hà Nội",
+      "paymentMethod": "MoMo",
+      "paymentStatus": "PAID",
+      "orderStatus": "PROCESSING",
+      "totalAmount": 25000000,
+      "items": [
+        {
+          "id": "pc-1",
+          "name": "PC GAMING ULTRA",
+          "quantity": 1,
+          "price": 25000000
+        }
+      ],
+      "createdAt": "2026-08-23T17:14:18.382Z"
+    },
+    {
+      "id": "NAT-716923",
+      "customerName": "Tuấn Nguyễn",
+      "customerEmail": "tuan.nguyen@gmail.com",
+      "customerPhone": "0886976868",
+      "shippingAddress": "123 Cầu Giấy, Hà Nội",
+      "paymentMethod": "MoMo",
+      "paymentStatus": "PAID",
+      "orderStatus": "PROCESSING",
+      "totalAmount": 25000000,
+      "items": [
+        {
+          "id": "pc-1",
+          "name": "PC GAMING ULTRA",
+          "quantity": 1,
+          "price": 25000000
+        }
+      ],
+      "createdAt": "2026-08-23T17:13:38.974Z"
+    },
+    {
+      "id": "NAT-889412",
+      "customerName": "Trần Tuấn Anh",
+      "customerEmail": "tuananh@gmail.com",
+      "customerPhone": "0988668868",
+      "shippingAddress": "123 Cầu Giấy, Hà Nội",
+      "paymentMethod": "MoMo",
+      "paymentStatus": "PAID",
+      "orderStatus": "PROCESSING",
+      "totalAmount": 45900000,
+      "createdAt": "2026-08-23T14:30:00.000Z",
+      "items": [
+        {
+          "id": "pc-gaming-ultra-4070ti",
+          "name": "NAT GAMING BEAST 4070 Ti SUPER",
+          "price": 45900000,
+          "quantity": 1,
+          "specs": {
+            "cpu": "AMD Ryzen 7 7800X3D",
+            "gpu": "NVIDIA RTX 4070 Ti SUPER 16GB",
+            "ram": "32GB DDR5 5600MHz RGB",
+            "ssd": "1TB NVMe Gen4"
+          }
+        }
+      ]
+    }
+  ],
+  "payments": [
+    {
+      "id": "pay_1789205287867",
+      "orderId": "NAT-635721",
+      "gateway": "vietqr",
+      "transactionCode": "TXN_3995912",
+      "amount": 5950000,
+      "status": "SUCCESS",
+      "createdAt": "2026-09-12T09:28:07.867Z"
+    },
+    {
+      "id": "pay_1789203106469",
+      "orderId": "NAT-112933",
+      "gateway": "vietqr",
+      "transactionCode": "TXN_2436101",
+      "amount": 32000000,
+      "status": "SUCCESS",
+      "createdAt": "2026-09-12T08:51:46.469Z"
+    },
+    {
+      "id": "pay_1789202982921",
+      "orderId": "NAT-267848",
+      "gateway": "vietqr",
+      "transactionCode": "TXN_7014074",
+      "amount": 32000000,
+      "status": "SUCCESS",
+      "createdAt": "2026-09-12T08:49:42.921Z"
+    },
+    {
+      "id": "pay_1789030958096",
+      "orderId": "NAT-777760",
+      "gateway": "vietqr",
+      "transactionCode": "TXN_6853227",
+      "amount": 1290000,
+      "status": "SUCCESS",
+      "createdAt": "2026-09-10T09:02:38.096Z"
+    },
+    {
+      "id": "pay_1789030912562",
+      "orderId": "NAT-246366",
+      "gateway": "cod",
+      "transactionCode": "TXN_1670660",
+      "amount": 67780000,
+      "status": "SUCCESS",
+      "createdAt": "2026-09-10T09:01:52.562Z"
+    },
+    {
+      "id": "pay_1788086258852",
+      "orderId": "NAT-589684",
+      "gateway": "MoMo",
+      "transactionCode": "TXN_7064840",
+      "amount": 25000000,
+      "status": "SUCCESS",
+      "createdAt": "2026-08-30T10:37:38.852Z"
+    },
+    {
+      "id": "pay_1787567565323",
+      "orderId": "NAT-585790",
+      "gateway": "MoMo",
+      "transactionCode": "TXN_7335347",
+      "amount": 25000000,
+      "status": "SUCCESS",
+      "createdAt": "2026-08-24T10:32:45.323Z"
+    },
+    {
+      "id": "pay_1787564007007",
+      "orderId": "NAT-282095",
+      "gateway": "MoMo",
+      "transactionCode": "TXN_1335138",
+      "amount": 25000000,
+      "status": "SUCCESS",
+      "createdAt": "2026-08-24T09:33:27.007Z"
+    },
+    {
+      "id": "pay_1787563212093",
+      "orderId": "NAT-473255",
+      "gateway": "MoMo",
+      "transactionCode": "TXN_6451286",
+      "amount": 25000000,
+      "status": "SUCCESS",
+      "createdAt": "2026-08-24T09:20:12.093Z"
+    },
+    {
+      "id": "pay_1787561836299",
+      "orderId": "NAT-326449",
+      "gateway": "MoMo",
+      "transactionCode": "TXN_8988552",
+      "amount": 25000000,
+      "status": "SUCCESS",
+      "createdAt": "2026-08-24T08:57:16.299Z"
+    },
+    {
+      "id": "pay_1787505298273",
+      "orderId": "NAT-743963",
+      "gateway": "MoMo",
+      "transactionCode": "TXN_1158572",
+      "amount": 25000000,
+      "status": "SUCCESS",
+      "createdAt": "2026-08-23T17:14:58.273Z"
+    },
+    {
+      "id": "pay_1787505258382",
+      "orderId": "NAT-571537",
+      "gateway": "MoMo",
+      "transactionCode": "TXN_2338413",
+      "amount": 25000000,
+      "status": "SUCCESS",
+      "createdAt": "2026-08-23T17:14:18.382Z"
+    },
+    {
+      "id": "pay_1787505218975",
+      "orderId": "NAT-716923",
+      "gateway": "MoMo",
+      "transactionCode": "TXN_6865449",
+      "amount": 25000000,
+      "status": "SUCCESS",
+      "createdAt": "2026-08-23T17:13:38.975Z"
+    }
+  ],
+  "sent_emails": [
+    {
+      "id": "mail_1789023635387",
+      "recipientEmail": "tu.ngo@natcomputer.vn",
+      "orderId": "NAT-998877",
+      "subject": "[NAT COMPUTER] Hóa Đơn Điện Tử Đơn Hàng #NAT-998877",
+      "status": "SENT",
+      "sentAt": "2026-09-10T07:00:35.387Z"
+    },
+    {
+      "id": "mail_1789023644905",
+      "recipientEmail": "tu.ngo@natcomputer.vn",
+      "orderId": "NAT-998877",
+      "subject": "[NAT COMPUTER] Hóa Đơn Điện Tử Đơn Hàng #NAT-998877",
+      "status": "SENT",
+      "sentAt": "2026-09-10T07:00:44.905Z"
+    },
+    {
+      "id": "mail_1789023662480",
+      "recipientEmail": "tu.ngo@natcomputer.vn",
+      "orderId": "NAT-998877",
+      "subject": "[NAT COMPUTER] Hóa Đơn Điện Tử Đơn Hàng #NAT-998877",
+      "status": "SENT",
+      "sentAt": "2026-09-10T07:01:02.480Z"
+    },
+    {
+      "id": "mail_1789030960864",
+      "recipientEmail": "tungo342005@gmail.com",
+      "orderId": "NAT-ORD-956020",
+      "subject": "[NAT COMPUTER] Hóa Đơn Điện Tử Đơn Hàng #NAT-ORD-956020",
+      "status": "SENT",
+      "sentAt": "2026-09-10T09:02:40.864Z"
+    },
+    {
+      "id": "mail_1789203106744",
+      "recipientEmail": "tu.ngo@natcomputer.vn",
+      "orderId": "NAT-998877",
+      "subject": "[NAT COMPUTER] Hóa Đơn Điện Tử Đơn Hàng #NAT-998877",
+      "status": "SENT",
+      "sentAt": "2026-09-12T08:51:46.744Z"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "noti_1789205287969",
+      "title": "🔔 Đơn Đặt Hàng Mới #NAT-635721!",
+      "message": "Khách hàng Tú Ngô vừa đặt hàng 5.950.000đ (vietqr).",
+      "type": "order",
+      "isRead": false,
+      "orderId": "NAT-635721",
+      "createdAt": "2026-09-12T09:28:08.018Z"
+    },
+    {
+      "id": "noti_1789203106479",
+      "title": "🔔 Đơn Đặt Hàng Mới #NAT-112933!",
+      "message": "Khách hàng Realtime Tester vừa đặt hàng 32.000.000đ (vietqr).",
+      "type": "order",
+      "isRead": false,
+      "orderId": "NAT-112933",
+      "createdAt": "2026-09-12T08:51:46.501Z"
+    },
+    {
+      "id": "noti_1789202982941",
+      "title": "🔔 Đơn Đặt Hàng Mới #NAT-267848!",
+      "message": "Khách hàng Realtime Tester vừa đặt hàng 32.000.000đ (vietqr).",
+      "type": "order",
+      "isRead": false,
+      "orderId": "NAT-267848",
+      "createdAt": "2026-09-12T08:49:42.998Z"
+    },
+    {
+      "id": "noti_1789030958102",
+      "title": "🔔 Đơn Đặt Hàng Mới #NAT-777760!",
+      "message": "Khách hàng Tú Ngô vừa đặt hàng 1.290.000đ (vietqr).",
+      "type": "order",
+      "isRead": false,
+      "orderId": "NAT-777760",
+      "createdAt": "2026-09-10T09:02:38.103Z"
+    },
+    {
+      "id": "noti_1789030912609",
+      "title": "🔔 Đơn Đặt Hàng Mới #NAT-246366!",
+      "message": "Khách hàng Tú Ngô vừa đặt hàng 67.780.000đ (cod).",
+      "type": "order",
+      "isRead": false,
+      "orderId": "NAT-246366",
+      "createdAt": "2026-09-10T09:01:52.616Z"
+    },
+    {
+      "id": "noti_1788086258933",
+      "title": "🔔 Đơn Đặt Hàng Mới #NAT-589684!",
+      "message": "Khách hàng Tuấn Nguyễn vừa đặt hàng 25.000.000đ (MoMo).",
+      "type": "order",
+      "isRead": false,
+      "orderId": "NAT-589684",
+      "createdAt": "2026-08-30T10:37:38.999Z"
+    },
+    {
+      "id": "noti_1787567565323",
+      "title": "🔔 Đơn Đặt Hàng Mới #NAT-585790!",
+      "message": "Khách hàng Tuấn Nguyễn vừa đặt hàng 25.000.000đ (MoMo).",
+      "type": "order",
+      "isRead": false,
+      "orderId": "NAT-585790",
+      "createdAt": "2026-08-24T10:32:45.333Z"
+    },
+    {
+      "id": "noti_1787564007007",
+      "title": "🔔 Đơn Đặt Hàng Mới #NAT-282095!",
+      "message": "Khách hàng Tuấn Nguyễn vừa đặt hàng 25.000.000đ (MoMo).",
+      "type": "order",
+      "isRead": false,
+      "orderId": "NAT-282095",
+      "createdAt": "2026-08-24T09:33:27.031Z"
+    },
+    {
+      "id": "noti_1787563212093",
+      "title": "🔔 Đơn Đặt Hàng Mới #NAT-473255!",
+      "message": "Khách hàng Tuấn Nguyễn vừa đặt hàng 25.000.000đ (MoMo).",
+      "type": "order",
+      "isRead": false,
+      "orderId": "NAT-473255",
+      "createdAt": "2026-08-24T09:20:12.120Z"
+    }
+  ],
+  "coupons": [
+    {
+      "id": "coup_nat500k",
+      "code": "NAT500K",
+      "description": "Giảm 500.000đ trực tiếp cho đơn hàng từ 15.000.000đ",
+      "discountType": "fixed",
+      "discountValue": 500000,
+      "minOrderAmount": 15000000,
+      "maxDiscount": 500000,
+      "usageLimit": 100,
+      "usedCount": 12,
+      "expiresAt": "2026-12-31T23:59:59.000Z",
+      "isActive": true
+    },
+    {
+      "id": "coup_gaming10",
+      "code": "GAMING10",
+      "description": "Giảm 10% tối đa 1.500.000đ cho đơn hàng máy tính gaming từ 10.000.000đ",
+      "discountType": "percent",
+      "discountValue": 10,
+      "minOrderAmount": 10000000,
+      "maxDiscount": 1500000,
+      "usageLimit": 50,
+      "usedCount": 7,
+      "expiresAt": "2026-12-31T23:59:59.000Z",
+      "isActive": true
+    },
+    {
+      "id": "coup_freeship",
+      "code": "FREESHIP",
+      "description": "Miễn phí vận chuyển toàn quốc (trừ 100.000đ phí giao hàng) cho đơn từ 5.000.000đ",
+      "discountType": "fixed",
+      "discountValue": 100000,
+      "minOrderAmount": 5000000,
+      "maxDiscount": 100000,
+      "usageLimit": 200,
+      "usedCount": 45,
+      "expiresAt": "2026-12-31T23:59:59.000Z",
+      "isActive": true
+    },
+    {
+      "id": "coup_chao2026",
+      "code": "CHAO2026",
+      "description": "Giảm ngay 200.000đ cho mọi đơn hàng linh kiện & máy tính từ 2.000.000đ",
+      "discountType": "fixed",
+      "discountValue": 200000,
+      "minOrderAmount": 2000000,
+      "maxDiscount": 200000,
+      "usageLimit": 500,
+      "usedCount": 89,
+      "expiresAt": "2026-12-31T23:59:59.000Z",
+      "isActive": true
+    }
+  ]
+}
