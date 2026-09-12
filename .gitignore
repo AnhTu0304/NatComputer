@@ -1,46 +1,51 @@
-# Dependencies
+# Whitelist approach — safe for PUBLIC repo.
+# Chặn tất cả mặc định, chỉ mở lại đúng những gì muốn share.
+# Thêm entry mới KHÔNG tự động bị commit trừ khi khai báo ở đây.
+
+/*
+
+# Cho phép các folder/file muốn share công khai
+!/backend/
+!/frontend/
+!/agents/
+!/skills/
+!/commands/
+!/rules/
+!/templates/
+!/presets/
+!/assets/
+!/hooks/
+!/scripts/
+!/bin/
+!/README.md
+!/README.en.md
+!/.gitignore
+!/package.json
+!/docker-compose.yml
+!/Dockerfile*
+
+# Chặn triệt để mã bí mật, dependencies & artifact build
+backend/.env
+backend/.env.*
+!backend/.env.example
+frontend/.env
+frontend/.env.*
 node_modules/
 */node_modules/
-.pnp
-.pnp.js
-
-# Environment variables & secrets
-.env
-.env.*
-!.env.example
-*.env
-
-# Testing
-coverage/
-*/coverage/
-.nyc_output/
-
-# Production builds
 build/
 */build/
 dist/
 */dist/
+coverage/
+*/coverage/
 
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
+# docs/ stays blocked by /* unless a specific path is whitelisted later
 
-# Editor & OS files
+# OS junk có thể lọt vào các folder được whitelist ở trên
 .DS_Store
 Thumbs.db
-.vscode/
-.idea/
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-
-# Temporary & scratch files
-*.tmp
+*.swp
+*.swo
+*~
+.*.swp
 *.bak
