@@ -2151,11 +2151,24 @@ img {
   margin-bottom: 8px;
 }
 
+.pdp-acc-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: auto;
+  flex-wrap: wrap;
+}
+
 .pdp-acc-price {
   font-size: 15px;
   font-weight: 800;
   color: var(--c-red);
-  margin-top: auto;
+}
+
+.pdp-acc-original-price {
+  font-size: 12px;
+  color: var(--c-faint);
+  text-decoration: line-through;
 }
 
 .pdp-combo-bar {
@@ -10822,3 +10835,486 @@ img {
   border-radius: 8px;
   text-decoration: none;
 }
+
+/* ==========================================================================
+   HERO SECTION MODERN PROMO REDESIGN (HeroBanner.jsx)
+   ========================================================================== */
+.hero-section-wrapper {
+  position: relative;
+  padding: 16px 0 24px;
+  background: #f8fafc;
+}
+
+/* 1. Top Quick Category Bar */
+.hero-quick-cats {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  scrollbar-width: none;
+}
+.hero-quick-cats::-webkit-scrollbar {
+  display: none;
+}
+
+.quick-cat-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  color: #334155;
+  font-size: 12.5px;
+  font-weight: 700;
+  white-space: nowrap;
+  text-decoration: none;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.quick-cat-btn:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+  color: #dc2626;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.06);
+}
+
+.quick-cat-btn.cat-highlight {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  color: #ffffff;
+  border-color: #334155;
+}
+
+.quick-cat-btn.cat-highlight:hover {
+  background: #dc2626;
+  border-color: #dc2626;
+  color: #ffffff;
+}
+
+.cat-icon {
+  color: #dc2626;
+}
+.cat-highlight .cat-icon {
+  color: #f87171;
+}
+
+/* 2. Main Big Panoramic Carousel */
+.hero-main-carousel {
+  position: relative;
+  width: 100%;
+  min-height: 420px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.12), 0 8px 10px -6px rgba(0, 0, 0, 0.08);
+  margin-bottom: 20px;
+  background: #0f172a;
+}
+
+.carousel-bg-container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.carousel-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.hero-main-carousel:hover .carousel-bg-img {
+  transform: scale(1.03);
+}
+
+.carousel-dark-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(15, 23, 42, 0.92) 0%,
+    rgba(15, 23, 42, 0.78) 45%,
+    rgba(15, 23, 42, 0.4) 100%
+  );
+  z-index: 2;
+}
+
+.carousel-content-layer {
+  position: relative;
+  z-index: 3;
+  max-width: 680px;
+  padding: 44px 48px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 420px;
+}
+
+.carousel-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(220, 38, 38, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(248, 113, 113, 0.4);
+  color: #ffffff;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  width: fit-content;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.badge-pulse {
+  width: 8px;
+  height: 8px;
+  background: #fef08a;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #fef08a;
+  animation: pulse-dot 1.5s infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.3); }
+}
+
+.carousel-title {
+  font-size: clamp(24px, 3.2vw, 36px);
+  font-weight: 900;
+  line-height: 1.25;
+  color: #ffffff;
+  margin-bottom: 14px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-desc {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #e2e8f0;
+  margin-bottom: 24px;
+  max-width: 580px;
+}
+
+.carousel-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.btn-hero-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  color: #ffffff;
+  font-size: 13.5px;
+  font-weight: 800;
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.45);
+  transition: all 0.25s;
+}
+
+.btn-hero-primary:hover {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(220, 38, 38, 0.6);
+  color: #ffffff;
+}
+
+.btn-hero-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  font-size: 13.5px;
+  font-weight: 700;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.25s;
+}
+
+.btn-hero-secondary:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: #ffffff;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.carousel-tagline-bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 12px;
+  color: #cbd5e1;
+  font-weight: 600;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.tagline-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tagline-icon {
+  color: #38bdf8;
+}
+
+.tagline-divider {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #64748b;
+}
+
+/* Carousel Navigation Arrows */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 4;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.carousel-arrow:hover {
+  background: #dc2626;
+  border-color: #dc2626;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-arrow.prev { left: 18px; }
+.carousel-arrow.next { right: 18px; }
+
+/* Carousel Dots */
+.carousel-dots {
+  position: absolute;
+  bottom: 20px;
+  right: 28px;
+  z-index: 4;
+  display: flex;
+  gap: 8px;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.carousel-dot.active {
+  width: 28px;
+  border-radius: 5px;
+  background: #dc2626;
+  box-shadow: 0 0 10px rgba(220, 38, 38, 0.8);
+}
+
+/* 3. Tri-Banner Sub Grid */
+.hero-tri-banner-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  position: relative;
+  z-index: 5;
+  margin-top: 16px;
+}
+
+.tri-banner-card {
+  position: relative;
+  height: 210px;
+  min-height: 210px;
+  border-radius: 14px;
+  overflow: hidden;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: #0f172a;
+  opacity: 1;
+  visibility: visible;
+}
+
+.tri-banner-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px -4px rgba(0, 0, 0, 0.18);
+}
+
+.tri-card-img-wrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.tri-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.tri-banner-card:hover .tri-card-img {
+  transform: scale(1.08);
+}
+
+.tri-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 23, 42, 0.2) 0%,
+    rgba(15, 23, 42, 0.88) 70%,
+    rgba(15, 23, 42, 0.98) 100%
+  );
+  z-index: 2;
+}
+
+.tri-card-content {
+  position: relative;
+  z-index: 3;
+  padding: 16px 18px;
+  color: #ffffff;
+}
+
+.tri-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 9px;
+  border-radius: 4px;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.tri-badge.badge-red {
+  background: #dc2626;
+  color: #ffffff;
+}
+.tri-badge.badge-gold {
+  background: #ca8a04;
+  color: #ffffff;
+}
+.tri-badge.badge-blue {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.tri-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.tri-subtitle {
+  font-size: 12px;
+  color: #cbd5e1;
+  margin-bottom: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tri-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.tri-price {
+  font-size: 13px;
+  font-weight: 800;
+  color: #facc15;
+}
+.tri-rating {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #fde047;
+}
+.tri-subsidy {
+  font-size: 12px;
+  font-weight: 700;
+  color: #60a5fa;
+}
+
+.tri-btn-arrow {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  transition: all 0.2s;
+}
+
+.tri-banner-card:hover .tri-btn-arrow {
+  background: #dc2626;
+  transform: translateX(3px);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .hero-main-carousel { min-height: 360px; }
+  .carousel-content-layer { min-height: 360px; padding: 32px; }
+  .carousel-title { font-size: 26px; }
+  .hero-tri-banner-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero-tri-banner-grid .card-trade-in { grid-column: span 2; }
+}
+
+@media (max-width: 768px) {
+  .hero-main-carousel { min-height: 320px; }
+  .carousel-content-layer { min-height: 320px; padding: 24px 20px; }
+  .carousel-title { font-size: 22px; }
+  .carousel-desc { font-size: 13px; }
+  .carousel-tagline-bar { flex-wrap: wrap; gap: 8px; }
+  .carousel-arrow { width: 36px; height: 36px; }
+  .hero-tri-banner-grid { grid-template-columns: 1fr; }
+  .hero-tri-banner-grid .card-trade-in { grid-column: span 1; }
+}

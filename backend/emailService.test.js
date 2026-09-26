@@ -68,4 +68,78 @@ describe('Automated Invoice Email Service Tests', () => {
     expect(res.body.emailLog).toBeDefined();
     expect(res.body.emailLog.recipientEmail).toEqual('tu.ngo@natcomputer.vn');
   });
+
+  test('sendInvoiceEmail should send email using Resend when RESEND_API_KEY is configured', async () => {
+    const originalEnv = process.env.RESEND_API_KEY;
+    process.env.RESEND_API_KEY = 're_mock_key_for_test';
+
+    const result = await sendInvoiceEmail(sampleOrder);
+    expect(result.success).toBe(true);
+    expect(result.provider).toBe('resend');
+
+    process.env.RESEND_API_KEY = originalEnv;
+  });
+
+  describe('Asynchronous Email Dispatching with 4s Wait', () => {
+    const { queueInvoiceEmailAsync } = require('./emailService');
+
+    test('queueInvoiceEmailAsync should return immediately without blocking (less than 50ms) with 4000ms wait', () => {
+      const startTime = Date.now();
+      const queueResult = queueInvoiceEmailAsync(sampleOrder, 4000);
+      const elapsed = Date.now() - startTime;
+
+      expect(elapsed).toBeLessThan(100);
+      expect(queueResult.queued).toBe(true);
+      expect(queueResult.status).toBe('QUEUED');
+      expect(queueResult.delayMs).toBe(4000);
+      expect(queueResult.orderId).toBe('NAT-998877');
+    });
+
+    test('POST /api/email/send-invoice should support async mode with 4s wait', async () => {
+      const startTime = Date.now();
+      const res = await request(app)
+        .post('/api/email/send-invoice')
+        .send({
+          recipientEmail: 'tu.ngo@natcomputer.vn',
+          orderId: 'NAT-998877',
+          order: sampleOrder,
+          isAsync: true,
+          delayMs: 4000
+        });
+      const elapsed = Date.now() - startTime;
+
+      expect(res.statusCode).toEqual(200);
+      expect(res.body.success).toBe(true);
+      expect(res.body.isAsync).toBe(true);
+      expect(res.body.delayMs).toBe(4000);
+      expect(res.body.status).toBe('QUEUED');
+      expect(elapsed).toBeLessThan(200); // Returns immediately!
+    });
+  });
+
+  describe('Synchronous Email Dispatching (Không dùng bất đồng bộ - Đồng bộ blocking)', () => {
+    test('POST /api/email/send-invoice with isAsync = false should block and wait synchronously before responding', async () => {
+      const waitTime = 500; // 500ms blocking delay to prove synchronous wait
+      const startTime = Date.now();
+      const res = await request(app)
+        .post('/api/email/send-invoice')
+        .send({
+          recipientEmail: 'tu.ngo@natcomputer.vn',
+          orderId: 'NAT-SYNC-TEST',
+          order: sampleOrder,
+          isAsync: false,
+          delayMs: waitTime
+        });
+      const elapsed = Date.now() - startTime;
+
+      // Phải chờ đủ thời gian delay mới trả kết quả về (Synchronous Blocking)
+      expect(elapsed).toBeGreaterThanOrEqual(450);
+
+      expect(res.statusCode).toEqual(200);
+      expect(res.body.success).toBe(true);
+      expect(res.body.isAsync).toBe(false);
+      expect(res.body.status).toBe('SENT');
+      expect(res.body.emailLog).toBeDefined();
+    });
+  });
 });

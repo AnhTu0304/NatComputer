@@ -75,7 +75,7 @@ export default function AiPage({ onAddToCart }) {
     }
   }, [messages, isTyping]);
 
-  const handleSendMessage = (textToSend) => {
+  const handleSendMessage = async (textToSend) => {
     const queryText = textToSend || inputMsg;
     if (!queryText.trim()) return;
 
@@ -86,44 +86,37 @@ export default function AiPage({ onAddToCart }) {
       time: new Date().toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' }),
     };
 
-    setMessages((prev) => [...prev, userMsgObj]);
+    const currentHistory = [...messages, userMsgObj];
+    setMessages(currentHistory);
     if (!textToSend) setInputMsg('');
     setIsTyping(true);
 
-    // AI Knowledge Matching Algorithm
-    setTimeout(() => {
-      const lower = queryText.toLowerCase();
-      let matchedProducts = [];
-      let botResponseText = '';
-
-      if (lower.includes('gaming') || lower.includes('chơi game') || lower.includes('wukong') || lower.includes('valorant') || lower.includes('20') || lower.includes('30')) {
-        matchedProducts = pcCatalog.slice(0, 2);
-        botResponseText = 'Dựa trên nhu cầu Gaming mượt mà ở độ phân giải 2K / 4K với các tựa game nặng như Black Myth Wukong, Valorant, GTA V, tôi xin khuyến nghị dàn PC Gaming trang bị Intel Core i7 / Ultra 7 kết hợp Card đồ họa NVIDIA RTX 4070 / RTX 5070 tối ưu hiệu năng/giá thành nhất cho bạn:';
-      } else if (lower.includes('đồ họa') || lower.includes('workstation') || lower.includes('render') || lower.includes('3d') || lower.includes('premiere')) {
-        matchedProducts = [pcCatalog[1], pcCatalog[2]].filter(Boolean);
-        botResponseText = 'Để làm công việc Đồ họa chuyên sâu 3DsMax, Maya, Premiere Pro Render video 4K không bị giật lag, bạn cần hệ thống trang bị nhiều nhân thực CPU (16 Cores+) cùng RAM 32GB DDR5 Bus cao. Dưới đây là cấu hình Workstation tối ưu cho công việc của bạn:';
-      } else if (lower.includes('so sánh') || lower.includes('intel') || lower.includes('amd') || lower.includes('7800x3d') || lower.includes('ultra 7')) {
-        matchedProducts = [pcCatalog[0], pcCatalog[2]].filter(Boolean);
-        botResponseText = 'Về so sánh vi xử lý: **Intel Core Ultra 7 270K** nổi bật với khả năng xử lý đa nhiệm 16 nhân 24 luồng vượt trội cho cả gaming lẫn làm việc nặng. Trong khi đó, **AMD Ryzen 7 7800X3D** với bộ nhớ đệm 3D V-Cache là "ông vua" tối ưu khung hình FPS tối đa cho game thủ eSports. Dưới đây là 2 bộ máy tương ứng:';
-      } else if (lower.includes('văn phòng') || lower.includes('học tập') || lower.includes('dưới 10') || lower.includes('nhỏ gọn')) {
-        matchedProducts = [pcCatalog[3] || pcCatalog[0]];
-        botResponseText = 'Với nhu cầu công việc Văn phòng, Học tập, Kế toán mượt mở hàng chục tab Chrome và file Excel nặng, cấu hình PC Mini / Văn phòng trang bị SSD NVMe tốc độ cao và bộ nguồn chuẩn 80 Plus sẽ đảm bảo máy chạy êm ái, bền bỉ suốt 5-10 năm:';
-      } else {
-        matchedProducts = pcCatalog.slice(0, 2);
-        botResponseText = `Cảm ơn câu hỏi của bạn về "${queryText}". Dựa trên phân tích tương thích phần cứng của NAT Computer, tôi xin đề xuất cho bạn dòng PC bán chạy nhất với cấu hình chuẩn bảo hành 36 tháng chính hãng:`;
-      }
-
+    try {
+      const res = await api.sendAiChat(queryText.trim(), currentHistory);
       const botMsgObj = {
         id: Date.now() + 1,
         sender: 'bot',
-        text: botResponseText,
-        recommendedProducts: matchedProducts,
+        text: res.reply || 'Cảm ơn bạn đã đặt câu hỏi. Hãy cho tôi biết thêm chi tiết để hỗ trợ tốt nhất!',
+        recommendedProducts: res.recommendedProducts && res.recommendedProducts.length > 0
+          ? res.recommendedProducts
+          : pcCatalog.slice(0, 2),
+        provider: res.provider || 'gemini',
         time: new Date().toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' }),
       };
-
       setMessages((prev) => [...prev, botMsgObj]);
+    } catch (err) {
+      const botMsgObj = {
+        id: Date.now() + 1,
+        sender: 'bot',
+        text: `NAT Computer đã nhận câu hỏi: "${queryText}". Dưới đây là những cấu hình tối ưu bảo hành 36 tháng chính hãng tốt nhất dành cho bạn:`,
+        recommendedProducts: pcCatalog.slice(0, 2),
+        provider: 'fallback',
+        time: new Date().toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' }),
+      };
+      setMessages((prev) => [...prev, botMsgObj]);
+    } finally {
       setIsTyping(false);
-    }, 1000);
+    }
   };
 
   const fmt = (v) =>
@@ -153,7 +146,9 @@ export default function AiPage({ onAddToCart }) {
             </div>
             <div>
               <h3 className="bot-name">NAT AI EXPERT ADVISOR</h3>
-              <span className="bot-status">● Đang hoạt động trực tuyến 24/7</span>
+              <span className="bot-status" style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                ● Trực tuyến 24/7 • <Sparkles size={11} color="#10b981" /> Powered by Google Gemini AI
+              </span>
             </div>
           </div>
           <button
@@ -204,7 +199,13 @@ export default function AiPage({ onAddToCart }) {
               </div>
 
               <div className="message-bubble-content">
-                <div className="message-text">{msg.text}</div>
+                {msg.sender === 'bot' && (
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '4px', marginBottom: '6px', fontSize: '11px', color: '#1c69d4', fontWeight: 600 }}>
+                    <Sparkles size={12} />
+                    <span>{msg.provider === 'gemini' ? 'Google Gemini 3.6 Flash' : 'NAT Hardware AI'}</span>
+                  </div>
+                )}
+                <div className="message-text" style={{ whiteSpace: 'pre-line', lineHeight: '1.6' }}>{msg.text}</div>
 
                 {/* Recommended Product Cards inside AI Message */}
                 {msg.recommendedProducts && msg.recommendedProducts.length > 0 && (

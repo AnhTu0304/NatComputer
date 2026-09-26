@@ -95,6 +95,76 @@ export default function AdminPage({ user, onLogout }) {
   const [prodCategoryFilter, setProdCategoryFilter] = useState('all');
   const [prodSortFilter, setProdSortFilter] = useState('default');
 
+  // Standard Specs Templates for Quick Fill
+  const SPEC_TEMPLATES = {
+    pc: [
+      { item: 'Bộ vi xử lý (CPU)', desc: 'Intel Core i7-14700K', qty: 1, warranty: '36 Tháng' },
+      { item: 'Bo mạch chủ (Mainboard)', desc: 'MSI MAG B760M MORTAR WIFI', qty: 1, warranty: '36 Tháng' },
+      { item: 'Bộ nhớ RAM', desc: '32GB DDR5 6000MHz RGB', qty: 1, warranty: '36 Tháng' },
+      { item: 'Ổ cứng SSD', desc: '1TB NVMe Gen4 High Speed', qty: 1, warranty: '36 Tháng' },
+      { item: 'Card đồ họa (VGA)', desc: 'NVIDIA RTX 4070 SUPER 12GB', qty: 1, warranty: '36 Tháng' },
+      { item: 'Nguồn máy tính (PSU)', desc: '750W 80 Plus Gold ATX 3.0', qty: 1, warranty: '36 Tháng' },
+      { item: 'Tản nhiệt', desc: 'AIO 240mm ARGB Liquid Cooler', qty: 1, warranty: '24 Tháng' },
+      { item: 'Vỏ Case', desc: 'Case Bể Cá Kính Cường Lực RGB', qty: 1, warranty: '12 Tháng' }
+    ],
+    gpu: [
+      { item: 'Chip đồ họa (GPU)', desc: 'GeForce RTX 5070 Ti 16GB', qty: 1, warranty: '36 Tháng' },
+      { item: 'Dung lượng VRAM', desc: '16GB GDDR7 256-bit', qty: 1, warranty: '36 Tháng' },
+      { item: 'Cổng xuất hình', desc: '3x DisplayPort 2.1b, 1x HDMI 2.1b', qty: 1, warranty: '36 Tháng' },
+      { item: 'Nguồn đề nghị', desc: 'Từ 750W trở lên (1x 16-pin 12V-2x6)', qty: 1, warranty: '36 Tháng' },
+      { item: 'Kích thước / Tản nhiệt', desc: '3 Quạt ARGB - Dài 305mm', qty: 1, warranty: '36 Tháng' }
+    ],
+    monitor: [
+      { item: 'Kích thước màn hình', desc: '27 inch QHD (2560 x 1440)', qty: 1, warranty: '36 Tháng' },
+      { item: 'Tần số quét', desc: '180Hz Super Fast', qty: 1, warranty: '36 Tháng' },
+      { item: 'Tấm nền', desc: 'Fast IPS Góc nhìn 178°', qty: 1, warranty: '36 Tháng' },
+      { item: 'Thời gian đáp ứng', desc: '1ms GTG / 0.5ms MPRT', qty: 1, warranty: '36 Tháng' },
+      { item: 'Cổng kết nối', desc: '2x HDMI 2.0, 1x DisplayPort 1.4', qty: 1, warranty: '36 Tháng' }
+    ],
+    gear: [
+      { item: 'Phân loại thiết bị', desc: 'Chuột Gaming Không Dây Siêu Nhẹ', qty: 1, warranty: '24 Tháng' },
+      { item: 'Cảm biến (Sensor) / Switch', desc: 'HERO 25K (100 - 25.600 DPI)', qty: 1, warranty: '24 Tháng' },
+      { item: 'Kết nối', desc: 'Lightspeed Wireless 1ms & Bluetooth', qty: 1, warranty: '24 Tháng' },
+      { item: 'Trọng lượng', desc: '63g', qty: 1, warranty: '24 Tháng' },
+      { item: 'Thời lượng pin', desc: '70 giờ sử dụng liên tục', qty: 1, warranty: '24 Tháng' }
+    ],
+    custom: [
+      { item: '', desc: '', qty: 1, warranty: '36 Tháng' }
+    ]
+  };
+
+  const parseSpecsToRows = (specs, defaultWarranty = '36 Tháng') => {
+    if (Array.isArray(specs) && specs.length > 0) {
+      return specs.map(s => ({
+        item: s.item || s.label || s.name || '',
+        desc: s.desc || s.value || s.detail || '',
+        qty: s.qty ?? 1,
+        warranty: s.warranty || defaultWarranty
+      }));
+    }
+    if (specs && typeof specs === 'object' && Object.keys(specs).length > 0) {
+      const keyMap = {
+        cpu: 'Bộ vi xử lý (CPU)',
+        gpu: 'Card đồ họa (VGA)',
+        vga: 'Card đồ họa (VGA)',
+        ram: 'Bộ nhớ RAM',
+        ssd: 'Ổ cứng SSD',
+        mainboard: 'Bo mạch chủ (Mainboard)',
+        psu: 'Nguồn máy tính (PSU)',
+        cooler: 'Tản nhiệt',
+        case: 'Vỏ Case',
+        casepc: 'Vỏ Case'
+      };
+      return Object.entries(specs).map(([k, v]) => ({
+        item: keyMap[k.toLowerCase()] || k,
+        desc: typeof v === 'object' ? JSON.stringify(v) : String(v),
+        qty: 1,
+        warranty: defaultWarranty
+      }));
+    }
+    return SPEC_TEMPLATES.pc;
+  };
+
   // New Product Form State
   const [newProd, setNewProd] = useState({
     name: '',
@@ -104,14 +174,7 @@ export default function AdminPage({ user, onLogout }) {
     badge: 'HOT SELLER',
     image: '',
     description: '',
-    cpu: 'Intel Core i7-14700K',
-    gpu: 'NVIDIA RTX 4070 SUPER 12GB',
-    ram: '32GB DDR5 6000MHz RGB',
-    ssd: '1TB NVMe Gen4 High Speed',
-    mainboard: 'MSI MAG B760M MORTAR WIFI',
-    psu: '750W 80 Plus Gold ATX 3.0',
-    cooler: 'AIO 240mm ARGB Liquid Cooler',
-    casepc: 'Case Bể Cá Kính Cường Lực RGB'
+    specsRows: SPEC_TEMPLATES.pc
   });
 
   // New Category State
@@ -251,8 +314,8 @@ export default function AdminPage({ user, onLogout }) {
 
     return () => {
       clearInterval(interval);
-      unsubNewOrder();
-      unsubPaymentUpdate();
+      if (typeof unsubNewOrder === 'function') unsubNewOrder();
+      if (typeof unsubPaymentUpdate === 'function') unsubPaymentUpdate();
       leaveAdminRoom();
     };
   }, []);
@@ -293,10 +356,41 @@ export default function AdminPage({ user, onLogout }) {
     setOrders(prev => prev.map(o => o.id === orderId ? { ...o, orderStatus: newStatus } : o));
   };
 
+  // Confirm Payment manually
+  const handleConfirmPayment = async (orderId, totalAmount, customerName) => {
+    if (window.confirm(`Xác nhận đã nhận đủ ${fmt(totalAmount)} từ khách hàng ${customerName || ''} qua MBBank?`)) {
+      try {
+        const res = await api.confirmAdminOrderPayment(orderId);
+        if (res && res.success) {
+          setOrders(prev => prev.map(o => o.id === orderId ? { ...o, paymentStatus: 'PAID', orderStatus: 'PROCESSING' } : o));
+          const alertItem = {
+            id: 'alt_' + Date.now(),
+            title: `✅ Đã duyệt tiền đơn hàng #${orderId}!`,
+            desc: `Đã xác nhận thanh toán thành công cho khách hàng ${customerName || ''}.`,
+            time: 'Vừa xong',
+            isNew: true
+          };
+          setOrderAlerts(prev => [alertItem, ...prev]);
+          setToastAlert(alertItem);
+          setTimeout(() => setToastAlert(null), 4000);
+        } else {
+          alert(res?.error || 'Có lỗi xảy ra khi duyệt thanh toán.');
+        }
+      } catch (err) {
+        alert('Lỗi kết nối khi duyệt thanh toán.');
+      }
+    }
+  };
+
   // Product CRUD
   const handleSaveProduct = async (e) => {
     e.preventDefault();
     if (!newProd.name || !newProd.price) return;
+
+    // Filter valid specs rows (ignore empty rows)
+    const validSpecs = (newProd.specsRows || []).filter(
+      r => (r.item && r.item.trim()) || (r.desc && r.desc.trim())
+    );
 
     const payload = {
       name: newProd.name,
@@ -305,17 +399,8 @@ export default function AdminPage({ user, onLogout }) {
       originalPrice: parseFloat(newProd.originalPrice || newProd.price),
       badge: newProd.badge,
       image: newProd.image || 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800&q=80',
-      description: newProd.description || 'Dàn máy PC chính hãng cao cấp bảo hành 36 tháng.',
-      specs: {
-        cpu: newProd.cpu,
-        gpu: newProd.gpu,
-        ram: newProd.ram,
-        ssd: newProd.ssd,
-        mainboard: newProd.mainboard,
-        psu: newProd.psu,
-        cooler: newProd.cooler,
-        case: newProd.casepc
-      }
+      description: newProd.description || 'Sản phẩm máy tính / linh kiện chính hãng bảo hành đầy đủ.',
+      specs: validSpecs
     };
 
     if (editingProduct) {
@@ -329,8 +414,7 @@ export default function AdminPage({ user, onLogout }) {
 
     setNewProd({
       name: '', category: 'gaming', price: '', originalPrice: '', badge: 'HOT SELLER', image: '', description: '',
-      cpu: 'Intel Core i7-14700K', gpu: 'NVIDIA RTX 4070 SUPER 12GB', ram: '32GB DDR5 6000MHz RGB', ssd: '1TB NVMe Gen4 High Speed',
-      mainboard: 'MSI MAG B760M MORTAR WIFI', psu: '750W 80 Plus Gold ATX 3.0', cooler: 'AIO 240mm ARGB Liquid Cooler', casepc: 'Case Bể Cá Kính Cường Lực RGB'
+      specsRows: SPEC_TEMPLATES.pc
     });
   };
 
@@ -344,14 +428,7 @@ export default function AdminPage({ user, onLogout }) {
       badge: prod.badge || 'HOT SELLER',
       image: prod.image || '',
       description: prod.description || '',
-      cpu: prod.specs?.cpu || 'Core i7',
-      gpu: prod.specs?.gpu || 'RTX 4070',
-      ram: prod.specs?.ram || '32GB DDR5',
-      ssd: prod.specs?.ssd || '1TB NVMe',
-      mainboard: prod.specs?.mainboard || 'B760M',
-      psu: prod.specs?.psu || '750W',
-      cooler: prod.specs?.cooler || 'AIO 240mm',
-      casepc: prod.specs?.case || 'Case Kính'
+      specsRows: parseSpecsToRows(prod.specs, prod.warranty || '36 Tháng')
     });
     setActiveMenu('products');
     setTimeout(() => {
@@ -936,6 +1013,7 @@ export default function AdminPage({ user, onLogout }) {
                       <th>ĐỊA CHỈ</th>
                       <th>PHƯƠNG THỨC</th>
                       <th>TỔNG TIỀN</th>
+                      <th>THANH TOÁN</th>
                       <th>TRẠNG THÁI</th>
                       <th>HÀNH ĐỘNG</th>
                     </tr>
@@ -953,6 +1031,31 @@ export default function AdminPage({ user, onLogout }) {
                         <td><span className="badge-payment-method">{o.paymentMethod}</span></td>
                         <td><strong className="text-bold-amount">{fmt(o.totalAmount)}</strong></td>
                         <td>
+                          <span
+                            style={{
+                              display: 'inline-flex',
+                              alignItems: 'center',
+                              gap: '4px',
+                              padding: '4px 8px',
+                              borderRadius: '9999px',
+                              fontSize: '11px',
+                              fontWeight: '600',
+                              backgroundColor: o.paymentStatus === 'PAID' ? '#dcfce7' : '#fef3c7',
+                              color: o.paymentStatus === 'PAID' ? '#15803d' : '#b45309'
+                            }}
+                          >
+                            {o.paymentStatus === 'PAID' ? (
+                              <>
+                                <CheckCircle2 size={12} /> Đã thanh toán
+                              </>
+                            ) : (
+                              <>
+                                <CreditCard size={12} /> Chưa thanh toán
+                              </>
+                            )}
+                          </span>
+                        </td>
+                        <td>
                           <select
                             className={`tail-status-select ${o.orderStatus ? o.orderStatus.toLowerCase() : 'processing'}`}
                             value={o.orderStatus || 'PROCESSING'}
@@ -965,13 +1068,33 @@ export default function AdminPage({ user, onLogout }) {
                           </select>
                         </td>
                         <td>
-                          <button
-                            type="button"
-                            className="btn-tail-action"
-                            onClick={() => setSelectedInvoiceOrder(o)}
-                          >
-                            <FileText size={14} /> In Hóa Đơn
-                          </button>
+                          <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
+                            {o.paymentStatus !== 'PAID' && (
+                              <button
+                                type="button"
+                                className="btn-tail-action"
+                                style={{
+                                  backgroundColor: '#10b981',
+                                  color: '#ffffff',
+                                  borderColor: '#059669',
+                                  padding: '6px 10px',
+                                  fontWeight: 600,
+                                  cursor: 'pointer'
+                                }}
+                                onClick={() => handleConfirmPayment(o.id, o.totalAmount, o.customerName)}
+                                title="Duyệt nhận tiền chuyển khoản MBBank thủ công"
+                              >
+                                <CheckCircle2 size={14} /> Duyệt Tiền
+                              </button>
+                            )}
+                            <button
+                              type="button"
+                              className="btn-tail-action"
+                              onClick={() => setSelectedInvoiceOrder(o)}
+                            >
+                              <FileText size={14} /> In Hóa Đơn
+                            </button>
+                          </div>
                         </td>
                       </tr>
                     ))}
@@ -994,13 +1117,10 @@ export default function AdminPage({ user, onLogout }) {
               const nameMatch = p.name?.toLowerCase().includes(q);
               const catMatch = p.category?.toLowerCase().includes(q);
               const badgeMatch = p.badge?.toLowerCase().includes(q);
-              const cpuMatch = p.specs?.cpu?.toLowerCase().includes(q);
-              const gpuMatch = p.specs?.gpu?.toLowerCase().includes(q);
-              const ramMatch = p.specs?.ram?.toLowerCase().includes(q);
-              const ssdMatch = p.specs?.ssd?.toLowerCase().includes(q);
-              const mbMatch = p.specs?.mainboard?.toLowerCase().includes(q);
+              const specsString = JSON.stringify(p.specs || '').toLowerCase();
+              const specsMatch = specsString.includes(q);
 
-              return nameMatch || catMatch || badgeMatch || cpuMatch || gpuMatch || ramMatch || ssdMatch || mbMatch;
+              return nameMatch || catMatch || badgeMatch || specsMatch;
             }).sort((a, b) => {
               if (prodSortFilter === 'price-asc') return (a.price || 0) - (b.price || 0);
               if (prodSortFilter === 'price-desc') return (b.price || 0) - (a.price || 0);
@@ -1119,19 +1239,190 @@ export default function AdminPage({ user, onLogout }) {
                       />
                     </div>
 
-                    {/* Components Breakdown Fieldset */}
-                    <div className="specs-fieldset-box">
-                      <label className="specs-title"><Cpu size={14} /> Chi Tiết Các Linh Kiện Máy Tính (Hardware Breakdown)</label>
-                      <div className="form-grid-4">
-                        <div className="form-input-box"><label>CPU</label><input type="text" value={newProd.cpu} onChange={e => setNewProd(p => ({ ...p, cpu: e.target.value }))} /></div>
-                        <div className="form-input-box"><label>GPU (VGA)</label><input type="text" value={newProd.gpu} onChange={e => setNewProd(p => ({ ...p, gpu: e.target.value }))} /></div>
-                        <div className="form-input-box"><label>RAM</label><input type="text" value={newProd.ram} onChange={e => setNewProd(p => ({ ...p, ram: e.target.value }))} /></div>
-                        <div className="form-input-box"><label>SSD</label><input type="text" value={newProd.ssd} onChange={e => setNewProd(p => ({ ...p, ssd: e.target.value }))} /></div>
-                        <div className="form-input-box"><label>Mainboard</label><input type="text" value={newProd.mainboard} onChange={e => setNewProd(p => ({ ...p, mainboard: e.target.value }))} /></div>
-                        <div className="form-input-box"><label>Nguồn (PSU)</label><input type="text" value={newProd.psu} onChange={e => setNewProd(p => ({ ...p, psu: e.target.value }))} /></div>
-                        <div className="form-input-box"><label>Tản Nhiệt</label><input type="text" value={newProd.cooler} onChange={e => setNewProd(p => ({ ...p, cooler: e.target.value }))} /></div>
-                        <div className="form-input-box"><label>Vỏ Case</label><input type="text" value={newProd.casepc} onChange={e => setNewProd(p => ({ ...p, casepc: e.target.value }))} /></div>
+                    {/* Dynamic Specs Breakdown Fieldset */}
+                    <div className="specs-fieldset-box" style={{
+                      background: '#f8fafc',
+                      border: '1px solid #e2e8f0',
+                      borderRadius: '10px',
+                      padding: '16px',
+                      marginTop: '16px'
+                    }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '10px', marginBottom: '14px' }}>
+                        <label className="specs-title" style={{ margin: 0, display: 'flex', alignItems: 'center', gap: '6px', fontWeight: 700, color: '#1e293b' }}>
+                          <Cpu size={16} color="#3b82f6" /> Bảng Thông Số Kỹ Thuật (Dùng Chung Cho Mọi Loại Sản Phẩm)
+                        </label>
+                        <div style={{ display: 'flex', gap: '6px', alignItems: 'center', flexWrap: 'wrap' }}>
+                          <span style={{ fontSize: '12px', color: '#64748b', marginRight: '4px' }}>Mẫu nhanh:</span>
+                          <button
+                            type="button"
+                            className="btn-pill-template"
+                            style={{ fontSize: '11px', padding: '4px 8px', borderRadius: '6px', border: '1px solid #cbd5e1', background: '#ffffff', cursor: 'pointer' }}
+                            onClick={() => setNewProd(p => ({ ...p, specsRows: SPEC_TEMPLATES.pc }))}
+                          >
+                            🖥️ PC Máy Bộ
+                          </button>
+                          <button
+                            type="button"
+                            className="btn-pill-template"
+                            style={{ fontSize: '11px', padding: '4px 8px', borderRadius: '6px', border: '1px solid #cbd5e1', background: '#ffffff', cursor: 'pointer' }}
+                            onClick={() => setNewProd(p => ({ ...p, specsRows: SPEC_TEMPLATES.gpu }))}
+                          >
+                            ⚡ Card VGA
+                          </button>
+                          <button
+                            type="button"
+                            className="btn-pill-template"
+                            style={{ fontSize: '11px', padding: '4px 8px', borderRadius: '6px', border: '1px solid #cbd5e1', background: '#ffffff', cursor: 'pointer' }}
+                            onClick={() => setNewProd(p => ({ ...p, specsRows: SPEC_TEMPLATES.monitor }))}
+                          >
+                            📺 Màn Hình
+                          </button>
+                          <button
+                            type="button"
+                            className="btn-pill-template"
+                            style={{ fontSize: '11px', padding: '4px 8px', borderRadius: '6px', border: '1px solid #cbd5e1', background: '#ffffff', cursor: 'pointer' }}
+                            onClick={() => setNewProd(p => ({ ...p, specsRows: SPEC_TEMPLATES.gear }))}
+                          >
+                            🖱️ Gaming Gear
+                          </button>
+                        </div>
                       </div>
+
+                      {/* Specs Row List */}
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                        {(newProd.specsRows || []).map((row, idx) => (
+                          <div key={idx} style={{
+                            display: 'grid',
+                            gridTemplateColumns: 'minmax(140px, 1fr) minmax(200px, 2fr) 60px 110px 36px',
+                            gap: '8px',
+                            alignItems: 'center',
+                            background: '#ffffff',
+                            padding: '8px 10px',
+                            borderRadius: '8px',
+                            border: '1px solid #e2e8f0'
+                          }}>
+                            <div>
+                              <input
+                                type="text"
+                                placeholder="Tên thông số / Linh kiện"
+                                value={row.item}
+                                onChange={(e) => {
+                                  const val = e.target.value;
+                                  setNewProd(p => {
+                                    const next = [...(p.specsRows || [])];
+                                    next[idx] = { ...next[idx], item: val };
+                                    return { ...p, specsRows: next };
+                                  });
+                                }}
+                                style={{ width: '100%', padding: '6px 8px', fontSize: '12px', borderRadius: '6px', border: '1px solid #cbd5e1' }}
+                              />
+                            </div>
+                            <div>
+                              <input
+                                type="text"
+                                placeholder="Mô tả chi tiết thông số..."
+                                value={row.desc}
+                                onChange={(e) => {
+                                  const val = e.target.value;
+                                  setNewProd(p => {
+                                    const next = [...(p.specsRows || [])];
+                                    next[idx] = { ...next[idx], desc: val };
+                                    return { ...p, specsRows: next };
+                                  });
+                                }}
+                                style={{ width: '100%', padding: '6px 8px', fontSize: '12px', borderRadius: '6px', border: '1px solid #cbd5e1' }}
+                              />
+                            </div>
+                            <div>
+                              <input
+                                type="number"
+                                min="1"
+                                placeholder="SL"
+                                value={row.qty || 1}
+                                onChange={(e) => {
+                                  const val = parseInt(e.target.value) || 1;
+                                  setNewProd(p => {
+                                    const next = [...(p.specsRows || [])];
+                                    next[idx] = { ...next[idx], qty: val };
+                                    return { ...p, specsRows: next };
+                                  });
+                                }}
+                                style={{ width: '100%', padding: '6px 4px', fontSize: '12px', textAlign: 'center', borderRadius: '6px', border: '1px solid #cbd5e1' }}
+                              />
+                            </div>
+                            <div>
+                              <input
+                                type="text"
+                                placeholder="Bảo hành"
+                                value={row.warranty || '36 Tháng'}
+                                onChange={(e) => {
+                                  const val = e.target.value;
+                                  setNewProd(p => {
+                                    const next = [...(p.specsRows || [])];
+                                    next[idx] = { ...next[idx], warranty: val };
+                                    return { ...p, specsRows: next };
+                                  });
+                                }}
+                                style={{ width: '100%', padding: '6px 8px', fontSize: '12px', textAlign: 'center', borderRadius: '6px', border: '1px solid #cbd5e1' }}
+                              />
+                            </div>
+                            <div style={{ textAlign: 'center' }}>
+                              <button
+                                type="button"
+                                onClick={() => {
+                                  setNewProd(p => ({
+                                    ...p,
+                                    specsRows: (p.specsRows || []).filter((_, i) => i !== idx)
+                                  }));
+                                }}
+                                style={{
+                                  background: 'none',
+                                  border: 'none',
+                                  color: '#ef4444',
+                                  cursor: 'pointer',
+                                  padding: '4px',
+                                  display: 'inline-flex',
+                                  alignItems: 'center',
+                                  justifyContent: 'center'
+                                }}
+                                title="Xóa dòng thông số này"
+                              >
+                                <X size={15} />
+                              </button>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* Add New Row Button */}
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setNewProd(p => ({
+                            ...p,
+                            specsRows: [
+                              ...(p.specsRows || []),
+                              { item: '', desc: '', qty: 1, warranty: '36 Tháng' }
+                            ]
+                          }));
+                        }}
+                        style={{
+                          marginTop: '10px',
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '6px',
+                          fontSize: '12px',
+                          fontWeight: 600,
+                          color: '#2563eb',
+                          background: '#eff6ff',
+                          border: '1px dashed #93c5fd',
+                          padding: '6px 12px',
+                          borderRadius: '6px',
+                          cursor: 'pointer'
+                        }}
+                      >
+                        <Plus size={14} /> + Thêm dòng thông số kỹ thuật mới
+                      </button>
                     </div>
 
                     <button type="submit" className="btn-tail-primary" style={{ marginTop: '16px' }}>
@@ -1296,7 +1587,7 @@ export default function AdminPage({ user, onLogout }) {
                         <th>TÊN SẢN PHẨM</th>
                         <th>DANH MỤC</th>
                         <th>GIÁ BÁN</th>
-                        <th>LINH KIỆN CẤU HÌNH</th>
+                        <th>THÔNG SỐ KỸ THUẬT</th>
                         <th>THAO TÁC</th>
                       </tr>
                     </thead>
@@ -1320,8 +1611,20 @@ export default function AdminPage({ user, onLogout }) {
                             <td><span className="badge-category-tag">{p.category}</span></td>
                             <td><strong className="text-bold-amount">{fmt(p.price)}</strong></td>
                             <td className="cell-specs-small">
-                              <div>CPU: {p.specs?.cpu || 'Core i7'} | VGA: {p.specs?.gpu || 'RTX 4070'}</div>
-                              <div>RAM: {p.specs?.ram || '32GB'} | SSD: {p.specs?.ssd || '1TB'}</div>
+                              {Array.isArray(p.specs) && p.specs.length > 0 ? (
+                                p.specs.slice(0, 2).map((s, idx) => (
+                                  <div key={idx} style={{ fontSize: '11px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', maxWidth: '240px' }}>
+                                    <strong>{s.item}:</strong> {s.desc}
+                                  </div>
+                                ))
+                              ) : p.specs && typeof p.specs === 'object' && Object.keys(p.specs).length > 0 ? (
+                                <>
+                                  <div>CPU: {p.specs.cpu || '-'} | VGA: {p.specs.gpu || p.specs.vga || '-'}</div>
+                                  <div>RAM: {p.specs.ram || '-'} | SSD: {p.specs.ssd || '-'}</div>
+                                </>
+                              ) : (
+                                <div style={{ color: '#94a3b8', fontStyle: 'italic' }}>Chưa có thông số</div>
+                              )}
                             </td>
                             <td>
                               <div className="tail-action-btns">

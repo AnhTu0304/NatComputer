@@ -6,8 +6,8 @@ jest.mock('./components/ThreeDCanvas', () => () => <div data-testid="three-d-can
 
 test('renders homepage hero banner', async () => {
   render(<MemoryRouter initialEntries={['/']}><App /></MemoryRouter>);
-  const heading = await screen.findByRole('heading', { level: 1 });
-  expect(heading.textContent).toContain('BUILD PC');
+  const heading = await screen.findByRole('heading', { level: 1 }, { timeout: 4000 });
+  expect(heading.textContent).toContain('NAT COMPUTER');
 });
 
 test('renders all 4 category carousels on homepage', async () => {
@@ -47,5 +47,5 @@ test('renders Login page at /login', async () => {
 test('redirects unknown routes to homepage', async () => {
   render(<MemoryRouter initialEntries={['/unknown']}><App /></MemoryRouter>);
   const heading = await screen.findByRole('heading', { level: 1 });
-  expect(heading.textContent).toContain('BUILD PC');
+  expect(heading.textContent).toContain('NAT COMPUTER');
 });

@@ -19,10 +19,83 @@ export function getAuthHeaders() {
   return { 'Content-Type': 'application/json' };
 }
 
+// Client-side Memory + SessionStorage Cache Manager
+const clientCache = new Map();
+const CACHE_PREFIX = 'nat_cache_';
+
+export function getCached(key) {
+  // 1. Check in-memory Map
+  if (clientCache.has(key)) {
+    const item = clientCache.get(key);
+    if (Date.now() < item.expiresAt) {
+      return item.data;
+    }
+    clientCache.delete(key);
+  }
+
+  // 2. Check sessionStorage fallback
+  try {
+    const raw = sessionStorage.getItem(`${CACHE_PREFIX}${key}`);
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      if (Date.now() < parsed.expiresAt) {
+        clientCache.set(key, parsed);
+        return parsed.data;
+      }
+      sessionStorage.removeItem(`${CACHE_PREFIX}${key}`);
+    }
+  } catch (e) {}
+
+  return null;
+}
+
+export function setCached(key, data, ttlMs = 120000) {
+  const expiresAt = Date.now() + ttlMs;
+  const item = { data, expiresAt };
+  clientCache.set(key, item);
+  try {
+    sessionStorage.setItem(`${CACHE_PREFIX}${key}`, JSON.stringify(item));
+  } catch (e) {}
+}
+
+export function clearClientCache(prefix = '') {
+  if (!prefix) {
+    clientCache.clear();
+    try {
+      const keysToRemove = [];
+      for (let i = 0; i < sessionStorage.length; i++) {
+        const k = sessionStorage.key(i);
+        if (k && k.startsWith(CACHE_PREFIX)) {
+          keysToRemove.push(k);
+        }
+      }
+      keysToRemove.forEach(k => sessionStorage.removeItem(k));
+    } catch (e) {}
+    return;
+  }
+
+  for (const k of clientCache.keys()) {
+    if (k.startsWith(prefix)) clientCache.delete(k);
+  }
+  try {
+    const fullPrefix = `${CACHE_PREFIX}${prefix}`;
+    const keysToRemove = [];
+    for (let i = 0; i < sessionStorage.length; i++) {
+      const k = sessionStorage.key(i);
+      if (k && k.startsWith(fullPrefix)) {
+        keysToRemove.push(k);
+      }
+    }
+    keysToRemove.forEach(k => sessionStorage.removeItem(k));
+  } catch (e) {}
+}
+
 /**
  * NAT Computer Backend Service Client
  */
 export const api = {
+  // Cache Management
+  clearCache: (prefix) => clearClientCache(prefix),
   // Check backend server health
   async checkHealth() {
     try {
@@ -87,12 +160,22 @@ export const api = {
     }
   },
 
-  // Products: Get catalog
-  async getProducts(category = '', search = '') {
+  // Products: Get catalog (Client SWR Cached)
+  async getProducts(category = '', search = '', forceFresh = false) {
+    const cacheKey = `products_${category || 'all'}_${search || 'all'}`;
+    if (!forceFresh) {
+      const cached = getCached(cacheKey);
+      if (cached) return cached;
+    }
+
     try {
       const query = new URLSearchParams({ category, search }).toString();
       const res = await fetch(`${API_BASE_URL}/products?${query}`);
-      return await res.json();
+      const data = await res.json();
+      if (data && data.products) {
+        setCached(cacheKey, data, 120000); // 2 minutes client cache
+      }
+      return data;
     } catch (err) {
       return { products: [] };
     }
@@ -109,6 +192,24 @@ export const api = {
       return await res.json();
     } catch (err) {
       return { error: 'Lỗi kết nối khi gửi đơn hàng.' };
+    }
+  },
+
+  // AI: Chat with Gemini Hardware Advisor
+  async sendAiChat(message, history = []) {
+    try {
+      const res = await fetch(`${API_BASE_URL}/ai/chat`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message, history })
+      });
+      return await res.json();
+    } catch (err) {
+      return {
+        success: false,
+        error: 'Lỗi kết nối tới Trợ lý AI.',
+        reply: 'Rất tiếc, kết nối tới hệ thống AI tạm thời gián đoạn. Bạn vui lòng thử lại sau giây lát!'
+      };
     }
   },
 
@@ -152,6 +253,19 @@ export const api = {
     }
   },
 
+  // Admin: Manually confirm order payment (fallback)
+  async confirmAdminOrderPayment(orderId) {
+    try {
+      const res = await fetch(`${API_BASE_URL}/admin/orders/${orderId}/confirm-payment`, {
+        method: 'PUT',
+        headers: getAuthHeaders()
+      });
+      return await res.json();
+    } catch {
+      return { error: 'Lỗi khi xác nhận thanh toán đơn hàng.' };
+    }
+  },
+
   // Admin: Add new product
   async addAdminProduct(productData) {
     try {
@@ -160,7 +274,9 @@ export const api = {
         headers: getAuthHeaders(),
         body: JSON.stringify(productData)
       });
-      return await res.json();
+      const data = await res.json();
+      clearClientCache();
+      return data;
     } catch {
       return { error: 'Lỗi khi thêm sản phẩm mới.' };
     }
@@ -173,7 +289,9 @@ export const api = {
         method: 'DELETE',
         headers: getAuthHeaders()
       });
-      return await res.json();
+      const data = await res.json();
+      clearClientCache();
+      return data;
     } catch {
       return { error: 'Lỗi khi xóa sản phẩm.' };
     }
@@ -210,7 +328,9 @@ export const api = {
         headers: getAuthHeaders(),
         body: JSON.stringify(catData)
       });
-      return await res.json();
+      const data = await res.json();
+      clearClientCache();
+      return data;
     } catch {
       return { error: 'Lỗi khi thêm danh mục.' };
     }
@@ -222,7 +342,9 @@ export const api = {
         method: 'DELETE',
         headers: getAuthHeaders()
       });
-      return await res.json();
+      const data = await res.json();
+      clearClientCache();
+      return data;
     } catch {
       return { error: 'Lỗi khi xóa danh mục.' };
     }
@@ -247,7 +369,9 @@ export const api = {
         headers: getAuthHeaders(),
         body: JSON.stringify(bannerData)
       });
-      return await res.json();
+      const data = await res.json();
+      clearClientCache();
+      return data;
     } catch {
       return { error: 'Lỗi khi thêm banner.' };
     }
@@ -259,7 +383,9 @@ export const api = {
         method: 'DELETE',
         headers: getAuthHeaders()
       });
-      return await res.json();
+      const data = await res.json();
+      clearClientCache();
+      return data;
     } catch {
       return { error: 'Lỗi khi xóa banner.' };
     }
@@ -310,7 +436,9 @@ export const api = {
         headers: getAuthHeaders(),
         body: JSON.stringify(productData)
       });
-      return await res.json();
+      const data = await res.json();
+      clearClientCache();
+      return data;
     } catch {
       return { error: 'Lỗi khi cập nhật sản phẩm.' };
     }
