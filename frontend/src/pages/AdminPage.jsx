@@ -56,6 +56,9 @@ import PcBuildsView from '../components/admin/PcBuildsView';
 import WarrantyReturnsView from '../components/admin/WarrantyReturnsView';
 import ReportsView from '../components/admin/ReportsView';
 import AdminManagementView from '../components/admin/AdminManagementView';
+import ProductsView from '../components/admin/ProductsView';
+import ProductEditor from '../components/admin/ProductEditor';
+import OrdersView from '../components/admin/OrdersView';
 
 export default function AdminPage({ user, onLogout }) {
   const navigate = useNavigate();
@@ -391,25 +394,32 @@ export default function AdminPage({ user, onLogout }) {
   };
 
   // Product CRUD
-  const handleSaveProduct = async (e) => {
-    e.preventDefault();
-    if (!newProd.name || !newProd.price) return;
+  const handleSaveProduct = async (dataOrEvent, isPublished = true) => {
+    let payload;
+    if (dataOrEvent && dataOrEvent.preventDefault) {
+      dataOrEvent.preventDefault();
+      if (!newProd.name || !newProd.price) return;
 
-    // Filter valid specs rows (ignore empty rows)
-    const validSpecs = (newProd.specsRows || []).filter(
-      r => (r.item && r.item.trim()) || (r.desc && r.desc.trim())
-    );
+      // Filter valid specs rows (ignore empty rows)
+      const validSpecs = (newProd.specsRows || []).filter(
+        r => (r.item && r.item.trim()) || (r.desc && r.desc.trim())
+      );
 
-    const payload = {
-      name: newProd.name,
-      category: newProd.category,
-      price: parseFloat(newProd.price),
-      originalPrice: parseFloat(newProd.originalPrice || newProd.price),
-      badge: newProd.badge,
-      image: newProd.image || 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800&q=80',
-      description: newProd.description || 'Sản phẩm máy tính / linh kiện chính hãng bảo hành đầy đủ.',
-      specs: validSpecs
-    };
+      payload = {
+        name: newProd.name,
+        category: newProd.category,
+        price: parseFloat(newProd.price),
+        originalPrice: parseFloat(newProd.originalPrice || newProd.price),
+        badge: newProd.badge,
+        image: newProd.image || 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800&q=80',
+        description: newProd.description || 'Sản phẩm máy tính / linh kiện chính hãng bảo hành đầy đủ.',
+        specs: validSpecs
+      };
+    } else if (dataOrEvent && dataOrEvent.name) {
+      payload = dataOrEvent;
+    } else {
+      return;
+    }
 
     if (editingProduct) {
       await api.updateAdminProduct(editingProduct.id, payload);
@@ -417,9 +427,15 @@ export default function AdminPage({ user, onLogout }) {
       setEditingProduct(null);
     } else {
       const res = await api.addAdminProduct(payload);
-      if (res && res.product) setProducts(prev => [res.product, ...prev]);
+      if (res && res.product) {
+        setProducts(prev => [res.product, ...prev]);
+      } else {
+        setProducts(prev => [{ id: 'prod_' + Date.now(), ...payload }, ...prev]);
+      }
     }
 
+    setEditingProduct(null);
+    setActiveMenu('products');
     setNewProd({
       name: '', category: 'gaming', price: '', originalPrice: '', badge: 'HOT SELLER', image: '', description: '',
       specsRows: SPEC_TEMPLATES.pc
@@ -438,7 +454,7 @@ export default function AdminPage({ user, onLogout }) {
       description: prod.description || '',
       specsRows: parseSpecsToRows(prod.specs, prod.warranty || '36 Tháng')
     });
-    setActiveMenu('products');
+    setActiveMenu('add-product');
     setTimeout(() => {
       if (editFormRef.current) {
         editFormRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -697,654 +713,61 @@ export default function AdminPage({ user, onLogout }) {
           {/* =============================================================== */}
           {activeMenu === 'orders' && (
             <div className="tail-content-panel">
-              <div className="panel-header-row">
-                <div>
-                  <h3>Quản Lý Đơn Hàng & Vận Chuyển Realtime</h3>
-                  <p className="panel-sub">Tự động kết nối cơ sở dữ liệu PostgreSQL và nhận chuông báo khi có đơn mới</p>
-                </div>
-                <button type="button" className="btn-tail-primary" onClick={loadData} disabled={isLoading}>
-                  <RefreshCw size={14} className={isLoading ? 'spin-icon' : ''} /> Đồng bộ đơn hàng
-                </button>
-              </div>
-
-              <div className="tail-table-container">
-                <table className="tail-data-table">
-                  <thead>
-                    <tr>
-                      <th>MÃ ĐƠN</th>
-                      <th>KHÁCH HÀNG</th>
-                      <th>SỐ ĐIỆN THOẠI</th>
-                      <th>ĐỊA CHỈ</th>
-                      <th>PHƯƠNG THỨC</th>
-                      <th>TỔNG TIỀN</th>
-                      <th>THANH TOÁN</th>
-                      <th>TRẠNG THÁI</th>
-                      <th>HÀNH ĐỘNG</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {orders.map(o => (
-                      <tr key={o.id}>
-                        <td><strong className="text-primary-code">#{o.id}</strong></td>
-                        <td>
-                          <strong>{o.customerName}</strong>
-                          <div className="sub-email">{o.customerEmail}</div>
-                        </td>
-                        <td>{o.customerPhone}</td>
-                        <td className="cell-truncate">{o.shippingAddress}</td>
-                        <td><span className="badge-payment-method">{o.paymentMethod}</span></td>
-                        <td><strong className="text-bold-amount">{fmt(o.totalAmount)}</strong></td>
-                        <td>
-                          <span
-                            style={{
-                              display: 'inline-flex',
-                              alignItems: 'center',
-                              gap: '4px',
-                              padding: '4px 8px',
-                              borderRadius: '9999px',
-                              fontSize: '11px',
-                              fontWeight: '600',
-                              backgroundColor: o.paymentStatus === 'PAID' ? '#dcfce7' : '#fef3c7',
-                              color: o.paymentStatus === 'PAID' ? '#15803d' : '#b45309'
-                            }}
-                          >
-                            {o.paymentStatus === 'PAID' ? (
-                              <>
-                                <CheckCircle2 size={12} /> Đã thanh toán
-                              </>
-                            ) : (
-                              <>
-                                <CreditCard size={12} /> Chưa thanh toán
-                              </>
-                            )}
-                          </span>
-                        </td>
-                        <td>
-                          <select
-                            className={`tail-status-select ${o.orderStatus ? o.orderStatus.toLowerCase() : 'processing'}`}
-                            value={o.orderStatus || 'PROCESSING'}
-                            onChange={(e) => handleStatusChange(o.id, e.target.value)}
-                          >
-                            <option value="PROCESSING">Đang xử lý</option>
-                            <option value="SHIPPING">Đang vận chuyển</option>
-                            <option value="COMPLETED">Đã hoàn thành</option>
-                            <option value="CANCELLED">Đã hủy</option>
-                          </select>
-                        </td>
-                        <td>
-                          <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
-                            {o.paymentStatus !== 'PAID' && (
-                              <button
-                                type="button"
-                                className="btn-tail-action"
-                                style={{
-                                  backgroundColor: '#10b981',
-                                  color: '#ffffff',
-                                  borderColor: '#059669',
-                                  padding: '6px 10px',
-                                  fontWeight: 600,
-                                  cursor: 'pointer'
-                                }}
-                                onClick={() => handleConfirmPayment(o.id, o.totalAmount, o.customerName)}
-                                title="Duyệt nhận tiền chuyển khoản MBBank thủ công"
-                              >
-                                <CheckCircle2 size={14} /> Duyệt Tiền
-                              </button>
-                            )}
-                            <button
-                              type="button"
-                              className="btn-tail-action"
-                              onClick={() => setSelectedInvoiceOrder(o)}
-                            >
-                              <FileText size={14} /> In Hóa Đơn
-                            </button>
-                          </div>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
+              <OrdersView
+                orders={orders}
+                onStatusChange={handleStatusChange}
+                onConfirmPayment={handleConfirmPayment}
+                onPrintInvoice={(o) => setSelectedInvoiceOrder(o)}
+                onSimulateOrder={handleSimulateNewOrder}
+                onSyncOrders={loadData}
+                isLoading={isLoading}
+                currencyFormatter={fmt}
+              />
             </div>
           )}
 
           {/* =============================================================== */}
           {/* VIEW 3: PRODUCTS & HARDWARE SPECS CRUD                           */}
           {/* =============================================================== */}
-          {activeMenu === 'products' && (() => {
-            const filteredProducts = products.filter(p => {
-              const matchesCat = prodCategoryFilter === 'all' || p.category === prodCategoryFilter;
-              if (!matchesCat) return false;
-              if (!prodSearchQuery.trim()) return true;
-
-              const q = prodSearchQuery.toLowerCase().trim();
-              const nameMatch = p.name?.toLowerCase().includes(q);
-              const catMatch = p.category?.toLowerCase().includes(q);
-              const badgeMatch = p.badge?.toLowerCase().includes(q);
-              const specsString = JSON.stringify(p.specs || '').toLowerCase();
-              const specsMatch = specsString.includes(q);
-
-              return nameMatch || catMatch || badgeMatch || specsMatch;
-            }).sort((a, b) => {
-              if (prodSortFilter === 'price-asc') return (a.price || 0) - (b.price || 0);
-              if (prodSortFilter === 'price-desc') return (b.price || 0) - (a.price || 0);
-              if (prodSortFilter === 'name-az') return (a.name || '').localeCompare(b.name || '');
-              return 0;
-            });
-
-            return (
-              <div className="tail-content-panel">
-                <div ref={editFormRef} className={`tail-form-card ${editingProduct ? 'editing-highlight-border' : ''}`}>
-                  <div className="panel-header-row">
-                    <h3>
-                      {editingProduct ? <Edit size={18} color="#4f46e5" /> : <Plus size={18} color="#4f46e5" />}
-                      {editingProduct ? `Chỉnh Sửa Sản Phẩm #${editingProduct.id}` : 'Thêm Sản Phẩm & Cấu Hình Linh Kiện PC Mới'}
-                    </h3>
-                    {editingProduct && (
-                      <button
-                        type="button"
-                        className="btn-tail-secondary"
-                        onClick={() => setEditingProduct(null)}
-                      >
-                        Hủy Chỉnh Sửa
-                      </button>
-                    )}
-                  </div>
-
-                  <form onSubmit={handleSaveProduct} className="tail-crud-form">
-                    <div className="form-grid-3">
-                      <div className="form-input-box">
-                        <label>Tên Sản Phẩm / Dàn Máy *</label>
-                        <input
-                          type="text"
-                          required
-                          placeholder="VD: NAT GAMING ULTRA I9 / RTX 4080"
-                          value={newProd.name}
-                          onChange={(e) => setNewProd(p => ({ ...p, name: e.target.value }))}
-                        />
-                      </div>
-                      <div className="form-input-box">
-                        <label>Danh Mục</label>
-                        <select
-                          value={newProd.category}
-                          onChange={(e) => setNewProd(p => ({ ...p, category: e.target.value }))}
-                        >
-                          {categories.length > 0 ? (
-                            categories.map(c => (
-                              <option key={c.id} value={c.slug || c.id}>{c.name}</option>
-                            ))
-                          ) : (
-                            <>
-                              <option value="gaming">PC Gaming</option>
-                              <option value="workstation">PC Workstation</option>
-                              <option value="office">PC Văn Phòng</option>
-                              <option value="components">Linh Kiện Rời</option>
-                              <option value="monitors">Màn Hình</option>
-                            </>
-                          )}
-                        </select>
-                      </div>
-                      <div className="form-input-box">
-                        <label>Giá Bán Khuyến Mãi (VND) *</label>
-                        <input
-                          type="number"
-                          required
-                          placeholder="35900000"
-                          value={newProd.price}
-                          onChange={(e) => setNewProd(p => ({ ...p, price: e.target.value }))}
-                        />
-                      </div>
-                      <div className="form-input-box">
-                        <label>Giá Niêm Yết Gốc (VND)</label>
-                        <input
-                          type="number"
-                          placeholder="39900000"
-                          value={newProd.originalPrice}
-                          onChange={(e) => setNewProd(p => ({ ...p, originalPrice: e.target.value }))}
-                        />
-                      </div>
-                      <div className="form-input-box">
-                        <label>Tem Khuyến Mãi (Badge)</label>
-                        <select
-                          value={newProd.badge}
-                          onChange={(e) => setNewProd(p => ({ ...p, badge: e.target.value }))}
-                        >
-                          <option value="HOT SELLER">HOT SELLER</option>
-                          <option value="BEST CHOICE">BEST CHOICE</option>
-                          <option value="AI ULTRA POWER">AI ULTRA POWER</option>
-                          <option value="GIẢM 30%">GIẢM 30%</option>
-                        </select>
-                      </div>
-                      <div className="form-input-box">
-                        <label>Link Ảnh Sản Phẩm (Image URL)</label>
-                        <input
-                          type="text"
-                          placeholder="https://images.unsplash.com/..."
-                          value={newProd.image}
-                          onChange={(e) => setNewProd(p => ({ ...p, image: e.target.value }))}
-                        />
-                      </div>
-                    </div>
-
-                    {newProd.image && (
-                      <div className="image-preview-wrapper">
-                        <label>Xem trước hình ảnh:</label>
-                        <img src={newProd.image} alt="Preview" className="img-thumb-preview" />
-                      </div>
-                    )}
-
-                    <div className="form-input-box" style={{ marginTop: '12px' }}>
-                      <label>Mô Tả Sản Phẩm & Chính Sách Bảo Hành</label>
-                      <textarea
-                        rows="2"
-                        placeholder="Mô tả chi tiết cấu hình máy tính, hiệu năng chơi game 4K, đồ họa 3D..."
-                        value={newProd.description}
-                        onChange={(e) => setNewProd(p => ({ ...p, description: e.target.value }))}
-                      />
-                    </div>
-
-                    {/* Dynamic Specs Breakdown Fieldset */}
-                    <div className="specs-fieldset-box" style={{
-                      background: '#f8fafc',
-                      border: '1px solid #e2e8f0',
-                      borderRadius: '10px',
-                      padding: '16px',
-                      marginTop: '16px'
-                    }}>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '10px', marginBottom: '14px' }}>
-                        <label className="specs-title" style={{ margin: 0, display: 'flex', alignItems: 'center', gap: '6px', fontWeight: 700, color: '#1e293b' }}>
-                          <Cpu size={16} color="#3b82f6" /> Bảng Thông Số Kỹ Thuật (Dùng Chung Cho Mọi Loại Sản Phẩm)
-                        </label>
-                        <div style={{ display: 'flex', gap: '6px', alignItems: 'center', flexWrap: 'wrap' }}>
-                          <span style={{ fontSize: '12px', color: '#64748b', marginRight: '4px' }}>Mẫu nhanh:</span>
-                          <button
-                            type="button"
-                            className="btn-pill-template"
-                            style={{ fontSize: '11px', padding: '4px 8px', borderRadius: '6px', border: '1px solid #cbd5e1', background: '#ffffff', cursor: 'pointer' }}
-                            onClick={() => setNewProd(p => ({ ...p, specsRows: SPEC_TEMPLATES.pc }))}
-                          >
-                            🖥️ PC Máy Bộ
-                          </button>
-                          <button
-                            type="button"
-                            className="btn-pill-template"
-                            style={{ fontSize: '11px', padding: '4px 8px', borderRadius: '6px', border: '1px solid #cbd5e1', background: '#ffffff', cursor: 'pointer' }}
-                            onClick={() => setNewProd(p => ({ ...p, specsRows: SPEC_TEMPLATES.gpu }))}
-                          >
-                            ⚡ Card VGA
-                          </button>
-                          <button
-                            type="button"
-                            className="btn-pill-template"
-                            style={{ fontSize: '11px', padding: '4px 8px', borderRadius: '6px', border: '1px solid #cbd5e1', background: '#ffffff', cursor: 'pointer' }}
-                            onClick={() => setNewProd(p => ({ ...p, specsRows: SPEC_TEMPLATES.monitor }))}
-                          >
-                            📺 Màn Hình
-                          </button>
-                          <button
-                            type="button"
-                            className="btn-pill-template"
-                            style={{ fontSize: '11px', padding: '4px 8px', borderRadius: '6px', border: '1px solid #cbd5e1', background: '#ffffff', cursor: 'pointer' }}
-                            onClick={() => setNewProd(p => ({ ...p, specsRows: SPEC_TEMPLATES.gear }))}
-                          >
-                            🖱️ Gaming Gear
-                          </button>
-                        </div>
-                      </div>
-
-                      {/* Specs Row List */}
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                        {(newProd.specsRows || []).map((row, idx) => (
-                          <div key={idx} style={{
-                            display: 'grid',
-                            gridTemplateColumns: 'minmax(140px, 1fr) minmax(200px, 2fr) 60px 110px 36px',
-                            gap: '8px',
-                            alignItems: 'center',
-                            background: '#ffffff',
-                            padding: '8px 10px',
-                            borderRadius: '8px',
-                            border: '1px solid #e2e8f0'
-                          }}>
-                            <div>
-                              <input
-                                type="text"
-                                placeholder="Tên thông số / Linh kiện"
-                                value={row.item}
-                                onChange={(e) => {
-                                  const val = e.target.value;
-                                  setNewProd(p => {
-                                    const next = [...(p.specsRows || [])];
-                                    next[idx] = { ...next[idx], item: val };
-                                    return { ...p, specsRows: next };
-                                  });
-                                }}
-                                style={{ width: '100%', padding: '6px 8px', fontSize: '12px', borderRadius: '6px', border: '1px solid #cbd5e1' }}
-                              />
-                            </div>
-                            <div>
-                              <input
-                                type="text"
-                                placeholder="Mô tả chi tiết thông số..."
-                                value={row.desc}
-                                onChange={(e) => {
-                                  const val = e.target.value;
-                                  setNewProd(p => {
-                                    const next = [...(p.specsRows || [])];
-                                    next[idx] = { ...next[idx], desc: val };
-                                    return { ...p, specsRows: next };
-                                  });
-                                }}
-                                style={{ width: '100%', padding: '6px 8px', fontSize: '12px', borderRadius: '6px', border: '1px solid #cbd5e1' }}
-                              />
-                            </div>
-                            <div>
-                              <input
-                                type="number"
-                                min="1"
-                                placeholder="SL"
-                                value={row.qty || 1}
-                                onChange={(e) => {
-                                  const val = parseInt(e.target.value) || 1;
-                                  setNewProd(p => {
-                                    const next = [...(p.specsRows || [])];
-                                    next[idx] = { ...next[idx], qty: val };
-                                    return { ...p, specsRows: next };
-                                  });
-                                }}
-                                style={{ width: '100%', padding: '6px 4px', fontSize: '12px', textAlign: 'center', borderRadius: '6px', border: '1px solid #cbd5e1' }}
-                              />
-                            </div>
-                            <div>
-                              <input
-                                type="text"
-                                placeholder="Bảo hành"
-                                value={row.warranty || '36 Tháng'}
-                                onChange={(e) => {
-                                  const val = e.target.value;
-                                  setNewProd(p => {
-                                    const next = [...(p.specsRows || [])];
-                                    next[idx] = { ...next[idx], warranty: val };
-                                    return { ...p, specsRows: next };
-                                  });
-                                }}
-                                style={{ width: '100%', padding: '6px 8px', fontSize: '12px', textAlign: 'center', borderRadius: '6px', border: '1px solid #cbd5e1' }}
-                              />
-                            </div>
-                            <div style={{ textAlign: 'center' }}>
-                              <button
-                                type="button"
-                                onClick={() => {
-                                  setNewProd(p => ({
-                                    ...p,
-                                    specsRows: (p.specsRows || []).filter((_, i) => i !== idx)
-                                  }));
-                                }}
-                                style={{
-                                  background: 'none',
-                                  border: 'none',
-                                  color: '#ef4444',
-                                  cursor: 'pointer',
-                                  padding: '4px',
-                                  display: 'inline-flex',
-                                  alignItems: 'center',
-                                  justifyContent: 'center'
-                                }}
-                                title="Xóa dòng thông số này"
-                              >
-                                <X size={15} />
-                              </button>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-
-                      {/* Add New Row Button */}
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setNewProd(p => ({
-                            ...p,
-                            specsRows: [
-                              ...(p.specsRows || []),
-                              { item: '', desc: '', qty: 1, warranty: '36 Tháng' }
-                            ]
-                          }));
-                        }}
-                        style={{
-                          marginTop: '10px',
-                          display: 'inline-flex',
-                          alignItems: 'center',
-                          gap: '6px',
-                          fontSize: '12px',
-                          fontWeight: 600,
-                          color: '#2563eb',
-                          background: '#eff6ff',
-                          border: '1px dashed #93c5fd',
-                          padding: '6px 12px',
-                          borderRadius: '6px',
-                          cursor: 'pointer'
-                        }}
-                      >
-                        <Plus size={14} /> + Thêm dòng thông số kỹ thuật mới
-                      </button>
-                    </div>
-
-                    <button type="submit" className="btn-tail-primary" style={{ marginTop: '16px' }}>
-                      {editingProduct ? 'Cập Nhật Thay Đổi Vào CSDL' : 'Lưu Sản Phẩm Mới Vào CSDL'}
-                    </button>
-                  </form>
+          {(activeMenu === 'products' || activeMenu === 'add-product') && (
+            <div className="tail-content-panel">
+              {/* Professional Product Add / Edit Enterprise Form */}
+              {(editingProduct || activeMenu === 'add-product') && (
+                <div ref={editFormRef} style={{ marginBottom: 24 }}>
+                  <ProductEditor
+                    initialData={editingProduct}
+                    categories={categories}
+                    isEditing={Boolean(editingProduct)}
+                    onSave={handleSaveProduct}
+                    onCancel={() => {
+                      setEditingProduct(null);
+                      setActiveMenu('products');
+                    }}
+                  />
                 </div>
+              )}
 
-                {/* Product Search & Filter Toolbar */}
-                <div className="product-search-toolbar" style={{
-                  marginTop: '24px',
-                  marginBottom: '16px',
-                  background: '#ffffff',
-                  border: '1px solid #e2e8f0',
-                  borderRadius: '12px',
-                  padding: '16px 20px',
-                  display: 'flex',
-                  flexWrap: 'wrap',
-                  gap: '14px',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  boxShadow: '0 1px 3px rgba(0,0,0,0.03)'
-                }}>
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', alignItems: 'center', flex: 1, minWidth: '300px' }}>
-                    {/* Search Input */}
-                    <div style={{
-                      position: 'relative',
-                      flex: '1 1 280px',
-                      display: 'flex',
-                      alignItems: 'center'
-                    }}>
-                      <Search size={16} style={{ position: 'absolute', left: '12px', color: '#94a3b8', pointerEvents: 'none' }} />
-                      <input
-                        type="text"
-                        placeholder="Tìm theo tên sản phẩm, CPU (i5, i7, Ryzen), VGA, RAM, SSD..."
-                        value={prodSearchQuery}
-                        onChange={(e) => setProdSearchQuery(e.target.value)}
-                        style={{
-                          width: '100%',
-                          padding: '10px 36px 10px 36px',
-                          border: '1px solid #cbd5e1',
-                          borderRadius: '8px',
-                          fontSize: '14px',
-                          outline: 'none',
-                          background: '#f8fafc'
-                        }}
-                      />
-                      {prodSearchQuery && (
-                        <button
-                          type="button"
-                          onClick={() => setProdSearchQuery('')}
-                          style={{
-                            position: 'absolute',
-                            right: '10px',
-                            background: 'none',
-                            border: 'none',
-                            cursor: 'pointer',
-                            color: '#94a3b8',
-                            display: 'flex',
-                            alignItems: 'center',
-                            padding: '4px'
-                          }}
-                          title="Xóa tìm kiếm"
-                        >
-                          <X size={14} />
-                        </button>
-                      )}
-                    </div>
-
-                    {/* Category Filter */}
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                      <SlidersHorizontal size={14} color="#64748b" />
-                      <select
-                        value={prodCategoryFilter}
-                        onChange={(e) => setProdCategoryFilter(e.target.value)}
-                        style={{
-                          padding: '10px 14px',
-                          border: '1px solid #cbd5e1',
-                          borderRadius: '8px',
-                          fontSize: '13px',
-                          background: '#ffffff',
-                          cursor: 'pointer',
-                          outline: 'none'
-                        }}
-                      >
-                        <option value="all">Tất cả danh mục ({products.length})</option>
-                        {categories.map(c => {
-                          const count = products.filter(p => p.category === (c.slug || c.id)).length;
-                          return (
-                            <option key={c.id} value={c.slug || c.id}>
-                              {c.name} ({count})
-                            </option>
-                          );
-                        })}
-                      </select>
-                    </div>
-
-                    {/* Sort Order */}
-                    <select
-                      value={prodSortFilter}
-                      onChange={(e) => setProdSortFilter(e.target.value)}
-                      style={{
-                        padding: '10px 14px',
-                        border: '1px solid #cbd5e1',
-                        borderRadius: '8px',
-                        fontSize: '13px',
-                        background: '#ffffff',
-                        cursor: 'pointer',
-                        outline: 'none'
-                      }}
-                    >
-                      <option value="default">Sắp xếp: Mặc định</option>
-                      <option value="price-asc">Giá: Thấp đến cao</option>
-                      <option value="price-desc">Giá: Cao đến thấp</option>
-                      <option value="name-az">Tên: A - Z</option>
-                    </select>
-                  </div>
-
-                  {/* Counter Badge & Reset */}
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <span style={{
-                      fontSize: '13px',
-                      fontWeight: 600,
-                      color: '#475569',
-                      background: '#f1f5f9',
-                      padding: '6px 12px',
-                      borderRadius: '20px'
-                    }}>
-                      Hiển thị {filteredProducts.length} / {products.length} sản phẩm
-                    </span>
-
-                    {(prodSearchQuery || prodCategoryFilter !== 'all' || prodSortFilter !== 'default') && (
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setProdSearchQuery('');
-                          setProdCategoryFilter('all');
-                          setProdSortFilter('default');
-                        }}
-                        style={{
-                          background: 'none',
-                          border: 'none',
-                          color: '#ef4444',
-                          fontSize: '13px',
-                          fontWeight: 600,
-                          cursor: 'pointer',
-                          textDecoration: 'underline'
-                        }}
-                      >
-                        Đặt lại
-                      </button>
-                    )}
-                  </div>
-                </div>
-
-                {/* Product List */}
-                <div className="tail-table-container">
-                  <table className="tail-data-table">
-                    <thead>
-                      <tr>
-                        <th>HÌNH ẢNH</th>
-                        <th>TÊN SẢN PHẨM</th>
-                        <th>DANH MỤC</th>
-                        <th>GIÁ BÁN</th>
-                        <th>THÔNG SỐ KỸ THUẬT</th>
-                        <th>THAO TÁC</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {filteredProducts.length === 0 ? (
-                        <tr>
-                          <td colSpan="6" style={{ textAlign: 'center', padding: '40px 20px', color: '#64748b' }}>
-                            <div style={{ fontSize: '15px', fontWeight: 600, marginBottom: '6px' }}>
-                              🔍 Không tìm thấy sản phẩm nào khớp với bộ lọc
-                            </div>
-                            <p style={{ fontSize: '13px', color: '#94a3b8', margin: 0 }}>
-                              Vui lòng thử tìm với từ khóa khác hoặc bấm nút "Đặt lại" để xem toàn bộ danh mục.
-                            </p>
-                          </td>
-                        </tr>
-                      ) : (
-                        filteredProducts.map(p => (
-                          <tr key={p.id} className={editingProduct?.id === p.id ? 'row-currently-editing' : ''}>
-                            <td><img src={p.image} alt={p.name} className="tail-prod-img" /></td>
-                            <td><strong>{p.name}</strong></td>
-                            <td><span className="badge-category-tag">{p.category}</span></td>
-                            <td><strong className="text-bold-amount">{fmt(p.price)}</strong></td>
-                            <td className="cell-specs-small">
-                              {Array.isArray(p.specs) && p.specs.length > 0 ? (
-                                p.specs.slice(0, 2).map((s, idx) => (
-                                  <div key={idx} style={{ fontSize: '11px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', maxWidth: '240px' }}>
-                                    <strong>{s.item}:</strong> {s.desc}
-                                  </div>
-                                ))
-                              ) : p.specs && typeof p.specs === 'object' && Object.keys(p.specs).length > 0 ? (
-                                <>
-                                  <div>CPU: {p.specs.cpu || '-'} | VGA: {p.specs.gpu || p.specs.vga || '-'}</div>
-                                  <div>RAM: {p.specs.ram || '-'} | SSD: {p.specs.ssd || '-'}</div>
-                                </>
-                              ) : (
-                                <div style={{ color: '#94a3b8', fontStyle: 'italic' }}>Chưa có thông số</div>
-                              )}
-                            </td>
-                            <td>
-                              <div className="tail-action-btns">
-                                <button type="button" className="btn-tail-edit" onClick={() => handleEditProduct(p)}><Edit size={14} /> Sửa</button>
-                                <button type="button" className="btn-tail-delete" onClick={() => handleDeleteProduct(p.id)}><Trash2 size={14} /> Xóa</button>
-                              </div>
-                            </td>
-                          </tr>
-                        ))
-                      )}
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            );
-          })()}
+              {/* Professional Products Management View */}
+              {activeMenu === 'products' && !editingProduct && (
+                <ProductsView
+                  products={products}
+                  categories={categories}
+                  onAddNewProduct={() => {
+                    setEditingProduct(null);
+                    setActiveMenu('add-product');
+                    setTimeout(() => {
+                      if (editFormRef.current) {
+                        editFormRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                      }
+                    }, 100);
+                  }}
+                  onEditProduct={handleEditProduct}
+                  onDeleteProduct={handleDeleteProduct}
+                  currencyFormatter={fmt}
+                />
+              )}
+            </div>
+          )}
 
           {/* =============================================================== */}
           {/* VIEW 4: CATEGORIES CRUD                                         */}
