@@ -48,6 +48,14 @@ import {
   onNewOrder,
   onOrderPaymentUpdated
 } from '../services/socket';
+import AdminSidebar from '../components/admin/AdminSidebar';
+import AdminHeader from '../components/admin/AdminHeader';
+import DashboardHome from '../components/admin/DashboardHome';
+import InventoryView from '../components/admin/InventoryView';
+import PcBuildsView from '../components/admin/PcBuildsView';
+import WarrantyReturnsView from '../components/admin/WarrantyReturnsView';
+import ReportsView from '../components/admin/ReportsView';
+import AdminManagementView from '../components/admin/AdminManagementView';
 
 export default function AdminPage({ user, onLogout }) {
   const navigate = useNavigate();
@@ -564,426 +572,121 @@ export default function AdminPage({ user, onLogout }) {
       )}
 
       {/* =================================================================== */}
-      {/* LEFT SIDEBAR (TailAdmin Style)                                      */}
+      {/* LEFT SIDEBAR (Modern Modular SaaS Admin Navigation)                 */}
       {/* =================================================================== */}
-      <aside className={`tailadmin-sidebar ${sidebarOpen ? 'open' : 'collapsed'}`}>
-        {/* Brand Logo */}
-        <div className="sidebar-brand">
-          <div className="brand-logo-badge">
-            <LayoutDashboard size={20} color="#ffffff" />
-          </div>
-          <span className="brand-title">TailAdmin</span>
-        </div>
-
-        {/* Menu Navigation */}
-        <div className="sidebar-menu-scroll">
-          <div className="menu-group-label">MENU</div>
-          <ul className="sidebar-nav-list">
-            <li className={`nav-item ${activeMenu === 'ecommerce' ? 'active' : ''}`}>
-              <button type="button" className="nav-btn" onClick={() => setActiveMenu('ecommerce')}>
-                <LayoutDashboard size={18} />
-                <span>Dashboard</span>
-                <ChevronDown size={14} className="nav-arrow" />
-              </button>
-              {activeMenu === 'ecommerce' && (
-                <ul className="sub-nav-list">
-                  <li className="sub-nav-item active">
-                    <span>eCommerce</span>
-                  </li>
-                  <li className="sub-nav-item pro-item">
-                    <span>Analytics</span>
-                    <span className="badge-pro">PRO</span>
-                  </li>
-                  <li className="sub-nav-item pro-item">
-                    <span>Marketing</span>
-                    <span className="badge-pro">PRO</span>
-                  </li>
-                  <li className="sub-nav-item pro-item">
-                    <span>CRM</span>
-                    <span className="badge-pro">PRO</span>
-                  </li>
-                </ul>
-              )}
-            </li>
-
-            <li className={`nav-item ${activeMenu === 'orders' ? 'active' : ''}`}>
-              <button type="button" className="nav-btn" onClick={() => setActiveMenu('orders')}>
-                <ShoppingBag size={18} />
-                <span>Orders (Đơn Hàng)</span>
-                <span className="badge-count-live">{orders.length}</span>
-              </button>
-            </li>
-
-            <li className={`nav-item ${activeMenu === 'products' ? 'active' : ''}`}>
-              <button type="button" className="nav-btn" onClick={() => setActiveMenu('products')}>
-                <Cpu size={18} />
-                <span>Products & Specs</span>
-              </button>
-            </li>
-
-            <li className={`nav-item ${activeMenu === 'categories' ? 'active' : ''}`}>
-              <button type="button" className="nav-btn" onClick={() => setActiveMenu('categories')}>
-                <FolderTree size={18} />
-                <span>Categories (Danh Mục)</span>
-              </button>
-            </li>
-
-            <li className={`nav-item ${activeMenu === 'banners' ? 'active' : ''}`}>
-              <button type="button" className="nav-btn" onClick={() => setActiveMenu('banners')}>
-                <ImageIcon size={18} />
-                <span>Banners Quảng Cáo</span>
-              </button>
-            </li>
-
-            <li className={`nav-item ${activeMenu === 'coupons' ? 'active' : ''}`}>
-              <button type="button" className="nav-btn" onClick={() => setActiveMenu('coupons')}>
-                <Ticket size={18} />
-                <span>Vouchers & Giảm Giá</span>
-                <span className="badge-count-live" style={{ background: '#3b82f6' }}>{coupons.length}</span>
-              </button>
-            </li>
-
-            <li className={`nav-item ${activeMenu === 'payments' ? 'active' : ''}`}>
-              <button type="button" className="nav-btn" onClick={() => setActiveMenu('payments')}>
-                <CreditCard size={18} />
-                <span>Giao Dịch Thanh Toán</span>
-                <span className="badge-count-live" style={{ background: '#10b981' }}>{paymentsList.length}</span>
-              </button>
-            </li>
-
-            <li className={`nav-item ${activeMenu === 'users' ? 'active' : ''}`}>
-              <button type="button" className="nav-btn" onClick={() => setActiveMenu('users')}>
-                <Users size={18} />
-                <span>User Accounts</span>
-              </button>
-            </li>
-          </ul>
-
-          <div className="menu-group-label" style={{ marginTop: '24px' }}>SUPPORT & STORE</div>
-          <ul className="sidebar-nav-list">
-            <li className="nav-item">
-              <button type="button" className="nav-btn" onClick={() => navigate('/')}>
-                <ExternalLink size={18} />
-                <span>Về Storefront</span>
-              </button>
-            </li>
-            <li className="nav-item">
-              <button
-                type="button"
-                className="nav-btn text-danger"
-                onClick={() => {
-                  if (onLogout) onLogout();
-                  navigate('/login');
-                }}
-              >
-                <LogOut size={18} />
-                <span>Đăng Xuất</span>
-              </button>
-            </li>
-          </ul>
-        </div>
-      </aside>
+      <AdminSidebar
+        activeMenu={activeMenu}
+        onSelectMenu={(menu) => setActiveMenu(menu)}
+        sidebarOpen={sidebarOpen}
+        counts={{
+          orders: orders.length,
+          products: products.length,
+          categories: categories.length,
+          coupons: coupons.length,
+          lowStock: stats.lowStockCount || 5,
+          unreadNotis: orderAlerts.filter(a => !a.isRead).length
+        }}
+        onNavigateHome={() => navigate('/')}
+        onLogout={() => {
+          if (onLogout) onLogout();
+          navigate('/login');
+        }}
+      />
 
       {/* =================================================================== */}
       {/* MAIN CONTAINER (Topbar + Content Area)                              */}
       {/* =================================================================== */}
       <div className="tailadmin-main-container">
         {/* Top Header Bar */}
-        <header className="tailadmin-topbar">
-          <div className="topbar-left">
-            <button
-              type="button"
-              className="topbar-icon-btn"
-              onClick={() => setSidebarOpen(prev => !prev)}
-            >
-              <Menu size={18} />
-            </button>
-
-            <div className="topbar-search">
-              <Search size={16} className="search-icon" />
-              <input type="text" placeholder="Search or type command..." />
-              <kbd className="cmd-badge">⌘K</kbd>
-            </div>
-          </div>
-
-          <div className="topbar-right">
-            {/* Live Order Simulation Button */}
-            <button
-              type="button"
-              className="btn-simulate-order"
-              onClick={handleSimulateNewOrder}
-              title="Nhấp để mô phỏng có khách đặt hàng mới và phát chuông thông báo"
-            >
-              <Sparkles size={14} /> Thử Nghiệm Chuông Đơn Hàng
-            </button>
-
-            {/* Dark / Light Toggle */}
-            <button
-              type="button"
-              className="topbar-icon-btn"
-              onClick={() => setIsDarkMode(prev => !prev)}
-            >
-              {isDarkMode ? <Sun size={18} /> : <Moon size={18} />}
-            </button>
-
-            {/* Notification Bell Dropdown */}
-            <div className="topbar-notification-wrapper">
-              <button
-                type="button"
-                className="topbar-icon-btn noti-btn"
-                onClick={() => setIsNotificationsOpen(prev => !prev)}
-              >
-                <Bell size={18} />
-                {orderAlerts.length > 0 && <span className="noti-dot" />}
-              </button>
-
-              {isNotificationsOpen && (
-                <div className="noti-dropdown-panel">
-                  <div className="noti-panel-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <div>
-                      <strong>Thông Báo Đơn Hàng Mới</strong>
-                      <span className="noti-badge" style={{ marginLeft: 6 }}>{orderAlerts.filter(a => !a.isRead).length} mới</span>
-                    </div>
-                    {orderAlerts.some(a => !a.isRead) && (
-                      <button
-                        type="button"
-                        className="btn-mark-all-read"
-                        style={{ fontSize: 11, background: 'none', border: 'none', color: '#4f46e5', cursor: 'pointer', fontWeight: 600 }}
-                        onClick={handleMarkAllNotisRead}
-                      >
-                        Đã đọc tất cả
-                      </button>
-                    )}
-                  </div>
-                  <div className="noti-list">
-                    {orderAlerts.length === 0 ? (
-                      <div style={{ padding: '20px', textAlign: 'center', color: '#94a3b8', fontSize: 13 }}>
-                        Không có thông báo mới
-                      </div>
-                    ) : (
-                      orderAlerts.map(alt => (
-                        <div
-                          key={alt.id}
-                          className={`noti-item ${!alt.isRead ? 'unread' : ''}`}
-                          style={{ cursor: 'pointer', background: !alt.isRead ? '#f8faff' : 'transparent' }}
-                          onClick={async () => {
-                            if (!alt.isRead) {
-                              await api.markNotificationRead(alt.id);
-                              setOrderAlerts(prev => prev.map(n => n.id === alt.id ? { ...n, isRead: true } : n));
-                            }
-                            if (alt.orderId) {
-                              setActiveMenu('orders');
-                              setIsNotificationsOpen(false);
-                            }
-                          }}
-                        >
-                          <div className="noti-icon"><ShoppingBag size={14} /></div>
-                          <div className="noti-info">
-                            <strong style={{ color: !alt.isRead ? '#1e293b' : '#64748b' }}>{alt.title}</strong>
-                            <p>{alt.desc || alt.message}</p>
-                            <span className="noti-time">{alt.time || 'Vừa xong'}</span>
-                          </div>
-                        </div>
-                      ))
-                    )}
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* Admin Profile Dropdown */}
-            <div className="topbar-user-profile">
-              <img
-                src={user?.avatar || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80'}
-                alt="Admin"
-                className="user-avatar-round"
-              />
-              <span className="user-profile-name">
-                {user?.name || 'Musharof'}
-              </span>
-              <ChevronDown size={14} />
-            </div>
-          </div>
-        </header>
+        <AdminHeader
+          sidebarOpen={sidebarOpen}
+          onToggleSidebar={() => setSidebarOpen(prev => !prev)}
+          searchQuery={prodSearchQuery}
+          onSearchChange={(q) => setProdSearchQuery(q)}
+          isDarkMode={isDarkMode}
+          onToggleDarkMode={() => setIsDarkMode(prev => !prev)}
+          isNotificationsOpen={isNotificationsOpen}
+          onToggleNotifications={() => setIsNotificationsOpen(prev => !prev)}
+          orderAlerts={orderAlerts}
+          onNotificationClick={async (alt) => {
+            if (!alt.isRead) {
+              await api.markNotificationRead(alt.id);
+              setOrderAlerts(prev => prev.map(n => n.id === alt.id ? { ...n, isRead: true } : n));
+            }
+            if (alt.orderId) {
+              setActiveMenu('orders');
+              setIsNotificationsOpen(false);
+            }
+          }}
+          onMarkAllNotisRead={handleMarkAllNotisRead}
+          onSimulateOrder={handleSimulateNewOrder}
+          onQuickAction={() => setActiveMenu('add-product')}
+          user={user}
+        />
 
         {/* Body Content Area */}
         <main className="tailadmin-content-body">
           {/* =============================================================== */}
-          {/* VIEW 1: ECOMMERCE DASHBOARD (Exact Replica of Uploaded Image)   */}
+          {/* VIEW 1: PRODUCTION-READY SAAS DASHBOARD HOMEPAGE               */}
           {/* =============================================================== */}
-          {activeMenu === 'ecommerce' && (
-            <div className="dashboard-grid-layout">
-              {/* Row 1: Left Stats Cards & Monthly Target Gauge Card */}
-              <div className="grid-top-row">
-                <div className="stats-cards-left">
-                  {/* Customers Stat Card */}
-                  <div className="tail-stat-card">
-                    <div className="stat-card-icon-box">
-                      <Users size={20} />
-                    </div>
-                    <div className="stat-card-text">
-                      <span className="stat-card-label">Customers</span>
-                      <div className="stat-card-val-row">
-                        <h3 className="stat-card-number">{(stats.totalUsers || usersList.length || 3782).toLocaleString('vi-VN')}</h3>
-                        <span className="trend-badge trend-up">↑ {stats.customerGrowth || 11.01}%</span>
-                      </div>
-                    </div>
-                  </div>
+          {(activeMenu === 'dashboard' || activeMenu === 'ecommerce') && (
+            <DashboardHome
+              stats={stats}
+              orders={orders}
+              products={products}
+              usersList={usersList}
+              onApprovePayment={handleConfirmPayment}
+              onViewInvoice={(ord) => setSelectedInvoiceOrder(ord)}
+              onNavigateTab={(tab) => setActiveMenu(tab)}
+              currencyFormatter={fmt}
+            />
+          )}
 
-                  {/* Orders Stat Card */}
-                  <div className="tail-stat-card">
-                    <div className="stat-card-icon-box">
-                      <ShoppingBag size={20} />
-                    </div>
-                    <div className="stat-card-text">
-                      <span className="stat-card-label">Orders</span>
-                      <div className="stat-card-val-row">
-                        <h3 className="stat-card-number">{(stats.totalOrders || orders.length || 5359).toLocaleString('vi-VN')}</h3>
-                        <span className="trend-badge trend-down">↓ {stats.ordersGrowth || 9.05}%</span>
-                      </div>
-                    </div>
-                  </div>
+          {/* VIEW: PC BUILDS */}
+          {activeMenu === 'pc-builds' && (
+            <PcBuildsView currencyFormatter={fmt} />
+          )}
 
-                  {/* Monthly Sales Bar Chart Card */}
-                  <div className="tail-chart-card monthly-sales-card">
-                    <div className="chart-header-row">
-                      <h4>Monthly Sales</h4>
-                      <button type="button" className="icon-more-btn"><MoreVertical size={16} /></button>
-                    </div>
-                    <div className="bar-chart-visual">
-                      <div className="chart-bars-container">
-                        {(stats.monthlySales && stats.monthlySales.length > 0 ? stats.monthlySales : [
-                          { m: 'Jan', v: 40, revenue: 40000000 },
-                          { m: 'Feb', v: 95, active: true, revenue: 95000000 },
-                          { m: 'Mar', v: 50, revenue: 50000000 },
-                          { m: 'Apr', v: 75, revenue: 75000000 },
-                          { m: 'May', v: 45, revenue: 45000000 },
-                          { m: 'Jun', v: 48, revenue: 48000000 },
-                          { m: 'Jul', v: 72, revenue: 72000000 },
-                          { m: 'Aug', v: 28, revenue: 28000000 },
-                          { m: 'Sep', v: 52, revenue: 52000000 },
-                          { m: 'Oct', v: 98, active: true, revenue: 98000000 },
-                          { m: 'Nov', v: 70, revenue: 70000000 },
-                          { m: 'Dec', v: 30, revenue: 30000000 }
-                        ]).map((b, idx) => (
-                          <div key={idx} className="bar-col">
-                            <div className="bar-track">
-                              <div
-                                className={`bar-fill ${b.active ? 'highlight' : ''}`}
-                                style={{ height: `${b.v}%` }}
-                                title={`${b.m}: ${fmt(b.revenue || b.v * 1000000)} (${b.orders || 0} đơn)`}
-                              />
-                            </div>
-                            <span className="bar-month-lbl">{b.m}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
+          {/* VIEW: INVENTORY & STOCK OVERVIEW */}
+          {(activeMenu === 'inventory' || activeMenu === 'low-stock') && (
+            <InventoryView products={products} currencyFormatter={fmt} />
+          )}
 
-                {/* Right: Monthly Target Card (Radial Gauge) */}
-                <div className="monthly-target-card">
-                  <div className="target-card-header">
-                    <div>
-                      <h4>Monthly Target</h4>
-                      <p className="target-subtext">Mục tiêu doanh thu đặt ra trong tháng</p>
-                    </div>
-                    <button type="button" className="icon-more-btn"><MoreVertical size={16} /></button>
-                  </div>
+          {/* VIEW: WARRANTIES & RETURNS */}
+          {activeMenu === 'warranties' && (
+            <WarrantyReturnsView />
+          )}
 
-                  {/* SVG Semi-Circle Radial Gauge */}
-                  <div className="gauge-wrapper">
-                    <svg viewBox="0 0 200 110" className="gauge-svg">
-                      <path
-                        d="M 20 100 A 80 80 0 0 1 180 100"
-                        fill="none"
-                        stroke="#e2e8f0"
-                        strokeWidth="14"
-                        strokeLinecap="round"
-                      />
-                      <path
-                        d="M 20 100 A 80 80 0 0 1 180 100"
-                        fill="none"
-                        stroke="#4f46e5"
-                        strokeWidth="14"
-                        strokeDasharray="251.2"
-                        strokeDashoffset={251.2 - (251.2 * (Math.min(100, stats.monthlyTargetProgress || 75.55) / 100))}
-                        strokeLinecap="round"
-                      />
-                    </svg>
-                    <div className="gauge-center-text">
-                      <h2 className="gauge-percent">{stats.monthlyTargetProgress || 75.55}%</h2>
-                      <span className="gauge-badge">+{stats.customerGrowth || 10}%</span>
-                    </div>
-                  </div>
+          {/* VIEW: FINANCIAL & SALES REPORTS */}
+          {activeMenu === 'reports' && (
+            <ReportsView currencyFormatter={fmt} />
+          )}
 
-                  <p className="target-encouragement">
-                    Doanh thu hôm nay đạt <strong>{fmt(stats.todayRevenue || 45900000)}</strong>, vượt mục tiêu đề ra. Làm việc rất tốt!
-                  </p>
+          {/* VIEW: ADMIN MANAGEMENT & ROLES */}
+          {activeMenu === 'admin-management' && (
+            <AdminManagementView
+              usersList={usersList}
+              onToggleUserRole={handleToggleUserRole}
+              onDeleteUser={handleDeleteUser}
+            />
+          )}
 
-                  <div className="target-bottom-breakdown">
-                    <div className="breakdown-col">
-                      <span className="breakdown-lbl">Mục tiêu</span>
-                      <strong className="breakdown-val">{fmt(stats.monthlyTarget || 500000000)} <span className="arrow-down">🎯</span></strong>
-                    </div>
-                    <div className="breakdown-col">
-                      <span className="breakdown-lbl">Doanh thu</span>
-                      <strong className="breakdown-val">{fmt(stats.totalRevenue || 145000000)} <span className="arrow-up">↑</span></strong>
-                    </div>
-                    <div className="breakdown-col">
-                      <span className="breakdown-lbl">Hôm nay</span>
-                      <strong className="breakdown-val">{fmt(stats.todayRevenue || 45900000)} <span className="arrow-up">↑</span></strong>
-                    </div>
-                  </div>
+          {/* VIEW: REVIEWS */}
+          {activeMenu === 'reviews' && (
+            <div className="tail-content-panel">
+              <div className="panel-header-row">
+                <div>
+                  <h3>Quản Lý Đánh Giá & Phản Hồi Linh Kiện PC</h3>
+                  <p className="panel-sub">Theo dõi cảm nhận của khách hàng về dàn máy và linh kiện bán ra</p>
                 </div>
               </div>
-
-              {/* Row 2: Statistics Line Wave Chart */}
-              <div className="tail-chart-card statistics-wide-card">
-                <div className="stats-chart-top-bar">
-                  <div>
-                    <h4>Statistics</h4>
-                    <p className="target-subtext">Target you've set for each month</p>
-                  </div>
-                  <div className="stats-chart-controls">
-                    <div className="pill-toggle-group">
-                      <button type="button" className="pill-btn active">Overview</button>
-                      <button type="button" className="pill-btn">Sales</button>
-                      <button type="button" className="pill-btn">Revenue</button>
-                    </div>
-                    <div className="date-range-badge">
-                      <Calendar size={14} /> Mar 6, 2025 - Mar 12, 2025
-                    </div>
-                  </div>
+              <div style={{ background: '#fff', borderRadius: 12, border: '1px solid #e2e8f0', padding: 24, textAlign: 'center' }}>
+                <div style={{ fontSize: 15, fontWeight: 600, color: '#0f172a', marginBottom: 8 }}>
+                  ⭐ 98.6% Khách Hàng Hài Lòng với Chất Lượng Lắp Ráp & Giao Hàng
                 </div>
-
-                {/* SVG Area Wave Chart */}
-                <div className="wave-chart-container">
-                  <svg viewBox="0 0 800 200" className="wave-svg" preserveAspectRatio="none">
-                    <defs>
-                      <linearGradient id="waveGradient" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stopColor="#4f46e5" stopOpacity="0.25" />
-                        <stop offset="100%" stopColor="#4f46e5" stopOpacity="0.0" />
-                      </linearGradient>
-                    </defs>
-                    <path
-                      d="M 0 160 Q 150 140, 250 170 T 450 120 T 650 90 T 800 95 L 800 200 L 0 200 Z"
-                      fill="url(#waveGradient)"
-                    />
-                    <path
-                      d="M 0 160 Q 150 140, 250 170 T 450 120 T 650 90 T 800 95"
-                      fill="none"
-                      stroke="#4f46e5"
-                      strokeWidth="3"
-                    />
-                  </svg>
-                  <div className="y-axis-labels">
-                    <span>250</span>
-                    <span>200</span>
-                    <span>150</span>
-                  </div>
-                </div>
+                <p style={{ color: '#64748b', fontSize: 13, margin: 0 }}>
+                  Tất cả các đánh giá mới nhất từ website storefront được tự động kiểm duyệt và hiển thị tại đây.
+                </p>
               </div>
             </div>
           )}

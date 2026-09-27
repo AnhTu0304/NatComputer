@@ -75,6 +75,23 @@ describe('AdminPage (TailAdmin Layout)', () => {
     expect(screen.getByText(/Orders \(Đơn Hàng\)/i)).toBeInTheDocument();
   });
 
+  test('renders 6 KPI cards, Low Stock widget, and category breakdown on dashboard', async () => {
+    render(
+      <MemoryRouter>
+        <AdminPage />
+      </MemoryRouter>
+    );
+
+    expect(await screen.findByText('Tổng Doanh Thu')).toBeInTheDocument();
+    expect(screen.getByText('Tổng Đơn Hàng')).toBeInTheDocument();
+    expect(screen.getByText('Tổng Khách Hàng')).toBeInTheDocument();
+    expect(screen.getByText('Giá Trị Đơn TB (AOV)')).toBeInTheDocument();
+    expect(screen.getByText('Sản Phẩm Đã Bán')).toBeInTheDocument();
+    expect(screen.getByText('Cảnh Báo Hết Hàng')).toBeInTheDocument();
+    expect(screen.getByText(/Cảnh Báo Tồn Kho \(Low Stock\)/i)).toBeInTheDocument();
+    expect(screen.getByText(/Doanh Số Theo Danh Mục/i)).toBeInTheDocument();
+  });
+
   test('renders Orders tab and displays Duyệt Tiền button for unpaid orders', async () => {
     const { fireEvent } = require('@testing-library/react');
     render(
@@ -89,5 +106,34 @@ describe('AdminPage (TailAdmin Layout)', () => {
     expect(await screen.findByText(/Quản Lý Đơn Hàng & Vận Chuyển Realtime/i)).toBeInTheDocument();
     expect(await screen.findByText(/Duyệt Tiền/i)).toBeInTheDocument();
     expect(await screen.findByText(/Chưa thanh toán/i)).toBeInTheDocument();
+  });
+
+  test('navigates to PC Builds, Inventory, and Warranty tabs', async () => {
+    const { fireEvent } = require('@testing-library/react');
+    render(
+      <MemoryRouter>
+        <AdminPage />
+      </MemoryRouter>
+    );
+
+    // PC Builds tab
+    const pcBuildsTab = await screen.findByText(/Cấu hình PC Builds/i);
+    fireEvent.click(pcBuildsTab);
+    expect(await screen.findByText(/Quản Lý Dàn PC Builds & Cấu Hình Lắp Sẵn/i)).toBeInTheDocument();
+
+    // Inventory tab
+    const inventoryTab = await screen.findByText(/Tổng quan kho hàng/i);
+    fireEvent.click(inventoryTab);
+    expect(await screen.findByText(/Quản Lý Kho & Mức Tồn Linh Kiện/i)).toBeInTheDocument();
+
+    // Warranties tab
+    const warrantyTab = await screen.findByText(/Bảo Hành & Đổi Trả/i);
+    fireEvent.click(warrantyTab);
+    expect(await screen.findByText(/Tiếp Nhận Bảo Hành & Đổi Trả Linh Kiện/i)).toBeInTheDocument();
+
+    // Reports tab
+    const reportsTab = await screen.findByText(/Báo Cáo Doanh Thu/i);
+    fireEvent.click(reportsTab);
+    expect(await screen.findByText(/Báo Cáo Doanh Số & Phân Tích Tài Chính Cửa Hàng/i)).toBeInTheDocument();
   });
 });
