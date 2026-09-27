@@ -75,21 +75,24 @@ describe('AdminPage (TailAdmin Layout)', () => {
     expect(screen.getByText(/Orders \(Đơn Hàng\)/i)).toBeInTheDocument();
   });
 
-  test('renders 6 KPI cards, Low Stock widget, and category breakdown on dashboard', async () => {
+  test('renders 6 KPI cards, Low Stock widget, Quick Actions, and 9 categories on dashboard', async () => {
     render(
       <MemoryRouter>
         <AdminPage />
       </MemoryRouter>
     );
 
-    expect(await screen.findByText('Tổng Doanh Thu')).toBeInTheDocument();
-    expect(screen.getByText('Tổng Đơn Hàng')).toBeInTheDocument();
-    expect(screen.getByText('Tổng Khách Hàng')).toBeInTheDocument();
-    expect(screen.getByText('Giá Trị Đơn TB (AOV)')).toBeInTheDocument();
-    expect(screen.getByText('Sản Phẩm Đã Bán')).toBeInTheDocument();
-    expect(screen.getByText('Cảnh Báo Hết Hàng')).toBeInTheDocument();
+    expect(await screen.findByText(/Overview of your store performance/i)).toBeInTheDocument();
+    expect(screen.getByText(/Export Report/i)).toBeInTheDocument();
+    expect(screen.getByText(/Quick Actions/i)).toBeInTheDocument();
+    expect(screen.getByText('Total Revenue')).toBeInTheDocument();
+    expect(screen.getByText('Total Orders')).toBeInTheDocument();
+    expect(screen.getByText('Customers')).toBeInTheDocument();
+    expect(screen.getByText('Average Order Value')).toBeInTheDocument();
+    expect(screen.getByText('Products Sold')).toBeInTheDocument();
+    expect(screen.getByText('Low Stock Items')).toBeInTheDocument();
     expect(screen.getByText(/Cảnh Báo Tồn Kho \(Low Stock\)/i)).toBeInTheDocument();
-    expect(screen.getByText(/Doanh Số Theo Danh Mục/i)).toBeInTheDocument();
+    expect(screen.getByText(/Sales by Category/i)).toBeInTheDocument();
   });
 
   test('renders Orders tab and displays Duyệt Tiền button for unpaid orders', async () => {

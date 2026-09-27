@@ -638,6 +638,7 @@ export default function AdminPage({ user, onLogout }) {
               onApprovePayment={handleConfirmPayment}
               onViewInvoice={(ord) => setSelectedInvoiceOrder(ord)}
               onNavigateTab={(tab) => setActiveMenu(tab)}
+              onRefreshData={loadData}
               currencyFormatter={fmt}
             />
           )}

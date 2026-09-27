@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   DollarSign,
   ShoppingBag,
@@ -6,7 +6,10 @@ import {
   CreditCard,
   PackageCheck,
   AlertTriangle,
-  Activity
+  Activity,
+  Download,
+  RefreshCw,
+  Calendar
 } from 'lucide-react';
 import KpiCard from './KpiCard';
 import RevenueChart from './RevenueChart';
@@ -14,6 +17,7 @@ import CategorySalesChart from './CategorySalesChart';
 import RecentOrdersTable from './RecentOrdersTable';
 import LowStockWidget from './LowStockWidget';
 import TopProductsTable from './TopProductsTable';
+import QuickActionsBar from './QuickActionsBar';
 
 export default function DashboardHome({
   stats = {},
@@ -23,8 +27,12 @@ export default function DashboardHome({
   onApprovePayment,
   onViewInvoice,
   onNavigateTab,
+  onRefreshData,
   currencyFormatter = (v) => `${(v || 0).toLocaleString('vi-VN')} đ`
 }) {
+  const [dateRange, setDateRange] = useState('30d');
+  const [isRefreshing, setIsRefreshing] = useState(false);
+
   // Compute Key Metrics
   const totalRevenue = stats.totalRevenue || orders.reduce((sum, o) => sum + (o.totalAmount || 0), 0) || 145000000;
   const totalOrdersCount = stats.totalOrders || orders.length || 28;
@@ -33,60 +41,167 @@ export default function DashboardHome({
   const productsSoldCount = stats.productsSold || 248;
   const lowStockCount = stats.lowStockCount || 5;
 
+  const handleRefresh = async () => {
+    setIsRefreshing(true);
+    if (onRefreshData) {
+      await onRefreshData();
+    }
+    setTimeout(() => {
+      setIsRefreshing(false);
+    }, 600);
+  };
+
+  const handleExportReport = () => {
+    alert('Đang trích xuất báo cáo tổng quan kinh doanh Dashboard (CSV/Excel)...');
+  };
+
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
       {/* =================================================================== */}
-      {/* ROW 1: 6 KPI CARDS                                                 */}
+      {/* HEADER: TITLE, SUBTITLE, DATE RANGE, EXPORT, REFRESH                */}
+      {/* =================================================================== */}
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          flexWrap: 'wrap',
+          gap: 14,
+          paddingBottom: 4
+        }}
+      >
+        <div>
+          <h2 style={{ margin: 0, fontSize: 22, fontWeight: 800, color: '#0f172a', letterSpacing: '-0.02em' }}>
+            Dashboard
+          </h2>
+          <p style={{ margin: '4px 0 0', fontSize: 13, color: '#64748b' }}>
+            Overview of your store performance
+          </p>
+        </div>
+
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap' }}>
+          {/* Date Range Selector */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 6, background: '#ffffff', padding: '6px 12px', borderRadius: 8, border: '1px solid #e2e8f0', fontSize: 13 }}>
+            <Calendar size={14} color="#4f46e5" />
+            <select
+              value={dateRange}
+              onChange={(e) => setDateRange(e.target.value)}
+              style={{ border: 'none', background: 'transparent', outline: 'none', fontSize: 12, fontWeight: 600, color: '#334155', cursor: 'pointer' }}
+            >
+              <option value="today">Hôm nay</option>
+              <option value="7d">7 ngày qua</option>
+              <option value="30d">30 ngày qua</option>
+              <option value="month">Tháng này</option>
+              <option value="year">Toàn bộ năm 2026</option>
+            </select>
+          </div>
+
+          {/* Export Report Button */}
+          <button
+            type="button"
+            onClick={handleExportReport}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 6,
+              background: '#ffffff',
+              color: '#334155',
+              border: '1px solid #e2e8f0',
+              padding: '7px 14px',
+              borderRadius: 8,
+              fontSize: 12,
+              fontWeight: 600,
+              cursor: 'pointer',
+              boxShadow: '0 1px 2px rgba(0,0,0,0.04)'
+            }}
+          >
+            <Download size={14} color="#4f46e5" />
+            <span>Export Report</span>
+          </button>
+
+          {/* Refresh Button */}
+          <button
+            type="button"
+            onClick={handleRefresh}
+            disabled={isRefreshing}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 6,
+              background: '#4f46e5',
+              color: '#ffffff',
+              border: 'none',
+              padding: '7px 16px',
+              borderRadius: 8,
+              fontSize: 12,
+              fontWeight: 600,
+              cursor: 'pointer',
+              boxShadow: '0 2px 4px rgba(79, 70, 229, 0.2)'
+            }}
+          >
+            <RefreshCw size={14} className={isRefreshing ? 'spin-icon' : ''} />
+            <span>{isRefreshing ? 'Đang tải...' : 'Refresh'}</span>
+          </button>
+        </div>
+      </div>
+
+      {/* =================================================================== */}
+      {/* QUICK ACTIONS BAR                                                   */}
+      {/* =================================================================== */}
+      <QuickActionsBar onNavigateTab={onNavigateTab} />
+
+      {/* =================================================================== */}
+      {/* ROW 1: 6 COMPACT KPI CARDS                                          */}
       {/* =================================================================== */}
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
           gap: 16
         }}
       >
         <KpiCard
-          title="Tổng Doanh Thu"
+          title="Total Revenue"
           value={currencyFormatter(totalRevenue)}
           change="+18.4%"
           isPositive={true}
-          comparisonText="so với tháng trước"
+          comparisonText="so với kỳ trước"
           icon={DollarSign}
           iconColor="#4f46e5"
         />
 
         <KpiCard
-          title="Tổng Đơn Hàng"
+          title="Total Orders"
           value={totalOrdersCount.toLocaleString('vi-VN')}
           change="+9.2%"
           isPositive={true}
-          comparisonText="so với tháng trước"
+          comparisonText="so với kỳ trước"
           icon={ShoppingBag}
           iconColor="#3b82f6"
         />
 
         <KpiCard
-          title="Tổng Khách Hàng"
+          title="Customers"
           value={totalCustomersCount.toLocaleString('vi-VN')}
           change="+11.0%"
           isPositive={true}
-          comparisonText="142 khách mới tuần này"
+          comparisonText="khách hàng hoạt động"
           icon={Users}
           iconColor="#10b981"
         />
 
         <KpiCard
-          title="Giá Trị Đơn TB (AOV)"
+          title="Average Order Value"
           value={currencyFormatter(aov)}
           change="+6.5%"
           isPositive={true}
-          comparisonText="cấu hình PC cao cấp"
+          comparisonText="giá trị đơn trung bình"
           icon={CreditCard}
           iconColor="#8b5cf6"
         />
 
         <KpiCard
-          title="Sản Phẩm Đã Bán"
+          title="Products Sold"
           value={`${productsSoldCount} món`}
           change="+14.8%"
           isPositive={true}
@@ -96,8 +211,8 @@ export default function DashboardHome({
         />
 
         <KpiCard
-          title="Cảnh Báo Hết Hàng"
-          value={`${lowStockCount} linh kiện`}
+          title="Low Stock Items"
+          value={`${lowStockCount} SKU`}
           change="-2 SKU"
           isPositive={false}
           comparisonText="cần tạo đơn nhập kho"
