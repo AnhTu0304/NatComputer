@@ -59,6 +59,8 @@ import AdminManagementView from '../components/admin/AdminManagementView';
 import ProductsView from '../components/admin/ProductsView';
 import ProductEditor from '../components/admin/ProductEditor';
 import OrdersView from '../components/admin/OrdersView';
+import CustomersView from '../components/admin/CustomersView';
+import PromotionsView from '../components/admin/PromotionsView';
 
 export default function AdminPage({ user, onLogout }) {
   const navigate = useNavigate();
@@ -665,13 +667,21 @@ export default function AdminPage({ user, onLogout }) {
           )}
 
           {/* VIEW: INVENTORY & STOCK OVERVIEW */}
-          {(activeMenu === 'inventory' || activeMenu === 'low-stock') && (
-            <InventoryView products={products} currencyFormatter={fmt} />
+          {(activeMenu === 'inventory' || activeMenu === 'low-stock' || activeMenu === 'stock-adjustments') && (
+            <div className="tail-content-panel">
+              <InventoryView
+                products={products}
+                initialTab={activeMenu === 'low-stock' ? 'low-stock' : (activeMenu === 'stock-adjustments' ? 'movements' : 'inventory')}
+                currencyFormatter={fmt}
+              />
+            </div>
           )}
 
           {/* VIEW: WARRANTIES & RETURNS */}
           {activeMenu === 'warranties' && (
-            <WarrantyReturnsView />
+            <div className="tail-content-panel">
+              <WarrantyReturnsView />
+            </div>
           )}
 
           {/* VIEW: FINANCIAL & SALES REPORTS */}
@@ -894,166 +904,15 @@ export default function AdminPage({ user, onLogout }) {
           )}
 
           {/* =============================================================== */}
-          {/* VIEW 5.4: COUPONS & VOUCHERS MANAGEMENT                         */}
+          {/* VIEW 5.4: PROMOTIONS & DISCOUNT MANAGEMENT                      */}
           {/* =============================================================== */}
-          {activeMenu === 'coupons' && (
+          {(activeMenu === 'promotions' || activeMenu === 'coupons') && (
             <div className="tail-content-panel">
-              <div className="tail-form-card">
-                <h3><Ticket size={18} color="#3b82f6" /> Tạo & Quản Lý Mã Giảm Giá (Vouchers)</h3>
-                <p className="panel-sub" style={{ marginBottom: '14px' }}>Cấu hình mã khuyến mãi giảm theo % hoặc số tiền cố định cho khách hàng</p>
-                <form onSubmit={handleAddCoupon} className="tail-crud-form">
-                  <div className="form-grid-2">
-                    <div className="form-input-box">
-                      <label>Mã Voucher (Code) *</label>
-                      <input
-                        type="text"
-                        required
-                        placeholder="VD: NAT500K, GAMING10"
-                        value={newCoupon.code}
-                        onChange={e => setNewCoupon(c => ({ ...c, code: e.target.value.toUpperCase() }))}
-                      />
-                    </div>
-                    <div className="form-input-box">
-                      <label>Mô Tả Khuyến Mãi</label>
-                      <input
-                        type="text"
-                        placeholder="Giảm 500.000đ cho đơn từ 15tr..."
-                        value={newCoupon.description}
-                        onChange={e => setNewCoupon(c => ({ ...c, description: e.target.value }))}
-                      />
-                    </div>
-                    <div className="form-input-box">
-                      <label>Loại Giảm Giá</label>
-                      <select
-                        value={newCoupon.discountType}
-                        onChange={e => setNewCoupon(c => ({ ...c, discountType: e.target.value }))}
-                      >
-                        <option value="fixed">Số tiền cố định (VNĐ)</option>
-                        <option value="percent">Phần trăm (%)</option>
-                      </select>
-                    </div>
-                    <div className="form-input-box">
-                      <label>Mức Giảm ({newCoupon.discountType === 'percent' ? '%' : 'VNĐ'}) *</label>
-                      <input
-                        type="number"
-                        required
-                        placeholder={newCoupon.discountType === 'percent' ? 'VD: 10' : 'VD: 500000'}
-                        value={newCoupon.discountValue}
-                        onChange={e => setNewCoupon(c => ({ ...c, discountValue: e.target.value }))}
-                      />
-                    </div>
-                    <div className="form-input-box">
-                      <label>Đơn Hàng Tối Thiểu (VNĐ)</label>
-                      <input
-                        type="number"
-                        placeholder="VD: 15000000"
-                        value={newCoupon.minOrderAmount}
-                        onChange={e => setNewCoupon(c => ({ ...c, minOrderAmount: e.target.value }))}
-                      />
-                    </div>
-                    <div className="form-input-box">
-                      <label>Giảm Tối Đa (VNĐ - dành cho %)</label>
-                      <input
-                        type="number"
-                        placeholder="VD: 1500000"
-                        value={newCoupon.maxDiscount}
-                        onChange={e => setNewCoupon(c => ({ ...c, maxDiscount: e.target.value }))}
-                      />
-                    </div>
-                    <div className="form-input-box">
-                      <label>Số Lượt Dùng Giới Hạn</label>
-                      <input
-                        type="number"
-                        placeholder="VD: 100"
-                        value={newCoupon.usageLimit}
-                        onChange={e => setNewCoupon(c => ({ ...c, usageLimit: e.target.value }))}
-                      />
-                    </div>
-                    <div className="form-input-box">
-                      <label>Ngày Hết Hạn (YYYY-MM-DD)</label>
-                      <input
-                        type="date"
-                        value={newCoupon.expiresAt}
-                        onChange={e => setNewCoupon(c => ({ ...c, expiresAt: e.target.value }))}
-                      />
-                    </div>
-                  </div>
-                  <button type="submit" className="btn-tail-primary" style={{ marginTop: '14px' }}>
-                    <Plus size={15} /> Thêm Mã Giảm Giá Vào Hệ Thống
-                  </button>
-                </form>
-              </div>
-
-              <div className="tail-table-container" style={{ marginTop: '20px' }}>
-                <table className="tail-data-table">
-                  <thead>
-                    <tr>
-                      <th>MÃ CODE</th>
-                      <th>MÔ TẢ</th>
-                      <th>LOẠI & MỨC GIẢM</th>
-                      <th>ĐƠN TỐI THIỂU</th>
-                      <th>ĐÃ DÙNG / GIỚI HẠN</th>
-                      <th>HẾT HẠN</th>
-                      <th>TRẠNG THÁI</th>
-                      <th>THAO TÁC</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {coupons.length === 0 ? (
-                      <tr>
-                        <td colSpan="8" style={{ textAlign: 'center', padding: '24px', color: '#94a3b8' }}>
-                          Chưa có mã giảm giá nào. Hãy tạo mã đầu tiên ở trên!
-                        </td>
-                      </tr>
-                    ) : (
-                      coupons.map(c => (
-                        <tr key={c.id || c.code}>
-                          <td><strong style={{ color: '#3b82f6', letterSpacing: '0.05em' }}>{c.code}</strong></td>
-                          <td style={{ maxWidth: '240px' }}>{c.description || '—'}</td>
-                          <td>
-                            <strong style={{ color: '#10b981' }}>
-                              {c.discountType === 'percent' ? `${c.discountValue}%` : fmt(c.discountValue)}
-                            </strong>
-                            {c.maxDiscount && (
-                              <div style={{ fontSize: '11px', color: '#94a3b8' }}>Tối đa: {fmt(c.maxDiscount)}</div>
-                            )}
-                          </td>
-                          <td>{fmt(c.minOrderAmount || 0)}</td>
-                          <td>
-                            <span>{c.usedCount || 0}</span> / <span>{c.usageLimit || '∞'}</span>
-                          </td>
-                          <td style={{ fontSize: '12px' }}>
-                            {c.expiresAt ? new Date(c.expiresAt).toLocaleDateString('vi-VN') : 'Vĩnh viễn'}
-                          </td>
-                          <td>
-                            <button
-                              type="button"
-                              onClick={() => handleToggleCoupon(c.id)}
-                              style={{
-                                padding: '3px 8px',
-                                borderRadius: '12px',
-                                fontSize: '11px',
-                                fontWeight: 700,
-                                border: 'none',
-                                cursor: 'pointer',
-                                background: c.isActive !== false ? 'rgba(16, 185, 129, 0.15)' : 'rgba(239, 68, 68, 0.15)',
-                                color: c.isActive !== false ? '#10b981' : '#ef4444'
-                              }}
-                            >
-                              {c.isActive !== false ? '● ĐANG BẬT' : '○ TẠM KHÓA'}
-                            </button>
-                          </td>
-                          <td>
-                            <button type="button" className="btn-tail-delete" onClick={() => handleDeleteCoupon(c.id)}>
-                              <Trash2 size={14} /> Xóa
-                            </button>
-                          </td>
-                        </tr>
-                      ))
-                    )}
-                  </tbody>
-                </table>
-              </div>
+              <PromotionsView
+                categories={categories}
+                products={products}
+                currencyFormatter={fmt}
+              />
             </div>
           )}
 
@@ -1112,6 +971,20 @@ export default function AdminPage({ user, onLogout }) {
                   </tbody>
                 </table>
               </div>
+            </div>
+          )}
+
+          {/* =============================================================== */}
+          {/* VIEW: CUSTOMERS MANAGEMENT (KHÁCH HÀNG)                          */}
+          {/* =============================================================== */}
+          {activeMenu === 'customers' && (
+            <div className="tail-content-panel">
+              <CustomersView
+                currencyFormatter={fmt}
+                onViewOrder={(ord) => {
+                  setSelectedInvoiceOrder(ord);
+                }}
+              />
             </div>
           )}
 

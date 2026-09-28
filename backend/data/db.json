@@ -464,6 +464,36 @@
       "role": "customer",
       "address": "456 Trần Duy Hưng, Cầu Giấy, Hà Nội",
       "createdAt": "2026-09-24T09:49:18.591Z"
+    },
+    {
+      "id": "usr_1790497475930",
+      "name": "Webhook Test User",
+      "email": "webhook_user_1790497475915@nat.vn",
+      "phone": "0988776655",
+      "password": "$2b$10$mnE3jgE27Ji7BUYzBLFhw.gizpM9SE56msCnqbjxfPN3faE7BZXJm",
+      "role": "customer",
+      "address": "456 Trần Duy Hưng, Cầu Giấy, Hà Nội",
+      "createdAt": "2026-09-27T08:24:36.004Z"
+    },
+    {
+      "id": "usr_1790581663008",
+      "name": "Webhook Test User",
+      "email": "webhook_user_1790581663003@nat.vn",
+      "phone": "0988776655",
+      "password": "$2b$10$pISPjbl2h7ZmUR2zt27JauCLLnsZk7cUrs.A.xiExJxoqR97rV9Sm",
+      "role": "customer",
+      "address": "456 Trần Duy Hưng, Cầu Giấy, Hà Nội",
+      "createdAt": "2026-09-28T07:47:43.133Z"
+    },
+    {
+      "id": "usr_1790581663653",
+      "name": "Khách hàng mới",
+      "email": "cust_1790581663648@nat.vn",
+      "phone": "0901234567",
+      "password": "$2b$10$d00f./zPzmXCAmLNJ8bFj.oebwcHjy6igU4ywq0SUYm8c/Pkt..mG",
+      "role": "customer",
+      "address": "456 Trần Duy Hưng, Cầu Giấy, Hà Nội",
+      "createdAt": "2026-09-28T07:47:43.767Z"
     }
   ],
   "categories": [
@@ -573,6 +603,91 @@
     }
   ],
   "products": [
+    {
+      "id": "pc-1790581665670",
+      "name": "VGA NVIDIA GeForce RTX 5070 Ti 16GB",
+      "category": "components",
+      "price": 26900000,
+      "originalPrice": 26900000,
+      "rating": 5,
+      "badge": "HOT NEW",
+      "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800&q=80",
+      "description": "Dàn máy tính cao cấp chính hãng bảo hành 36 tháng.",
+      "specs": [
+        {
+          "item": "Chip đồ họa (GPU)",
+          "desc": "GeForce RTX 5070 Ti",
+          "qty": 1,
+          "warranty": "36 Tháng"
+        },
+        {
+          "item": "Bộ nhớ VRAM",
+          "desc": "16GB GDDR7 256-bit",
+          "qty": 1,
+          "warranty": "36 Tháng"
+        },
+        {
+          "item": "Cổng xuất hình",
+          "desc": "3x DisplayPort 2.1b, 1x HDMI 2.1b",
+          "qty": 1,
+          "warranty": "36 Tháng"
+        },
+        {
+          "item": "Nguồn đề nghị",
+          "desc": "Từ 750W trở lên (1x 16-pin 12V-2x6)",
+          "qty": 1,
+          "warranty": "36 Tháng"
+        }
+      ]
+    },
+    {
+      "id": "pc-1790581665661",
+      "name": "Chuột Gaming Không Dây Siêu Nhẹ",
+      "category": "gear",
+      "price": 1590000,
+      "originalPrice": 1890000,
+      "rating": 5,
+      "badge": "NEW GEAR",
+      "image": "https://example.com/mouse.jpg",
+      "description": "Chuột gaming không dây chính hãng",
+      "specs": [
+        {
+          "item": "Cảm biến (Sensor)",
+          "desc": "HERO 25K (100 - 25.600 DPI)",
+          "qty": 1,
+          "warranty": "24 Tháng"
+        },
+        {
+          "item": "Kết nối",
+          "desc": "Lightspeed Wireless 1ms & Bluetooth",
+          "qty": 1,
+          "warranty": "24 Tháng"
+        },
+        {
+          "item": "Trọng lượng",
+          "desc": "99g",
+          "qty": 1,
+          "warranty": "24 Tháng"
+        }
+      ]
+    },
+    {
+      "id": "pc-1790581665288",
+      "name": "Chuột Gaming Cache Test",
+      "category": "gear",
+      "price": 990000,
+      "originalPrice": 1200000,
+      "rating": 5,
+      "badge": "HOT NEW",
+      "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800&q=80",
+      "description": "Dàn máy tính cao cấp chính hãng bảo hành 36 tháng.",
+      "specs": [
+        {
+          "item": "DPI",
+          "desc": "16000"
+        }
+      ]
+    },
     {
       "id": "pc-1790243360498",
       "name": "VGA NVIDIA GeForce RTX 5070 Ti 16GB",
@@ -1582,6 +1697,247 @@
   ],
   "orders": [
     {
+      "id": "NAT-112330",
+      "customerName": "Realtime Tester",
+      "customerEmail": "realtime@test.vn",
+      "customerPhone": "0987654321",
+      "shippingAddress": "123 Realtime Way, Danang",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PENDING",
+      "status": "PENDING",
+      "totalAmount": 32000000,
+      "totalPrice": 32000000,
+      "appliedCoupon": null,
+      "discountAmount": 0,
+      "items": [
+        {
+          "id": "pc-rt",
+          "name": "PC ULTRA RTX 4090",
+          "price": 32000000,
+          "quantity": 1
+        }
+      ],
+      "createdAt": "2026-09-28T07:47:44.391Z"
+    },
+    {
+      "id": "NAT-ADMIN-OK-1790581663250",
+      "customerName": "Pham Van D",
+      "customerEmail": "phamvand@gmail.com",
+      "customerPhone": "0977889900",
+      "shippingAddress": "10 Hai Ba Trung, Ha Noi",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PAID",
+      "status": "PROCESSING",
+      "totalAmount": 18000000,
+      "createdAt": "2026-09-28T07:47:43.250Z"
+    },
+    {
+      "id": "NAT-UNDER-1790581663225",
+      "customerName": "Le Van C",
+      "customerEmail": "levanc@gmail.com",
+      "customerPhone": "0912345678",
+      "shippingAddress": "789 Nguyen Thi Minh Khai, TP.HCM",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PENDING",
+      "status": "PENDING",
+      "totalAmount": 25000000,
+      "createdAt": "2026-09-28T07:47:43.225Z"
+    },
+    {
+      "id": "NAT-IDEM-1790581663198",
+      "customerName": "Tran Thi B",
+      "customerEmail": "tranthib@gmail.com",
+      "customerPhone": "0905123456",
+      "shippingAddress": "456 Tran Phu, Da Nang",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PAID",
+      "status": "PROCESSING",
+      "totalAmount": 20000000,
+      "createdAt": "2026-09-28T07:47:43.198Z"
+    },
+    {
+      "id": "NAT-SEPAY-1790581663145",
+      "customerName": "Nguyen Van A",
+      "customerEmail": "nguyenvana@gmail.com",
+      "customerPhone": "0773071629",
+      "shippingAddress": "123 Le Duan, Da Nang",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PAID",
+      "status": "PROCESSING",
+      "totalAmount": 15000000,
+      "createdAt": "2026-09-28T07:47:43.145Z"
+    },
+    {
+      "id": "NAT-ORD-551440",
+      "customerName": "Ngô Anh Tú",
+      "customerEmail": "tungo342005@gmail.com",
+      "customerPhone": "0773071629",
+      "shippingAddress": "123 Lê Duẩn, Đà Nẵng",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PAID",
+      "status": "PROCESSING",
+      "totalAmount": 15990000,
+      "totalPrice": 15990000,
+      "appliedCoupon": null,
+      "discountAmount": 0,
+      "items": [
+        {
+          "id": "pc-gaming-ultra",
+          "name": "PC Gaming RTX 4070 Ti Super",
+          "price": 15990000,
+          "quantity": 1
+        }
+      ],
+      "createdAt": "2026-09-28T07:45:51.470Z"
+    },
+    {
+      "id": "NAT-ORD-454203",
+      "customerName": "Ngô Anh Tú",
+      "customerEmail": "tungo342005@gmail.com",
+      "customerPhone": "0773071629",
+      "shippingAddress": "123 Lê Duẩn, Đà Nẵng",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PAID",
+      "status": "PROCESSING",
+      "totalAmount": 15990000,
+      "totalPrice": 15990000,
+      "appliedCoupon": null,
+      "discountAmount": 0,
+      "items": [
+        {
+          "id": "pc-gaming-ultra",
+          "name": "PC Gaming RTX 4070 Ti Super",
+          "price": 15990000,
+          "quantity": 1
+        }
+      ],
+      "createdAt": "2026-09-28T07:44:14.238Z"
+    },
+    {
+      "id": "NAT-ORD-400480",
+      "customerName": "tú ngô",
+      "customerEmail": "anhtu345@gmail.com",
+      "customerPhone": "0886976868",
+      "shippingAddress": "456 Trần Duy Hưng, Cầu Giấy, Hà Nội",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PENDING",
+      "status": "PENDING",
+      "totalAmount": 58980000,
+      "totalPrice": 58980000,
+      "appliedCoupon": null,
+      "discountAmount": 0,
+      "items": [
+        {
+          "id": "deal-ryzen-7-9800x3d",
+          "name": "PC TTG AMD GAMING LUXURY RYZEN 7 9800X3D",
+          "category": "gaming",
+          "price": 58980000,
+          "originalPrice": 61500000,
+          "rating": 4.98,
+          "badge": "SUPER DEAL",
+          "image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=800&q=80",
+          "description": "Vua gaming thế giới với vi xử lý 3D V-Cache Ryzen 7 9800X3D đỉnh cao FPS.",
+          "specs": {
+            "cpu": "AMD Ryzen 7 9800X3D",
+            "gpu": "NVIDIA RTX 4070 Ti SUPER 16GB",
+            "psu": "Seasonic FOCUS GX-850",
+            "ram": "32GB DDR5 6000MHz",
+            "ssd": "1TB NVMe Gen4",
+            "mainboard": "ASUS ROG STRIX B650-A"
+          },
+          "quantity": 1
+        }
+      ],
+      "createdAt": "2026-09-28T07:43:20.496Z"
+    },
+    {
+      "id": "NAT-927926",
+      "customerName": "Tú Ngô",
+      "customerEmail": "tungo342005@gmail.com",
+      "customerPhone": "0886976868",
+      "shippingAddress": "1231",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PAID",
+      "status": "PROCESSING",
+      "totalAmount": 627000,
+      "totalPrice": 627000,
+      "appliedCoupon": null,
+      "discountAmount": 0,
+      "items": [
+        {
+          "id": "pc-1790144603492",
+          "name": "Bàn phím AULA F75",
+          "category": "gaming-gear",
+          "price": 627000,
+          "originalPrice": 567000,
+          "rating": 5,
+          "badge": "HOT SELLER",
+          "image": "https://hanoicomputercdn.com/media/product/78916_ban_phim_co_aula_f75_ice_blue_3_mode_typec_2_4g_bluetooth_reaper_switch_1.jpg",
+          "description": "Bàn phím AULA F75 ",
+          "specs": {
+            "cpu": "",
+            "gpu": "",
+            "psu": "",
+            "ram": "",
+            "ssd": "",
+            "case": "",
+            "cooler": "",
+            "mainboard": ""
+          },
+          "quantity": 1
+        }
+      ],
+      "createdAt": "2026-09-28T07:12:37.115Z"
+    },
+    {
+      "id": "NAT-ADMIN-OK-1790497476127",
+      "customerName": "Pham Van D",
+      "customerEmail": "phamvand@gmail.com",
+      "customerPhone": "0977889900",
+      "shippingAddress": "10 Hai Ba Trung, Ha Noi",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PAID",
+      "status": "PROCESSING",
+      "totalAmount": 18000000,
+      "createdAt": "2026-09-27T08:24:36.127Z"
+    },
+    {
+      "id": "NAT-UNDER-1790497476101",
+      "customerName": "Le Van C",
+      "customerEmail": "levanc@gmail.com",
+      "customerPhone": "0912345678",
+      "shippingAddress": "789 Nguyen Thi Minh Khai, TP.HCM",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PAID",
+      "status": "PROCESSING",
+      "totalAmount": 25000000,
+      "createdAt": "2026-09-27T08:24:36.101Z"
+    },
+    {
+      "id": "NAT-IDEM-1790497476034",
+      "customerName": "Tran Thi B",
+      "customerEmail": "tranthib@gmail.com",
+      "customerPhone": "0905123456",
+      "shippingAddress": "456 Tran Phu, Da Nang",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PAID",
+      "status": "PROCESSING",
+      "totalAmount": 20000000,
+      "createdAt": "2026-09-27T08:24:36.034Z"
+    },
+    {
+      "id": "NAT-SEPAY-1790497476019",
+      "customerName": "Nguyen Van A",
+      "customerEmail": "nguyenvana@gmail.com",
+      "customerPhone": "0773071629",
+      "shippingAddress": "123 Le Duan, Da Nang",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PAID",
+      "status": "PROCESSING",
+      "totalAmount": 15000000,
+      "createdAt": "2026-09-27T08:24:36.019Z"
+    },
+    {
       "id": "NAT-201432",
       "customerName": "Realtime Tester",
       "customerEmail": "realtime@test.vn",
@@ -1623,8 +1979,8 @@
       "customerPhone": "0912345678",
       "shippingAddress": "789 Nguyen Thi Minh Khai, TP.HCM",
       "paymentMethod": "vietqr",
-      "paymentStatus": "PENDING",
-      "status": "PENDING",
+      "paymentStatus": "PAID",
+      "status": "PROCESSING",
       "totalAmount": 25000000,
       "createdAt": "2026-09-24T09:49:18.052Z"
     },
@@ -3466,6 +3822,115 @@
   ],
   "payments": [
     {
+      "id": "pay_1790581664391",
+      "orderId": "NAT-112330",
+      "gateway": "vietqr",
+      "transactionCode": null,
+      "amount": 32000000,
+      "status": "PENDING",
+      "createdAt": "2026-09-28T07:47:44.391Z"
+    },
+    {
+      "id": "pay_1790581663250",
+      "orderId": "NAT-ADMIN-OK-1790581663250",
+      "gateway": "MBBank",
+      "transactionCode": "MANUAL-ADMIN-1790581663259",
+      "amount": 18000000,
+      "status": "SUCCESS"
+    },
+    {
+      "id": "pay_1790581663225",
+      "orderId": "NAT-UNDER-1790581663225",
+      "gateway": "MBBank",
+      "transactionCode": "TXN-NAT-UNDER-1790581663225",
+      "amount": 25000000,
+      "status": "PENDING"
+    },
+    {
+      "id": "pay_1790581663198",
+      "orderId": "NAT-IDEM-1790581663198",
+      "gateway": "MBBank",
+      "transactionCode": "MB112233",
+      "amount": 20000000,
+      "status": "SUCCESS"
+    },
+    {
+      "id": "pay_1790581663145",
+      "orderId": "NAT-SEPAY-1790581663145",
+      "gateway": "MBBank",
+      "transactionCode": "MB99887766",
+      "amount": 15000000,
+      "status": "SUCCESS"
+    },
+    {
+      "id": "pay_1790581551470",
+      "orderId": "NAT-ORD-551440",
+      "gateway": "vietqr",
+      "transactionCode": "MB_REF_551863",
+      "amount": 15990000,
+      "status": "SUCCESS",
+      "createdAt": "2026-09-28T07:45:51.470Z"
+    },
+    {
+      "id": "pay_1790581454238",
+      "orderId": "NAT-ORD-454203",
+      "gateway": "vietqr",
+      "transactionCode": "MB_REF_454574",
+      "amount": 15990000,
+      "status": "SUCCESS",
+      "createdAt": "2026-09-28T07:44:14.238Z"
+    },
+    {
+      "id": "pay_1790581400496",
+      "orderId": "NAT-ORD-400480",
+      "gateway": "vietqr",
+      "transactionCode": null,
+      "amount": 58980000,
+      "status": "PENDING",
+      "createdAt": "2026-09-28T07:43:20.496Z"
+    },
+    {
+      "id": "pay_1790579557115",
+      "orderId": "NAT-927926",
+      "gateway": "vietqr",
+      "transactionCode": "TXN_4242255",
+      "amount": 627000,
+      "status": "SUCCESS",
+      "createdAt": "2026-09-28T07:12:37.115Z"
+    },
+    {
+      "id": "pay_1790497476127",
+      "orderId": "NAT-ADMIN-OK-1790497476127",
+      "gateway": "MBBank",
+      "transactionCode": "MANUAL-ADMIN-1790497476135",
+      "amount": 18000000,
+      "status": "SUCCESS"
+    },
+    {
+      "id": "pay_1790497476101",
+      "orderId": "NAT-UNDER-1790497476101",
+      "gateway": "MBBank",
+      "transactionCode": "MANUAL-ADMIN-1790579692044",
+      "amount": 25000000,
+      "status": "SUCCESS"
+    },
+    {
+      "id": "pay_1790497476034",
+      "orderId": "NAT-IDEM-1790497476034",
+      "gateway": "MBBank",
+      "transactionCode": "MB112233",
+      "amount": 20000000,
+      "status": "SUCCESS"
+    },
+    {
+      "id": "pay_1790497476019",
+      "orderId": "NAT-SEPAY-1790497476019",
+      "gateway": "MBBank",
+      "transactionCode": "MB99887766",
+      "amount": 15000000,
+      "status": "SUCCESS"
+    },
+    {
       "id": "pay_1790243359420",
       "orderId": "NAT-201432",
       "gateway": "vietqr",
@@ -3486,9 +3951,9 @@
       "id": "pay_1790243358052",
       "orderId": "NAT-UNDER-1790243358052",
       "gateway": "MBBank",
-      "transactionCode": "TXN-NAT-UNDER-1790243358052",
+      "transactionCode": "MANUAL-ADMIN-1790579698720",
       "amount": 25000000,
-      "status": "PENDING"
+      "status": "SUCCESS"
     },
     {
       "id": "pay_1790243358015",
@@ -4660,9 +5125,127 @@
       "status": "SENT",
       "isAsync": false,
       "sentAt": "2026-09-24T09:49:17.383Z"
+    },
+    {
+      "id": "mail_async_1790579563066",
+      "recipientEmail": "tungo342005@gmail.com",
+      "orderId": "NAT-927926",
+      "subject": "[NAT COMPUTER] Hóa Đơn Điện Tử Đơn Hàng #NAT-927926",
+      "status": "SENT",
+      "provider": "resend",
+      "isAsync": true,
+      "delayMs": 4000,
+      "sentAt": "2026-09-28T07:12:43.066Z"
+    },
+    {
+      "id": "mail_async_1790579697113",
+      "recipientEmail": "levanc@gmail.com",
+      "orderId": "NAT-UNDER-1790497476101",
+      "subject": "[NAT COMPUTER] Hóa Đơn Điện Tử Đơn Hàng #NAT-UNDER-1790497476101",
+      "status": "SENT",
+      "provider": "resend",
+      "isAsync": true,
+      "delayMs": 4000,
+      "sentAt": "2026-09-28T07:14:57.113Z"
+    },
+    {
+      "id": "mail_async_1790579703684",
+      "recipientEmail": "levanc@gmail.com",
+      "orderId": "NAT-UNDER-1790243358052",
+      "subject": "[NAT COMPUTER] Hóa Đơn Điện Tử Đơn Hàng #NAT-UNDER-1790243358052",
+      "status": "SENT",
+      "provider": "resend",
+      "isAsync": true,
+      "delayMs": 4000,
+      "sentAt": "2026-09-28T07:15:03.684Z"
+    },
+    {
+      "id": "mail_async_1790581459882",
+      "recipientEmail": "tungo342005@gmail.com",
+      "orderId": "NAT-ORD-454203",
+      "subject": "[NAT COMPUTER] Hóa Đơn Điện Tử Đơn Hàng #NAT-ORD-454203",
+      "status": "SENT",
+      "provider": "resend",
+      "isAsync": true,
+      "delayMs": 4000,
+      "sentAt": "2026-09-28T07:44:19.882Z"
+    },
+    {
+      "id": "mail_async_1790581558494",
+      "recipientEmail": "tungo342005@gmail.com",
+      "orderId": "NAT-ORD-551440",
+      "subject": "[NAT COMPUTER] Hóa Đơn Điện Tử Đơn Hàng #NAT-ORD-551440",
+      "status": "SENT",
+      "provider": "resend",
+      "isAsync": true,
+      "delayMs": 4000,
+      "sentAt": "2026-09-28T07:45:58.494Z"
+    },
+    {
+      "id": "mail_1790581662038",
+      "recipientEmail": "tu.ngo@natcomputer.vn",
+      "orderId": "NAT-998877",
+      "subject": "[NAT COMPUTER] Hóa Đơn Điện Tử Đơn Hàng #NAT-998877",
+      "status": "SENT",
+      "isAsync": false,
+      "sentAt": "2026-09-28T07:47:42.038Z"
+    },
+    {
+      "id": "mail_1790581662570",
+      "recipientEmail": "tu.ngo@natcomputer.vn",
+      "orderId": "NAT-SYNC-TEST",
+      "subject": "[NAT COMPUTER] Hóa Đơn Điện Tử Đơn Hàng #NAT-SYNC-TEST",
+      "status": "SENT",
+      "isAsync": false,
+      "sentAt": "2026-09-28T07:47:42.570Z"
     }
   ],
   "notifications": [
+    {
+      "id": "noti_1790581664400",
+      "title": "🔔 Đơn Đặt Hàng Mới #NAT-112330!",
+      "message": "Khách hàng Realtime Tester vừa đặt hàng 32.000.000đ (vietqr).",
+      "type": "order",
+      "isRead": false,
+      "orderId": "NAT-112330",
+      "createdAt": "2026-09-28T07:47:44.436Z"
+    },
+    {
+      "id": "noti_1790581551514",
+      "title": "🔔 Đơn Đặt Hàng Mới #NAT-ORD-551440!",
+      "message": "Khách hàng Ngô Anh Tú vừa đặt hàng 15.990.000đ (vietqr).",
+      "type": "order",
+      "isRead": false,
+      "orderId": "NAT-ORD-551440",
+      "createdAt": "2026-09-28T07:45:51.552Z"
+    },
+    {
+      "id": "noti_1790581454252",
+      "title": "🔔 Đơn Đặt Hàng Mới #NAT-ORD-454203!",
+      "message": "Khách hàng Ngô Anh Tú vừa đặt hàng 15.990.000đ (vietqr).",
+      "type": "order",
+      "isRead": false,
+      "orderId": "NAT-ORD-454203",
+      "createdAt": "2026-09-28T07:44:14.254Z"
+    },
+    {
+      "id": "noti_1790581400511",
+      "title": "🔔 Đơn Đặt Hàng Mới #NAT-ORD-400480!",
+      "message": "Khách hàng tú ngô vừa đặt hàng 58.980.000đ (vietqr).",
+      "type": "order",
+      "isRead": false,
+      "orderId": "NAT-ORD-400480",
+      "createdAt": "2026-09-28T07:43:20.533Z"
+    },
+    {
+      "id": "noti_1790579557174",
+      "title": "🔔 Đơn Đặt Hàng Mới #NAT-927926!",
+      "message": "Khách hàng Tú Ngô vừa đặt hàng 627.000đ (vietqr).",
+      "type": "order",
+      "isRead": false,
+      "orderId": "NAT-927926",
+      "createdAt": "2026-09-28T07:12:37.192Z"
+    },
     {
       "id": "noti_1790243359443",
       "title": "🔔 Đơn Đặt Hàng Mới #NAT-201432!",

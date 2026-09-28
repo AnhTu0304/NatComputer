@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, act } from '@testing-library/react';
+import { render, screen, act, fireEvent } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import AdminPage from './AdminPage';
 import api from '../services/api';
@@ -268,4 +268,219 @@ describe('AdminPage (TailAdmin Layout)', () => {
     // Verify API called and navigates back to products list
     expect(api.addAdminProduct).toHaveBeenCalled();
   });
+
+  test('renders full Inventory Dashboard with 6 overview cards, charts, tabs, and opens adjustment modal', async () => {
+    const { fireEvent } = require('@testing-library/react');
+    render(
+      <MemoryRouter>
+        <AdminPage />
+      </MemoryRouter>
+    );
+
+    // Click Inventory tab
+    const inventoryTab = await screen.findByText(/Tổng quan kho hàng/i);
+    fireEvent.click(inventoryTab);
+
+    // Verify 6 Overview Cards
+    expect(await screen.findByText(/Real-time stock levels, warehouse distribution/i)).toBeInTheDocument();
+    expect(screen.getByText('Total Products')).toBeInTheDocument();
+    expect(screen.getByText('Total Stock Units')).toBeInTheDocument();
+    expect(screen.getAllByText('Low Stock')[0]).toBeInTheDocument();
+    expect(screen.getAllByText('Out of Stock')[0]).toBeInTheDocument();
+    expect(screen.getByText('Inventory Value')).toBeInTheDocument();
+    expect(screen.getByText('Stock Movement Today')).toBeInTheDocument();
+
+    // Verify Tab switching: Stock Movement History
+    const movementsTab = screen.getByText(/Nhật Ký Biến Động Kho/i);
+    fireEvent.click(movementsTab);
+    expect((await screen.findAllByText(/LOẠI BIẾN ĐỘNG/i))[0]).toBeInTheDocument();
+    expect(screen.getByText('Purchase')).toBeInTheDocument();
+
+    // Verify Tab switching: Low Stock Restock
+    const lowStockTab = screen.getByText(/Cảnh Báo Nhập Hàng/i);
+    fireEvent.click(lowStockTab);
+    expect(await screen.findByText(/LINH KIỆN CẦN NHẬP/i)).toBeInTheDocument();
+    expect((await screen.findAllByText(/ĐỀ XUẤT ĐẶT THÊM/i))[0]).toBeInTheDocument();
+
+    // Open Add Stock Modal
+    const addStockBtn = screen.getByText(/\+ Add Stock/i);
+    fireEvent.click(addStockBtn);
+    expect(await screen.findByText(/Nghiệp Vụ Kho Linh Kiện \(Inventory Action\)/i)).toBeInTheDocument();
+    expect(screen.getByText(/Xác Nhận Lưu Kho/i)).toBeInTheDocument();
+  });
+
+  test('renders full Customer Management dashboard with 5 KPI cards, table, search, and opens detail drawer', async () => {
+    render(
+      <MemoryRouter>
+        <AdminPage />
+      </MemoryRouter>
+    );
+
+    const customersNavBtn = await screen.findByRole('button', { name: /Khách Hàng \(Customers\)/i });
+    fireEvent.click(customersNavBtn);
+
+    // Verify Header & 5 KPI cards
+    expect(await screen.findByText(/Khách Hàng \(Customer Management\)/i)).toBeInTheDocument();
+    expect(screen.getByText('TOTAL CUSTOMERS')).toBeInTheDocument();
+    expect(screen.getByText('NEW CUSTOMERS (30D)')).toBeInTheDocument();
+    expect(screen.getByText('RETURNING CUSTOMERS')).toBeInTheDocument();
+    expect(screen.getByText('ACTIVE CUSTOMERS')).toBeInTheDocument();
+    expect(screen.getByText('CUSTOMER LIFETIME VALUE (CLV)')).toBeInTheDocument();
+
+    // Verify Customer Table items
+    expect(screen.getByText('Nguyễn Tuấn Dũng')).toBeInTheDocument();
+    expect(screen.getByText('Trần Minh Quang')).toBeInTheDocument();
+
+    // Verify Privacy Toggle button
+    const privacyBtn = screen.getByText(/Che Bảo Mật \(Privacy\)|Hiện SĐT\/Email/i);
+    expect(privacyBtn).toBeInTheDocument();
+
+    // Click to Open Customer Detail Drawer
+    const detailBtns = screen.getAllByRole('button', { name: /Chi tiết/i });
+    fireEvent.click(detailBtns[0]);
+
+    // Verify Drawer content
+    expect((await screen.findAllByText(/Hồ Sơ Khách Hàng/i))[0]).toBeInTheDocument();
+    expect(screen.getByText(/Lịch Sử Đơn Hàng/i)).toBeInTheDocument();
+    expect(screen.getByText(/Dòng Hoạt Động \(Activity Timeline\)/i)).toBeInTheDocument();
+    expect(screen.getByText(/Ghi Chú Kỹ Thuật \/ CSKH/i)).toBeInTheDocument();
+    expect(screen.getByText(/Quản Trị & Bảo Mật/i)).toBeInTheDocument();
+
+    // Switch to Notes Tab
+    const notesTab = screen.getByText(/Ghi Chú Kỹ Thuật \/ CSKH/i);
+    fireEvent.click(notesTab);
+    expect(await screen.findByText(/Thêm Ghi Chú Khách Hàng/i)).toBeInTheDocument();
+
+    // Switch to Admin & Security Actions Tab
+    const actionsTab = screen.getByText(/Quản Trị & Bảo Mật/i);
+    fireEvent.click(actionsTab);
+    expect(await screen.findByText(/Đặt Lại Mật Khẩu/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/Tạm Khóa Tài Khoản/i)[0]).toBeInTheDocument();
+  });
+
+  test('renders full Promotions & Discounts dashboard with 5 KPI cards, table, and opens builder with Live Preview', async () => {
+    render(
+      <MemoryRouter>
+        <AdminPage />
+      </MemoryRouter>
+    );
+
+    const promoNavBtn = await screen.findByRole('button', { name: /Khuyến Mãi & Voucher/i });
+    fireEvent.click(promoNavBtn);
+
+    // Verify Header & 5 KPI cards
+    expect(await screen.findByText(/Khuyến Mãi & Giảm Giá \(Promotions & Discounts\)/i)).toBeInTheDocument();
+    expect(screen.getByText('ACTIVE PROMOTIONS')).toBeInTheDocument();
+    expect(screen.getByText('SCHEDULED PROMOTIONS')).toBeInTheDocument();
+    expect(screen.getByText('EXPIRED PROMOTIONS')).toBeInTheDocument();
+    expect(screen.getByText('TOTAL DISCOUNT AMOUNT')).toBeInTheDocument();
+    expect(screen.getByText('PROMOTION REVENUE')).toBeInTheDocument();
+
+    // Verify promotion codes & items
+    expect(screen.getByText('PCGAMING10')).toBeInTheDocument();
+    expect(screen.getByText('FREESHIPPC')).toBeInTheDocument();
+
+    // Open Create Promotion Modal
+    const createPromoBtn = screen.getByRole('button', { name: /\+ Tạo Khuyến Mãi Mới/i });
+    fireEvent.click(createPromoBtn);
+
+    // Verify Modal & Live Customer Voucher Preview
+    expect(await screen.findByText(/GIAO DIỆN KHÁCH HÀNG \(LIVE PREVIEW\)/i)).toBeInTheDocument();
+    expect(screen.getByText('LIVE SIMULATOR')).toBeInTheDocument();
+    expect(screen.getByText(/Kích Hoạt Chương Trình/i)).toBeInTheDocument();
+  });
+
+  test('renders full Returns & Warranty dashboard with 7 KPI cards, table, and opens RMA drawer with workflow', async () => {
+    render(
+      <MemoryRouter>
+        <AdminPage />
+      </MemoryRouter>
+    );
+
+    const warrantyNavBtn = await screen.findByRole('button', { name: /Bảo Hành & Đổi Trả/i });
+    fireEvent.click(warrantyNavBtn);
+
+    // Verify Header & 7 KPI cards
+    expect(await screen.findByText(/Tiếp Nhận Bảo Hành & Đổi Trả Linh Kiện \(Returns & Warranty RMA\)/i)).toBeInTheDocument();
+    expect(screen.getByText('OPEN REQUESTS')).toBeInTheDocument();
+    expect(screen.getByText('PENDING REVIEW')).toBeInTheDocument();
+    expect(screen.getByText('APPROVED')).toBeInTheDocument();
+    expect(screen.getByText('REJECTED')).toBeInTheDocument();
+    expect(screen.getByText('IN REPAIR')).toBeInTheDocument();
+    expect(screen.getByText('COMPLETED')).toBeInTheDocument();
+    expect(screen.getByText('REFUNDED')).toBeInTheDocument();
+
+    // Verify Table content & Serial Numbers
+    expect(screen.getByText('SN-RTX5070TI-891024')).toBeInTheDocument();
+    expect(screen.getByText('Hoàng Minh Quân')).toBeInTheDocument();
+
+    // Open RMA Detail Drawer
+    const rmaBtns = screen.getAllByRole('button', { name: /Xử lý RMA/i });
+    fireEvent.click(rmaBtns[0]);
+
+    // Verify Drawer Workflow Stepper and Tabs
+    expect(await screen.findByText(/Nhật Ký Truy Vết \(Traceability Timeline\)/i)).toBeInTheDocument();
+    expect(screen.getByText(/Chi Tiết Linh Kiện & Bảo Hành/i)).toBeInTheDocument();
+    expect(screen.getByText(/Ảnh Khách Gửi & Tem Niêm Phong/i)).toBeInTheDocument();
+    expect(screen.getByText(/Ghi Chú Kỹ Thuật/i)).toBeInTheDocument();
+  });
+
+  test('renders full Admin Management & RBAC dashboard with 4 KPI cards, admin table, and interactive permission matrix', async () => {
+    render(
+      <MemoryRouter>
+        <AdminPage />
+      </MemoryRouter>
+    );
+
+    const adminNavBtn = await screen.findByRole('button', { name: /Quản Trị Viên & Phân Quyền/i });
+    fireEvent.click(adminNavBtn);
+
+    // Verify Header & 4 KPI cards
+    expect(await screen.findByText(/Quản Trị Viên & Phân Quyền Vai Trò \(Admin Management & RBAC\)/i)).toBeInTheDocument();
+    expect(screen.getByText('TOTAL ADMINS')).toBeInTheDocument();
+    expect(screen.getByText('ACTIVE SESSIONS')).toBeInTheDocument();
+    expect(screen.getByText('SUPER ADMINS')).toBeInTheDocument();
+    expect(screen.getByText('DEFAULT ROLES')).toBeInTheDocument();
+
+    // Verify Admin Table items & Master protection
+    expect(screen.getByText(/Ngô Anh Tú/i)).toBeInTheDocument();
+    expect(screen.getByText(/Trần Văn Kho/i)).toBeInTheDocument();
+    expect(screen.getByText(/👑 Master/i)).toBeInTheDocument();
+
+    // Verify Table Headers
+    expect(screen.getByText('QUẢN TRỊ VIÊN (ADMIN)')).toBeInTheDocument();
+    expect(screen.getByText('VAI TRÒ (ROLE)')).toBeInTheDocument();
+    expect(screen.getByText('LẦN ĐĂNG NHẬP CUỐI')).toBeInTheDocument();
+
+    // Open Add Admin Modal
+    const addAdminBtn = screen.getByRole('button', { name: /\+ Thêm Quản Trị Viên \(Add Admin\)/i });
+    fireEvent.click(addAdminBtn);
+    expect(await screen.findByText(/Thêm Quản Trị Viên Nội Bộ/i)).toBeInTheDocument();
+    expect(screen.getByText(/Tạo Tài Khoản Quản Trị/i)).toBeInTheDocument();
+
+    // Close Modal
+    const cancelBtn = screen.getByRole('button', { name: /Hủy Bỏ/i });
+    fireEvent.click(cancelBtn);
+
+    // Switch to Permission Matrix Tab
+    const matrixTabBtn = screen.getAllByRole('button', { name: /Ma Trận Phân Quyền \(Permission Matrix\)/i })[0];
+    fireEvent.click(matrixTabBtn);
+
+    // Verify Permission Matrix Table & 10 Modules
+    expect(await screen.findByText(/Ma Trận Phân Quyền Theo 5 Vai Trò Mặc Định/i)).toBeInTheDocument();
+    expect(screen.getByText('PHÂN HỆ (MODULE)')).toBeInTheDocument();
+    expect(screen.getByText('VIEW (XEM)')).toBeInTheDocument();
+    expect(screen.getByText('CREATE (THÊM)')).toBeInTheDocument();
+    expect(screen.getByText('EDIT (SỬA)')).toBeInTheDocument();
+    expect(screen.getByText('DELETE (XÓA)')).toBeInTheDocument();
+    expect(screen.getByText('EXPORT (XUẤT FILE)')).toBeInTheDocument();
+
+    // Check specific PC modules in matrix
+    expect(screen.getByText(/Sản Phẩm & Linh Kiện PC/i)).toBeInTheDocument();
+    expect(screen.getByText(/Bảo Hành & Đổi Trả \(RMA\)/i)).toBeInTheDocument();
+    expect(screen.getByText(/Quản Trị Nhân Sự & RBAC/i)).toBeInTheDocument();
+  });
 });
+
+
+

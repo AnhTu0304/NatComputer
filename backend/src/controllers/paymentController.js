@@ -73,6 +73,14 @@ class PaymentController {
     const textToScan = `${content || ''} ${description || ''}`.trim();
     const match = textToScan.match(/NAT[-\s]*([0-9A-Za-z]+)/i);
     if (!match) {
+      // Gracefully acknowledge SePay test webhook pings (e.g. from SePay dashboard "Gửi thử")
+      if (textToScan.toLowerCase().includes('test') || id === 0 || !content) {
+        return res.status(200).json({
+          success: true,
+          message: 'SePay webhook test ping received successfully.',
+          isTest: true
+        });
+      }
       return res.status(400).json({ error: 'Không tìm thấy mã đơn hàng NAT trong nội dung giao dịch.' });
     }
 
@@ -105,6 +113,13 @@ class PaymentController {
     }
 
     if (!order) {
+      if (textToScan.toLowerCase().includes('test') || match[1].toLowerCase().includes('test')) {
+        return res.status(200).json({
+          success: true,
+          message: `SePay test webhook received successfully for simulated code: ${match[0]}`,
+          isTest: true
+        });
+      }
       return res.status(404).json({ error: `Không tìm thấy đơn hàng tương ứng với mã ${match[0]}` });
     }
 

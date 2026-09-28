@@ -35,6 +35,17 @@ class OrderController {
     const finalMethod = paymentMethod || 'Chuyển khoản QR';
     const finalEmail = customerEmail || email || 'khachhang@natcomputer.vn';
 
+    const isPendingPayment = req.body.paymentStatus === 'PENDING' ||
+      (req.body.paymentStatus !== 'PAID' && (
+        finalMethod === 'vietqr' ||
+        finalMethod === 'bank' ||
+        finalMethod.toLowerCase().includes('vietqr') ||
+        finalMethod.toLowerCase().includes('chuyển khoản')
+      ));
+
+    const finalPaymentStatus = isPendingPayment ? 'PENDING' : (req.body.paymentStatus || 'PAID');
+    const finalOrderStatus = isPendingPayment ? 'PENDING' : 'PROCESSING';
+
     const newOrder = {
       id: orderId,
       customerName: finalName,
@@ -42,8 +53,8 @@ class OrderController {
       customerPhone: finalPhone,
       shippingAddress: finalAddress,
       paymentMethod: finalMethod,
-      paymentStatus: 'PAID',
-      status: 'PROCESSING',
+      paymentStatus: finalPaymentStatus,
+      status: finalOrderStatus,
       totalAmount: finalAmount,
       totalPrice: finalAmount,
       appliedCoupon: appliedCoupon || null,
@@ -56,9 +67,9 @@ class OrderController {
       id: 'pay_' + Date.now(),
       orderId: orderId,
       gateway: finalMethod,
-      transactionCode: 'TXN_' + Math.floor(1000000 + Math.random() * 9000000),
+      transactionCode: isPendingPayment ? null : ('TXN_' + Math.floor(1000000 + Math.random() * 9000000)),
       amount: finalAmount,
-      status: 'SUCCESS',
+      status: isPendingPayment ? 'PENDING' : 'SUCCESS',
       createdAt: new Date().toISOString()
     };
 
@@ -73,7 +84,7 @@ class OrderController {
     // Auto-generate order notification
     const notiId = 'noti_' + Date.now();
     const notiTitle = `🔔 Đơn Đặt Hàng Mới #${orderId}!`;
-    const notiMsg = `Khách hàng ${customerName} vừa đặt hàng ${new Intl.NumberFormat('vi-VN').format(finalAmount)}đ (${finalMethod}).`;
+    const notiMsg = `Khách hàng ${finalName} vừa đặt hàng ${new Intl.NumberFormat('vi-VN').format(finalAmount)}đ (${finalMethod}).`;
     await NotificationModel.create({
       id: notiId,
       title: notiTitle,
@@ -82,14 +93,17 @@ class OrderController {
       orderId: orderId
     });
 
-    // Auto-send HTML confirmation email in background after 4s wait
-    queueInvoiceEmailAsync(newOrder, 4000);
+    // Auto-send HTML confirmation email in background after 4s wait ONLY if already paid (e.g. COD/immediate)
+    // For VietQR/SePay, invoice email will be sent automatically by PaymentController upon receiving webhook!
+    if (!isPendingPayment) {
+      queueInvoiceEmailAsync(newOrder, 4000);
+    }
 
     // Realtime broadcast to admin dashboard
     notifyNewOrder(newOrder);
 
     res.status(201).json({
-      message: 'Đặt hàng & Thanh toán thành công.',
+      message: isPendingPayment ? 'Đơn hàng đã được tạo, vui lòng thanh toán.' : 'Đặt hàng & Thanh toán thành công.',
       order: newOrder,
       payment: newPayment
     });

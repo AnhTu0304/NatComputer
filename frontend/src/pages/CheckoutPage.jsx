@@ -203,7 +203,7 @@ export default function CheckoutPage({ user, cartItems = [], onClearCart, onAddT
     );
   }
 
-  const handleConfirmOrder = () => {
+  const handleConfirmOrder = async () => {
     const paymentLabels = {
       momo: 'Ví MoMo (Mã QR / App)',
       zalopay: 'Ví ZaloPay (Mã QR / App)',
@@ -211,8 +211,11 @@ export default function CheckoutPage({ user, cartItems = [], onClearCart, onAddT
       cod: 'Thanh toán khi nhận hàng (COD)',
     };
 
+    const isVietQrMethod = paymentMethod === 'vietqr' || paymentMethod === 'bank';
+    const orderId = `NAT-ORD-${Date.now().toString().slice(-6)}`;
+
     const newOrder = {
-      id: `NAT-ORD-${Date.now().toString().slice(-6)}`,
+      id: orderId,
       createdAt: new Date().toISOString(),
       customerName: user.name || user.fullName || 'Khách hàng NAT',
       customerPhone: user.phone,
@@ -226,37 +229,50 @@ export default function CheckoutPage({ user, cartItems = [], onClearCart, onAddT
       discountAmount,
       appliedCoupon: appliedCoupon?.code || (discountAmount > 0 ? couponCode.trim().toUpperCase() : null),
       totalPrice,
-      status: 'Đã xác nhận (Đã thanh toán)',
+      status: isVietQrMethod ? 'Chờ thanh toán VietQR' : 'Đã xác nhận (Đã thanh toán)',
+      paymentStatus: isVietQrMethod ? 'PENDING' : 'PAID',
     };
+
+    // Pre-create order in backend database so SePay Webhook can match it immediately upon transfer
+    try {
+      await api.createOrder({
+        orderId: newOrder.id,
+        customerName: newOrder.customerName,
+        customerEmail: newOrder.customerEmail,
+        customerPhone: newOrder.customerPhone,
+        shippingAddress: newOrder.shippingAddress,
+        paymentMethod: newOrder.paymentMethod,
+        items: newOrder.items,
+        totalAmount: newOrder.totalPrice,
+        appliedCoupon: newOrder.appliedCoupon,
+        discountAmount: newOrder.discountAmount,
+        paymentStatus: newOrder.paymentStatus
+      });
+    } catch (err) {
+      console.warn('Initial order save warning:', err);
+    }
 
     setPendingOrder(newOrder);
     setIsProcessingPayment(true);
   };
 
-  const handlePaymentComplete = async () => {
+  const handlePaymentComplete = async (paymentData) => {
     setIsProcessingPayment(false);
-    setConfirmedOrder(pendingOrder);
 
-    // Sync order with backend database
-    try {
-      await api.createOrder({
-        customerName: pendingOrder.customerName,
-        customerEmail: pendingOrder.customerEmail,
-        customerPhone: pendingOrder.customerPhone,
-        shippingAddress: pendingOrder.shippingAddress,
-        paymentMethod: pendingOrder.paymentMethod,
-        items: pendingOrder.items,
-        totalAmount: pendingOrder.totalPrice,
-        appliedCoupon: pendingOrder.appliedCoupon,
-        discountAmount: pendingOrder.discountAmount
-      });
-    } catch (err) {
-      console.error('Error syncing order with backend:', err);
-    }
+    const completedOrder = {
+      ...pendingOrder,
+      paymentStatus: 'PAID',
+      status: 'Đã xác nhận (Đã thanh toán)',
+      transactionCode: paymentData?.transactionCode || pendingOrder?.transactionCode
+    };
 
+    setConfirmedOrder(completedOrder);
+
+    // Save to local storage for user order history
     try {
       const savedOrders = JSON.parse(localStorage.getItem('nat_orders') || '[]');
-      localStorage.setItem('nat_orders', JSON.stringify([pendingOrder, ...savedOrders]));
+      const filtered = savedOrders.filter(o => o.id !== completedOrder.id);
+      localStorage.setItem('nat_orders', JSON.stringify([completedOrder, ...filtered]));
     } catch (e) {
       console.error(e);
     }
