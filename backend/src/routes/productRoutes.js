@@ -4,8 +4,14 @@ const ProductController = require('../controllers/productController');
 const CouponModel = require('../models/CouponModel');
 const CacheService = require('../services/cacheService');
 
+const ReviewController = require('../controllers/reviewController');
+const { verifyToken } = require('../middlewares/authMiddleware');
+
 router.get('/products', CacheService.middleware('api:products', 300), ProductController.getProducts);
 router.get('/products/:id', ProductController.getProductById);
+router.get('/products/:id/reviews', ReviewController.getProductReviews);
+router.post('/products/:id/reviews', verifyToken, ReviewController.submitReview);
+
 router.get('/categories', CacheService.middleware('api:categories', 600), ProductController.getCategories);
 router.get('/banners', CacheService.middleware('api:banners', 600), ProductController.getBanners);
 

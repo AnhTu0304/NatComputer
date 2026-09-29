@@ -30,6 +30,14 @@ async function initDatabase() {
       console.log('✅ PostgreSQL Schema tables verified/created successfully.');
     }
 
+    // Run Database Normalization & Optimization Migration
+    const migrationPath = path.join(__dirname, 'migrations', '20260929_database_normalization.sql');
+    if (fs.existsSync(migrationPath)) {
+      const migrationSql = fs.readFileSync(migrationPath, 'utf8');
+      await client.query(migrationSql);
+      console.log('✅ PostgreSQL Normalization Migration applied successfully.');
+    }
+
     // Ensure columns exist on already created tables
     await client.query(`
       ALTER TABLE users ADD COLUMN IF NOT EXISTS password VARCHAR(255) DEFAULT '123';
@@ -41,7 +49,6 @@ async function initDatabase() {
       ALTER TABLE products ADD COLUMN IF NOT EXISTS description TEXT;
       ALTER TABLE products ADD COLUMN IF NOT EXISTS slug VARCHAR(255);
       ALTER TABLE products ALTER COLUMN slug DROP NOT NULL;
-      ALTER TABLE products DROP CONSTRAINT IF EXISTS products_category_id_fkey;
     `);
 
     // Seed default admin user

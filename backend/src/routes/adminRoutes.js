@@ -12,8 +12,13 @@ router.put('/settings/bank', AdminController.updateBankSettings);
 
 // Orders
 router.get('/orders', AdminController.getOrders);
+router.get('/orders/:id/audit', AdminController.getOrderAuditTrail);
 router.put('/orders/:id/status', AdminController.updateOrderStatus);
 router.put('/orders/:id/confirm-payment', AdminController.confirmOrderPaymentManually);
+
+// Inventory & Audit Logs
+router.get('/inventory/logs', AdminController.getInventoryLogs);
+router.get('/emails', AdminController.getSentEmails);
 
 // Stats & Analytics
 router.get('/stats', AdminController.getStats);

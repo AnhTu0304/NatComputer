@@ -19,9 +19,7 @@ import {
   RotateCcw,
   Clock
 } from 'lucide-react';
-
-const CITIES = ['Hà Nội', 'TP. Hồ Chí Minh', 'Đà Nẵng', 'Hải Phòng', 'Cần Thơ'];
-const DISTRICTS = ['Quận Cầu Giấy', 'Quận Hoàn Kiếm', 'Quận Đống Đa', 'Quận Hai Bà Trưng', 'Quận Thanh Xuân', 'Quận 1', 'Quận 3', 'Quận 7'];
+import addressService from '../services/addressService';
 
 const MOCK_ORDERS = [
   {
@@ -74,20 +72,32 @@ export default function ProfilePage({ user, onLogout, onUpdateUser }) {
   const [toastMessage, setToastMessage] = useState('');
   const [isSaving, setIsSaving] = useState(false);
 
-  // Personal Info Form State
-  const [formData, setFormData] = useState({
-    name: user?.name || 'Nguyễn Văn An',
-    email: user?.email || 'khachhang@natcomputer.vn',
-    phone: user?.phone || '0988668868',
-    birthDate: user?.birthDate || '1998-05-15',
-    gender: user?.gender || 'Nam',
-    address: user?.address || 'Số 188 Đường Cầu Giấy, Phường Dịch Vọng',
-    city: user?.city || 'Hà Nội',
-    district: user?.district || 'Quận Cầu Giấy',
+  const getCleanVal = (val, mockDefaults = []) => {
+    if (user?.isCustomProfile) return val || '';
+    if (!val || mockDefaults.includes(val)) return '';
+    return val;
+  };
+
+  // Personal Info Form State - Default empty for clean user input
+  const [formData, setFormData] = useState(() => ({
+    name: user?.name && user.name !== 'Nguyễn Văn An' ? user.name : '',
+    email: user?.email && user.email !== 'khachhang@natcomputer.vn' ? user.email : '',
+    phone: getCleanVal(user?.phone, ['0886976868', '0988668868']),
+    birthDate: getCleanVal(user?.birthDate, ['1998-05-15']),
+    gender: user?.isCustomProfile ? (user?.gender || '') : '',
+    address: user?.isCustomProfile ? (user?.address || '') : (user?.address?.includes('188 Đường Cầu Giấy') ? '' : (user?.address || '')),
+    city: user?.isCustomProfile ? (user?.city || '') : '',
+    district: user?.isCustomProfile ? (user?.district || '') : '',
     avatar: user?.avatar || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80',
-  });
+  }));
 
   const [isDirty, setIsDirty] = useState(false);
+
+  // Administrative units state from Cas AddressKit API
+  const [provinces, setProvinces] = useState([]);
+  const [communes, setCommunes] = useState([]);
+  const [isLoadingProvinces, setIsLoadingProvinces] = useState(false);
+  const [isLoadingCommunes, setIsLoadingCommunes] = useState(false);
 
   // Password Form State
   const [pwdData, setPwdData] = useState({
@@ -102,26 +112,76 @@ export default function ProfilePage({ user, onLogout, onUpdateUser }) {
 
   const fmt = v => new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(v);
 
+  // Load provinces from Cas AddressKit API on mount
+  useEffect(() => {
+    let isMounted = true;
+    setIsLoadingProvinces(true);
+    addressService.getProvinces().then(data => {
+      if (isMounted && data) {
+        setProvinces(data);
+      }
+    }).finally(() => {
+      if (isMounted) setIsLoadingProvinces(false);
+    });
+    return () => { isMounted = false; };
+  }, []);
+
+  // Sync with user prop if updated
   useEffect(() => {
     if (user) {
       setFormData(prev => ({
         ...prev,
-        name: user.name || prev.name,
-        email: user.email || prev.email,
-        phone: user.phone || prev.phone,
-        birthDate: user.birthDate || prev.birthDate,
-        gender: user.gender || prev.gender,
-        address: user.address || prev.address,
-        city: user.city || prev.city,
-        district: user.district || prev.district,
+        name: user.name && user.name !== 'Nguyễn Văn An' ? user.name : '',
+        email: user.email && user.email !== 'khachhang@natcomputer.vn' ? user.email : '',
+        phone: getCleanVal(user.phone, ['0886976868', '0988668868']),
+        birthDate: getCleanVal(user.birthDate, ['1998-05-15']),
+        gender: user.isCustomProfile ? (user.gender || '') : '',
+        address: user.isCustomProfile ? (user.address || '') : (user.address?.includes('188 Đường Cầu Giấy') ? '' : (user.address || '')),
+        city: user.isCustomProfile ? (user.city || '') : '',
+        district: user.isCustomProfile ? (user.district || '') : '',
         avatar: user.avatar || prev.avatar,
       }));
     }
   }, [user]);
 
+  // Load communes / districts when city / province changes
+  useEffect(() => {
+    if (!formData.city) {
+      setCommunes([]);
+      return;
+    }
+
+    const matchedProv = provinces.find(
+      p => p.code === formData.city || p.name === formData.city || p.name.includes(formData.city)
+    );
+    const provCode = matchedProv ? matchedProv.code : '';
+    if (!provCode) {
+      setCommunes([]);
+      return;
+    }
+
+    let isMounted = true;
+    setIsLoadingCommunes(true);
+    addressService.getCommunes(provCode).then(data => {
+      if (isMounted && data) {
+        setCommunes(data);
+      }
+    }).finally(() => {
+      if (isMounted) setIsLoadingCommunes(false);
+    });
+
+    return () => { isMounted = false; };
+  }, [formData.city, provinces]);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
+    setIsDirty(true);
+  };
+
+  const handleCityChange = (e) => {
+    const val = e.target.value;
+    setFormData(prev => ({ ...prev, city: val, district: '' }));
     setIsDirty(true);
   };
 
@@ -145,24 +205,26 @@ export default function ProfilePage({ user, onLogout, onUpdateUser }) {
   const handleSave = (e) => {
     e.preventDefault();
 
-    if (!formData.name.trim() || !formData.phone.trim() || !formData.address.trim()) {
-      setToastMessage('Vui lòng nhập đầy đủ Họ tên, Số điện thoại và Địa chỉ nhận hàng.');
+    if (!formData.name.trim()) {
+      setToastMessage('Vui lòng nhập Họ và tên của bạn.');
       setTimeout(() => setToastMessage(''), 4000);
       return;
     }
 
-    const phoneRegex = /^(03|05|07|08|09)\d{8}$/;
-    if (!phoneRegex.test(formData.phone.trim())) {
-      setToastMessage('Số điện thoại không hợp lệ (Phải đúng 10 số đầu nhà mạng Việt Nam).');
-      setTimeout(() => setToastMessage(''), 4000);
-      return;
+    if (formData.phone && formData.phone.trim()) {
+      const phoneRegex = /^(03|05|07|08|09)\d{8}$/;
+      if (!phoneRegex.test(formData.phone.trim())) {
+        setToastMessage('Số điện thoại không hợp lệ (Phải đúng 10 số đầu nhà mạng Việt Nam).');
+        setTimeout(() => setToastMessage(''), 4000);
+        return;
+      }
     }
 
     setIsSaving(true);
 
     setTimeout(() => {
       setIsSaving(false);
-      const updatedUser = { ...user, ...formData };
+      const updatedUser = { ...user, ...formData, isCustomProfile: true };
       if (onUpdateUser) onUpdateUser(updatedUser);
       localStorage.setItem('nat_user', JSON.stringify(updatedUser));
       setIsDirty(false);
@@ -371,6 +433,7 @@ export default function ProfilePage({ user, onLogout, onUpdateUser }) {
                 <div className="form-col">
                   <label>Giới tính</label>
                   <select name="gender" value={formData.gender} onChange={handleChange}>
+                    <option value="">-- Chọn giới tính --</option>
                     <option value="Nam">Nam</option>
                     <option value="Nữ">Nữ</option>
                     <option value="Khác">Khác</option>
@@ -384,21 +447,52 @@ export default function ProfilePage({ user, onLogout, onUpdateUser }) {
                     name="address"
                     value={formData.address}
                     onChange={handleChange}
-                    placeholder="Nhập số nhà, tên đường, phường/xã"
+                    placeholder="Nhập số nhà, tên đường"
                   />
                 </div>
 
                 <div className="form-col">
-                  <label>Tỉnh / Thành phố</label>
-                  <select name="city" value={formData.city} onChange={handleChange}>
-                    {CITIES.map(c => <option key={c} value={c}>{c}</option>)}
+                  <label htmlFor="profile-city">Tỉnh / Thành phố</label>
+                  <select
+                    id="profile-city"
+                    name="city"
+                    aria-label="Tỉnh / Thành phố"
+                    value={formData.city}
+                    onChange={handleCityChange}
+                  >
+                    <option value="">
+                      {isLoadingProvinces ? 'Đang tải danh sách tỉnh/thành...' : '-- Chọn Tỉnh / Thành phố --'}
+                    </option>
+                    {provinces.map(p => (
+                      <option key={p.code} value={p.name}>
+                        {p.name}
+                      </option>
+                    ))}
                   </select>
                 </div>
 
                 <div className="form-col">
-                  <label>Quận / Huyện</label>
-                  <select name="district" value={formData.district} onChange={handleChange}>
-                    {DISTRICTS.map(d => <option key={d} value={d}>{d}</option>)}
+                  <label htmlFor="profile-district">Quận / Huyện / Xã / Phường</label>
+                  <select
+                    id="profile-district"
+                    name="district"
+                    aria-label="Quận / Huyện / Xã / Phường"
+                    value={formData.district}
+                    onChange={handleChange}
+                    disabled={!formData.city}
+                  >
+                    <option value="">
+                      {!formData.city
+                        ? '-- Vui lòng chọn Tỉnh/Thành trước --'
+                        : isLoadingCommunes
+                          ? 'Đang tải danh mục xã/phường...'
+                          : '-- Chọn Quận / Huyện / Xã / Phường --'}
+                    </option>
+                    {communes.map((c, idx) => (
+                      <option key={c.code || idx} value={c.name}>
+                        {c.name} {c.administrativeLevel ? `(${c.administrativeLevel})` : ''}
+                      </option>
+                    ))}
                   </select>
                 </div>
 

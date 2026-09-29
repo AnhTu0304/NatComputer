@@ -4,6 +4,8 @@ const UserModel = require('../models/UserModel');
 const PaymentModel = require('../models/PaymentModel');
 const NotificationModel = require('../models/NotificationModel');
 const CouponModel = require('../models/CouponModel');
+const AuditModel = require('../models/AuditModel');
+const InventoryModel = require('../models/InventoryModel');
 const CacheService = require('../services/cacheService');
 const { getBankConfig, updateBankConfig } = require('../services/vietqrHelper');
 const { dbModule, readDB, writeDB } = require('../config/dbHelper');
@@ -394,6 +396,77 @@ class AdminController {
     const { id } = req.params;
     await CouponModel.delete(id);
     res.json({ message: 'Xóa voucher thành công.' });
+  }
+
+  // Audit Trail
+  static async getOrderAuditTrail(req, res) {
+    try {
+      const { id } = req.params;
+      const logs = await AuditModel.getLogsByOrderId(id);
+      res.json({ orderId: id, total: logs.length, auditLogs: logs });
+    } catch (err) {
+      console.error('Lỗi lấy lịch sử audit đơn hàng:', err.message);
+      res.status(500).json({ error: 'Không thể tải lịch sử đơn hàng.' });
+    }
+  }
+
+  // Inventory Logs
+  static async getInventoryLogs(req, res) {
+    try {
+      const { productId, limit } = req.query;
+      if (productId) {
+        const logs = await InventoryModel.getLogsByProductId(productId, parseInt(limit, 10) || 50);
+        return res.json({ productId, total: logs.length, logs });
+      }
+
+      if (dbModule.getIsPostgresConnected()) {
+        const resLogs = await dbModule.query(
+          `SELECT l.*, p.name as product_name, p.image_url 
+           FROM inventory_logs l
+           LEFT JOIN products p ON l.product_id = p.id
+           ORDER BY l.created_at DESC
+           LIMIT $1`,
+          [parseInt(limit, 10) || 100]
+        );
+        return res.json({ total: resLogs.rows.length, logs: resLogs.rows });
+      }
+
+      const db = readDB();
+      const logs = (db.inventory_logs || []).slice(0, parseInt(limit, 10) || 100);
+      res.json({ total: logs.length, logs });
+    } catch (err) {
+      console.error('Lỗi lấy lịch sử kho hàng:', err.message);
+      res.status(500).json({ error: 'Không thể tải lịch sử tồn kho.' });
+    }
+  }
+
+  // Sent Emails
+  static async getSentEmails(req, res) {
+    try {
+      const { orderId, limit } = req.query;
+      if (dbModule.getIsPostgresConnected()) {
+        let q = 'SELECT * FROM sent_emails';
+        const params = [];
+        if (orderId) {
+          params.push(orderId);
+          q += ' WHERE order_id = $1';
+        }
+        params.push(parseInt(limit, 10) || 100);
+        q += ` ORDER BY created_at DESC LIMIT $${params.length}`;
+        const resEmails = await dbModule.query(q, params);
+        return res.json({ total: resEmails.rows.length, emails: resEmails.rows });
+      }
+
+      const db = readDB();
+      let emails = db.sent_emails || [];
+      if (orderId) {
+        emails = emails.filter(e => e.orderId === orderId);
+      }
+      res.json({ total: emails.length, emails: emails.slice(0, parseInt(limit, 10) || 100) });
+    } catch (err) {
+      console.error('Lỗi lấy danh sách emails đã gửi:', err.message);
+      res.status(500).json({ error: 'Không thể tải danh sách emails.' });
+    }
   }
 }
 

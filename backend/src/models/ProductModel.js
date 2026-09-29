@@ -1,7 +1,7 @@
 const { dbModule, readDB, writeDB } = require('../config/dbHelper');
 
 class ProductModel {
-  static async getAll({ category, search } = {}) {
+  static async getAll({ category, search, specsFilter } = {}) {
     if (dbModule.getIsPostgresConnected()) {
       try {
         let queryText = 'SELECT * FROM products';
@@ -16,6 +16,15 @@ class ProductModel {
           params.push(`%${search}%`);
           conditions.push(`name ILIKE $${params.length}`);
         }
+        if (specsFilter) {
+          try {
+            const filterObj = typeof specsFilter === 'string' ? JSON.parse(specsFilter) : specsFilter;
+            params.push(JSON.stringify(filterObj));
+            conditions.push(`specs_json @> $${params.length}::jsonb`);
+          } catch (e) {
+            console.warn('Lỗi parse specsFilter:', e.message);
+          }
+        }
 
         if (conditions.length > 0) {
           queryText += ' WHERE ' + conditions.join(' AND ');
@@ -28,11 +37,14 @@ class ProductModel {
           category: r.category_id || 'gaming',
           price: parseFloat(r.price),
           originalPrice: parseFloat(r.original_price || r.price),
+          stockQuantity: parseInt(r.stock_quantity || 10, 10),
           rating: parseFloat(r.rating || 5.0),
+          reviewsCount: parseInt(r.reviews_count || 0, 10),
           badge: r.badge,
           image: r.image_url,
           description: r.description || '',
-          specs: typeof r.specs_json === 'string' ? JSON.parse(r.specs_json) : (r.specs_json || {})
+          specs: typeof r.specs_json === 'string' ? JSON.parse(r.specs_json) : (r.specs_json || {}),
+          updatedAt: r.updated_at
         }));
       } catch (err) {
         console.error('PostgreSQL products error:', err.message);
@@ -64,11 +76,14 @@ class ProductModel {
             category: r.category_id || 'gaming',
             price: parseFloat(r.price),
             originalPrice: parseFloat(r.original_price || r.price),
+            stockQuantity: parseInt(r.stock_quantity || 10, 10),
             rating: parseFloat(r.rating || 5.0),
+            reviewsCount: parseInt(r.reviews_count || 0, 10),
             badge: r.badge,
             image: r.image_url,
             description: r.description || '',
-            specs: typeof r.specs_json === 'string' ? JSON.parse(r.specs_json) : (r.specs_json || {})
+            specs: typeof r.specs_json === 'string' ? JSON.parse(r.specs_json) : (r.specs_json || {}),
+            updatedAt: r.updated_at
           };
         }
       } catch (err) {

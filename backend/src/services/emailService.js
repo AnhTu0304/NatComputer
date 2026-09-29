@@ -1,4 +1,5 @@
 const nodemailer = require('nodemailer');
+const { dbModule, readDB, writeDB } = require('../config/dbHelper');
 
 const SMTP_HOST = process.env.SMTP_HOST || 'smtp.gmail.com';
 const SMTP_PORT = parseInt(process.env.SMTP_PORT, 10) || 587;
@@ -6,6 +7,34 @@ const SMTP_SECURE = process.env.SMTP_SECURE === 'true';
 const SMTP_USER = process.env.SMTP_USER || '';
 const SMTP_PASS = process.env.SMTP_PASS || '';
 const SMTP_FROM = process.env.SMTP_FROM || '"NAT Computer Store" <no-reply@natcomputer.vn>';
+
+async function recordSentEmailLog({ orderId, recipientEmail, subject, template = 'invoice_order', status = 'sent', errorMessage = null }) {
+  const mailId = 'mail_' + Date.now() + '_' + Math.random().toString(36).substring(2, 6);
+  try {
+    if (dbModule.getIsPostgresConnected()) {
+      await dbModule.query(
+        `INSERT INTO sent_emails (id, order_id, recipient_email, subject, template, status, error_message)
+         VALUES ($1, $2, $3, $4, $5, $6, $7)`,
+        [mailId, orderId, recipientEmail, subject, template, status, errorMessage]
+      );
+    }
+    const db = readDB();
+    db.sent_emails = db.sent_emails || [];
+    db.sent_emails.unshift({
+      id: mailId,
+      orderId,
+      recipientEmail,
+      subject,
+      template,
+      status,
+      errorMessage,
+      sentAt: new Date().toISOString()
+    });
+    writeDB(db);
+  } catch (err) {
+    console.warn('Ghi log sent_emails cảnh báo:', err.message);
+  }
+}
 
 /**
  * Format currency VND
@@ -291,7 +320,7 @@ async function sendInvoiceEmail(order) {
   }
 
   // Fallback mode for development / tests
-  return {
+  const fallbackResult = {
     success: true,
     messageId: 'mock_msg_' + Date.now(),
     recipientEmail,
@@ -299,6 +328,16 @@ async function sendInvoiceEmail(order) {
     status: 'SENT',
     previewUrl: `http://localhost:5000/api/email/preview/${orderId}`
   };
+
+  await recordSentEmailLog({
+    orderId,
+    recipientEmail,
+    subject: `[NAT COMPUTER] Hóa Đơn Điện Tử Đơn Hàng #${orderId}`,
+    template: 'invoice_order',
+    status: 'SENT'
+  });
+
+  return fallbackResult;
 }
 
 /**
@@ -318,24 +357,14 @@ function queueInvoiceEmailAsync(order, delayMs = 4000) {
       const result = await sendInvoiceEmail(order);
       console.log(`✅ [ASYNC EMAIL] Đã gửi thành công hóa đơn đơn hàng #${orderId} đến ${targetEmail}`);
 
-      // Ghi log vào database ngầm
-      try {
-        const { readDB, writeDB } = require('../config/dbHelper');
-        const db = readDB();
-        db.sent_emails = db.sent_emails || [];
-        db.sent_emails.push({
-          id: 'mail_async_' + Date.now(),
-          recipientEmail: targetEmail,
-          orderId: orderId,
-          subject: `[NAT COMPUTER] Hóa Đơn Điện Tử Đơn Hàng #${orderId}`,
-          status: result.status || 'SENT',
-          provider: result.provider || 'resend',
-          isAsync: true,
-          delayMs: delayMs,
-          sentAt: new Date().toISOString()
-        });
-        writeDB(db);
-      } catch (logErr) {}
+      // Ghi log vào sent_emails
+      await recordSentEmailLog({
+        orderId,
+        recipientEmail: targetEmail,
+        subject: `[NAT COMPUTER] Hóa Đơn Điện Tử Đơn Hàng #${orderId}`,
+        template: 'invoice_order_async',
+        status: result.status || 'SENT'
+      });
     } catch (err) {
       console.error(`❌ [ASYNC EMAIL] Lỗi gửi ngầm hóa đơn #${orderId}:`, err.message);
     }

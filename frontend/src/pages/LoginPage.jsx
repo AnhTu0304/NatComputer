@@ -90,7 +90,7 @@ export default function LoginPage({ onLoginSuccess }) {
             id: 'usr_gg_' + (decoded.sub ? decoded.sub.slice(-8) : Date.now()),
             name: decoded.name || decoded.email.split('@')[0],
             email: decoded.email,
-            phone: '0886976868',
+            phone: '',
             avatar: decoded.picture || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80',
             role: decoded.email === 'admin@natcomputer.vn' ? 'admin' : 'customer'
           };
@@ -187,7 +187,7 @@ export default function LoginPage({ onLoginSuccess }) {
       if (mode === 'register') {
         const isEmail = accountVal.includes('@');
         const userEmail = isEmail ? accountVal : `${accountVal}@natcomputer.vn`;
-        const userPhone = !isEmail ? accountVal : (formData.phone || '0886976868');
+        const userPhone = !isEmail ? accountVal : (formData.phone || '');
 
         const res = await api.register(formData.name.trim(), userEmail, userPhone, pwdVal);
         if (res.error) {

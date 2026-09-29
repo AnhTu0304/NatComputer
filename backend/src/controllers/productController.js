@@ -3,8 +3,8 @@ const CouponModel = require('../models/CouponModel');
 
 class ProductController {
   static async getProducts(req, res) {
-    const { category, search } = req.query;
-    const items = await ProductModel.getAll({ category, search });
+    const { category, search, specs } = req.query;
+    const items = await ProductModel.getAll({ category, search, specsFilter: specs });
     res.json({ total: items.length, products: items });
   }
 
