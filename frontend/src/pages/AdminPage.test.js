@@ -480,6 +480,74 @@ describe('AdminPage (TailAdmin Layout)', () => {
     expect(screen.getByText(/Bảo Hành & Đổi Trả \(RMA\)/i)).toBeInTheDocument();
     expect(screen.getByText(/Quản Trị Nhân Sự & RBAC/i)).toBeInTheDocument();
   });
+
+  test('renders full VietQR & Store Settings view with bank config, live preview, and tabs', async () => {
+    render(
+      <MemoryRouter>
+        <AdminPage />
+      </MemoryRouter>
+    );
+
+    const settingsNavBtn = await screen.findByRole('button', { name: /Cài Đặt VietQR & Store/i });
+    fireEvent.click(settingsNavBtn);
+
+    // Verify Header & Live Napas tag
+    expect(await screen.findByText(/Cài Đặt Hệ Thống & Cổng VietQR \(Store & VietQR Settings\)/i)).toBeInTheDocument();
+    expect(screen.getByText(/Napas 24\/7 Sẵn Sàng/i)).toBeInTheDocument();
+
+    // Verify Tabs
+    expect(screen.getByText(/Cổng Thanh Toán VietQR Napas/i)).toBeInTheDocument();
+    expect(screen.getByText(/Thông Tin Showroom & Cửa Hàng/i)).toBeInTheDocument();
+    expect(screen.getByText(/Âm Báo & Cấu Hình Vận Hành/i)).toBeInTheDocument();
+
+    // Verify VietQR Form & Live Preview
+    expect(screen.getByText(/Tài Khoản Thụ Hưởng VietQR/i)).toBeInTheDocument();
+    expect(screen.getByText(/Giao Diện Quét Mã Khách Hàng \(Live Preview\)/i)).toBeInTheDocument();
+    expect(screen.getByText(/Bắn Thử Webhook Báo Có/i)).toBeInTheDocument();
+
+    // Switch to Showroom Tab
+    const showroomTab = screen.getByText(/Thông Tin Showroom & Cửa Hàng/i);
+    fireEvent.click(showroomTab);
+    expect(await screen.findByText(/Hồ Sơ Showroom & Doanh Nghiệp NAT Computer/i)).toBeInTheDocument();
+    expect(screen.getByText(/Hotline Bán Hàng & Tư Vấn/i)).toBeInTheDocument();
+
+    // Switch to System & Audio Tab
+    const systemTab = screen.getByText(/Âm Báo & Cấu Hình Vận Hành/i);
+    fireEvent.click(systemTab);
+    expect(await screen.findByText(/Cấu Hình Âm Thanh & Thông Báo Vận Hành Realtime/i)).toBeInTheDocument();
+    expect(screen.getByText(/Âm Thanh Báo Đơn Hàng Mới \(Web Audio Chime\)/i)).toBeInTheDocument();
+  });
+
+  test('renders Realtime Notifications Hub with 4 KPI cards, filters, and action buttons', async () => {
+    render(
+      <MemoryRouter>
+        <AdminPage />
+      </MemoryRouter>
+    );
+
+    const notisNavBtn = await screen.findByRole('button', { name: /Thông Báo Realtime/i });
+    fireEvent.click(notisNavBtn);
+
+    // Verify Header & 4 KPI cards
+    expect(await screen.findByText(/Trung Tâm Thông Báo Realtime \(Notification Hub\)/i)).toBeInTheDocument();
+    expect(screen.getByText('TỔNG SỐ THÔNG BÁO')).toBeInTheDocument();
+    expect(screen.getByText('CHƯA ĐỌC (UNREAD)')).toBeInTheDocument();
+    expect(screen.getByText('ĐƠN HÀNG MỚI (ORDERS)')).toBeInTheDocument();
+    expect(screen.getByText('CẢNH BÁO KHO & RMA')).toBeInTheDocument();
+
+    // Verify Top Action Buttons
+    expect(screen.getByRole('button', { name: /Thử Chuông Báo/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Đánh Dấu Tất Cả Đã Đọc/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /\+ Giả Lập Đơn Hàng Mới/i })).toBeInTheDocument();
+
+    // Verify Filters
+    expect(screen.getByPlaceholderText(/Tìm thông báo theo tiêu đề, mã đơn, khách hàng hoặc linh kiện\.\.\./i)).toBeInTheDocument();
+
+    // Trigger Mark All Read
+    const markAllBtn = screen.getByRole('button', { name: /Đánh Dấu Tất Cả Đã Đọc/i });
+    fireEvent.click(markAllBtn);
+    expect(await screen.findByText(/Đã đánh dấu tất cả thông báo là đã đọc!/i)).toBeInTheDocument();
+  });
 });
 
 

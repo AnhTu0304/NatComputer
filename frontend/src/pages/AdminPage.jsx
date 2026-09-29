@@ -61,6 +61,8 @@ import ProductEditor from '../components/admin/ProductEditor';
 import OrdersView from '../components/admin/OrdersView';
 import CustomersView from '../components/admin/CustomersView';
 import PromotionsView from '../components/admin/PromotionsView';
+import StoreSettingsView from '../components/admin/StoreSettingsView';
+import NotificationsView from '../components/admin/NotificationsView';
 
 export default function AdminPage({ user, onLogout }) {
   const navigate = useNavigate();
@@ -335,8 +337,46 @@ export default function AdminPage({ user, onLogout }) {
 
   // Mark all notifications read
   const handleMarkAllNotisRead = async () => {
-    await api.markAllNotificationsRead();
-    setOrderAlerts(prev => prev.map(n => ({ ...n, isRead: true })));
+    try {
+      await api.markAllNotificationsRead();
+    } catch {
+      // fallback
+    }
+    setOrderAlerts(prev => prev.map(n => ({ ...n, isRead: true, isNew: false })));
+  };
+
+  // Mark single notification read / unread toggle
+  const handleMarkNotificationRead = async (notiId) => {
+    try {
+      await api.markNotificationRead(notiId);
+    } catch {
+      // fallback
+    }
+    setOrderAlerts(prev => prev.map(n => n.id === notiId ? { ...n, isRead: !n.isRead, isNew: false } : n));
+  };
+
+  // Delete notification
+  const handleDeleteNotification = (notiId) => {
+    setOrderAlerts(prev => prev.filter(n => n.id !== notiId));
+  };
+
+  // Save VietQR Bank Settings
+  const handleSaveBankConfig = async (config) => {
+    try {
+      await api.updateAdminBankSettings(config);
+    } catch (err) {
+      console.error('Failed to update bank settings:', err);
+    }
+  };
+
+  // Simulate VietQR payment webhook
+  const handleSimulateWebhook = async (orderId, amount) => {
+    try {
+      return await api.simulatePaymentWebhook(orderId, amount, 'SIM_NAT_' + Date.now());
+    } catch (err) {
+      console.error('Simulation webhook error:', err);
+      return { error: err.message };
+    }
   };
 
   // Simulate Order for live demonstration
@@ -1034,6 +1074,36 @@ export default function AdminPage({ user, onLogout }) {
                   </tbody>
                 </table>
               </div>
+            </div>
+          )}
+
+          {/* =============================================================== */}
+          {/* VIEW 7: REALTIME NOTIFICATIONS HUB                              */}
+          {/* =============================================================== */}
+          {activeMenu === 'notifications' && (
+            <div className="tail-content-panel">
+              <NotificationsView
+                notifications={orderAlerts}
+                onMarkRead={handleMarkNotificationRead}
+                onMarkAllRead={handleMarkAllNotisRead}
+                onDeleteNotification={handleDeleteNotification}
+                onNavigateTab={(tab) => setActiveMenu(tab)}
+                onSimulateOrder={handleSimulateNewOrder}
+                onPlayChime={playNotificationChime}
+              />
+            </div>
+          )}
+
+          {/* =============================================================== */}
+          {/* VIEW 8: VIETQR & STORE SETTINGS                                 */}
+          {/* =============================================================== */}
+          {activeMenu === 'settings' && (
+            <div className="tail-content-panel">
+              <StoreSettingsView
+                onSaveBankConfig={handleSaveBankConfig}
+                onSimulateWebhook={handleSimulateWebhook}
+                onPlayChime={playNotificationChime}
+              />
             </div>
           )}
         </main>
