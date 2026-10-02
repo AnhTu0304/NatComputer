@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import HeroBanner from '../components/HeroBanner';
 import HotDealsSection from '../components/HotDealsSection';
 import CategoryCarousel from '../components/CategoryCarousel';
-import CommitmentSection from '../components/CommitmentSection';
-import ShowroomSection from '../components/ShowroomSection';
 import { GAMING_PCS, OFFICE_PCS, COMPONENTS, MONITORS } from '../data/catalogData';
 import api from '../services/api';
 
@@ -84,9 +82,6 @@ export default function HomePage({ onAddToCart }) {
           items={monitorItems}
           onAddToCart={onAddToCart}
         />
-
-        <CommitmentSection />
-        <ShowroomSection />
       </div>
     </main>
   );

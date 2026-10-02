@@ -564,6 +564,126 @@
       "role": "customer",
       "address": "456 Trần Duy Hưng, Cầu Giấy, Hà Nội",
       "createdAt": "2026-09-29T06:45:19.960Z"
+    },
+    {
+      "id": "usr_1790694205855",
+      "name": "Webhook Test User",
+      "email": "webhook_user_1790694205847@nat.vn",
+      "phone": "0988776655",
+      "password": "$2b$10$KrS0IT0pG6HSUGMTS29wn.AyQobU77VBlEQqJzdR7DMeM8ISwl2we",
+      "role": "customer",
+      "address": "456 Trần Duy Hưng, Cầu Giấy, Hà Nội",
+      "createdAt": "2026-09-29T15:03:25.943Z"
+    },
+    {
+      "id": "usr_1790694206484",
+      "name": "Khách hàng mới",
+      "email": "cust_1790694206472@nat.vn",
+      "phone": "0901234567",
+      "password": "$2b$10$zN7wUP94oqV9tgwb4z60HOI5QNnGxZvsUdVcZhCjV0v.5ZHHjCfAS",
+      "role": "customer",
+      "address": "456 Trần Duy Hưng, Cầu Giấy, Hà Nội",
+      "createdAt": "2026-09-29T15:03:26.563Z"
+    },
+    {
+      "id": "usr_1790695303579",
+      "name": "Khách hàng mới",
+      "email": "cust_1790695303569@nat.vn",
+      "phone": "0901234567",
+      "password": "$2b$10$2O.5mb61uRnhDM7MIKJ5nu0ic32euLFPoSLJO1VhV5F5SVdZAO9l2",
+      "role": "customer",
+      "address": "456 Trần Duy Hưng, Cầu Giấy, Hà Nội",
+      "createdAt": "2026-09-29T15:21:43.700Z"
+    },
+    {
+      "id": "usr_1790695304431",
+      "name": "Webhook Test User",
+      "email": "webhook_user_1790695304420@nat.vn",
+      "phone": "0988776655",
+      "password": "$2b$10$Wxotzh2/r/Hv0MKtpatGgOt1Zd6cX/MhU1oKPmkF1P9Jp/K/NVKOS",
+      "role": "customer",
+      "address": "456 Trần Duy Hưng, Cầu Giấy, Hà Nội",
+      "createdAt": "2026-09-29T15:21:44.552Z"
+    },
+    {
+      "id": "usr_1790696677603",
+      "name": "Webhook Test User",
+      "email": "webhook_user_1790696677594@nat.vn",
+      "phone": "0988776655",
+      "password": "$2b$10$i8p1B9pX6eIXunpO9.PBhe5OIW3K4bFRHQKW2LcmZL2pA/ah/PgbW",
+      "role": "customer",
+      "address": "456 Trần Duy Hưng, Cầu Giấy, Hà Nội",
+      "createdAt": "2026-09-29T15:44:37.718Z"
+    },
+    {
+      "id": "usr_1790696678376",
+      "name": "Khách hàng mới",
+      "email": "cust_1790696678363@nat.vn",
+      "phone": "0901234567",
+      "password": "$2b$10$hQ1FUZX0wJNBCFwlWzwNTuOk3wdXW3V65hydassaU8w4lPCOpP25q",
+      "role": "customer",
+      "address": "456 Trần Duy Hưng, Cầu Giấy, Hà Nội",
+      "createdAt": "2026-09-29T15:44:38.489Z"
+    },
+    {
+      "id": "usr_1790696782538",
+      "name": "Webhook Test User",
+      "email": "webhook_user_1790696782516@nat.vn",
+      "phone": "0988776655",
+      "password": "$2b$10$8QWK6GwQaEpfwNxLgU9PkORdoafkEJBiYzpRTvxnB3oW2gjClZXqS",
+      "role": "customer",
+      "address": "456 Trần Duy Hưng, Cầu Giấy, Hà Nội",
+      "createdAt": "2026-09-29T15:46:22.654Z"
+    },
+    {
+      "id": "usr_1790696783378",
+      "name": "Khách hàng mới",
+      "email": "cust_1790696783367@nat.vn",
+      "phone": "0901234567",
+      "password": "$2b$10$Cj2/chPendG2J5DI5dIIve.Ijoojhp4zwX.xbdQx7YtZ4dCkJdHdW",
+      "role": "customer",
+      "address": "456 Trần Duy Hưng, Cầu Giấy, Hà Nội",
+      "createdAt": "2026-09-29T15:46:23.490Z"
+    },
+    {
+      "id": "usr_1790696820338",
+      "name": "Webhook Test User",
+      "email": "webhook_user_1790696820334@nat.vn",
+      "phone": "0988776655",
+      "password": "$2b$10$1tRRG2psSxSGneTvfD9nC.9H.QhYWEENFFzWs.MLG0Rqc33rmED8q",
+      "role": "customer",
+      "address": "456 Trần Duy Hưng, Cầu Giấy, Hà Nội",
+      "createdAt": "2026-09-29T15:47:00.403Z"
+    },
+    {
+      "id": "usr_1790696821188",
+      "name": "Webhook Test User",
+      "email": "webhook_user_1790696821183@nat.vn",
+      "phone": "0988776655",
+      "password": "$2b$10$AQWUEF4rlhqnjDBdM2mwOOFtWEMEl2up/UlnWrVahJe0wmnsLXhd.",
+      "role": "customer",
+      "address": "456 Trần Duy Hưng, Cầu Giấy, Hà Nội",
+      "createdAt": "2026-09-29T15:47:01.257Z"
+    },
+    {
+      "id": "usr_1790696821869",
+      "name": "Khách hàng mới",
+      "email": "cust_1790696821861@nat.vn",
+      "phone": "0901234567",
+      "password": "$2b$10$0W2JL4E2YJvIFSUVppBO.eZ5xea.NzIkIdRFLPDy5aRlzbp4.V1VW",
+      "role": "customer",
+      "address": "456 Trần Duy Hưng, Cầu Giấy, Hà Nội",
+      "createdAt": "2026-09-29T15:47:01.935Z"
+    },
+    {
+      "id": "usr_1790696975292",
+      "name": "Khách hàng mới",
+      "email": "cust_1790696975275@nat.vn",
+      "phone": "0901234567",
+      "password": "$2b$10$cyULcpycADdWElIPPf4N3uTuVO6brnI/EdZ1wUUVmginy/32.LwsG",
+      "role": "customer",
+      "address": "456 Trần Duy Hưng, Cầu Giấy, Hà Nội",
+      "createdAt": "2026-09-29T15:49:35.404Z"
     }
   ],
   "categories": [
@@ -611,9 +731,10 @@
     },
     {
       "id": "cat_monitors",
-      "name": "Màn Hình Máy Tính",
-      "slug": "monitors",
-      "description": "Màn hình IPS, OLED, 144Hz - 240Hz sắc nét"
+      "name": "Màn hình máy tính",
+      "slug": "man-hinh",
+      "description": "Màn hình IPS, OLED, 144Hz - 240Hz sắc nét",
+      "icon": "Monitor"
     },
     {
       "id": "cat_gaming_gear",
@@ -650,6 +771,54 @@
       "name": "PC Giả Lập Ảo Hóa",
       "slug": "virtualization",
       "description": "Chạy nhiều tab giả lập NoxPlayer, LDPlayer mượt mà"
+    },
+    {
+      "id": "cat_cpu",
+      "name": "Vi xử lý (CPU)",
+      "slug": "cpu",
+      "icon": "Cpu"
+    },
+    {
+      "id": "cat_mainboard",
+      "name": "Bo mạch chủ (Mainboard)",
+      "slug": "mainboard",
+      "icon": "Layers"
+    },
+    {
+      "id": "cat_ram",
+      "name": "Bộ nhớ trong (RAM)",
+      "slug": "ram",
+      "icon": "Cpu"
+    },
+    {
+      "id": "cat_vga",
+      "name": "Card màn hình (VGA)",
+      "slug": "vga",
+      "icon": "Tv"
+    },
+    {
+      "id": "cat_ssd",
+      "name": "Ổ cứng lưu trữ (SSD / HDD)",
+      "slug": "ssd",
+      "icon": "HardDrive"
+    },
+    {
+      "id": "cat_psu",
+      "name": "Nguồn máy tính (PSU)",
+      "slug": "psu",
+      "icon": "Zap"
+    },
+    {
+      "id": "cat_cooler",
+      "name": "Tản nhiệt CPU / Nước AIO",
+      "slug": "cooler",
+      "icon": "Wind"
+    },
+    {
+      "id": "cat_case",
+      "name": "Vỏ thùng máy (Case)",
+      "slug": "case",
+      "icon": "Box"
     }
   ],
   "banners": [
@@ -673,6 +842,584 @@
     }
   ],
   "products": [
+    {
+      "id": "pc-1790696977903",
+      "name": "VGA NVIDIA GeForce RTX 5070 Ti 16GB",
+      "category": "components",
+      "price": 26900000,
+      "originalPrice": 26900000,
+      "rating": 5,
+      "badge": "HOT NEW",
+      "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800&q=80",
+      "description": "Dàn máy tính cao cấp chính hãng bảo hành 36 tháng.",
+      "specs": [
+        {
+          "item": "Chip đồ họa (GPU)",
+          "desc": "GeForce RTX 5070 Ti",
+          "qty": 1,
+          "warranty": "36 Tháng"
+        },
+        {
+          "item": "Bộ nhớ VRAM",
+          "desc": "16GB GDDR7 256-bit",
+          "qty": 1,
+          "warranty": "36 Tháng"
+        },
+        {
+          "item": "Cổng xuất hình",
+          "desc": "3x DisplayPort 2.1b, 1x HDMI 2.1b",
+          "qty": 1,
+          "warranty": "36 Tháng"
+        },
+        {
+          "item": "Nguồn đề nghị",
+          "desc": "Từ 750W trở lên (1x 16-pin 12V-2x6)",
+          "qty": 1,
+          "warranty": "36 Tháng"
+        }
+      ]
+    },
+    {
+      "id": "pc-1790696977825",
+      "name": "Chuột Gaming Không Dây Siêu Nhẹ",
+      "category": "gear",
+      "price": 1590000,
+      "originalPrice": 1890000,
+      "rating": 5,
+      "badge": "NEW GEAR",
+      "image": "https://example.com/mouse.jpg",
+      "description": "Chuột gaming không dây chính hãng",
+      "specs": [
+        {
+          "item": "Cảm biến (Sensor)",
+          "desc": "HERO 25K (100 - 25.600 DPI)",
+          "qty": 1,
+          "warranty": "24 Tháng"
+        },
+        {
+          "item": "Kết nối",
+          "desc": "Lightspeed Wireless 1ms & Bluetooth",
+          "qty": 1,
+          "warranty": "24 Tháng"
+        },
+        {
+          "item": "Trọng lượng",
+          "desc": "99g",
+          "qty": 1,
+          "warranty": "24 Tháng"
+        }
+      ]
+    },
+    {
+      "id": "pc-1790696977277",
+      "name": "Chuột Gaming Cache Test",
+      "category": "gear",
+      "price": 990000,
+      "originalPrice": 1200000,
+      "rating": 5,
+      "badge": "HOT NEW",
+      "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800&q=80",
+      "description": "Dàn máy tính cao cấp chính hãng bảo hành 36 tháng.",
+      "specs": [
+        {
+          "item": "DPI",
+          "desc": "16000"
+        }
+      ]
+    },
+    {
+      "id": "pc-1790696824161",
+      "name": "Chuột Gaming Cache Test",
+      "category": "gear",
+      "price": 990000,
+      "originalPrice": 1200000,
+      "rating": 5,
+      "badge": "HOT NEW",
+      "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800&q=80",
+      "description": "Dàn máy tính cao cấp chính hãng bảo hành 36 tháng.",
+      "specs": [
+        {
+          "item": "DPI",
+          "desc": "16000"
+        }
+      ]
+    },
+    {
+      "id": "pc-1790696820894",
+      "name": "VGA NVIDIA GeForce RTX 5070 Ti 16GB",
+      "category": "components",
+      "price": 26900000,
+      "originalPrice": 26900000,
+      "rating": 5,
+      "badge": "HOT NEW",
+      "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800&q=80",
+      "description": "Dàn máy tính cao cấp chính hãng bảo hành 36 tháng.",
+      "specs": [
+        {
+          "item": "Chip đồ họa (GPU)",
+          "desc": "GeForce RTX 5070 Ti",
+          "qty": 1,
+          "warranty": "36 Tháng"
+        },
+        {
+          "item": "Bộ nhớ VRAM",
+          "desc": "16GB GDDR7 256-bit",
+          "qty": 1,
+          "warranty": "36 Tháng"
+        },
+        {
+          "item": "Cổng xuất hình",
+          "desc": "3x DisplayPort 2.1b, 1x HDMI 2.1b",
+          "qty": 1,
+          "warranty": "36 Tháng"
+        },
+        {
+          "item": "Nguồn đề nghị",
+          "desc": "Từ 750W trở lên (1x 16-pin 12V-2x6)",
+          "qty": 1,
+          "warranty": "36 Tháng"
+        }
+      ]
+    },
+    {
+      "id": "pc-1790696820866",
+      "name": "Chuột Gaming Không Dây Siêu Nhẹ",
+      "category": "gear",
+      "price": 1590000,
+      "originalPrice": 1890000,
+      "rating": 5,
+      "badge": "NEW GEAR",
+      "image": "https://example.com/mouse.jpg",
+      "description": "Chuột gaming không dây chính hãng",
+      "specs": [
+        {
+          "item": "Cảm biến (Sensor)",
+          "desc": "HERO 25K (100 - 25.600 DPI)",
+          "qty": 1,
+          "warranty": "24 Tháng"
+        },
+        {
+          "item": "Kết nối",
+          "desc": "Lightspeed Wireless 1ms & Bluetooth",
+          "qty": 1,
+          "warranty": "24 Tháng"
+        },
+        {
+          "item": "Trọng lượng",
+          "desc": "99g",
+          "qty": 1,
+          "warranty": "24 Tháng"
+        }
+      ]
+    },
+    {
+      "id": "pc-1790696786588",
+      "name": "Chuột Gaming Cache Test",
+      "category": "gear",
+      "price": 990000,
+      "originalPrice": 1200000,
+      "rating": 5,
+      "badge": "HOT NEW",
+      "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800&q=80",
+      "description": "Dàn máy tính cao cấp chính hãng bảo hành 36 tháng.",
+      "specs": [
+        {
+          "item": "DPI",
+          "desc": "16000"
+        }
+      ]
+    },
+    {
+      "id": "pc-1790696782007",
+      "name": "VGA NVIDIA GeForce RTX 5070 Ti 16GB",
+      "category": "components",
+      "price": 26900000,
+      "originalPrice": 26900000,
+      "rating": 5,
+      "badge": "HOT NEW",
+      "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800&q=80",
+      "description": "Dàn máy tính cao cấp chính hãng bảo hành 36 tháng.",
+      "specs": [
+        {
+          "item": "Chip đồ họa (GPU)",
+          "desc": "GeForce RTX 5070 Ti",
+          "qty": 1,
+          "warranty": "36 Tháng"
+        },
+        {
+          "item": "Bộ nhớ VRAM",
+          "desc": "16GB GDDR7 256-bit",
+          "qty": 1,
+          "warranty": "36 Tháng"
+        },
+        {
+          "item": "Cổng xuất hình",
+          "desc": "3x DisplayPort 2.1b, 1x HDMI 2.1b",
+          "qty": 1,
+          "warranty": "36 Tháng"
+        },
+        {
+          "item": "Nguồn đề nghị",
+          "desc": "Từ 750W trở lên (1x 16-pin 12V-2x6)",
+          "qty": 1,
+          "warranty": "36 Tháng"
+        }
+      ]
+    },
+    {
+      "id": "pc-1790696781988",
+      "name": "Chuột Gaming Không Dây Siêu Nhẹ",
+      "category": "gear",
+      "price": 1590000,
+      "originalPrice": 1890000,
+      "rating": 5,
+      "badge": "NEW GEAR",
+      "image": "https://example.com/mouse.jpg",
+      "description": "Chuột gaming không dây chính hãng",
+      "specs": [
+        {
+          "item": "Cảm biến (Sensor)",
+          "desc": "HERO 25K (100 - 25.600 DPI)",
+          "qty": 1,
+          "warranty": "24 Tháng"
+        },
+        {
+          "item": "Kết nối",
+          "desc": "Lightspeed Wireless 1ms & Bluetooth",
+          "qty": 1,
+          "warranty": "24 Tháng"
+        },
+        {
+          "item": "Trọng lượng",
+          "desc": "99g",
+          "qty": 1,
+          "warranty": "24 Tháng"
+        }
+      ]
+    },
+    {
+      "id": "pc-1790696699388",
+      "name": "VGA NVIDIA GeForce RTX 5070 Ti 16GB",
+      "category": "components",
+      "price": 26900000,
+      "originalPrice": 26900000,
+      "rating": 5,
+      "badge": "HOT NEW",
+      "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800&q=80",
+      "description": "Dàn máy tính cao cấp chính hãng bảo hành 36 tháng.",
+      "specs": [
+        {
+          "item": "Chip đồ họa (GPU)",
+          "desc": "GeForce RTX 5070 Ti",
+          "qty": 1,
+          "warranty": "36 Tháng"
+        },
+        {
+          "item": "Bộ nhớ VRAM",
+          "desc": "16GB GDDR7 256-bit",
+          "qty": 1,
+          "warranty": "36 Tháng"
+        },
+        {
+          "item": "Cổng xuất hình",
+          "desc": "3x DisplayPort 2.1b, 1x HDMI 2.1b",
+          "qty": 1,
+          "warranty": "36 Tháng"
+        },
+        {
+          "item": "Nguồn đề nghị",
+          "desc": "Từ 750W trở lên (1x 16-pin 12V-2x6)",
+          "qty": 1,
+          "warranty": "36 Tháng"
+        }
+      ]
+    },
+    {
+      "id": "pc-1790696699373",
+      "name": "Chuột Gaming Không Dây Siêu Nhẹ",
+      "category": "gear",
+      "price": 1590000,
+      "originalPrice": 1890000,
+      "rating": 5,
+      "badge": "NEW GEAR",
+      "image": "https://example.com/mouse.jpg",
+      "description": "Chuột gaming không dây chính hãng",
+      "specs": [
+        {
+          "item": "Cảm biến (Sensor)",
+          "desc": "HERO 25K (100 - 25.600 DPI)",
+          "qty": 1,
+          "warranty": "24 Tháng"
+        },
+        {
+          "item": "Kết nối",
+          "desc": "Lightspeed Wireless 1ms & Bluetooth",
+          "qty": 1,
+          "warranty": "24 Tháng"
+        },
+        {
+          "item": "Trọng lượng",
+          "desc": "99g",
+          "qty": 1,
+          "warranty": "24 Tháng"
+        }
+      ]
+    },
+    {
+      "id": "pc-1790696681402",
+      "name": "VGA NVIDIA GeForce RTX 5070 Ti 16GB",
+      "category": "components",
+      "price": 26900000,
+      "originalPrice": 26900000,
+      "rating": 5,
+      "badge": "HOT NEW",
+      "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800&q=80",
+      "description": "Dàn máy tính cao cấp chính hãng bảo hành 36 tháng.",
+      "specs": [
+        {
+          "item": "Chip đồ họa (GPU)",
+          "desc": "GeForce RTX 5070 Ti",
+          "qty": 1,
+          "warranty": "36 Tháng"
+        },
+        {
+          "item": "Bộ nhớ VRAM",
+          "desc": "16GB GDDR7 256-bit",
+          "qty": 1,
+          "warranty": "36 Tháng"
+        },
+        {
+          "item": "Cổng xuất hình",
+          "desc": "3x DisplayPort 2.1b, 1x HDMI 2.1b",
+          "qty": 1,
+          "warranty": "36 Tháng"
+        },
+        {
+          "item": "Nguồn đề nghị",
+          "desc": "Từ 750W trở lên (1x 16-pin 12V-2x6)",
+          "qty": 1,
+          "warranty": "36 Tháng"
+        }
+      ]
+    },
+    {
+      "id": "pc-1790696681380",
+      "name": "Chuột Gaming Không Dây Siêu Nhẹ",
+      "category": "gear",
+      "price": 1590000,
+      "originalPrice": 1890000,
+      "rating": 5,
+      "badge": "NEW GEAR",
+      "image": "https://example.com/mouse.jpg",
+      "description": "Chuột gaming không dây chính hãng",
+      "specs": [
+        {
+          "item": "Cảm biến (Sensor)",
+          "desc": "HERO 25K (100 - 25.600 DPI)",
+          "qty": 1,
+          "warranty": "24 Tháng"
+        },
+        {
+          "item": "Kết nối",
+          "desc": "Lightspeed Wireless 1ms & Bluetooth",
+          "qty": 1,
+          "warranty": "24 Tháng"
+        },
+        {
+          "item": "Trọng lượng",
+          "desc": "99g",
+          "qty": 1,
+          "warranty": "24 Tháng"
+        }
+      ]
+    },
+    {
+      "id": "pc-1790696680969",
+      "name": "Chuột Gaming Cache Test",
+      "category": "gear",
+      "price": 990000,
+      "originalPrice": 1200000,
+      "rating": 5,
+      "badge": "HOT NEW",
+      "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800&q=80",
+      "description": "Dàn máy tính cao cấp chính hãng bảo hành 36 tháng.",
+      "specs": [
+        {
+          "item": "DPI",
+          "desc": "16000"
+        }
+      ]
+    },
+    {
+      "id": "pc-1790695307257",
+      "name": "VGA NVIDIA GeForce RTX 5070 Ti 16GB",
+      "category": "components",
+      "price": 26900000,
+      "originalPrice": 26900000,
+      "rating": 5,
+      "badge": "HOT NEW",
+      "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800&q=80",
+      "description": "Dàn máy tính cao cấp chính hãng bảo hành 36 tháng.",
+      "specs": [
+        {
+          "item": "Chip đồ họa (GPU)",
+          "desc": "GeForce RTX 5070 Ti",
+          "qty": 1,
+          "warranty": "36 Tháng"
+        },
+        {
+          "item": "Bộ nhớ VRAM",
+          "desc": "16GB GDDR7 256-bit",
+          "qty": 1,
+          "warranty": "36 Tháng"
+        },
+        {
+          "item": "Cổng xuất hình",
+          "desc": "3x DisplayPort 2.1b, 1x HDMI 2.1b",
+          "qty": 1,
+          "warranty": "36 Tháng"
+        },
+        {
+          "item": "Nguồn đề nghị",
+          "desc": "Từ 750W trở lên (1x 16-pin 12V-2x6)",
+          "qty": 1,
+          "warranty": "36 Tháng"
+        }
+      ]
+    },
+    {
+      "id": "pc-1790695307236",
+      "name": "Chuột Gaming Không Dây Siêu Nhẹ",
+      "category": "gear",
+      "price": 1590000,
+      "originalPrice": 1890000,
+      "rating": 5,
+      "badge": "NEW GEAR",
+      "image": "https://example.com/mouse.jpg",
+      "description": "Chuột gaming không dây chính hãng",
+      "specs": [
+        {
+          "item": "Cảm biến (Sensor)",
+          "desc": "HERO 25K (100 - 25.600 DPI)",
+          "qty": 1,
+          "warranty": "24 Tháng"
+        },
+        {
+          "item": "Kết nối",
+          "desc": "Lightspeed Wireless 1ms & Bluetooth",
+          "qty": 1,
+          "warranty": "24 Tháng"
+        },
+        {
+          "item": "Trọng lượng",
+          "desc": "99g",
+          "qty": 1,
+          "warranty": "24 Tháng"
+        }
+      ]
+    },
+    {
+      "id": "pc-1790695305528",
+      "name": "Chuột Gaming Cache Test",
+      "category": "gear",
+      "price": 990000,
+      "originalPrice": 1200000,
+      "rating": 5,
+      "badge": "HOT NEW",
+      "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800&q=80",
+      "description": "Dàn máy tính cao cấp chính hãng bảo hành 36 tháng.",
+      "specs": [
+        {
+          "item": "DPI",
+          "desc": "16000"
+        }
+      ]
+    },
+    {
+      "id": "pc-1790694209216",
+      "name": "VGA NVIDIA GeForce RTX 5070 Ti 16GB",
+      "category": "components",
+      "price": 26900000,
+      "originalPrice": 26900000,
+      "rating": 5,
+      "badge": "HOT NEW",
+      "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800&q=80",
+      "description": "Dàn máy tính cao cấp chính hãng bảo hành 36 tháng.",
+      "specs": [
+        {
+          "item": "Chip đồ họa (GPU)",
+          "desc": "GeForce RTX 5070 Ti",
+          "qty": 1,
+          "warranty": "36 Tháng"
+        },
+        {
+          "item": "Bộ nhớ VRAM",
+          "desc": "16GB GDDR7 256-bit",
+          "qty": 1,
+          "warranty": "36 Tháng"
+        },
+        {
+          "item": "Cổng xuất hình",
+          "desc": "3x DisplayPort 2.1b, 1x HDMI 2.1b",
+          "qty": 1,
+          "warranty": "36 Tháng"
+        },
+        {
+          "item": "Nguồn đề nghị",
+          "desc": "Từ 750W trở lên (1x 16-pin 12V-2x6)",
+          "qty": 1,
+          "warranty": "36 Tháng"
+        }
+      ]
+    },
+    {
+      "id": "pc-1790694209200",
+      "name": "Chuột Gaming Không Dây Siêu Nhẹ",
+      "category": "gear",
+      "price": 1590000,
+      "originalPrice": 1890000,
+      "rating": 5,
+      "badge": "NEW GEAR",
+      "image": "https://example.com/mouse.jpg",
+      "description": "Chuột gaming không dây chính hãng",
+      "specs": [
+        {
+          "item": "Cảm biến (Sensor)",
+          "desc": "HERO 25K (100 - 25.600 DPI)",
+          "qty": 1,
+          "warranty": "24 Tháng"
+        },
+        {
+          "item": "Kết nối",
+          "desc": "Lightspeed Wireless 1ms & Bluetooth",
+          "qty": 1,
+          "warranty": "24 Tháng"
+        },
+        {
+          "item": "Trọng lượng",
+          "desc": "99g",
+          "qty": 1,
+          "warranty": "24 Tháng"
+        }
+      ]
+    },
+    {
+      "id": "pc-1790694208733",
+      "name": "Chuột Gaming Cache Test",
+      "category": "gear",
+      "price": 990000,
+      "originalPrice": 1200000,
+      "rating": 5,
+      "badge": "HOT NEW",
+      "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800&q=80",
+      "description": "Dàn máy tính cao cấp chính hãng bảo hành 36 tháng.",
+      "specs": [
+        {
+          "item": "DPI",
+          "desc": "16000"
+        }
+      ]
+    },
     {
       "id": "pc-1790664322251",
       "name": "VGA NVIDIA GeForce RTX 5070 Ti 16GB",
@@ -1928,18 +2675,31 @@
       "category": "gaming",
       "price": 45900000,
       "originalPrice": 49900000,
-      "rating": 4.88,
+      "rating": 4.9,
+      "reviewsCount": 15,
+      "stockQuantity": 10,
       "badge": "HOT SELLER",
       "image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=800&q=80",
+        "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800&q=80",
+        "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80"
+      ],
       "description": "Chiến mượt 100% các tựa game eSports & AAA 2K/4K max settings như Black Myth Wukong, Cyberpunk 2077, GTA V, Valorant.",
       "specs": {
-        "cpu": "AMD Ryzen 7 7800X3D",
-        "gpu": "NVIDIA RTX 4070 Ti SUPER 16GB",
-        "ram": "32GB DDR5 5600MHz RGB",
-        "ssd": "1TB NVMe Gen4",
+        "cpu": "AMD Ryzen 7 7800X3D (8C/16T, Up to 5.0GHz)",
+        "gpu": "NVIDIA GeForce RTX 4070 Ti SUPER 16GB GDDR6X",
+        "ram": "32GB DDR5 6000MHz RGB Corsair Vengeance",
+        "ssd": "1TB NVMe PCIe 4.0 (Tốc độ đọc 7000MB/s)",
         "mainboard": "MSI MAG B650 TOMAHAWK WIFI",
-        "psu": "850W 80 Plus Gold",
-        "cooler": "Dual Tower ARGB Air Cooler"
+        "psu": "Corsair RM850e 850W 80 Plus Gold ATX 3.0",
+        "cooler": "Thermalright Frozen Prism 360 ARGB Liquid",
+        "case_name": "NZXT H9 Flow Dual Chamber Black",
+        "warranty": "36 Tháng Chính Hãng 1 Đổi 1",
+        "gallery": [
+          "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800&q=80",
+          "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80"
+        ]
       }
     },
     {
@@ -1948,18 +2708,29 @@
       "category": "gaming",
       "price": 21990000,
       "originalPrice": 24500000,
-      "rating": 4.82,
+      "rating": 4.85,
+      "reviewsCount": 15,
+      "stockQuantity": 10,
       "badge": "BEST VALUE",
       "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80",
+        "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800&q=80"
+      ],
       "description": "Cấu hình quốc dân chiến mượt mọi game Online Liên Minh, CS2, FO4, Valorant và GTA V mức thiết lập cao.",
       "specs": {
-        "cpu": "Intel Core i5-13400F",
-        "gpu": "NVIDIA RTX 4060 8GB GDDR6",
-        "ram": "16GB DDR4 3200MHz",
-        "ssd": "512GB NVMe PCIe 4.0",
-        "mainboard": "ASUS PRIME B760M-K",
-        "psu": "650W 80 Plus Bronze",
-        "cooler": "Thermalright Assassin X 120"
+        "cpu": "Intel Core i5-13400F (10 Nhân 16 Luồng, Up to 4.6GHz)",
+        "gpu": "ASUS Dual GeForce RTX 4060 OC Edition 8GB GDDR6",
+        "ram": "16GB (2x8GB) DDR4 3200MHz Kingston Fury Beast",
+        "ssd": "512GB Kingston NV2 NVMe PCIe 4.0",
+        "mainboard": "ASUS PRIME B760M-K DDR4",
+        "psu": "Mik C650B 650W 80 Plus Bronze",
+        "cooler": "Thermalright Assassin X 120 Refined SE ARGB",
+        "case_name": "Xigmatek Aqua Ultra M-ATX 3 Fan ARGB",
+        "warranty": "36 Tháng Tận Nơi",
+        "gallery": [
+          "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800&q=80"
+        ]
       }
     },
     {
@@ -2012,15 +2783,2881 @@
       "badge": "SIÊU PHẨM",
       "image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=800&q=80",
       "description": "Vua của card đồ họa gaming và trí tuệ nhân tạo thế giới, tản nhiệt buồng hơi siêu mát.",
+      "specs": [
+        {
+          "item": "Bộ vi xử lý (CPU)",
+          "desc": "Intel Core i7-14700K (20 nhân / 28 luồng, up to 5.6 GHz)",
+          "detail": "Bảo hành 36T"
+        },
+        {
+          "item": "Bo mạch chủ (Mainboard)",
+          "desc": "MSI MAG Z790 TOMAHAWK WIFI DDR5",
+          "detail": "Bảo hành 36T"
+        },
+        {
+          "item": "Bộ nhớ trong (RAM)",
+          "desc": "Corsair Vengeance RGB 32GB (2x16GB) DDR5 6000MHz",
+          "detail": "Bảo hành 36T"
+        },
+        {
+          "item": "Card đồ họa (VGA)",
+          "desc": "Gigabyte GeForce RTX 4070 Ti SUPER Gaming OC 16GB",
+          "detail": "Bảo hành 36T"
+        },
+        {
+          "item": "Ổ cứng lưu trữ (SSD)",
+          "desc": "Kingston KC3000 1TB PCIe 4.0 NVMe M.2 (7000MB/s)",
+          "detail": "Bảo hành 60T"
+        },
+        {
+          "item": "Nguồn máy tính (PSU)",
+          "desc": "Corsair RM850e 850W 80 Plus Gold ATX 3.0 PCIe 5.0",
+          "detail": "Bảo hành 84T"
+        },
+        {
+          "item": "Tản nhiệt (Cooler)",
+          "desc": "Deepcool LT720 ARGB 360mm Liquid Cooler",
+          "detail": "Bảo hành 36T"
+        },
+        {
+          "item": "Vỏ máy tính (Case)",
+          "desc": "Lian Li O11 Dynamic EVO RGB White kính cường lực",
+          "detail": "Bảo hành 12T"
+        }
+      ]
+    },
+    {
+      "id": "comp_cpu_i9_14900k",
+      "name": "CPU Intel Core i9 14900K (Up to 6.0GHz, 24 Nhân 32 Luồng, 36MB Cache)",
+      "category": "cat_cpu",
+      "price": 15490000,
+      "originalPrice": 16990000,
+      "stockQuantity": 15,
+      "rating": 5,
+      "reviewsCount": 32,
+      "badge": "Flagship",
+      "image": "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&w=400&q=80",
+      "description": "Vi xử lý cao cấp nhất thế hệ 14 của Intel, tối ưu hóa cho gaming 4K và đồ họa chuyên nghiệp.",
       "specs": {
-        "vga": "RTX 4090 24GB GDDR6X 384-bit",
-        "bus": "PCIe 4.0 x16",
-        "ports": "2x HDMI 2.1a, 3x DisplayPort 1.4a",
-        "power": "850W PSU Recommended"
+        "brand": "Intel",
+        "socket": "LGA1700",
+        "cores": "24 nhân / 32 luồng",
+        "clock": "Up to 6.0GHz",
+        "tdp": 253,
+        "warranty": "36 Tháng"
+      }
+    },
+    {
+      "id": "comp_cpu_i7_14700k",
+      "name": "CPU Intel Core i7 14700K (Up to 5.6GHz, 20 Nhân 28 Luồng, 33MB Cache)",
+      "category": "cat_cpu",
+      "price": 10890000,
+      "originalPrice": 11990000,
+      "stockQuantity": 20,
+      "rating": 4.9,
+      "reviewsCount": 45,
+      "badge": "Bán chạy",
+      "image": "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&w=400&q=80",
+      "description": "Lựa chọn cân bằng đỉnh cao giữa gaming và render đồ họa.",
+      "specs": {
+        "brand": "Intel",
+        "socket": "LGA1700",
+        "cores": "20 nhân / 28 luồng",
+        "clock": "Up to 5.6GHz",
+        "tdp": 125,
+        "warranty": "36 Tháng"
+      }
+    },
+    {
+      "id": "comp_cpu_i5_14600k",
+      "name": "CPU Intel Core i5 14600K (Up to 5.3GHz, 14 Nhân 20 Luồng, 24MB Cache)",
+      "category": "cat_cpu",
+      "price": 7690000,
+      "originalPrice": 8490000,
+      "stockQuantity": 25,
+      "rating": 4.9,
+      "reviewsCount": 60,
+      "badge": "Hot",
+      "image": "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&w=400&q=80",
+      "description": "Ông vua phân khúc tầm trung cho game thủ và streamer.",
+      "specs": {
+        "brand": "Intel",
+        "socket": "LGA1700",
+        "cores": "14 nhân / 20 luồng",
+        "clock": "Up to 5.3GHz",
+        "tdp": 125,
+        "warranty": "36 Tháng"
+      }
+    },
+    {
+      "id": "comp_cpu_i5_13400f",
+      "name": "CPU Intel Core i5 13400F (Up to 4.6GHz, 10 Nhân 16 Luồng, 20MB Cache)",
+      "category": "cat_cpu",
+      "price": 4890000,
+      "originalPrice": 5390000,
+      "stockQuantity": 30,
+      "rating": 4.8,
+      "reviewsCount": 82,
+      "badge": "Quốc dân",
+      "image": "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&w=400&q=80",
+      "description": "CPU quốc dân cho các dàn PC Gaming tối ưu chi phí.",
+      "specs": {
+        "brand": "Intel",
+        "socket": "LGA1700",
+        "cores": "10 nhân / 16 luồng",
+        "clock": "Up to 4.6GHz",
+        "tdp": 65,
+        "warranty": "36 Tháng"
+      }
+    },
+    {
+      "id": "comp_cpu_ryzen_7800x3d",
+      "name": "CPU AMD Ryzen 7 7800X3D (Up to 5.0GHz, 8 Nhân 16 Luồng, 96MB 3D V-Cache)",
+      "category": "cat_cpu",
+      "price": 10490000,
+      "originalPrice": 11500000,
+      "stockQuantity": 18,
+      "rating": 5,
+      "reviewsCount": 77,
+      "badge": "Gaming #1",
+      "image": "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&w=400&q=80",
+      "description": "CPU chơi game tốt nhất thế giới với công nghệ bộ nhớ đệm 3D V-Cache độc quyền.",
+      "specs": {
+        "brand": "AMD",
+        "socket": "AM5",
+        "cores": "8 nhân / 16 luồng",
+        "clock": "Up to 5.0GHz",
+        "tdp": 120,
+        "warranty": "36 Tháng"
+      }
+    },
+    {
+      "id": "comp_cpu_ryzen_7600x",
+      "name": "CPU AMD Ryzen 5 7600X (Up to 5.3GHz, 6 Nhân 12 Luồng, 32MB Cache)",
+      "category": "cat_cpu",
+      "price": 5590000,
+      "originalPrice": 6200000,
+      "stockQuantity": 22,
+      "rating": 4.8,
+      "reviewsCount": 39,
+      "badge": "Hiệu năng cao",
+      "image": "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&w=400&q=80",
+      "description": "Hiệu năng gaming ấn tượng trên nền tảng socket AM5 hiện đại.",
+      "specs": {
+        "brand": "AMD",
+        "socket": "AM5",
+        "cores": "6 nhân / 12 luồng",
+        "clock": "Up to 5.3GHz",
+        "tdp": 105,
+        "warranty": "36 Tháng"
+      }
+    },
+    {
+      "id": "comp_mb_asus_z790_hero",
+      "name": "Mainboard ASUS ROG MAXIMUS Z790 HERO DDR5",
+      "category": "cat_mainboard",
+      "price": 16990000,
+      "originalPrice": 18500000,
+      "stockQuantity": 8,
+      "rating": 5,
+      "reviewsCount": 15,
+      "badge": "Cao cấp",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&q=80",
+      "description": "Bo mạch chủ đầu bảng socket LGA1700 hỗ trợ ép xung cực hạn và chuẩn PCIe 5.0.",
+      "specs": {
+        "brand": "ASUS",
+        "socket": "LGA1700",
+        "chipset": "Z790",
+        "formFactor": "ATX",
+        "ramSlots": "4x DDR5",
+        "warranty": "36 Tháng"
+      }
+    },
+    {
+      "id": "comp_mb_msi_b760m_mortar",
+      "name": "Mainboard MSI MAG B760M MORTAR WIFI DDR5",
+      "category": "cat_mainboard",
+      "price": 4890000,
+      "originalPrice": 5290000,
+      "stockQuantity": 35,
+      "rating": 4.9,
+      "reviewsCount": 92,
+      "badge": "Bán chạy",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&q=80",
+      "description": "Bo mạch chủ M-ATX bền bỉ, tích hợp WiFi 6E và tản nhiệt VRM dày dặn.",
+      "specs": {
+        "brand": "MSI",
+        "socket": "LGA1700",
+        "chipset": "B760",
+        "formFactor": "Micro-ATX",
+        "ramSlots": "4x DDR5",
+        "warranty": "36 Tháng"
+      }
+    },
+    {
+      "id": "comp_mb_gigabyte_b760_d4",
+      "name": "Mainboard GIGABYTE B760 GAMING X AX DDR4",
+      "category": "cat_mainboard",
+      "price": 3890000,
+      "originalPrice": 4200000,
+      "stockQuantity": 40,
+      "rating": 4.8,
+      "reviewsCount": 48,
+      "badge": "Tối ưu giá",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&q=80",
+      "description": "Mainboard chuẩn ATX hỗ trợ RAM DDR4 tiết kiệm chi phí nâng cấp.",
+      "specs": {
+        "brand": "GIGABYTE",
+        "socket": "LGA1700",
+        "chipset": "B760",
+        "formFactor": "ATX",
+        "ramSlots": "4x DDR4",
+        "warranty": "36 Tháng"
+      }
+    },
+    {
+      "id": "comp_mb_asus_h610m_k",
+      "name": "Mainboard ASUS PRIME H610M-K D4",
+      "category": "cat_mainboard",
+      "price": 1950000,
+      "originalPrice": 2200000,
+      "stockQuantity": 50,
+      "rating": 4.7,
+      "reviewsCount": 110,
+      "badge": "Tiết kiệm",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&q=80",
+      "description": "Mainboard cơ bản cho Core i3 và i5 thế hệ 12/13/14.",
+      "specs": {
+        "brand": "ASUS",
+        "socket": "LGA1700",
+        "chipset": "H610",
+        "formFactor": "Micro-ATX",
+        "ramSlots": "2x DDR4",
+        "warranty": "36 Tháng"
+      }
+    },
+    {
+      "id": "comp_mb_msi_b650_gaming_plus",
+      "name": "Mainboard MSI B650 GAMING PLUS WIFI AM5",
+      "category": "cat_mainboard",
+      "price": 4590000,
+      "originalPrice": 4990000,
+      "stockQuantity": 28,
+      "rating": 4.9,
+      "reviewsCount": 53,
+      "badge": "Khuyên dùng AMD",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&q=80",
+      "description": "Bo mạch chủ chuyên game cho socket AMD AM5 (Ryzen 7000, 8000, 9000).",
+      "specs": {
+        "brand": "MSI",
+        "socket": "AM5",
+        "chipset": "B650",
+        "formFactor": "ATX",
+        "ramSlots": "4x DDR5",
+        "warranty": "36 Tháng"
+      }
+    },
+    {
+      "id": "comp_mb_gigabyte_x670e_aorus",
+      "name": "Mainboard GIGABYTE X670E AORUS MASTER AM5",
+      "category": "cat_mainboard",
+      "price": 13990000,
+      "originalPrice": 15500000,
+      "stockQuantity": 6,
+      "rating": 5,
+      "reviewsCount": 12,
+      "badge": "Cao cấp AMD",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&q=80",
+      "description": "Bo mạch chủ khủng cho game thủ ép xung Ryzen 9 hàng đầu.",
+      "specs": {
+        "brand": "GIGABYTE",
+        "socket": "AM5",
+        "chipset": "X670E",
+        "formFactor": "E-ATX",
+        "ramSlots": "4x DDR5",
+        "warranty": "36 Tháng"
+      }
+    },
+    {
+      "id": "comp_ram_corsair_dominator_32gb",
+      "name": "RAM Corsair Dominator Titanium RGB 32GB (2x16GB) DDR5 6000MHz White",
+      "category": "cat_ram",
+      "price": 4690000,
+      "originalPrice": 5190000,
+      "stockQuantity": 25,
+      "rating": 5,
+      "reviewsCount": 30,
+      "badge": "RGB Đỉnh cao",
+      "image": "https://images.unsplash.com/photo-1562976540-1502c2145186?auto=format&fit=crop&w=400&q=80",
+      "description": "Dòng RAM kiệt tác của Corsair với LED Capellix rực rỡ và bus 6000MHz cực nhanh.",
+      "specs": {
+        "brand": "Corsair",
+        "type": "DDR5",
+        "capacity": "32GB (2x16GB)",
+        "speed": "6000MHz",
+        "rgb": "Có",
+        "warranty": "36 Tháng"
+      }
+    },
+    {
+      "id": "comp_ram_kingston_fury_32gb",
+      "name": "RAM Kingston Fury Beast RGB 32GB (2x16GB) DDR5 5600MHz",
+      "category": "cat_ram",
+      "price": 2890000,
+      "originalPrice": 3200000,
+      "stockQuantity": 40,
+      "rating": 4.9,
+      "reviewsCount": 68,
+      "badge": "Bán chạy",
+      "image": "https://images.unsplash.com/photo-1562976540-1502c2145186?auto=format&fit=crop&w=400&q=80",
+      "description": "Hiệu năng ổn định tuyệt đối và tương thích tốt cả Intel XMP 3.0 và AMD EXPO.",
+      "specs": {
+        "brand": "Kingston",
+        "type": "DDR5",
+        "capacity": "32GB (2x16GB)",
+        "speed": "5600MHz",
+        "rgb": "Có",
+        "warranty": "36 Tháng"
+      }
+    },
+    {
+      "id": "comp_ram_corsair_vengeance_32gb",
+      "name": "RAM Corsair Vengeance 32GB (2x16GB) DDR5 5200MHz Black",
+      "category": "cat_ram",
+      "price": 2450000,
+      "originalPrice": 2750000,
+      "stockQuantity": 30,
+      "rating": 4.8,
+      "reviewsCount": 42,
+      "badge": "Tối giản",
+      "image": "https://images.unsplash.com/photo-1562976540-1502c2145186?auto=format&fit=crop&w=400&q=80",
+      "description": "Thiết kế tản nhiệt nhôm đen huyền bí, không LED, hiệu năng thuần túy.",
+      "specs": {
+        "brand": "Corsair",
+        "type": "DDR5",
+        "capacity": "32GB (2x16GB)",
+        "speed": "5200MHz",
+        "rgb": "Không",
+        "warranty": "36 Tháng"
+      }
+    },
+    {
+      "id": "comp_ram_kingston_fury_16gb_d4",
+      "name": "RAM Kingston Fury Beast 16GB (1x16GB) DDR4 3200MHz",
+      "category": "cat_ram",
+      "price": 990000,
+      "originalPrice": 1190000,
+      "stockQuantity": 70,
+      "rating": 4.8,
+      "reviewsCount": 145,
+      "badge": "Quốc dân",
+      "image": "https://images.unsplash.com/photo-1562976540-1502c2145186?auto=format&fit=crop&w=400&q=80",
+      "description": "RAM DDR4 giá tốt, dễ nâng cấp và bảo hành chính hãng 3 năm.",
+      "specs": {
+        "brand": "Kingston",
+        "type": "DDR4",
+        "capacity": "16GB (1x16GB)",
+        "speed": "3200MHz",
+        "rgb": "Không",
+        "warranty": "36 Tháng"
+      }
+    },
+    {
+      "id": "comp_ram_gskill_trident_64gb",
+      "name": "RAM G.SKILL Trident Z5 RGB 64GB (2x32GB) DDR5 6000MHz Black",
+      "category": "cat_ram",
+      "price": 6290000,
+      "originalPrice": 6990000,
+      "stockQuantity": 12,
+      "rating": 5,
+      "reviewsCount": 19,
+      "badge": "Workstation",
+      "image": "https://images.unsplash.com/photo-1562976540-1502c2145186?auto=format&fit=crop&w=400&q=80",
+      "description": "Dung lượng khủng 64GB dành cho dựng phim 4K, đồ họa 3D và AI.",
+      "specs": {
+        "brand": "G.SKILL",
+        "type": "DDR5",
+        "capacity": "64GB (2x32GB)",
+        "speed": "6000MHz",
+        "rgb": "Có",
+        "warranty": "36 Tháng"
+      }
+    },
+    {
+      "id": "comp_vga_rog_rtx4090",
+      "name": "Card Màn Hình ASUS ROG Strix GeForce RTX 4090 OC Edition 24GB GDDR6X",
+      "category": "cat_vga",
+      "price": 54990000,
+      "originalPrice": 59900000,
+      "stockQuantity": 5,
+      "rating": 5,
+      "reviewsCount": 22,
+      "badge": "Quái vật đồ họa",
+      "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=400&q=80",
+      "description": "Card đồ họa đỉnh nóc thế giới, chiến max setting mọi tựa game 4K Ray Tracing.",
+      "specs": {
+        "brand": "ASUS",
+        "gpu": "RTX 4090",
+        "vram": "24GB GDDR6X",
+        "psuReq": "850W - 1000W",
+        "warranty": "36 Tháng"
+      }
+    },
+    {
+      "id": "comp_vga_msi_rtx4070ti_super",
+      "name": "Card Màn Hình MSI Gaming X Slim GeForce RTX 4070 Ti SUPER 16GB",
+      "category": "cat_vga",
+      "price": 23490000,
+      "originalPrice": 25500000,
+      "stockQuantity": 14,
+      "rating": 4.9,
+      "reviewsCount": 38,
+      "badge": "Hot Gaming",
+      "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=400&q=80",
+      "description": "16GB VRAM chuẩn mực cho đồ họa 2K - 4K và ứng dụng AI Stable Diffusion.",
+      "specs": {
+        "brand": "MSI",
+        "gpu": "RTX 4070 Ti SUPER",
+        "vram": "16GB GDDR6X",
+        "psuReq": "750W",
+        "warranty": "36 Tháng"
+      }
+    },
+    {
+      "id": "comp_vga_gigabyte_rtx4070_super",
+      "name": "Card Màn Hình GIGABYTE GeForce RTX 4070 SUPER WINDFORCE OC 12GB",
+      "category": "cat_vga",
+      "price": 16990000,
+      "originalPrice": 18500000,
+      "stockQuantity": 20,
+      "rating": 4.9,
+      "reviewsCount": 54,
+      "badge": "Khuyên dùng",
+      "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=400&q=80",
+      "description": "Hiệu năng vượt trội RTX 3090 thế hệ trước với mức tiêu thụ điện năng tối ưu.",
+      "specs": {
+        "brand": "GIGABYTE",
+        "gpu": "RTX 4070 SUPER",
+        "vram": "12GB GDDR6X",
+        "psuReq": "650W",
+        "warranty": "36 Tháng"
+      }
+    },
+    {
+      "id": "comp_vga_asus_rtx4060_8gb",
+      "name": "Card Màn Hình ASUS Dual GeForce RTX 4060 EVO OC 8GB GDDR6",
+      "category": "cat_vga",
+      "price": 8490000,
+      "originalPrice": 9200000,
+      "stockQuantity": 45,
+      "rating": 4.8,
+      "reviewsCount": 110,
+      "badge": "Bán chạy nhất",
+      "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=400&q=80",
+      "description": "Hỗ trợ DLSS 3 và Frame Generation, mang lại khung hình mượt mà tuyệt đối.",
+      "specs": {
+        "brand": "ASUS",
+        "gpu": "RTX 4060",
+        "vram": "8GB GDDR6",
+        "psuReq": "550W",
+        "warranty": "36 Tháng"
+      }
+    },
+    {
+      "id": "comp_vga_msi_rtx3060_12gb",
+      "name": "Card Màn Hình MSI GeForce RTX 3060 VENTUS 2X 12G OC",
+      "category": "cat_vga",
+      "price": 6990000,
+      "originalPrice": 7700000,
+      "stockQuantity": 30,
+      "rating": 4.8,
+      "reviewsCount": 88,
+      "badge": "12GB VRAM",
+      "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=400&q=80",
+      "description": "Lựa chọn xuất sắc cho các bạn làm đồ họa 3D kiến trúc cần dung lượng bộ nhớ lớn.",
+      "specs": {
+        "brand": "MSI",
+        "gpu": "RTX 3060",
+        "vram": "12GB GDDR6",
+        "psuReq": "550W",
+        "warranty": "36 Tháng"
+      }
+    },
+    {
+      "id": "comp_ssd_samsung_990pro_2tb",
+      "name": "Ổ Cứng SSD Samsung 990 PRO 2TB PCIe Gen 4.0 x4 NVMe M.2",
+      "category": "cat_ssd",
+      "price": 4890000,
+      "originalPrice": 5490000,
+      "stockQuantity": 20,
+      "rating": 5,
+      "reviewsCount": 42,
+      "badge": "Tốc độ 7450MB/s",
+      "image": "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?auto=format&fit=crop&w=400&q=80",
+      "description": "SSD đỉnh cao tốc độ đọc 7450MB/s, ghi 6900MB/s cho hiệu suất làm việc tức thì.",
+      "specs": {
+        "brand": "Samsung",
+        "capacity": "2TB",
+        "interface": "PCIe Gen 4.0 NVMe",
+        "readSpeed": "7450 MB/s",
+        "warranty": "60 Tháng"
+      }
+    },
+    {
+      "id": "comp_ssd_samsung_980_1tb",
+      "name": "Ổ Cứng SSD Samsung 980 1TB PCIe NVMe 3.0x4 M.2 2280",
+      "category": "cat_ssd",
+      "price": 2150000,
+      "originalPrice": 2450000,
+      "stockQuantity": 35,
+      "rating": 4.9,
+      "reviewsCount": 79,
+      "badge": "Bền bỉ",
+      "image": "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?auto=format&fit=crop&w=400&q=80",
+      "description": "Độ bền TBW cao, nhiệt độ hoạt động mát mẻ và tương thích rộng rãi.",
+      "specs": {
+        "brand": "Samsung",
+        "capacity": "1TB",
+        "interface": "PCIe Gen 3.0 NVMe",
+        "readSpeed": "3500 MB/s",
+        "warranty": "60 Tháng"
+      }
+    },
+    {
+      "id": "comp_ssd_kingston_nv2_1tb",
+      "name": "Ổ Cứng SSD Kingston NV2 1TB PCIe 4.0 x4 NVMe M.2",
+      "category": "cat_ssd",
+      "price": 1490000,
+      "originalPrice": 1750000,
+      "stockQuantity": 60,
+      "rating": 4.8,
+      "reviewsCount": 130,
+      "badge": "Bán chạy nhất",
+      "image": "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?auto=format&fit=crop&w=400&q=80",
+      "description": "Dung lượng 1TB chuẩn Gen 4 giá cực hời cho mọi game thủ.",
+      "specs": {
+        "brand": "Kingston",
+        "capacity": "1TB",
+        "interface": "PCIe Gen 4.0 NVMe",
+        "readSpeed": "3500 MB/s",
+        "warranty": "36 Tháng"
+      }
+    },
+    {
+      "id": "comp_ssd_kingston_nv2_500gb",
+      "name": "Ổ Cứng SSD Kingston NV2 500GB PCIe 4.0 x4 NVMe M.2",
+      "category": "cat_ssd",
+      "price": 990000,
+      "originalPrice": 1150000,
+      "stockQuantity": 80,
+      "rating": 4.8,
+      "reviewsCount": 95,
+      "badge": "Tiết kiệm",
+      "image": "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?auto=format&fit=crop&w=400&q=80",
+      "description": "Ổ đĩa khởi động hệ điều hành Windows siêu nhanh cho bộ máy giá rẻ.",
+      "specs": {
+        "brand": "Kingston",
+        "capacity": "500GB",
+        "interface": "PCIe Gen 4.0 NVMe",
+        "readSpeed": "3000 MB/s",
+        "warranty": "36 Tháng"
+      }
+    },
+    {
+      "id": "comp_hdd_wd_blue_2tb",
+      "name": "Ổ Cứng HDD Western Digital Blue 2TB 3.5 inch 7200RPM 256MB Cache",
+      "category": "cat_ssd",
+      "price": 1550000,
+      "originalPrice": 1750000,
+      "stockQuantity": 25,
+      "rating": 4.7,
+      "reviewsCount": 34,
+      "badge": "Lưu trữ lớn",
+      "image": "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?auto=format&fit=crop&w=400&q=80",
+      "description": "Giải pháp lưu trữ tài liệu ảnh, video dung lượng lớn an toàn và tiết kiệm.",
+      "specs": {
+        "brand": "Western Digital",
+        "capacity": "2TB",
+        "interface": "SATA 3 (6Gb/s)",
+        "speed": "7200 RPM",
+        "warranty": "24 Tháng"
+      }
+    },
+    {
+      "id": "comp_psu_corsair_rm1000e",
+      "name": "Nguồn Máy Tính Corsair RM1000e 1000W 80 Plus Gold Full Modular (ATX 3.0 / PCIe 5.0)",
+      "category": "cat_psu",
+      "price": 4290000,
+      "originalPrice": 4790000,
+      "stockQuantity": 15,
+      "rating": 5,
+      "reviewsCount": 28,
+      "badge": "ATX 3.0 Gold",
+      "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=400&q=80",
+      "description": "Chuẩn nguồn ATX 3.0 thế hệ mới kèm dây cáp 12VHPWR cấp điện trực tiếp cho RTX 4090/4080.",
+      "specs": {
+        "brand": "Corsair",
+        "wattage": 1000,
+        "efficiency": "80 Plus Gold",
+        "modular": "Full Modular",
+        "warranty": "84 Tháng"
+      }
+    },
+    {
+      "id": "comp_psu_seasonic_gx850",
+      "name": "Nguồn Máy Tính Seasonic Focus GX-850 850W 80 Plus Gold",
+      "category": "cat_psu",
+      "price": 3490000,
+      "originalPrice": 3890000,
+      "stockQuantity": 20,
+      "rating": 5,
+      "reviewsCount": 41,
+      "badge": "Độ bền thép",
+      "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=400&q=80",
+      "description": "Thương hiệu nguồn danh tiếng số 1 thế giới với tụ điện 100% Nhật Bản.",
+      "specs": {
+        "brand": "Seasonic",
+        "wattage": 850,
+        "efficiency": "80 Plus Gold",
+        "modular": "Full Modular",
+        "warranty": "120 Tháng"
+      }
+    },
+    {
+      "id": "comp_psu_msi_a750gl",
+      "name": "Nguồn Máy Tính MSI MAG A750GL PCIE5 750W 80 Plus Gold",
+      "category": "cat_psu",
+      "price": 2490000,
+      "originalPrice": 2850000,
+      "stockQuantity": 35,
+      "rating": 4.9,
+      "reviewsCount": 65,
+      "badge": "Bán chạy",
+      "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=400&q=80",
+      "description": "Nguồn 750W chuẩn PCIe 5.0 giá tốt nhất phân khúc Gold.",
+      "specs": {
+        "brand": "MSI",
+        "wattage": 750,
+        "efficiency": "80 Plus Gold",
+        "modular": "Full Modular",
+        "warranty": "60 Tháng"
+      }
+    },
+    {
+      "id": "comp_psu_corsair_cv650",
+      "name": "Nguồn Máy Tính Corsair CV650 650W 80 Plus Bronze",
+      "category": "cat_psu",
+      "price": 1490000,
+      "originalPrice": 1690000,
+      "stockQuantity": 50,
+      "rating": 4.8,
+      "reviewsCount": 89,
+      "badge": "Quốc dân",
+      "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=400&q=80",
+      "description": "Nguồn 650W quốc dân cho các dàn máy trang bị RTX 4060 hoặc RTX 3060.",
+      "specs": {
+        "brand": "Corsair",
+        "wattage": 650,
+        "efficiency": "80 Plus Bronze",
+        "modular": "Non-Modular",
+        "warranty": "36 Tháng"
+      }
+    },
+    {
+      "id": "comp_psu_deepcool_pk550d",
+      "name": "Nguồn Máy Tính DeepCool PK550D 550W 80 Plus Bronze",
+      "category": "cat_psu",
+      "price": 990000,
+      "originalPrice": 1190000,
+      "stockQuantity": 60,
+      "rating": 4.7,
+      "reviewsCount": 75,
+      "badge": "Giá rẻ",
+      "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=400&q=80",
+      "description": "Nguồn giá rẻ đạt chuẩn 80 Plus Bronze an toàn cho các bộ máy văn phòng và gaming cơ bản.",
+      "specs": {
+        "brand": "DeepCool",
+        "wattage": 550,
+        "efficiency": "80 Plus Bronze",
+        "modular": "Non-Modular",
+        "warranty": "36 Tháng"
+      }
+    },
+    {
+      "id": "comp_cooler_deepcool_lt720",
+      "name": "Tản Nhiệt Nước DeepCool LT720 360mm ARGB Liquid Cooler White",
+      "category": "cat_cooler",
+      "price": 3190000,
+      "originalPrice": 3590000,
+      "stockQuantity": 20,
+      "rating": 5,
+      "reviewsCount": 46,
+      "badge": "Top Hiệu Năng",
+      "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=400&q=80",
+      "description": "Bơm nước thế hệ thứ 4 tản nhiệt cực êm và mát cho Core i7, i9.",
+      "specs": {
+        "brand": "DeepCool",
+        "type": "Tản nước AIO 360mm",
+        "fanRpm": "2250 RPM",
+        "rgb": "ARGB",
+        "warranty": "36 Tháng"
+      }
+    },
+    {
+      "id": "comp_cooler_corsair_h150i_lcd",
+      "name": "Tản Nhiệt Nước Corsair iCUE H150i ELITE LCD XT 360mm Black",
+      "category": "cat_cooler",
+      "price": 6590000,
+      "originalPrice": 7200000,
+      "stockQuantity": 10,
+      "rating": 5,
+      "reviewsCount": 21,
+      "badge": "Màn hình LCD",
+      "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=400&q=80",
+      "description": "Trang bị màn hình LCD IPS 2.1 inch hiển thị ảnh GIF và nhiệt độ thời gian thực.",
+      "specs": {
+        "brand": "Corsair",
+        "type": "Tản nước AIO 360mm (Có LCD)",
+        "fanRpm": "2100 RPM",
+        "rgb": "iCUE RGB",
+        "warranty": "60 Tháng"
+      }
+    },
+    {
+      "id": "comp_cooler_thermalright_pa120",
+      "name": "Tản Nhiệt Khí Thermalright Peerless Assassin 120 SE ARGB",
+      "category": "cat_cooler",
+      "price": 850000,
+      "originalPrice": 1050000,
+      "stockQuantity": 50,
+      "rating": 4.9,
+      "reviewsCount": 140,
+      "badge": "Vua tản khí",
+      "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=400&q=80",
+      "description": "Tản nhiệt khí 2 tháp 6 ống đồng hiệu năng đè bẹp nhiều mẫu tản nước giá gấp đôi.",
+      "specs": {
+        "brand": "Thermalright",
+        "type": "Tản nhiệt khí 2 tháp",
+        "fans": "2x 120mm ARGB",
+        "tdpSupport": "240W",
+        "warranty": "24 Tháng"
+      }
+    },
+    {
+      "id": "comp_cooler_thermalright_aqua240",
+      "name": "Tản Nhiệt Nước Thermalright Aqua Elite 240 ARGB V3 Black",
+      "category": "cat_cooler",
+      "price": 1390000,
+      "originalPrice": 1650000,
+      "stockQuantity": 30,
+      "rating": 4.8,
+      "reviewsCount": 58,
+      "badge": "AIO Giá tốt",
+      "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=400&q=80",
+      "description": "Tản nước 240mm gọn gàng, đèn ARGB sync bo mạch chủ.",
+      "specs": {
+        "brand": "Thermalright",
+        "type": "Tản nước AIO 240mm",
+        "fanRpm": "1500 RPM",
+        "rgb": "ARGB",
+        "warranty": "24 Tháng"
+      }
+    },
+    {
+      "id": "comp_case_lianli_o11_evo",
+      "name": "Vỏ Case Lian Li O11 Dynamic EVO Black (Kính Cường Lực Hai Mặt)",
+      "category": "cat_case",
+      "price": 3890000,
+      "originalPrice": 4290000,
+      "stockQuantity": 15,
+      "rating": 5,
+      "reviewsCount": 37,
+      "badge": "Huyền thoại Showroom",
+      "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=400&q=80",
+      "description": "Case máy tính đẹp nhất để phô diễn toàn bộ linh kiện và tản nhiệt nước Custom.",
+      "specs": {
+        "brand": "Lian Li",
+        "formFactor": "ATX / E-ATX",
+        "glass": "Kính 2 mặt",
+        "gpuLength": "422mm",
+        "warranty": "12 Tháng"
+      }
+    },
+    {
+      "id": "comp_case_nzxt_h9_flow",
+      "name": "Vỏ Case NZXT H9 Flow Matte Black (Kính Panorama Không Cột)",
+      "category": "cat_case",
+      "price": 4190000,
+      "originalPrice": 4600000,
+      "stockQuantity": 12,
+      "rating": 4.9,
+      "reviewsCount": 26,
+      "badge": "Panorama",
+      "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=400&q=80",
+      "description": "Góc nhìn không góc chết với thiết kế kính liền mạch độc bản của NZXT.",
+      "specs": {
+        "brand": "NZXT",
+        "formFactor": "Mid-Tower ATX",
+        "glass": "Panorama Liền Mạch",
+        "gpuLength": "435mm",
+        "warranty": "24 Tháng"
+      }
+    },
+    {
+      "id": "comp_case_montech_sky_two",
+      "name": "Vỏ Case Montech Sky Two Black (Kèm Sẵn 4 Quạt ARGB PWM)",
+      "category": "cat_case",
+      "price": 1990000,
+      "originalPrice": 2250000,
+      "stockQuantity": 28,
+      "rating": 4.8,
+      "reviewsCount": 63,
+      "badge": "Kèm 4 Fan",
+      "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=400&q=80",
+      "description": "Thiết kế bể cá hiện đại, tặng kèm sẵn 4 quạt ARGB cánh ngược cực mát.",
+      "specs": {
+        "brand": "Montech",
+        "formFactor": "ATX",
+        "glass": "Bể cá kính cong",
+        "fansIncluded": "4x ARGB",
+        "warranty": "12 Tháng"
+      }
+    },
+    {
+      "id": "comp_case_xigmatek_aqua_m",
+      "name": "Vỏ Case Xigmatek Aqua M Lite 3GF (Kèm Sẵn 3 Quạt RGB)",
+      "category": "cat_case",
+      "price": 890000,
+      "originalPrice": 1090000,
+      "stockQuantity": 40,
+      "rating": 4.7,
+      "reviewsCount": 92,
+      "badge": "Ngon Bổ Rẻ",
+      "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=400&q=80",
+      "description": "Mẫu case bể cá M-ATX nhỏ gọn đáng mua nhất phân khúc dưới 1 triệu.",
+      "specs": {
+        "brand": "Xigmatek",
+        "formFactor": "Micro-ATX",
+        "glass": "Kính 2 mặt",
+        "fansIncluded": "3x RGB",
+        "warranty": "12 Tháng"
+      }
+    },
+    {
+      "id": "comp_mon_lg_27gr95qe",
+      "name": "Màn Hình LG UltraGear 27GR95QE-B 27 inch 2K QHD OLED 240Hz 0.03ms",
+      "category": "cat_monitors",
+      "price": 19900000,
+      "originalPrice": 22900000,
+      "stockQuantity": 10,
+      "rating": 5,
+      "reviewsCount": 25,
+      "badge": "OLED 240Hz",
+      "image": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=400&q=80",
+      "description": "Tấm nền OLED chân thực tương phản vô cực và tần số quét 240Hz chuẩn Esports.",
+      "specs": {
+        "brand": "LG",
+        "size": "27 inch",
+        "resolution": "2K QHD (2560x1440)",
+        "panel": "OLED",
+        "refreshRate": "240Hz",
+        "warranty": "24 Tháng"
+      }
+    },
+    {
+      "id": "comp_mon_samsung_g5_27",
+      "name": "Màn Hình Gaming Samsung Odyssey G5 G50D 27 inch 2K QHD IPS 180Hz 1ms",
+      "category": "cat_monitors",
+      "price": 5490000,
+      "originalPrice": 6200000,
+      "stockQuantity": 25,
+      "rating": 4.9,
+      "reviewsCount": 73,
+      "badge": "Bán chạy",
+      "image": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=400&q=80",
+      "description": "Màn hình IPS phẳng độ phân giải 2K sắc nét, hỗ trợ chân đế nâng hạ xoay dọc.",
+      "specs": {
+        "brand": "Samsung",
+        "size": "27 inch",
+        "resolution": "2K QHD (2560x1440)",
+        "panel": "IPS",
+        "refreshRate": "180Hz",
+        "warranty": "24 Tháng"
+      }
+    },
+    {
+      "id": "comp_mon_viewsonic_2758",
+      "name": "Màn Hình ViewSonic VX2758A-2K-PRO 27 inch 2K IPS 170Hz 1ms",
+      "category": "cat_monitors",
+      "price": 4490000,
+      "originalPrice": 4990000,
+      "stockQuantity": 30,
+      "rating": 4.8,
+      "reviewsCount": 52,
+      "badge": "Quốc dân 2K",
+      "image": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=400&q=80",
+      "description": "Độ chuẩn màu 100% sRGB phù hợp cả chơi game lẫn chỉnh sửa ảnh chuyên nghiệp.",
+      "specs": {
+        "brand": "ViewSonic",
+        "size": "27 inch",
+        "resolution": "2K QHD (2560x1440)",
+        "panel": "Fast IPS",
+        "refreshRate": "170Hz",
+        "warranty": "36 Tháng"
+      }
+    },
+    {
+      "id": "comp_mon_aoc_24g2sp",
+      "name": "Màn Hình AOC 24G2SP 23.8 inch Full HD IPS 165Hz 1ms",
+      "category": "cat_monitors",
+      "price": 3190000,
+      "originalPrice": 3600000,
+      "stockQuantity": 50,
+      "rating": 4.8,
+      "reviewsCount": 115,
+      "badge": "Vua phân khúc",
+      "image": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=400&q=80",
+      "description": "Màn hình Gaming 165Hz quốc dân cho sinh viên và game thủ FPS.",
+      "specs": {
+        "brand": "AOC",
+        "size": "23.8 inch",
+        "resolution": "Full HD (1920x1080)",
+        "panel": "IPS",
+        "refreshRate": "165Hz",
+        "warranty": "36 Tháng"
+      }
+    },
+    {
+      "id": "deal-ultra-7-5070",
+      "name": "PC TTG GAMING LUXURY ULTRA 7 270K PLUS - RTX 5070",
+      "category": "gaming",
+      "price": 67980000,
+      "originalPrice": 69900000,
+      "rating": 4.95,
+      "reviewsCount": 15,
+      "stockQuantity": 10,
+      "badge": "DEAL HOT",
+      "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800&q=80",
+        "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=800&q=80",
+        "https://images.unsplash.com/photo-1547082299-de196ea013d6?w=800&q=80"
+      ],
+      "description": "Cấu hình đỉnh cao trang bị Intel Core Ultra 7 kết hợp RTX 5070 thế hệ mới nhất, mang lại hiệu năng đồ họa đột phá.",
+      "specs": {
+        "cpu": "Intel Core Ultra 7 270K (20 Nhân, Up to 5.5GHz)",
+        "gpu": "NVIDIA GeForce RTX 5070 12GB GDDR7 Next-Gen",
+        "ram": "32GB DDR5 6400MHz G.Skill Trident Z5 RGB",
+        "ssd": "1TB Samsung 990 PRO NVMe Gen4 (7450MB/s)",
+        "mainboard": "MSI Z890 GAMING PLUS WIFI DDR5",
+        "psu": "Corsair RM850x Shift 850W 80 Plus Gold",
+        "cooler": "Deepcool LT720 360mm High-Performance AIO",
+        "case_name": "Lian Li O11 Vision Chrome Panoramic",
+        "warranty": "36 Tháng Chính Hãng",
+        "gallery": [
+          "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=800&q=80",
+          "https://images.unsplash.com/photo-1547082299-de196ea013d6?w=800&q=80"
+        ]
+      }
+    },
+    {
+      "id": "pc-gaming-i9-4090-liquid",
+      "name": "NAT TITAN GAMING I9 14900KS / RTX 4090 24GB LIQUID",
+      "category": "gaming",
+      "price": 115000000,
+      "originalPrice": 125000000,
+      "rating": 5,
+      "reviewsCount": 15,
+      "stockQuantity": 10,
+      "badge": "ULTIMATE FLAGSHIP",
+      "image": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=800&q=80",
+        "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800&q=80",
+        "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=800&q=80"
+      ],
+      "description": "Cỗ máy chơi game mạnh nhất hành tinh với tản nhiệt nước Custom cao cấp, quái vật RTX 4090 24GB cân mọi game 4K 144Hz Ray Tracing.",
+      "specs": {
+        "cpu": "Intel Core i9-14900KS Special Edition 6.2GHz",
+        "gpu": "ASUS ROG Matrix Platinum GeForce RTX 4090 24GB",
+        "ram": "64GB (2x32GB) DDR5 7200MHz G.Skill Trident Z5 RGB",
+        "ssd": "2TB Samsung 990 PRO NVMe Gen4 (7450MB/s)",
+        "mainboard": "ASUS ROG MAXIMUS Z790 HERO",
+        "psu": "Seasonic Prime TX-1300 1300W Titanium ATX 3.0",
+        "cooler": "EKWB Custom Water Cooling Hard-Tube Loop",
+        "case_name": "Lian Li V3000 Plus Super Tower",
+        "warranty": "36 Tháng VIP 1 Đổi 1 Tại Nhà",
+        "gallery": [
+          "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800&q=80",
+          "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=800&q=80"
+        ]
+      }
+    },
+    {
+      "id": "pc-gaming-r5-4060ti",
+      "name": "NAT CYBER GAMING RYZEN 5 7600 / RTX 4060 Ti 8GB",
+      "category": "gaming",
+      "price": 26500000,
+      "originalPrice": 28900000,
+      "rating": 4.86,
+      "reviewsCount": 15,
+      "stockQuantity": 10,
+      "badge": "POPULAR CHOICE",
+      "image": "https://images.unsplash.com/photo-1547082299-de196ea013d6?w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1547082299-de196ea013d6?w=800&q=80",
+        "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=800&q=80"
+      ],
+      "description": "Nền tảng AM5 DDR5 thời thượng, card RTX 4060 Ti hỗ trợ DLSS 3 Frame Generation chiến mượt game AAA 2K sắc nét.",
+      "specs": {
+        "cpu": "AMD Ryzen 5 7600 (6 Nhân 12 Luồng, Up to 5.1GHz)",
+        "gpu": "Gigabyte GeForce RTX 4060 Ti EAGLE OC 8GB",
+        "ram": "32GB (2x16GB) DDR5 5600MHz Kingston Fury",
+        "ssd": "1TB Kioxia Exceria Plus G3 NVMe Gen4",
+        "mainboard": "Gigabyte B650M GAMING PLUS WIFI",
+        "psu": "Deepcool PK750D 750W 80 Plus Bronze",
+        "cooler": "ID-Cooling SE-207-XT Black Dual Tower",
+        "case_name": "Montech Air 100 ARGB Black",
+        "warranty": "36 Tháng Chính Hãng",
+        "gallery": [
+          "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=800&q=80"
+        ]
+      }
+    },
+    {
+      "id": "deal-ryzen-7-9800x3d",
+      "name": "PC TTG AMD GAMING LUXURY RYZEN 7 9800X3D",
+      "category": "pc-amd",
+      "price": 72500000,
+      "originalPrice": 75900000,
+      "rating": 4.96,
+      "reviewsCount": 15,
+      "stockQuantity": 10,
+      "badge": "AMD BEST GAMING",
+      "image": "https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=800&q=80",
+        "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=800&q=80"
+      ],
+      "description": "Vua chơi game thế hệ mới Ryzen 7 9800X3D với công nghệ 2nd Gen 3D V-Cache mở khóa hệ số nhân hoàn toàn, FPS cực đại không đối thủ.",
+      "specs": {
+        "cpu": "AMD Ryzen 7 9800X3D (8C/16T, 104MB Cache, 5.2GHz)",
+        "gpu": "Sapphire Nitro+ AMD Radeon RX 7900 XTX Vapor-X 24GB",
+        "ram": "32GB (2x16GB) DDR5 6000MHz CL30 G.Skill Flare X5",
+        "ssd": "2TB WD Black SN850X NVMe PCIe Gen4 (7300MB/s)",
+        "mainboard": "ASUS ROG STRIX X670E-F GAMING WIFI",
+        "psu": "MSI MAG A1000G PCIE5 1000W 80 Plus Gold",
+        "cooler": "NZXT Kraken Elite 360 RGB LCD Display",
+        "case_name": "Phanteks NV5 Black ARGB Panoramic",
+        "warranty": "36 Tháng Toàn Bộ Linh Kiện",
+        "gallery": [
+          "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=800&q=80"
+        ]
+      }
+    },
+    {
+      "id": "pc-amd-phoenix-7500f",
+      "name": "NAT AMD PHOENIX RYZEN 5 7500F / RX 6700 XT 12GB",
+      "category": "pc-amd",
+      "price": 19890000,
+      "originalPrice": 22000000,
+      "rating": 4.8,
+      "reviewsCount": 15,
+      "stockQuantity": 10,
+      "badge": "BUDGET CHAMPION",
+      "image": "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=800&q=80",
+        "https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=800&q=80"
+      ],
+      "description": "Bộ đôi AM5 hiệu năng giá rẻ xuất sắc với 12GB VRAM thoải mái kéo texture game nặng ở độ phân giải Full HD / 2K mượt mà.",
+      "specs": {
+        "cpu": "AMD Ryzen 5 7500F (6 Nhân 12 Luồng, 5.0GHz)",
+        "gpu": "AMD Radeon RX 6700 XT 12GB GDDR6 (Tri-Fan)",
+        "ram": "16GB (2x8GB) DDR5 5200MHz Lexar Ares",
+        "ssd": "512GB Kingston NV2 NVMe M.2 2280",
+        "mainboard": "ASRock B650M-HDV/M.2 DDR5",
+        "psu": "FSP HV PRO 650W 80 Plus Bronze",
+        "cooler": "Thermalright Peerless Assassin 120 SE",
+        "case_name": "Xigmatek Endorphin M ARGB Black",
+        "warranty": "36 Tháng Chính Hãng",
+        "gallery": [
+          "https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=800&q=80"
+        ]
+      }
+    },
+    {
+      "id": "pc-amd-threadripper-7995wx",
+      "name": "NAT AMD THREADRIPPER PRO 7995WX EXTREME 96 CORES",
+      "category": "pc-amd",
+      "price": 210000000,
+      "originalPrice": 225000000,
+      "rating": 5,
+      "reviewsCount": 15,
+      "stockQuantity": 10,
+      "badge": "MONSTER POWER",
+      "image": "https://images.unsplash.com/photo-1587202372634-32705e3bf49c?w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1587202372634-32705e3bf49c?w=800&q=80",
+        "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=800&q=80"
+      ],
+      "description": "Siêu máy trạm 96 nhân 192 luồng AMD Threadripper PRO 7995WX, xử lý render phim trường Hollywood, mô phỏng khí động học và biên dịch code cực lớn.",
+      "specs": {
+        "cpu": "AMD Ryzen Threadripper PRO 7995WX (96 Nhân 192 Luồng)",
+        "gpu": "Dual NVIDIA RTX 4090 24GB NVLink Ready (48GB VRAM)",
+        "ram": "256GB (8x32GB) DDR5 4800MHz ECC Registered 8-Channel",
+        "ssd": "4TB (2x2TB) Samsung 990 PRO RAID 0 (14000MB/s)",
+        "mainboard": "ASUS Pro WS WRX90E-SAGE SE (sTR5)",
+        "psu": "Super Flower Leadex Titanium 2000W",
+        "cooler": "SilverStone IceMyst 420 TR5 AIO Liquid Cooler",
+        "case_name": "Thermaltake Core W200 Super Tower",
+        "warranty": "36 Tháng Tận Nơi 24/7",
+        "gallery": [
+          "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=800&q=80"
+        ]
+      }
+    },
+    {
+      "id": "ws-pro-i9-14900k-4080s",
+      "name": "NAT WORKSTATION PRO I9 14900K / 64GB DDR5 / RTX 4080 SUPER 16GB",
+      "category": "workstation",
+      "price": 69900000,
+      "originalPrice": 74900000,
+      "rating": 4.94,
+      "reviewsCount": 15,
+      "stockQuantity": 10,
+      "badge": "PRO 3D RENDER",
+      "image": "https://images.unsplash.com/photo-1587202372634-32705e3bf49c?w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1587202372634-32705e3bf49c?w=800&q=80",
+        "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800&q=80"
+      ],
+      "description": "Chuyên dụng dựng hình 3DsMax, Maya, Blender, Render Vray, Corona, Lumion và dựng phim 4K/8K Premiere, After Effects mượt mà.",
+      "specs": {
+        "cpu": "Intel Core i9-14900K (24 Nhân 32 Luồng, Up to 6.0GHz)",
+        "gpu": "PNY GeForce RTX 4080 SUPER 16GB XLR8 Gaming VERTO",
+        "ram": "64GB (2x32GB) DDR5 6000MHz Kingston Fury Beast Black",
+        "ssd": "2TB Kingston KC3000 PCIe 4.0 NVMe (7000MB/s)",
+        "mainboard": "ASUS ProArt Z790-CREATOR WIFI",
+        "psu": "Super Flower Leadex VII Gold 1000W ATX 3.0",
+        "cooler": "Deepcool LT720 360mm High-Performance AIO",
+        "case_name": "Fractal Design Meshify 2 XL Black Solid",
+        "warranty": "36 Tháng 1 Đổi 1",
+        "gallery": [
+          "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800&q=80"
+        ]
+      }
+    },
+    {
+      "id": "ws-dual-xeon-a5000",
+      "name": "NAT DUAL XEON PLATINUM 8280 / 128GB ECC / RTX A5000 24GB",
+      "category": "workstation",
+      "price": 89000000,
+      "originalPrice": 96000000,
+      "rating": 4.97,
+      "reviewsCount": 15,
+      "stockQuantity": 10,
+      "badge": "SERVER CLASS",
+      "image": "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=800&q=80",
+        "https://images.unsplash.com/photo-1587202372634-32705e3bf49c?w=800&q=80"
+      ],
+      "description": "Máy trạm 2 CPU Xeon Platinum tổng 56 nhân 112 luồng, RAM ECC sửa lỗi tự động, card đồ họa chuyên nghiệp NVIDIA RTX A5000 bền bỉ 24/7.",
+      "specs": {
+        "cpu": "Dual Intel Xeon Platinum 8280 (56 Nhân 112 Luồng, 77MB Cache)",
+        "gpu": "Leadtek NVIDIA RTX A5000 24GB GDDR6 ECC",
+        "ram": "128GB (4x32GB) DDR4 2933MHz ECC Registered",
+        "ssd": "2TB Samsung PM9A1 NVMe PCIe Gen4 (OEM 980 Pro)",
+        "mainboard": "Supermicro X11DAi-N Dual Socket LGA3647",
+        "psu": "Corsair HX1200 1200W 80 Plus Platinum",
+        "cooler": "Dual Noctua NH-U14S DX-3647 Silent Coolers",
+        "case_name": "Phanteks Enthoo Pro 2 Server Edition",
+        "warranty": "36 Tháng Bảo Hành Vàng",
+        "gallery": [
+          "https://images.unsplash.com/photo-1587202372634-32705e3bf49c?w=800&q=80"
+        ]
+      }
+    },
+    {
+      "id": "ws-architecture-r9-7950x",
+      "name": "NAT ARCHITECTURE RYZEN 9 7950X / 64GB / RTX 4070 Ti SUPER",
+      "category": "workstation",
+      "price": 52900000,
+      "originalPrice": 56500000,
+      "rating": 4.91,
+      "reviewsCount": 15,
+      "stockQuantity": 10,
+      "badge": "ARCHITECTURE PRO",
+      "image": "https://images.unsplash.com/photo-1547082299-de196ea013d6?w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1547082299-de196ea013d6?w=800&q=80",
+        "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800&q=80"
+      ],
+      "description": "Tối ưu cho kiến trúc sư và kỹ sư xây dựng chạy Revit, AutoCAD, Sketchup, D5 Render và Enscape thời gian thực cực nhanh.",
+      "specs": {
+        "cpu": "AMD Ryzen 9 7950X (16 Nhân 32 Luồng, Up to 5.7GHz)",
+        "gpu": "MSI GeForce RTX 4070 Ti SUPER 16GB VENTUS 3X",
+        "ram": "64GB (2x32GB) DDR5 6000MHz Corsair Vengeance",
+        "ssd": "1TB Samsung 980 PRO NVMe PCIe 4.0",
+        "mainboard": "MSI MAG X670E TOMAHAWK WIFI",
+        "psu": "Seasonic Focus GX-850 850W Gold",
+        "cooler": "Thermalright Frozen Horizon 360 Black",
+        "case_name": "Antec P20C High-Airflow Mid-Tower",
+        "warranty": "36 Tháng Tận Nơi",
+        "gallery": [
+          "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800&q=80"
+        ]
+      }
+    },
+    {
+      "id": "ws-studio-creator-i7-14700k",
+      "name": "NAT STUDIO CREATOR I7 14700K / 32GB / RTX 4070 12GB",
+      "category": "workstation",
+      "price": 38500000,
+      "originalPrice": 41900000,
+      "rating": 4.88,
+      "reviewsCount": 15,
+      "stockQuantity": 10,
+      "badge": "CONTENT CREATOR",
+      "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80",
+        "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800&q=80"
+      ],
+      "description": "Lựa chọn số 1 cho các Studio sáng tạo nội dung YouTube, TikTok, chỉnh sửa ảnh Photoshop, Lightroom và dựng video CapCut/Premiere 4K.",
+      "specs": {
+        "cpu": "Intel Core i7-14700K (20 Nhân 28 Luồng, Up to 5.6GHz)",
+        "gpu": "Gigabyte GeForce RTX 4070 WINDFORCE OC 12GB",
+        "ram": "32GB (2x16GB) DDR5 5600MHz Kingston Fury",
+        "ssd": "1TB Kioxia Exceria Plus G3 NVMe Gen4",
+        "mainboard": "ASUS TUF GAMING B760-PLUS WIFI DDR5",
+        "psu": "Corsair CX750M 750W 80 Plus Bronze",
+        "cooler": "Thermalright Frost Commander 140 Dual Tower",
+        "case_name": "Montech Air 903 MAX White",
+        "warranty": "36 Tháng Toàn Diện",
+        "gallery": [
+          "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800&q=80"
+        ]
+      }
+    },
+    {
+      "id": "pc-office-pro-i5-12400",
+      "name": "NAT OFFICE PRO I5 12400 / 16GB RAM / 512GB NVMe / 550W",
+      "category": "office",
+      "price": 9490000,
+      "originalPrice": 10900000,
+      "rating": 4.85,
+      "reviewsCount": 15,
+      "stockQuantity": 10,
+      "badge": "BEST FOR WORK",
+      "image": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=800&q=80",
+        "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&q=80"
+      ],
+      "description": "Máy tính đồng bộ văn phòng cao cấp, xử lý mượt mà hàng trăm tab Chrome, Excel kế toán bảng tính nặng và phần mềm ERP quản lý kho.",
+      "specs": {
+        "cpu": "Intel Core i5-12400 (6 Nhân 12 Luồng, Up to 4.4GHz, Đồ họa UHD 730)",
+        "gpu": "Intel UHD Graphics 730 Tích Hợp (Hỗ trợ 3 Màn Hình 4K)",
+        "ram": "16GB DDR4 3200MHz Kingston Fury Black",
+        "ssd": "512GB Kingston NV2 NVMe M.2 2280",
+        "mainboard": "ASUS PRIME H610M-K D4 Bền Bỉ",
+        "psu": "Antec Atom V550 550W Công Suất Thực",
+        "cooler": "Intel Stock Cooler Êm Ái",
+        "case_name": "Xigmatek XAS-20 Văn Phòng Lịch Sự",
+        "warranty": "24 Tháng 1 Đổi 1 Tại Chỗ",
+        "gallery": [
+          "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&q=80"
+        ]
+      }
+    },
+    {
+      "id": "pc-office-slim-i3-12100",
+      "name": "NAT OFFICE SLIM I3 12100 / 8GB RAM / 256GB SSD Siêu Bền",
+      "category": "office",
+      "price": 6890000,
+      "originalPrice": 7990000,
+      "rating": 4.8,
+      "reviewsCount": 15,
+      "stockQuantity": 10,
+      "badge": "TIẾT KIỆM ĐIỆN",
+      "image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&q=80",
+        "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=800&q=80"
+      ],
+      "description": "Giải pháp kinh tế cho trường học, bệnh viện, cơ quan hành chính và nhân viên văn phòng nhập liệu với độ ổn định 10 năm không hỏng vặt.",
+      "specs": {
+        "cpu": "Intel Core i3-12100 (4 Nhân 8 Luồng, Up to 4.3GHz)",
+        "gpu": "Intel UHD Graphics 730",
+        "ram": "8GB DDR4 3200MHz Crucial Micron",
+        "ssd": "256GB SSD Lexar NS100 Sata 3 (550MB/s)",
+        "mainboard": "MSI PRO H610M-E DDR4",
+        "psu": "Aigo VK450 450W Ổn Định",
+        "cooler": "Intel Box Original",
+        "case_name": "Vỏ Case Văn Phòng Nhỏ Gọn Siêu Bền",
+        "warranty": "24 Tháng Chính Hãng",
+        "gallery": [
+          "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=800&q=80"
+        ]
+      }
+    },
+    {
+      "id": "pc-office-enterprise-i7-13700",
+      "name": "NAT ENTERPRISE CORE I7 13700 / 32GB / 1TB NVMe Gen4",
+      "category": "office",
+      "price": 17900000,
+      "originalPrice": 19900000,
+      "rating": 4.92,
+      "reviewsCount": 15,
+      "stockQuantity": 10,
+      "badge": "DOANH NGHIỆP",
+      "image": "https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=800&q=80",
+        "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=800&q=80"
+      ],
+      "description": "Cỗ máy văn phòng cấp quản lý, giám đốc và phòng tài chính chứng khoán, xử lý dữ liệu Big Data, Macro VBA siêu tốc độ.",
+      "specs": {
+        "cpu": "Intel Core i7-13700 (16 Nhân 24 Luồng, Up to 5.2GHz)",
+        "gpu": "Intel UHD Graphics 770 Cao Cấp",
+        "ram": "32GB (2x16GB) DDR4 3200MHz Corsair Vengeance LPX",
+        "ssd": "1TB Samsung 980 NVMe PCIe 3.0 (3500MB/s)",
+        "mainboard": "ASUS PRIME B760M-A WIFI DDR4",
+        "psu": "Cooler Master Elite V4 600W 80 Plus",
+        "cooler": "Thermalright Assassin King 120 SE White",
+        "case_name": "Cooler Master Silencio S400 Cách Âm Tuyệt Đối",
+        "warranty": "36 Tháng Bảo Hành Doanh Nghiệp",
+        "gallery": [
+          "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=800&q=80"
+        ]
+      }
+    },
+    {
+      "id": "pc-mini-itx-gaming-7800x3d",
+      "name": "NAT MINI ITX GAMING RYZEN 7 7800X3D / RTX 4070 DUAL",
+      "category": "pc-mini",
+      "price": 41500000,
+      "originalPrice": 45000000,
+      "rating": 4.93,
+      "reviewsCount": 15,
+      "stockQuantity": 10,
+      "badge": "ITX TINH TẾ",
+      "image": "https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=800&q=80",
+        "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=800&q=80"
+      ],
+      "description": "Cỗ máy chơi game mạnh mẽ nằm gọn trong thể tích chỉ 11 Lít, xách tay đi du lịch hoặc đặt gọn gàng cạnh TV phòng khách.",
+      "specs": {
+        "cpu": "AMD Ryzen 7 7800X3D (8 Nhân 16 Luồng, 3D V-Cache)",
+        "gpu": "ASUS Dual GeForce RTX 4070 EVO OC 12GB GDDR6X",
+        "ram": "32GB (2x16GB) DDR5 6000MHz Corsair Vengeance ITX",
+        "ssd": "1TB Samsung 990 PRO NVMe Gen4",
+        "mainboard": "ASUS ROG STRIX B650E-I GAMING WIFI Mini-ITX",
+        "psu": "Corsair SF750 750W 80 Plus Platinum SFX Nhỏ Gọn",
+        "cooler": "Thermalright AXP90-X47 Full Copper Low Profile",
+        "case_name": "FormD T1 V2.1 Nhôm Anode Đen Cao Cấp (9.95L)",
+        "warranty": "36 Tháng Tận Tâm",
+        "gallery": [
+          "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=800&q=80"
+        ]
+      }
+    },
+    {
+      "id": "pc-mini-cube-i5-14400-4060",
+      "name": "NAT MINI CUBE I5 14400 / RTX 4060 ITX VỎ NHÔM PHAY",
+      "category": "pc-mini",
+      "price": 23900000,
+      "originalPrice": 25900000,
+      "rating": 4.87,
+      "reviewsCount": 15,
+      "stockQuantity": 10,
+      "badge": "NHỎ GỌN ĐẸP",
+      "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80",
+        "https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=800&q=80"
+      ],
+      "description": "Thiết kế dạng hộp Cube nhôm CNC tinh xảo, hiệu năng cân mượt mọi game và đồ họa với kích thước chỉ bằng chiếc hộp giày.",
+      "specs": {
+        "cpu": "Intel Core i5-14400 (10 Nhân 16 Luồng, Up to 4.7GHz)",
+        "gpu": "Gigabyte GeForce RTX 4060 D6 8GB Mini-ITX",
+        "ram": "16GB DDR5 5600MHz Kingston Fury Beast",
+        "ssd": "512GB Kingston KC3000 PCIe 4.0 NVMe",
+        "mainboard": "MSI MPG B760I EDGE WIFI DDR5",
+        "psu": "FSP Dagger Pro 650W SFX Gold",
+        "cooler": "Noctua NH-L9i-17xx Siêu Êm Ái",
+        "case_name": "Jonsbo T8 Plus Nhôm Kính Cường Lực Có Quai Xách",
+        "warranty": "36 Tháng Chính Hãng",
+        "gallery": [
+          "https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=800&q=80"
+        ]
+      }
+    },
+    {
+      "id": "pc-mini-nuc-8845hs",
+      "name": "NAT NUC MINI DESKTOP RYZEN 7 8845HS / RADEON 780M",
+      "category": "pc-mini",
+      "price": 13500000,
+      "originalPrice": 15000000,
+      "rating": 4.89,
+      "reviewsCount": 15,
+      "stockQuantity": 10,
+      "badge": "SIÊU NHỎ BỎ TÚI",
+      "image": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=800&q=80",
+        "https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=800&q=80"
+      ],
+      "description": "Kích thước siêu nhỏ chỉ 13x13cm nhưng trang bị CPU Ryzen AI 8000 Series 8 nhân 16 luồng, đồ họa Radeon 780M chiến mượt eSports.",
+      "specs": {
+        "cpu": "AMD Ryzen 7 8845HS (8C/16T, 5.1GHz, NPU 38 TOPS AI)",
+        "gpu": "AMD Radeon 780M RDNA 3 Integrated Graphics",
+        "ram": "32GB DDR5 5600MHz Dual Channel SODIMM",
+        "ssd": "1TB M.2 2280 NVMe PCIe 4.0",
+        "mainboard": "Custom Mini PC Motherboard (WiFi 6E + BT 5.3 + Dual 2.5G LAN)",
+        "psu": "Adapter 120W Type-C Power Delivery",
+        "cooler": "Tản nhiệt buồng hơi Vapor Chamber + Quạt Turbo",
+        "case_name": "Vỏ Hợp Kim Nhôm Cắt CNC Liền Khối 0.8L",
+        "warranty": "24 Tháng Đổi Mới",
+        "gallery": [
+          "https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=800&q=80"
+        ]
+      }
+    },
+    {
+      "id": "pc-ai-deep-learning-3x4090",
+      "name": "NAT AI DEEP LEARNING TRIPLE RTX 4090 72GB VRAM / XEON W9",
+      "category": "ai",
+      "price": 280000000,
+      "originalPrice": 299000000,
+      "rating": 5,
+      "reviewsCount": 15,
+      "stockQuantity": 10,
+      "badge": "AI SUPERCOMPUTER",
+      "image": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=800&q=80",
+        "https://images.unsplash.com/photo-1587202372634-32705e3bf49c?w=800&q=80"
+      ],
+      "description": "Trạm huấn luyện mô hình ngôn ngữ lớn LLM (Llama 3, Mistral), Stable Diffusion XL và Deep Learning chuyên sâu với 72GB VRAM tốc độ cao.",
+      "specs": {
+        "cpu": "Intel Xeon w9-3495X (56 Nhân 112 Luồng, 105MB Cache)",
+        "gpu": "3x NVIDIA GeForce RTX 4090 24GB Blower Edition (Tổng 72GB VRAM)",
+        "ram": "256GB (8x32GB) DDR5 4800MHz ECC Registered RDIMM",
+        "ssd": "4TB (2x2TB) Samsung 990 PRO NVMe Gen4 RAID",
+        "mainboard": "ASUS Pro WS W790E-SAGE SE",
+        "psu": "Dual Corsair AX1600i Titanium (Tổng 3200W)",
+        "cooler": "Custom Water Loop 3 Két Nước 480mm Đồng Nguyên Khối",
+        "case_name": "Mountain Jade Super AI Server Chassis",
+        "warranty": "36 Tháng Hỗ Trợ Kỹ Thuật AI 24/7",
+        "gallery": [
+          "https://images.unsplash.com/photo-1587202372634-32705e3bf49c?w=800&q=80"
+        ]
+      }
+    },
+    {
+      "id": "pc-ai-dual-4080s-9950x",
+      "name": "NAT AI WORKSTATION RYZEN 9 9950X / DUAL RTX 4080 SUPER 32GB VRAM",
+      "category": "ai",
+      "price": 128000000,
+      "originalPrice": 135000000,
+      "rating": 4.98,
+      "reviewsCount": 15,
+      "stockQuantity": 10,
+      "badge": "AI RESEARCHER",
+      "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800&q=80",
+        "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=800&q=80"
+      ],
+      "description": "Tối ưu cho doanh nghiệp và viện nghiên cứu Fine-tune mô hình AI, chạy inference tự động hóa và xử lý thị giác máy tính Computer Vision.",
+      "specs": {
+        "cpu": "AMD Ryzen 9 9950X (16 Nhân 32 Luồng, Kiến trúc Zen 5, Up to 5.7GHz)",
+        "gpu": "Dual ASUS TUF Gaming RTX 4080 SUPER 16GB (Tổng 32GB VRAM)",
+        "ram": "128GB (4x32GB) DDR5 6000MHz Kingston Fury Beast",
+        "ssd": "2TB Samsung 990 PRO NVMe PCIe 4.0",
+        "mainboard": "ASUS ProArt X670E-CREATOR WIFI",
+        "psu": "Corsair HX1500i 1500W 80 Plus Platinum",
+        "cooler": "EKWB AIO Nucleus CR360 Dark",
+        "case_name": "Fractal Design Torrent Black Solid Dual GPU",
+        "warranty": "36 Tháng Tận Nơi Toàn Quốc",
+        "gallery": [
+          "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=800&q=80"
+        ]
+      }
+    },
+    {
+      "id": "pc-ai-developer-i9-14900k-4090",
+      "name": "NAT AI DEVELOPER STUDIO I9 14900K / RTX 4090 24GB AI ACCEL",
+      "category": "ai",
+      "price": 92000000,
+      "originalPrice": 98000000,
+      "rating": 4.96,
+      "reviewsCount": 15,
+      "stockQuantity": 10,
+      "badge": "AI DEV CHOICE",
+      "image": "https://images.unsplash.com/photo-1587202372634-32705e3bf49c?w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1587202372634-32705e3bf49c?w=800&q=80",
+        "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=800&q=80"
+      ],
+      "description": "Trạm lập trình trí tuệ nhân tạo cá nhân, hỗ trợ PyTorch, TensorFlow, CUDA toolkit, chạy song song Docker container mượt mà.",
+      "specs": {
+        "cpu": "Intel Core i9-14900K (24 Nhân 32 Luồng, 6.0GHz)",
+        "gpu": "MSI GeForce RTX 4090 SUPRIM X 24GB GDDR6X",
+        "ram": "64GB (2x32GB) DDR5 6400MHz G.Skill Ripjaws S5",
+        "ssd": "2TB Kingston KC3000 PCIe 4.0 (7000MB/s)",
+        "mainboard": "MSI MEG Z790 ACE DDR5",
+        "psu": "MSI MEG Ai1300P PCIE5 1300W Platinum",
+        "cooler": "Arctic Liquid Freezer III 360 A-RGB",
+        "case_name": "Lian Li O11 Dynamic EVO XL Black",
+        "warranty": "36 Tháng Bảo Hành Siêu Tốc",
+        "gallery": [
+          "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=800&q=80"
+        ]
+      }
+    },
+    {
+      "id": "pc-virtualization-dual-xeon-2696v4",
+      "name": "NAT DUAL XEON E5-2696v4 44 NHÂN 88 LUỒNG / 128GB ECC / GTX 1660 Ti",
+      "category": "virtualization",
+      "price": 18500000,
+      "originalPrice": 21000000,
+      "rating": 4.88,
+      "reviewsCount": 15,
+      "stockQuantity": 10,
+      "badge": "CHẠY 40 TAB NOX",
+      "image": "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=800&q=80",
+        "https://images.unsplash.com/photo-1587202372634-32705e3bf49c?w=800&q=80"
+      ],
+      "description": "Chuyên dụng cày game giả lập Android (NoxPlayer, LDPlayer) chạy 35-45 tab mượt mà, render đồ họa 24/7 cày coin, treo tool MMO bền bỉ.",
+      "specs": {
+        "cpu": "Dual Intel Xeon E5-2696 v4 (44 Nhân 88 Luồng, 110MB Cache)",
+        "gpu": "NVIDIA GeForce GTX 1660 Ti 6GB GDDR6 (Nhiều Cổng Xuất)",
+        "ram": "128GB (4x32GB) DDR4 ECC Registered Bus 2400",
+        "ssd": "512GB NVMe M.2 Tốc Độ Cao",
+        "mainboard": "Huananzhi X99 Dual F8D Plus Bền Bỉ",
+        "psu": "Sama 750W 80 Plus Gold Công Suất Thực",
+        "cooler": "Dual Tản Khí 6 Ống Đồng Led RGB",
+        "case_name": "Vỏ Case E-ATX Kính Cường Lực Kèm 6 Fan Led",
+        "warranty": "24 Tháng Toàn Bộ Linh Kiện",
+        "gallery": [
+          "https://images.unsplash.com/photo-1587202372634-32705e3bf49c?w=800&q=80"
+        ]
+      }
+    },
+    {
+      "id": "pc-virtualization-dual-xeon-8176",
+      "name": "NAT DUAL XEON PLATINUM 8176 56 NHÂN 112 LUỒNG / 256GB ECC / RTX 3060 12GB",
+      "category": "virtualization",
+      "price": 34900000,
+      "originalPrice": 38000000,
+      "rating": 4.95,
+      "reviewsCount": 15,
+      "stockQuantity": 10,
+      "badge": "CHẠY 70+ TAB NOX",
+      "image": "https://images.unsplash.com/photo-1587202372634-32705e3bf49c?w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1587202372634-32705e3bf49c?w=800&q=80",
+        "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=800&q=80"
+      ],
+      "description": "Dàn máy cày MMO khủng nhất hiện nay, gánh mượt 60-80 cửa sổ giả lập mượt mà không giật lag, dung lượng 256GB RAM thoải mái đa nhiệm.",
+      "specs": {
+        "cpu": "Dual Intel Xeon Platinum 8176 (56 Nhân 112 Luồng, 77MB Cache)",
+        "gpu": "NVIDIA GeForce RTX 3060 12GB GDDR6 (12GB VRAM Cân Tab)",
+        "ram": "256GB (8x32GB) DDR4 ECC Registered Bus 2666",
+        "ssd": "1TB NVMe PCIe Gen4 Tốc Độ 5000MB/s",
+        "mainboard": "Mainboard Dual LGA3647 Workstation Server",
+        "psu": "Xigmatek Thor T1000 1000W 80 Plus Gold",
+        "cooler": "Dual Tản Tháp Đôi 14cm 8 Ống Đồng Tản Siêu Mát",
+        "case_name": "Server Case E-ATX Khí Động Học Cực Mát",
+        "warranty": "24 Tháng 1 Đổi 1",
+        "gallery": [
+          "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=800&q=80"
+        ]
+      }
+    },
+    {
+      "id": "pc-virtualization-r9-7900-64gb",
+      "name": "NAT MULTI-INSTANCE RYZEN 9 7900 / 64GB DDR5 / RTX 4060 8GB",
+      "category": "virtualization",
+      "price": 28900000,
+      "originalPrice": 31500000,
+      "rating": 4.9,
+      "reviewsCount": 15,
+      "stockQuantity": 10,
+      "badge": "CÔNG NGHỆ MỚI",
+      "image": "https://images.unsplash.com/photo-1547082299-de196ea013d6?w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1547082299-de196ea013d6?w=800&q=80",
+        "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=800&q=80"
+      ],
+      "description": "Sử dụng kiến trúc Zen 4 tiến trình 5nm tiết kiệm điện năng chỉ 65W, mát mẻ, chạy giả lập và máy ảo VMware/VirtualBox cực mượt 24/7.",
+      "specs": {
+        "cpu": "AMD Ryzen 9 7900 (12 Nhân 24 Luồng, 5.4GHz, TDP 65W)",
+        "gpu": "ASUS Dual GeForce RTX 4060 8GB GDDR6",
+        "ram": "64GB (2x32GB) DDR5 5600MHz Kingston Fury Beast",
+        "ssd": "1TB Kingston KC3000 Gen4 (7000MB/s)",
+        "mainboard": "MSI PRO B650M-A WIFI DDR5",
+        "psu": "MSI MAG A750GL 750W 80 Plus Gold",
+        "cooler": "Thermalright Phantom Spirit 120 SE",
+        "case_name": "Montech Air 903 Base Black",
+        "warranty": "36 Tháng Chính Hãng",
+        "gallery": [
+          "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=800&q=80"
+        ]
+      }
+    },
+    {
+      "id": "combo-gaming-i5-12400f-144hz",
+      "name": "FULL BỘ PC GAMING I5 12400F + MÀN HÌNH 24\" IPS 144Hz + PHÍM CHUỘT RGB",
+      "category": "pc-combo",
+      "price": 16990000,
+      "originalPrice": 19500000,
+      "rating": 4.92,
+      "reviewsCount": 15,
+      "stockQuantity": 10,
+      "badge": "TRỌN GÓI SIÊU HỜI",
+      "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800&q=80",
+        "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=800&q=80"
+      ],
+      "description": "Trọn gói chỉ việc cắm điện là dùng! Gồm case PC I5 12400F / GTX 1660 Super, màn hình Gaming 24 inch 144Hz IPS và bộ phím chuột cơ RGB cực ngầu.",
+      "specs": {
+        "cpu": "Intel Core i5-12400F (6C/12T, 4.4GHz)",
+        "gpu": "NVIDIA GeForce GTX 1660 Super 6GB GDDR6",
+        "ram": "16GB DDR4 3200MHz RGB",
+        "ssd": "512GB NVMe M.2 Tốc Độ Cao",
+        "mainboard": "ASUS H610M-K D4",
+        "monitors": "Màn hình Gaming 24 Inch IPS 144Hz 1ms Chân Đế V",
+        "gear": "Bàn phím cơ Blue Switch RGB + Chuột Gaming 7200 DPI + Lót chuột 80x30cm",
+        "warranty": "36 Tháng Case PC / 24 Tháng Màn Hình",
+        "gallery": [
+          "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=800&q=80"
+        ]
+      }
+    },
+    {
+      "id": "combo-office-i3-12100-22inch",
+      "name": "FULL BỘ PC VĂN PHÒNG I3 12100 + MÀN HÌNH 22\" BẢO VỆ MẮT + PHÍM CHUỘT",
+      "category": "pc-combo",
+      "price": 8990000,
+      "originalPrice": 10500000,
+      "rating": 4.86,
+      "reviewsCount": 15,
+      "stockQuantity": 10,
+      "badge": "TRỌN BỘ CÔNG SỞ",
+      "image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&q=80",
+        "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=800&q=80"
+      ],
+      "description": "Giải pháp hoàn hảo đồng bộ cho bàn làm việc, bảo vệ thị lực chống ánh sáng xanh, đi kèm bộ phím chuột văn phòng êm ái chống ồn.",
+      "specs": {
+        "cpu": "Intel Core i3-12100 (4C/8T, 4.3GHz)",
+        "gpu": "Intel UHD Graphics 730 Tích Hợp",
+        "ram": "8GB DDR4 3200MHz",
+        "ssd": "256GB SSD Siêu Tốc",
+        "mainboard": "H610M Bền Bỉ",
+        "monitors": "Màn hình 22 Inch FHD 75Hz Công nghệ chống nháy Flicker-Free",
+        "gear": "Bộ bàn phím chuột Logitech Silent không dây chính hãng",
+        "warranty": "24 Tháng Bảo Hành Tận Nhà",
+        "gallery": [
+          "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=800&q=80"
+        ]
+      }
+    },
+    {
+      "id": "combo-esports-pro-13400f-4060-2k",
+      "name": "FULL BỘ ESPORTS PRO I5 13400F / RTX 4060 + MÀN HÌNH 27\" 2K 180Hz G-SYNC",
+      "category": "pc-combo",
+      "price": 29500000,
+      "originalPrice": 33500000,
+      "rating": 4.96,
+      "reviewsCount": 15,
+      "stockQuantity": 10,
+      "badge": "COMBO GAME THỦ",
+      "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80",
+        "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&q=80"
+      ],
+      "description": "Bộ máy hoàn chỉnh chuẩn tuyển thủ eSports, màn hình 27 inch 2K Fast-IPS 180Hz hiển thị siêu mượt mà không bóng mờ, chiến game đỉnh cao.",
+      "specs": {
+        "cpu": "Intel Core i5-13400F (10 Nhân 16 Luồng)",
+        "gpu": "NVIDIA GeForce RTX 4060 8GB GDDR6",
+        "ram": "32GB DDR4 3200MHz RGB",
+        "ssd": "1TB NVMe PCIe 4.0",
+        "mainboard": "B760M Gaming Wifi",
+        "monitors": "Màn hình Gaming 27 Inch 2K QHD Fast-IPS 180Hz G-Sync Compatible",
+        "gear": "Bàn phím cơ DareU EK87 + Chuột DareU EM901X Không Dây Có Dock Sạc",
+        "warranty": "36 Tháng Trọn Gói",
+        "gallery": [
+          "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&q=80"
+        ]
+      }
+    },
+    {
+      "id": "vga-asus-rog-strix-rtx-4090-24gb",
+      "name": "Card Đồ Họa ASUS ROG Strix GeForce RTX 4090 24GB GDDR6X OC Edition",
+      "category": "components",
+      "price": 54900000,
+      "originalPrice": 58900000,
+      "rating": 4.98,
+      "reviewsCount": 15,
+      "stockQuantity": 10,
+      "badge": "ĐỈNH CAO VGA",
+      "image": "https://images.unsplash.com/photo-1587202372616-b43abea06c2a?w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1587202372616-b43abea06c2a?w=800&q=80"
+      ],
+      "description": "Vua của card đồ họa với khung tản nhiệt đúc nguyên khối, quạt Axial-tech thế hệ mới và phase nguồn siêu bền, chiến game 4K không đối thủ.",
+      "specs": {
+        "gpu": "NVIDIA AD102 (16384 Nhân CUDA)",
+        "vram": "24GB GDDR6X 384-bit (1008 GB/s)",
+        "boost_clock": "2640 MHz (OC Mode)",
+        "power_connectors": "1x 16-pin 12VHPWR",
+        "recommended_psu": "1000W Hoặc Cao Hơn",
+        "warranty": "36 Tháng Chính Hãng ASUS"
+      }
+    },
+    {
+      "id": "cpu-amd-ryzen-7-7800x3d",
+      "name": "Vi Xử Lý AMD Ryzen 7 7800X3D (8C/16T, Up to 5.0GHz, 104MB Cache)",
+      "category": "components",
+      "price": 10490000,
+      "originalPrice": 11900000,
+      "rating": 4.97,
+      "reviewsCount": 15,
+      "stockQuantity": 10,
+      "badge": "VUA CHƠI GAME",
+      "image": "https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=800&q=80"
+      ],
+      "description": "CPU chơi game được săn đón nhất thế giới nhờ công nghệ bộ nhớ đệm xếp chồng 3D V-Cache độc quyền, tối ưu FPS tối đa cho game thủ.",
+      "specs": {
+        "cpu": "8 Nhân 16 Luồng (Zen 4)",
+        "base_clock": "4.2 GHz / Boost 5.0 GHz",
+        "l3_cache": "96MB 3D V-Cache (Tổng 104MB Cache)",
+        "socket": "AM5 (Hỗ trợ DDR5 + PCIe 5.0)",
+        "tdp": "120W",
+        "warranty": "36 Tháng Chính Hãng AMD"
+      }
+    },
+    {
+      "id": "mb-msi-mag-z790-tomahawk-wifi",
+      "name": "Bo Mạch Chủ MSI MAG Z790 TOMAHAWK WIFI DDR5",
+      "category": "components",
+      "price": 7890000,
+      "originalPrice": 8500000,
+      "rating": 4.9,
+      "reviewsCount": 15,
+      "stockQuantity": 10,
+      "badge": "CHIP SET Z790",
+      "image": "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=800&q=80"
+      ],
+      "description": "Nền tảng vững chắc cho CPU Intel Gen 13/14 với dàn VRM 16+1+1 phase 90A SPS, 4 khe M.2 PCIe 4.0 kèm tản nhiệt Shield Frozr cực mát.",
+      "specs": {
+        "chipset": "Intel Z790 LGA1700",
+        "ram_support": "4x DDR5 Up to 7200+(OC) MHz, Max 192GB",
+        "storage": "4x M.2 PCIe 4.0 x4 + 7x SATA 6G",
+        "networking": "Intel 2.5Gbps LAN + Wi-Fi 6E + Bluetooth 5.3",
+        "warranty": "36 Tháng Chính Hãng MSI"
+      }
+    },
+    {
+      "id": "ram-corsair-dominator-titanium-32gb",
+      "name": "RAM Corsair Dominator Titanium RGB 32GB (2x16GB) DDR5 6000MHz Black",
+      "category": "components",
+      "price": 4690000,
+      "originalPrice": 5200000,
+      "rating": 4.95,
+      "reviewsCount": 15,
+      "stockQuantity": 10,
+      "badge": "RAM CAO CẤP",
+      "image": "https://images.unsplash.com/photo-1555680202-c86f0e12f086?w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1555680202-c86f0e12f086?w=800&q=80"
+      ],
+      "description": "Đỉnh cao thiết kế RAM Corsair với nắp trên tháo rời tùy biến, chip nhớ tuyển chọn thủ công và công nghệ tản nhiệt DHX độc quyền.",
+      "specs": {
+        "capacity": "32GB (2 x 16GB)",
+        "speed": "DDR5 6000MHz CL30-36-36-76",
+        "voltage": "1.40V (Hỗ trợ Intel XMP 3.0 & AMD EXPO)",
+        "rgb": "11 Đèn LED CAPELLIX Siêu Sáng Tùy Chỉnh iCUE",
+        "warranty": "Trọn Đời (Lifetime Warranty)"
+      }
+    },
+    {
+      "id": "ssd-samsung-990-pro-2tb",
+      "name": "Ổ Cứng SSD Samsung 990 PRO 2TB NVMe PCIe 4.0 (7450MB/s)",
+      "category": "components",
+      "price": 4590000,
+      "originalPrice": 5100000,
+      "rating": 4.96,
+      "reviewsCount": 15,
+      "stockQuantity": 10,
+      "badge": "TỐC ĐỘ ĐỈNH CAO",
+      "image": "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=800&q=80"
+      ],
+      "description": "Ông vua tốc độ SSD NVMe Gen4 với tốc độ đọc tuần tự lên đến 7450MB/s, kiểm soát nhiệt thông minh giúp vận hành mát mẻ và bền bỉ.",
+      "specs": {
+        "capacity": "2TB (2000GB)",
+        "read_speed": "Up to 7,450 MB/s",
+        "write_speed": "Up to 6,900 MB/s",
+        "controller": "Samsung Pascal Controller",
+        "tbw": "1,200 TBW",
+        "warranty": "60 Tháng (5 Năm) Chính Hãng"
+      }
+    },
+    {
+      "id": "psu-corsair-rm1000x-shift",
+      "name": "Nguồn Máy Tính Corsair RM1000x Shift 1000W 80 Plus Gold ATX 3.0",
+      "category": "components",
+      "price": 5490000,
+      "originalPrice": 6200000,
+      "rating": 4.93,
+      "reviewsCount": 15,
+      "stockQuantity": 10,
+      "badge": "ATX 3.0 MỚI",
+      "image": "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=800&q=80"
+      ],
+      "description": "Thiết kế cổng cắm bên hông cách mạng giúp đi dây siêu gọn gàng, chuẩn ATX 3.0 và PCIe 5.0 sẵn sàng cấp nguồn cho card RTX 4090.",
+      "specs": {
+        "power": "1000 Watts",
+        "efficiency": "80 Plus Gold (Lên đến 92%)",
+        "modularity": "Full Modular (Cổng cắm bên sườn case)",
+        "fan": "140mm FDB Zero RPM Siêu Yên Tĩnh",
+        "warranty": "120 Tháng (10 Năm) Chính Hãng Corsair"
+      }
+    },
+    {
+      "id": "mon-asus-rog-pg27aqdm",
+      "name": "Màn Hình ASUS ROG Swift OLED PG27AQDM 27\" 2K 240Hz 0.03ms G-Sync",
+      "category": "monitors",
+      "price": 22900000,
+      "originalPrice": 25900000,
+      "rating": 4.96,
+      "reviewsCount": 15,
+      "stockQuantity": 10,
+      "badge": "OLED ĐỈNH CAO",
+      "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&q=80"
+      ],
+      "description": "Tấm nền OLED cao cấp với màu đen sâu thẳm tuyệt đối, tần số quét 240Hz thời gian phản hồi siêu tốc 0.03ms loại bỏ hoàn toàn bóng mờ.",
+      "specs": {
+        "size": "26.5 Inch Tỷ lệ 16:9",
+        "panel": "OLED Chống Chói Độc Quyền",
+        "resolution": "2K QHD (2560 x 1440)",
+        "refresh_rate": "240Hz / 0.03ms (GTG)",
+        "color_gamut": "DCI-P3 99%, Delta E < 2",
+        "ports": "2x HDMI 2.0, 1x DisplayPort 1.4, USB Hub",
+        "warranty": "24 Tháng Chính Hãng ASUS (Bảo hành cả Burn-in)"
+      }
+    },
+    {
+      "id": "mon-dell-ultrasharp-u2724d",
+      "name": "Màn Hình Đồ Họa Dell UltraSharp U2724D 27\" 2K IPS Black 120Hz 100% sRGB",
+      "category": "monitors",
+      "price": 11290000,
+      "originalPrice": 12500000,
+      "rating": 4.95,
+      "reviewsCount": 15,
+      "stockQuantity": 10,
+      "badge": "CHUẨN MÀU ĐỒ HỌA",
+      "image": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=800&q=80"
+      ],
+      "description": "Màn hình đồ họa chuyên nghiệp đầu tiên trang bị công nghệ IPS Black cho tỷ lệ tương phản 2000:1, tần số quét 120Hz mượt mà êm mắt.",
+      "specs": {
+        "size": "27 Inch Viền Siêu Mỏng InfinityEdge",
+        "panel": "IPS Black Chống Chói",
+        "resolution": "2K QHD (2560 x 1440)",
+        "refresh_rate": "120Hz / 5ms",
+        "color_gamut": "100% sRGB, 98% Display P3, Tương Phản 2000:1",
+        "ports": "DisplayPort 1.4, HDMI, USB-C 15W, Cảm biến ánh sáng tự động",
+        "warranty": "36 Tháng Đổi Mới Tận Nơi Của Dell"
+      }
+    },
+    {
+      "id": "mon-samsung-odyssey-g7-32inch",
+      "name": "Màn Hình Gaming Cong Samsung Odyssey G7 32\" 2K 240Hz 1000R HDR600",
+      "category": "monitors",
+      "price": 14500000,
+      "originalPrice": 16900000,
+      "rating": 4.91,
+      "reviewsCount": 15,
+      "stockQuantity": 10,
+      "badge": "CONG 1000R",
+      "image": "https://images.unsplash.com/photo-1585792180666-f7347c490ee2?w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1585792180666-f7347c490ee2?w=800&q=80"
+      ],
+      "description": "Độ cong hoàn hảo 1000R bao trọn tầm nhìn mắt người, tần số quét 240Hz kết hợp tấm nền VA QLED chấm lượng tử màu sắc rực rỡ.",
+      "specs": {
+        "size": "31.5 Inch Cong 1000R Hoàn Hảo",
+        "panel": "VA QLED Chấm Lượng Tử HDR600",
+        "resolution": "2K WQHD (2560 x 1440)",
+        "refresh_rate": "240Hz / 1ms (GTG)",
+        "sync": "G-Sync Compatible & FreeSync Premium Pro",
+        "warranty": "24 Tháng Chính Hãng Samsung"
+      }
+    },
+    {
+      "id": "mon-viewsonic-vx2479-180hz",
+      "name": "Màn Hình Gaming Quốc Dân ViewSonic VX2479-HD-PRO 24\" FHD IPS 180Hz 1ms",
+      "category": "monitors",
+      "price": 2890000,
+      "originalPrice": 3450000,
+      "rating": 4.88,
+      "reviewsCount": 15,
+      "stockQuantity": 10,
+      "badge": "GIÁ RẺ VÔ ĐỊCH",
+      "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&q=80"
+      ],
+      "description": "Mẫu màn hình eSports ngon bổ rẻ nhất phân khúc với tấm nền Fast IPS 180Hz sắc nét, không viền 3 cạnh phù hợp mọi góc máy tính.",
+      "specs": {
+        "size": "23.8 Inch Tỷ Lệ 16:9",
+        "panel": "SuperClear Fast IPS",
+        "resolution": "Full HD (1920 x 1080)",
+        "refresh_rate": "180Hz / 1ms MPRT",
+        "features": "HDR10, FreeSync, Lọc Ánh Sáng Xanh Bảo Vệ Mắt",
+        "warranty": "36 Tháng 1 Đổi 1"
+      }
+    },
+    {
+      "id": "gear-kb-rog-azoth-75",
+      "name": "Bàn Phím Cơ Không Dây ASUS ROG Azoth 75% OLED Gasket Mount Hot-Swap",
+      "category": "gaming-gear",
+      "price": 5990000,
+      "originalPrice": 6800000,
+      "rating": 4.96,
+      "reviewsCount": 15,
+      "stockQuantity": 10,
+      "badge": "CUSTOM BUILD",
+      "image": "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?w=800&q=80"
+      ],
+      "description": "Bàn phím cơ cao cấp tích hợp màn hình OLED 2 inch, đệm Gasket mount 3 lớp triệt tiêu âm thanh lạch cạch, switch ROG NX lube sẵn mượt mà.",
+      "specs": {
+        "layout": "75% Gasket Mount (81 Phím)",
+        "switch": "ROG NX Snow Linear Switch (Đã lube krytox sẵn)",
+        "screen": "Màn hình OLED 2 Inch Đa Năng Hiển Thị Thông Số",
+        "connectivity": "SpeedNova 2.4GHz / Bluetooth 5.1 / Type-C",
+        "battery": "Thời lượng pin lên đến 2000 giờ",
+        "warranty": "24 Tháng Chính Hãng ASUS"
+      }
+    },
+    {
+      "id": "gear-mouse-logitech-gpro-x-superlight2",
+      "name": "Chuột Gaming Không Dây Logitech G Pro X Superlight 2 Wireless 60g 32K DPI",
+      "category": "gaming-gear",
+      "price": 3490000,
+      "originalPrice": 3990000,
+      "rating": 4.97,
+      "reviewsCount": 15,
+      "stockQuantity": 10,
+      "badge": "CHUỘT TUYỂN THỦ",
+      "image": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=800&q=80"
+      ],
+      "description": "Vũ khí ưa chuộng của 80% tuyển thủ CS2 và Valorant thế giới, trọng lượng siêu nhẹ 60g, cảm biến HERO 2 và switch quang học lai LIGHTFORCE.",
+      "specs": {
+        "sensor": "HERO 2 (100 - 32.000 DPI, 500+ IPS, 40G)",
+        "polling_rate": "4000Hz (Tốc độ báo cáo 0.25ms)",
+        "switches": "LIGHTFORCE Hybrid Optical-Mechanical",
+        "weight": "60 grams Siêu Nhẹ",
+        "battery": "Lên đến 95 giờ chơi liên tục",
+        "warranty": "24 Tháng Đổi Mới Toàn Quốc"
+      }
+    },
+    {
+      "id": "gear-headset-hyperx-cloud3-wireless",
+      "name": "Tai Nghe Gaming Không Dây HyperX Cloud III Wireless Pin 120H DTS:X",
+      "category": "gaming-gear",
+      "price": 3890000,
+      "originalPrice": 4400000,
+      "rating": 4.92,
+      "reviewsCount": 15,
+      "stockQuantity": 10,
+      "badge": "PIN 120 GIỜ",
+      "image": "https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=800&q=80"
+      ],
+      "description": "Huyền thoại tai nghe gaming tái sinh với thời lượng pin kỷ lục 120 giờ chỉ 1 lần sạc, đệm mút hoạt tính êm ái và âm thanh vòm DTS Headphone:X.",
+      "specs": {
+        "driver": "Dynamic 53mm với nam châm Neodymium",
+        "spatial_audio": "DTS Headphone:X Spatial Audio Vĩnh Viễn",
+        "microphone": "Microphone 10mm Khử Ồn Có Đèn Báo Mute",
+        "connectivity": "Wireless 2.4GHz Độ Trễ Siêu Thấp",
+        "battery": "120 Giờ Chơi Game",
+        "warranty": "24 Tháng Chính Hãng HyperX"
+      }
+    },
+    {
+      "id": "gear-controller-xbox-series-white",
+      "name": "Tay Cầm Chơi Game Không Dây Microsoft Xbox Series X Robot White",
+      "category": "gaming-gear",
+      "price": 1590000,
+      "originalPrice": 1850000,
+      "rating": 4.91,
+      "reviewsCount": 15,
+      "stockQuantity": 10,
+      "badge": "TAY CẦM PC SỐ 1",
+      "image": "https://images.unsplash.com/photo-1600080972464-8e5f35f63d08?w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1600080972464-8e5f35f63d08?w=800&q=80"
+      ],
+      "description": "Chuẩn tay cầm chơi game tốt nhất trên Windows PC, tương thích 100% game Steam, Epic, FO4, D-Pad cải tiến và cò rung haptic sống động.",
+      "specs": {
+        "connectivity": "Xbox Wireless + Bluetooth + Cáp USB Type-C",
+        "compatibility": "Windows 11/10, Xbox Series X/S, iOS, Android",
+        "features": "Nút Share chuyên dụng, Bề mặt vân bám chống trơn trượt",
+        "warranty": "12 Tháng Chính Hãng Microsoft"
+      }
+    },
+    {
+      "id": "gear-stream-elgato-deck-mk2",
+      "name": "Thiết Bị Stream Elgato Stream Deck MK.2 15 Phím LCD Tùy Biến",
+      "category": "gaming-gear",
+      "price": 3690000,
+      "originalPrice": 4200000,
+      "rating": 4.94,
+      "reviewsCount": 15,
+      "stockQuantity": 10,
+      "badge": "STREAM TOOL PRO",
+      "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80"
+      ],
+      "description": "Trợ thủ đắc lực của mọi Streamer và Content Creator với 15 phím LCD bấm chuyển cảnh OBS, mở app, chạy macro phím tắt chỉ với 1 chạm.",
+      "specs": {
+        "keys": "15 Phím Màn Hình LCD Màu Tùy Chỉnh Biểu Tượng",
+        "interface": "USB 2.0 Type-C Tháo Rời",
+        "software_support": "Elgato Stream Deck App, OBS Studio, Twitch, YouTube, Spotify",
+        "stand": "Chân đế nghiêng 45 độ công thái học",
+        "warranty": "24 Tháng Chính Hãng Elgato"
+      }
+    },
+    {
+      "id": "spk-razer-leviathan-v2-chroma",
+      "name": "Loa Gaming Soundbar Razer Leviathan V2 Chroma Âm Thanh Vòm THX Spatial",
+      "category": "speakers",
+      "price": 6290000,
+      "originalPrice": 6990000,
+      "rating": 4.9,
+      "reviewsCount": 15,
+      "stockQuantity": 10,
+      "badge": "SOUNDBAR GAMING",
+      "image": "https://images.unsplash.com/photo-1545454675-3531b543be5d?w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1545454675-3531b543be5d?w=800&q=80"
+      ],
+      "description": "Dàn âm thanh soundbar đặt dưới màn hình kèm loa siêu trầm Subwoofer uy lực, đèn LED gầm Razer Chroma RGB 18 vùng độc đáo.",
+      "specs": {
+        "frequency_response": "45 Hz – 20 kHz",
+        "audio_technology": "THX Spatial Audio Giả Lập 7.1",
+        "drivers": "2x Full-Range, 2x Tweeter, 2x Passive Radiator + 1x Subwoofer Độc Lập",
+        "connectivity": "Bluetooth 5.2 (Độ trễ thấp 60ms) + USB Audio PC",
+        "warranty": "24 Tháng Chính Hãng Razer"
+      }
+    },
+    {
+      "id": "spk-edifier-s880db-audiophile",
+      "name": "Loa Vi Tính Edifier S880DB Hi-Res Audio Chuẩn Audiophile Vỏ Gỗ",
+      "category": "speakers",
+      "price": 4890000,
+      "originalPrice": 5500000,
+      "rating": 4.93,
+      "reviewsCount": 15,
+      "stockQuantity": 10,
+      "badge": "HI-RES AUDIO",
+      "image": "https://images.unsplash.com/photo-1545454675-3531b543be5d?w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1545454675-3531b543be5d?w=800&q=80"
+      ],
+      "description": "Cặp loa kiểm âm bàn làm việc vỏ gỗ sang trọng, chứng nhận Hi-Res Audio với chip giải mã DAC XMOS 24bit/192kHz âm thanh chi tiết từng nốt nhạc.",
+      "specs": {
+        "power_output": "88W RMS (12W x 2 Treble + 32W x 2 Bass)",
+        "dac_processor": "XMOS XCore200 24-bit/192kHz",
+        "inputs": "USB Audio, Optical, Coaxial, Bluetooth aptX, RCA AUX",
+        "casing": "Vỏ gỗ tự nhiên sơn mờ sang trọng",
+        "warranty": "12 Tháng Chính Hãng Edifier"
+      }
+    },
+    {
+      "id": "net-asus-pce-axe59bt-wifi6e",
+      "name": "Card Mạng Không Dây ASUS PCE-AXE59BT PCIe WiFi 6E & Bluetooth 5.2 Băng Tần 6GHz",
+      "category": "network",
+      "price": 1690000,
+      "originalPrice": 1990000,
+      "rating": 4.92,
+      "reviewsCount": 15,
+      "stockQuantity": 10,
+      "badge": "WIFI 6E TỐC ĐỘ CAO",
+      "image": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&q=80"
+      ],
+      "description": "Nâng cấp mạng WiFi 6E thế hệ mới mở rộng băng tần 6GHz không nghẽn sóng, anten rời đế nam châm thu sóng cực khỏe, ping chơi game cực ổn định.",
+      "specs": {
+        "standards": "IEEE 802.11 a/b/g/n/ac/ax (WiFi 6E)",
+        "speeds": "Lên đến 2402 Mbps (6GHz) / 2402 Mbps (5GHz) / 574 Mbps (2.4GHz)",
+        "bluetooth": "Bluetooth 5.2 Tốc Độ Cao",
+        "interface": "PCI Express x1",
+        "security": "Bảo mật chuẩn mới nhất WPA3",
+        "warranty": "36 Tháng Chính Hãng ASUS"
+      }
+    },
+    {
+      "id": "net-tplink-archer-tx20e-wifi6",
+      "name": "Card Mạng TP-Link Archer TX20E PCIe WiFi 6 AX1800 Anten Kép Bluetooth 5.2",
+      "category": "network",
+      "price": 690000,
+      "originalPrice": 850000,
+      "rating": 4.86,
+      "reviewsCount": 15,
+      "stockQuantity": 10,
+      "badge": "GIÁ TỐT NHẤT",
+      "image": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&q=80"
+      ],
+      "description": "Giải pháp bắt wifi ổn định giá mềm cho máy bàn, trang bị 2 anten đa hướng khuếch đại tín hiệu, loại bỏ dây mạng rườm rà trong nhà.",
+      "specs": {
+        "standards": "WiFi 6 (802.11ax/ac/n/a 5 GHz, 802.11ax/n/g/b 2.4 GHz)",
+        "speeds": "1201 Mbps trên băng tần 5GHz + 574 Mbps trên 2.4GHz",
+        "bluetooth": "Bluetooth 5.2 Kết Nối Tai Nghe, Chuột Không Dây",
+        "antennas": "2x Anten Độ Lợi Cao Đa Hướng",
+        "warranty": "24 Tháng Chính Hãng TP-Link"
+      }
+    },
+    {
+      "id": "soft-win11-pro-fpp-usb",
+      "name": "Hệ Điều Hành Microsoft Windows 11 Pro 64-bit Bản Quyền Vĩnh Viễn FPP",
+      "category": "software",
+      "price": 3490000,
+      "originalPrice": 3990000,
+      "rating": 4.97,
+      "reviewsCount": 15,
+      "stockQuantity": 10,
+      "badge": "BẢN QUYỀN VĨNH VIỄN",
+      "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80"
+      ],
+      "description": "Hộp cài đặt USB chính hãng kèm Key kích hoạt bản quyền vĩnh viễn, được chuyển nhượng sang máy tính khác khi nâng cấp PC.",
+      "specs": {
+        "edition": "Windows 11 Professional 64-bit",
+        "license_type": "FPP (Full Packaged Product) - Chuyển máy thoải mái",
+        "support": "Bảo mật BitLocker, Windows Sandbox, Hyper-V, Remote Desktop",
+        "updates": "Cập nhật tính năng và bản vá bảo mật trọn đời từ Microsoft",
+        "warranty": "Bản Quyền Vĩnh Viễn 100% Chính Hãng"
+      }
+    },
+    {
+      "id": "soft-office-home-business-2024",
+      "name": "Bộ Phần Mềm Văn Phòng Microsoft Office Home & Business 2024 Bản Quyền Vĩnh Viễn",
+      "category": "software",
+      "price": 4990000,
+      "originalPrice": 5500000,
+      "rating": 4.95,
+      "reviewsCount": 15,
+      "stockQuantity": 10,
+      "badge": "OFFICE 2024 MỚI NHẤT",
+      "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80"
+      ],
+      "description": "Bộ ứng dụng văn phòng kinh điển không cần gia hạn thuê bao hàng năm: Word, Excel, PowerPoint, Outlook bản quyền trọn đời cho 1 PC hoặc Mac.",
+      "specs": {
+        "apps_included": "Word 2024, Excel 2024, PowerPoint 2024, Outlook 2024, OneNote",
+        "device_count": "1 Thiết bị (Windows 11/10 hoặc macOS)",
+        "payment_type": "Mua Một Lần - Sử Dụng Vĩnh Viễn",
+        "support": "Hỗ trợ kỹ thuật chính hãng Microsoft trong 60 ngày đầu",
+        "warranty": "Chính Hãng Microsoft"
       }
     }
   ],
   "orders": [
+    {
+      "id": "NAT-907860",
+      "customerName": "Realtime Tester",
+      "customerEmail": "realtime@test.vn",
+      "customerPhone": "0987654321",
+      "shippingAddress": "123 Realtime Way, Danang",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PENDING",
+      "status": "PENDING",
+      "totalAmount": 32000000,
+      "totalPrice": 32000000,
+      "appliedCoupon": null,
+      "discountAmount": 0,
+      "items": [
+        {
+          "id": "pc-rt",
+          "name": "PC ULTRA RTX 4090",
+          "price": 32000000,
+          "quantity": 1
+        }
+      ],
+      "createdAt": "2026-09-29T15:49:36.334Z"
+    },
+    {
+      "id": "NAT-ADMIN-OK-1790696974222",
+      "customerName": "Pham Van D",
+      "customerEmail": "phamvand@gmail.com",
+      "customerPhone": "0977889900",
+      "shippingAddress": "10 Hai Ba Trung, Ha Noi",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PAID",
+      "status": "PROCESSING",
+      "totalAmount": 18000000,
+      "createdAt": "2026-09-29T15:49:34.222Z"
+    },
+    {
+      "id": "NAT-UNDER-1790696974140",
+      "customerName": "Le Van C",
+      "customerEmail": "levanc@gmail.com",
+      "customerPhone": "0912345678",
+      "shippingAddress": "789 Nguyen Thi Minh Khai, TP.HCM",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PENDING",
+      "status": "PENDING",
+      "totalAmount": 25000000,
+      "createdAt": "2026-09-29T15:49:34.140Z"
+    },
+    {
+      "id": "NAT-IDEM-1790696974057",
+      "customerName": "Tran Thi B",
+      "customerEmail": "tranthib@gmail.com",
+      "customerPhone": "0905123456",
+      "shippingAddress": "456 Tran Phu, Da Nang",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PAID",
+      "status": "PROCESSING",
+      "totalAmount": 20000000,
+      "createdAt": "2026-09-29T15:49:34.057Z"
+    },
+    {
+      "id": "NAT-SEPAY-1790696973977",
+      "customerName": "Nguyen Van A",
+      "customerEmail": "nguyenvana@gmail.com",
+      "customerPhone": "0773071629",
+      "shippingAddress": "123 Le Duan, Da Nang",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PAID",
+      "status": "PROCESSING",
+      "totalAmount": 15000000,
+      "createdAt": "2026-09-29T15:49:33.977Z"
+    },
+    {
+      "id": "NAT-AUDIT-1790696972946",
+      "customerName": "Audit Test Client",
+      "customerEmail": "audit@client.com",
+      "customerPhone": "0988776655",
+      "shippingAddress": "Cau Giay, Hanoi",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PENDING",
+      "status": "DELIVERED",
+      "totalAmount": 45900000,
+      "totalPrice": 45900000,
+      "appliedCoupon": null,
+      "discountAmount": 0,
+      "items": [
+        {
+          "id": "pc-gaming-ultra-4070ti",
+          "name": "NAT GAMING BEAST",
+          "quantity": 1,
+          "price": 45900000
+        }
+      ],
+      "createdAt": "2026-09-29T15:49:32.955Z"
+    },
+    {
+      "id": "NAT-523953",
+      "customerName": "Realtime Tester",
+      "customerEmail": "realtime@test.vn",
+      "customerPhone": "0987654321",
+      "shippingAddress": "123 Realtime Way, Danang",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PENDING",
+      "status": "PENDING",
+      "totalAmount": 32000000,
+      "totalPrice": 32000000,
+      "appliedCoupon": null,
+      "discountAmount": 0,
+      "items": [
+        {
+          "id": "pc-rt",
+          "name": "PC ULTRA RTX 4090",
+          "price": 32000000,
+          "quantity": 1
+        }
+      ],
+      "createdAt": "2026-09-29T15:47:03.603Z"
+    },
+    {
+      "id": "NAT-ADMIN-OK-1790696821551",
+      "customerName": "Pham Van D",
+      "customerEmail": "phamvand@gmail.com",
+      "customerPhone": "0977889900",
+      "shippingAddress": "10 Hai Ba Trung, Ha Noi",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PAID",
+      "status": "PROCESSING",
+      "totalAmount": 18000000,
+      "createdAt": "2026-09-29T15:47:01.551Z"
+    },
+    {
+      "id": "NAT-UNDER-1790696821511",
+      "customerName": "Le Van C",
+      "customerEmail": "levanc@gmail.com",
+      "customerPhone": "0912345678",
+      "shippingAddress": "789 Nguyen Thi Minh Khai, TP.HCM",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PENDING",
+      "status": "PENDING",
+      "totalAmount": 25000000,
+      "createdAt": "2026-09-29T15:47:01.511Z"
+    },
+    {
+      "id": "NAT-IDEM-1790696821335",
+      "customerName": "Tran Thi B",
+      "customerEmail": "tranthib@gmail.com",
+      "customerPhone": "0905123456",
+      "shippingAddress": "456 Tran Phu, Da Nang",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PAID",
+      "status": "PROCESSING",
+      "totalAmount": 20000000,
+      "createdAt": "2026-09-29T15:47:01.335Z"
+    },
+    {
+      "id": "NAT-SEPAY-1790696821271",
+      "customerName": "Nguyen Van A",
+      "customerEmail": "nguyenvana@gmail.com",
+      "customerPhone": "0773071629",
+      "shippingAddress": "123 Le Duan, Da Nang",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PAID",
+      "status": "PROCESSING",
+      "totalAmount": 15000000,
+      "createdAt": "2026-09-29T15:47:01.271Z"
+    },
+    {
+      "id": "NAT-ADMIN-OK-1790696820539",
+      "customerName": "Pham Van D",
+      "customerEmail": "phamvand@gmail.com",
+      "customerPhone": "0977889900",
+      "shippingAddress": "10 Hai Ba Trung, Ha Noi",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PAID",
+      "status": "PROCESSING",
+      "totalAmount": 18000000,
+      "createdAt": "2026-09-29T15:47:00.539Z"
+    },
+    {
+      "id": "NAT-UNDER-1790696820505",
+      "customerName": "Le Van C",
+      "customerEmail": "levanc@gmail.com",
+      "customerPhone": "0912345678",
+      "shippingAddress": "789 Nguyen Thi Minh Khai, TP.HCM",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PENDING",
+      "status": "PENDING",
+      "totalAmount": 25000000,
+      "createdAt": "2026-09-29T15:47:00.505Z"
+    },
+    {
+      "id": "NAT-AUDIT-1790696820466",
+      "customerName": "Audit Test Client",
+      "customerEmail": "audit@client.com",
+      "customerPhone": "0988776655",
+      "shippingAddress": "Cau Giay, Hanoi",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PENDING",
+      "status": "DELIVERED",
+      "totalAmount": 45900000,
+      "totalPrice": 45900000,
+      "appliedCoupon": null,
+      "discountAmount": 0,
+      "items": [
+        {
+          "id": "pc-gaming-ultra-4070ti",
+          "name": "NAT GAMING BEAST",
+          "quantity": 1,
+          "price": 45900000
+        }
+      ],
+      "createdAt": "2026-09-29T15:47:00.472Z"
+    },
+    {
+      "id": "NAT-IDEM-1790696820437",
+      "customerName": "Tran Thi B",
+      "customerEmail": "tranthib@gmail.com",
+      "customerPhone": "0905123456",
+      "shippingAddress": "456 Tran Phu, Da Nang",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PAID",
+      "status": "PROCESSING",
+      "totalAmount": 20000000,
+      "createdAt": "2026-09-29T15:47:00.437Z"
+    },
+    {
+      "id": "NAT-SEPAY-1790696820414",
+      "customerName": "Nguyen Van A",
+      "customerEmail": "nguyenvana@gmail.com",
+      "customerPhone": "0773071629",
+      "shippingAddress": "123 Le Duan, Da Nang",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PAID",
+      "status": "PROCESSING",
+      "totalAmount": 15000000,
+      "createdAt": "2026-09-29T15:47:00.414Z"
+    },
+    {
+      "id": "NAT-412721",
+      "customerName": "Realtime Tester",
+      "customerEmail": "realtime@test.vn",
+      "customerPhone": "0987654321",
+      "shippingAddress": "123 Realtime Way, Danang",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PENDING",
+      "status": "PENDING",
+      "totalAmount": 32000000,
+      "totalPrice": 32000000,
+      "appliedCoupon": null,
+      "discountAmount": 0,
+      "items": [
+        {
+          "id": "pc-rt",
+          "name": "PC ULTRA RTX 4090",
+          "price": 32000000,
+          "quantity": 1
+        }
+      ],
+      "createdAt": "2026-09-29T15:46:25.530Z"
+    },
+    {
+      "id": "NAT-ADMIN-OK-1790696782946",
+      "customerName": "Pham Van D",
+      "customerEmail": "phamvand@gmail.com",
+      "customerPhone": "0977889900",
+      "shippingAddress": "10 Hai Ba Trung, Ha Noi",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PAID",
+      "status": "PROCESSING",
+      "totalAmount": 18000000,
+      "createdAt": "2026-09-29T15:46:22.946Z"
+    },
+    {
+      "id": "NAT-UNDER-1790696782861",
+      "customerName": "Le Van C",
+      "customerEmail": "levanc@gmail.com",
+      "customerPhone": "0912345678",
+      "shippingAddress": "789 Nguyen Thi Minh Khai, TP.HCM",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PENDING",
+      "status": "PENDING",
+      "totalAmount": 25000000,
+      "createdAt": "2026-09-29T15:46:22.861Z"
+    },
+    {
+      "id": "NAT-IDEM-1790696782777",
+      "customerName": "Tran Thi B",
+      "customerEmail": "tranthib@gmail.com",
+      "customerPhone": "0905123456",
+      "shippingAddress": "456 Tran Phu, Da Nang",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PAID",
+      "status": "PROCESSING",
+      "totalAmount": 20000000,
+      "createdAt": "2026-09-29T15:46:22.777Z"
+    },
+    {
+      "id": "NAT-SEPAY-1790696782687",
+      "customerName": "Nguyen Van A",
+      "customerEmail": "nguyenvana@gmail.com",
+      "customerPhone": "0773071629",
+      "shippingAddress": "123 Le Duan, Da Nang",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PENDING",
+      "status": "PENDING",
+      "totalAmount": 15000000,
+      "createdAt": "2026-09-29T15:46:22.687Z"
+    },
+    {
+      "id": "NAT-AUDIT-1790696781456",
+      "customerName": "Audit Test Client",
+      "customerEmail": "audit@client.com",
+      "customerPhone": "0988776655",
+      "shippingAddress": "Cau Giay, Hanoi",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PENDING",
+      "status": "DELIVERED",
+      "totalAmount": 45900000,
+      "totalPrice": 45900000,
+      "appliedCoupon": null,
+      "discountAmount": 0,
+      "items": [
+        {
+          "id": "pc-gaming-ultra-4070ti",
+          "name": "NAT GAMING BEAST",
+          "quantity": 1,
+          "price": 45900000
+        }
+      ],
+      "createdAt": "2026-09-29T15:46:21.468Z"
+    },
+    {
+      "id": "NAT-673232",
+      "customerName": "Realtime Tester",
+      "customerEmail": "realtime@test.vn",
+      "customerPhone": "0987654321",
+      "shippingAddress": "123 Realtime Way, Danang",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PENDING",
+      "status": "PENDING",
+      "totalAmount": 32000000,
+      "totalPrice": 32000000,
+      "appliedCoupon": null,
+      "discountAmount": 0,
+      "items": [
+        {
+          "id": "pc-rt",
+          "name": "PC ULTRA RTX 4090",
+          "price": 32000000,
+          "quantity": 1
+        }
+      ],
+      "createdAt": "2026-09-29T15:44:40.087Z"
+    },
+    {
+      "id": "NAT-ADMIN-OK-1790696677981",
+      "customerName": "Pham Van D",
+      "customerEmail": "phamvand@gmail.com",
+      "customerPhone": "0977889900",
+      "shippingAddress": "10 Hai Ba Trung, Ha Noi",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PAID",
+      "status": "PROCESSING",
+      "totalAmount": 18000000,
+      "createdAt": "2026-09-29T15:44:37.981Z"
+    },
+    {
+      "id": "NAT-UNDER-1790696677918",
+      "customerName": "Le Van C",
+      "customerEmail": "levanc@gmail.com",
+      "customerPhone": "0912345678",
+      "shippingAddress": "789 Nguyen Thi Minh Khai, TP.HCM",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PENDING",
+      "status": "PENDING",
+      "totalAmount": 25000000,
+      "createdAt": "2026-09-29T15:44:37.918Z"
+    },
+    {
+      "id": "NAT-IDEM-1790696677838",
+      "customerName": "Tran Thi B",
+      "customerEmail": "tranthib@gmail.com",
+      "customerPhone": "0905123456",
+      "shippingAddress": "456 Tran Phu, Da Nang",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PAID",
+      "status": "PROCESSING",
+      "totalAmount": 20000000,
+      "createdAt": "2026-09-29T15:44:37.838Z"
+    },
+    {
+      "id": "NAT-SEPAY-1790696677741",
+      "customerName": "Nguyen Van A",
+      "customerEmail": "nguyenvana@gmail.com",
+      "customerPhone": "0773071629",
+      "shippingAddress": "123 Le Duan, Da Nang",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PAID",
+      "status": "PROCESSING",
+      "totalAmount": 15000000,
+      "createdAt": "2026-09-29T15:44:37.741Z"
+    },
+    {
+      "id": "NAT-AUDIT-1790696677078",
+      "customerName": "Audit Test Client",
+      "customerEmail": "audit@client.com",
+      "customerPhone": "0988776655",
+      "shippingAddress": "Cau Giay, Hanoi",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PENDING",
+      "status": "DELIVERED",
+      "totalAmount": 45900000,
+      "totalPrice": 45900000,
+      "appliedCoupon": null,
+      "discountAmount": 0,
+      "items": [
+        {
+          "id": "pc-gaming-ultra-4070ti",
+          "name": "NAT GAMING BEAST",
+          "quantity": 1,
+          "price": 45900000
+        }
+      ],
+      "createdAt": "2026-09-29T15:44:37.085Z"
+    },
+    {
+      "id": "NAT-144196",
+      "customerName": "Realtime Tester",
+      "customerEmail": "realtime@test.vn",
+      "customerPhone": "0987654321",
+      "shippingAddress": "123 Realtime Way, Danang",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PENDING",
+      "status": "PENDING",
+      "totalAmount": 32000000,
+      "totalPrice": 32000000,
+      "appliedCoupon": null,
+      "discountAmount": 0,
+      "items": [
+        {
+          "id": "pc-rt",
+          "name": "PC ULTRA RTX 4090",
+          "price": 32000000,
+          "quantity": 1
+        }
+      ],
+      "createdAt": "2026-09-29T15:21:46.288Z"
+    },
+    {
+      "id": "NAT-ADMIN-OK-1790695304961",
+      "customerName": "Pham Van D",
+      "customerEmail": "phamvand@gmail.com",
+      "customerPhone": "0977889900",
+      "shippingAddress": "10 Hai Ba Trung, Ha Noi",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PAID",
+      "status": "PROCESSING",
+      "totalAmount": 18000000,
+      "createdAt": "2026-09-29T15:21:44.961Z"
+    },
+    {
+      "id": "NAT-UNDER-1790695304880",
+      "customerName": "Le Van C",
+      "customerEmail": "levanc@gmail.com",
+      "customerPhone": "0912345678",
+      "shippingAddress": "789 Nguyen Thi Minh Khai, TP.HCM",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PENDING",
+      "status": "PENDING",
+      "totalAmount": 25000000,
+      "createdAt": "2026-09-29T15:21:44.880Z"
+    },
+    {
+      "id": "NAT-IDEM-1790695304756",
+      "customerName": "Tran Thi B",
+      "customerEmail": "tranthib@gmail.com",
+      "customerPhone": "0905123456",
+      "shippingAddress": "456 Tran Phu, Da Nang",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PAID",
+      "status": "PROCESSING",
+      "totalAmount": 20000000,
+      "createdAt": "2026-09-29T15:21:44.756Z"
+    },
+    {
+      "id": "NAT-SEPAY-1790695304606",
+      "customerName": "Nguyen Van A",
+      "customerEmail": "nguyenvana@gmail.com",
+      "customerPhone": "0773071629",
+      "shippingAddress": "123 Le Duan, Da Nang",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PAID",
+      "status": "PROCESSING",
+      "totalAmount": 15000000,
+      "createdAt": "2026-09-29T15:21:44.606Z"
+    },
+    {
+      "id": "NAT-AUDIT-1790695302108",
+      "customerName": "Audit Test Client",
+      "customerEmail": "audit@client.com",
+      "customerPhone": "0988776655",
+      "shippingAddress": "Cau Giay, Hanoi",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PENDING",
+      "status": "DELIVERED",
+      "totalAmount": 45900000,
+      "totalPrice": 45900000,
+      "appliedCoupon": null,
+      "discountAmount": 0,
+      "items": [
+        {
+          "id": "pc-gaming-ultra-4070ti",
+          "name": "NAT GAMING BEAST",
+          "quantity": 1,
+          "price": 45900000
+        }
+      ],
+      "createdAt": "2026-09-29T15:21:42.120Z"
+    },
+    {
+      "id": "NAT-589725",
+      "customerName": "Hoàng Minh Quân",
+      "customerEmail": "quan.hoang@gmail.com",
+      "customerPhone": "0977889988",
+      "shippingAddress": "Tòa nhà Landmark 72, Nam Từ Liêm, Hà Nội",
+      "paymentMethod": "Chuyển Khoản QR",
+      "paymentStatus": "PENDING",
+      "status": "PENDING",
+      "totalAmount": 38900000,
+      "totalPrice": 38900000,
+      "appliedCoupon": null,
+      "discountAmount": 0,
+      "items": [
+        {
+          "id": "pc-gaming-1",
+          "name": "NAT GAMING BEAST 4070 Ti",
+          "quantity": 1,
+          "price": 38900000
+        }
+      ],
+      "createdAt": "2026-09-29T15:21:11.922Z"
+    },
+    {
+      "id": "NAT-459858",
+      "customerName": "Hoàng Minh Quân",
+      "customerEmail": "quan.hoang@gmail.com",
+      "customerPhone": "0977889988",
+      "shippingAddress": "Tòa nhà Landmark 72, Nam Từ Liêm, Hà Nội",
+      "paymentMethod": "Chuyển Khoản QR",
+      "paymentStatus": "PENDING",
+      "status": "PENDING",
+      "totalAmount": 38900000,
+      "totalPrice": 38900000,
+      "appliedCoupon": null,
+      "discountAmount": 0,
+      "items": [
+        {
+          "id": "pc-gaming-1",
+          "name": "NAT GAMING BEAST 4070 Ti",
+          "quantity": 1,
+          "price": 38900000
+        }
+      ],
+      "createdAt": "2026-09-29T15:21:02.946Z"
+    },
+    {
+      "id": "NAT-719760",
+      "customerName": "Realtime Tester",
+      "customerEmail": "realtime@test.vn",
+      "customerPhone": "0987654321",
+      "shippingAddress": "123 Realtime Way, Danang",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PENDING",
+      "status": "PENDING",
+      "totalAmount": 32000000,
+      "totalPrice": 32000000,
+      "appliedCoupon": null,
+      "discountAmount": 0,
+      "items": [
+        {
+          "id": "pc-rt",
+          "name": "PC ULTRA RTX 4090",
+          "price": 32000000,
+          "quantity": 1
+        }
+      ],
+      "createdAt": "2026-09-29T15:03:28.065Z"
+    },
+    {
+      "id": "NAT-ADMIN-OK-1790694206128",
+      "customerName": "Pham Van D",
+      "customerEmail": "phamvand@gmail.com",
+      "customerPhone": "0977889900",
+      "shippingAddress": "10 Hai Ba Trung, Ha Noi",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PAID",
+      "status": "PROCESSING",
+      "totalAmount": 18000000,
+      "createdAt": "2026-09-29T15:03:26.128Z"
+    },
+    {
+      "id": "NAT-UNDER-1790694206083",
+      "customerName": "Le Van C",
+      "customerEmail": "levanc@gmail.com",
+      "customerPhone": "0912345678",
+      "shippingAddress": "789 Nguyen Thi Minh Khai, TP.HCM",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PENDING",
+      "status": "PENDING",
+      "totalAmount": 25000000,
+      "createdAt": "2026-09-29T15:03:26.083Z"
+    },
+    {
+      "id": "NAT-IDEM-1790694206046",
+      "customerName": "Tran Thi B",
+      "customerEmail": "tranthib@gmail.com",
+      "customerPhone": "0905123456",
+      "shippingAddress": "456 Tran Phu, Da Nang",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PAID",
+      "status": "PROCESSING",
+      "totalAmount": 20000000,
+      "createdAt": "2026-09-29T15:03:26.046Z"
+    },
+    {
+      "id": "NAT-SEPAY-1790694205970",
+      "customerName": "Nguyen Van A",
+      "customerEmail": "nguyenvana@gmail.com",
+      "customerPhone": "0773071629",
+      "shippingAddress": "123 Le Duan, Da Nang",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PAID",
+      "status": "PROCESSING",
+      "totalAmount": 15000000,
+      "createdAt": "2026-09-29T15:03:25.970Z"
+    },
+    {
+      "id": "NAT-AUDIT-1790694205457",
+      "customerName": "Audit Test Client",
+      "customerEmail": "audit@client.com",
+      "customerPhone": "0988776655",
+      "shippingAddress": "Cau Giay, Hanoi",
+      "paymentMethod": "vietqr",
+      "paymentStatus": "PENDING",
+      "status": "DELIVERED",
+      "totalAmount": 45900000,
+      "totalPrice": 45900000,
+      "appliedCoupon": null,
+      "discountAmount": 0,
+      "items": [
+        {
+          "id": "pc-gaming-ultra-4070ti",
+          "name": "NAT GAMING BEAST",
+          "quantity": 1,
+          "price": 45900000
+        }
+      ],
+      "createdAt": "2026-09-29T15:03:25.462Z"
+    },
     {
       "id": "NAT-ORD-272562",
       "customerName": "Tú Ngô",
@@ -4448,6 +8085,356 @@
   ],
   "payments": [
     {
+      "id": "pay_1790696976334",
+      "orderId": "NAT-907860",
+      "gateway": "vietqr",
+      "transactionCode": null,
+      "amount": 32000000,
+      "status": "PENDING",
+      "createdAt": "2026-09-29T15:49:36.334Z"
+    },
+    {
+      "id": "pay_1790696974222",
+      "orderId": "NAT-ADMIN-OK-1790696974222",
+      "gateway": "MBBank",
+      "transactionCode": "MANUAL-ADMIN-1790696974243",
+      "amount": 18000000,
+      "status": "SUCCESS"
+    },
+    {
+      "id": "pay_1790696974140",
+      "orderId": "NAT-UNDER-1790696974140",
+      "gateway": "MBBank",
+      "transactionCode": "TXN-NAT-UNDER-1790696974140",
+      "amount": 25000000,
+      "status": "PENDING"
+    },
+    {
+      "id": "pay_1790696974057",
+      "orderId": "NAT-IDEM-1790696974057",
+      "gateway": "MBBank",
+      "transactionCode": "MB112233",
+      "amount": 20000000,
+      "status": "SUCCESS"
+    },
+    {
+      "id": "pay_1790696973977",
+      "orderId": "NAT-SEPAY-1790696973977",
+      "gateway": "MBBank",
+      "transactionCode": "MB99887766",
+      "amount": 15000000,
+      "status": "SUCCESS"
+    },
+    {
+      "id": "pay_1790696972955",
+      "orderId": "NAT-AUDIT-1790696972946",
+      "gateway": "vietqr",
+      "transactionCode": null,
+      "amount": 45900000,
+      "status": "PENDING",
+      "createdAt": "2026-09-29T15:49:32.955Z"
+    },
+    {
+      "id": "pay_1790696823603",
+      "orderId": "NAT-523953",
+      "gateway": "vietqr",
+      "transactionCode": null,
+      "amount": 32000000,
+      "status": "PENDING",
+      "createdAt": "2026-09-29T15:47:03.603Z"
+    },
+    {
+      "id": "pay_1790696821551",
+      "orderId": "NAT-ADMIN-OK-1790696821551",
+      "gateway": "MBBank",
+      "transactionCode": "MANUAL-ADMIN-1790696821567",
+      "amount": 18000000,
+      "status": "SUCCESS"
+    },
+    {
+      "id": "pay_1790696821511",
+      "orderId": "NAT-UNDER-1790696821511",
+      "gateway": "MBBank",
+      "transactionCode": "TXN-NAT-UNDER-1790696821511",
+      "amount": 25000000,
+      "status": "PENDING"
+    },
+    {
+      "id": "pay_1790696821335",
+      "orderId": "NAT-IDEM-1790696821335",
+      "gateway": "MBBank",
+      "transactionCode": "MB112233",
+      "amount": 20000000,
+      "status": "SUCCESS"
+    },
+    {
+      "id": "pay_1790696821271",
+      "orderId": "NAT-SEPAY-1790696821271",
+      "gateway": "MBBank",
+      "transactionCode": "MB99887766",
+      "amount": 15000000,
+      "status": "SUCCESS"
+    },
+    {
+      "id": "pay_1790696820539",
+      "orderId": "NAT-ADMIN-OK-1790696820539",
+      "gateway": "MBBank",
+      "transactionCode": "MANUAL-ADMIN-1790696820548",
+      "amount": 18000000,
+      "status": "SUCCESS"
+    },
+    {
+      "id": "pay_1790696820505",
+      "orderId": "NAT-UNDER-1790696820505",
+      "gateway": "MBBank",
+      "transactionCode": "TXN-NAT-UNDER-1790696820505",
+      "amount": 25000000,
+      "status": "PENDING"
+    },
+    {
+      "id": "pay_1790696820472",
+      "orderId": "NAT-AUDIT-1790696820466",
+      "gateway": "vietqr",
+      "transactionCode": null,
+      "amount": 45900000,
+      "status": "PENDING",
+      "createdAt": "2026-09-29T15:47:00.472Z"
+    },
+    {
+      "id": "pay_1790696820437",
+      "orderId": "NAT-IDEM-1790696820437",
+      "gateway": "MBBank",
+      "transactionCode": "MB112233",
+      "amount": 20000000,
+      "status": "SUCCESS"
+    },
+    {
+      "id": "pay_1790696820414",
+      "orderId": "NAT-SEPAY-1790696820414",
+      "gateway": "MBBank",
+      "transactionCode": "MB99887766",
+      "amount": 15000000,
+      "status": "SUCCESS"
+    },
+    {
+      "id": "pay_1790696785530",
+      "orderId": "NAT-412721",
+      "gateway": "vietqr",
+      "transactionCode": null,
+      "amount": 32000000,
+      "status": "PENDING",
+      "createdAt": "2026-09-29T15:46:25.530Z"
+    },
+    {
+      "id": "pay_1790696782946",
+      "orderId": "NAT-ADMIN-OK-1790696782946",
+      "gateway": "MBBank",
+      "transactionCode": "MANUAL-ADMIN-1790696782970",
+      "amount": 18000000,
+      "status": "SUCCESS"
+    },
+    {
+      "id": "pay_1790696782861",
+      "orderId": "NAT-UNDER-1790696782861",
+      "gateway": "MBBank",
+      "transactionCode": "TXN-NAT-UNDER-1790696782861",
+      "amount": 25000000,
+      "status": "PENDING"
+    },
+    {
+      "id": "pay_1790696782777",
+      "orderId": "NAT-IDEM-1790696782777",
+      "gateway": "MBBank",
+      "transactionCode": "MB112233",
+      "amount": 20000000,
+      "status": "SUCCESS"
+    },
+    {
+      "id": "pay_1790696782687",
+      "orderId": "NAT-SEPAY-1790696782687",
+      "gateway": "MBBank",
+      "transactionCode": "TXN-NAT-SEPAY-1790696782687",
+      "amount": 15000000,
+      "status": "PENDING"
+    },
+    {
+      "id": "pay_1790696781468",
+      "orderId": "NAT-AUDIT-1790696781456",
+      "gateway": "vietqr",
+      "transactionCode": null,
+      "amount": 45900000,
+      "status": "PENDING",
+      "createdAt": "2026-09-29T15:46:21.468Z"
+    },
+    {
+      "id": "pay_1790696680087",
+      "orderId": "NAT-673232",
+      "gateway": "vietqr",
+      "transactionCode": null,
+      "amount": 32000000,
+      "status": "PENDING",
+      "createdAt": "2026-09-29T15:44:40.087Z"
+    },
+    {
+      "id": "pay_1790696677981",
+      "orderId": "NAT-ADMIN-OK-1790696677981",
+      "gateway": "MBBank",
+      "transactionCode": "MANUAL-ADMIN-1790696677998",
+      "amount": 18000000,
+      "status": "SUCCESS"
+    },
+    {
+      "id": "pay_1790696677918",
+      "orderId": "NAT-UNDER-1790696677918",
+      "gateway": "MBBank",
+      "transactionCode": "TXN-NAT-UNDER-1790696677918",
+      "amount": 25000000,
+      "status": "PENDING"
+    },
+    {
+      "id": "pay_1790696677838",
+      "orderId": "NAT-IDEM-1790696677838",
+      "gateway": "MBBank",
+      "transactionCode": "MB112233",
+      "amount": 20000000,
+      "status": "SUCCESS"
+    },
+    {
+      "id": "pay_1790696677741",
+      "orderId": "NAT-SEPAY-1790696677741",
+      "gateway": "MBBank",
+      "transactionCode": "MB99887766",
+      "amount": 15000000,
+      "status": "SUCCESS"
+    },
+    {
+      "id": "pay_1790696677085",
+      "orderId": "NAT-AUDIT-1790696677078",
+      "gateway": "vietqr",
+      "transactionCode": null,
+      "amount": 45900000,
+      "status": "PENDING",
+      "createdAt": "2026-09-29T15:44:37.085Z"
+    },
+    {
+      "id": "pay_1790695306288",
+      "orderId": "NAT-144196",
+      "gateway": "vietqr",
+      "transactionCode": null,
+      "amount": 32000000,
+      "status": "PENDING",
+      "createdAt": "2026-09-29T15:21:46.288Z"
+    },
+    {
+      "id": "pay_1790695304961",
+      "orderId": "NAT-ADMIN-OK-1790695304961",
+      "gateway": "MBBank",
+      "transactionCode": "MANUAL-ADMIN-1790695304989",
+      "amount": 18000000,
+      "status": "SUCCESS"
+    },
+    {
+      "id": "pay_1790695304880",
+      "orderId": "NAT-UNDER-1790695304880",
+      "gateway": "MBBank",
+      "transactionCode": "TXN-NAT-UNDER-1790695304880",
+      "amount": 25000000,
+      "status": "PENDING"
+    },
+    {
+      "id": "pay_1790695304756",
+      "orderId": "NAT-IDEM-1790695304756",
+      "gateway": "MBBank",
+      "transactionCode": "MB112233",
+      "amount": 20000000,
+      "status": "SUCCESS"
+    },
+    {
+      "id": "pay_1790695304606",
+      "orderId": "NAT-SEPAY-1790695304606",
+      "gateway": "MBBank",
+      "transactionCode": "MB99887766",
+      "amount": 15000000,
+      "status": "SUCCESS"
+    },
+    {
+      "id": "pay_1790695302120",
+      "orderId": "NAT-AUDIT-1790695302108",
+      "gateway": "vietqr",
+      "transactionCode": null,
+      "amount": 45900000,
+      "status": "PENDING",
+      "createdAt": "2026-09-29T15:21:42.120Z"
+    },
+    {
+      "id": "pay_1790695271922",
+      "orderId": "NAT-589725",
+      "gateway": "Chuyển Khoản QR",
+      "transactionCode": null,
+      "amount": 38900000,
+      "status": "PENDING",
+      "createdAt": "2026-09-29T15:21:11.922Z"
+    },
+    {
+      "id": "pay_1790695262946",
+      "orderId": "NAT-459858",
+      "gateway": "Chuyển Khoản QR",
+      "transactionCode": null,
+      "amount": 38900000,
+      "status": "PENDING",
+      "createdAt": "2026-09-29T15:21:02.946Z"
+    },
+    {
+      "id": "pay_1790694208065",
+      "orderId": "NAT-719760",
+      "gateway": "vietqr",
+      "transactionCode": null,
+      "amount": 32000000,
+      "status": "PENDING",
+      "createdAt": "2026-09-29T15:03:28.065Z"
+    },
+    {
+      "id": "pay_1790694206128",
+      "orderId": "NAT-ADMIN-OK-1790694206128",
+      "gateway": "MBBank",
+      "transactionCode": "MANUAL-ADMIN-1790694206148",
+      "amount": 18000000,
+      "status": "SUCCESS"
+    },
+    {
+      "id": "pay_1790694206083",
+      "orderId": "NAT-UNDER-1790694206083",
+      "gateway": "MBBank",
+      "transactionCode": "TXN-NAT-UNDER-1790694206083",
+      "amount": 25000000,
+      "status": "PENDING"
+    },
+    {
+      "id": "pay_1790694206046",
+      "orderId": "NAT-IDEM-1790694206046",
+      "gateway": "MBBank",
+      "transactionCode": "MB112233",
+      "amount": 20000000,
+      "status": "SUCCESS"
+    },
+    {
+      "id": "pay_1790694205970",
+      "orderId": "NAT-SEPAY-1790694205970",
+      "gateway": "MBBank",
+      "transactionCode": "MB99887766",
+      "amount": 15000000,
+      "status": "SUCCESS"
+    },
+    {
+      "id": "pay_1790694205462",
+      "orderId": "NAT-AUDIT-1790694205457",
+      "gateway": "vietqr",
+      "transactionCode": null,
+      "amount": 45900000,
+      "status": "PENDING",
+      "createdAt": "2026-09-29T15:03:25.462Z"
+    },
+    {
       "id": "pay_1790665272568",
       "orderId": "NAT-ORD-272562",
       "gateway": "vietqr",
@@ -6038,15 +10025,249 @@
       "status": "SENT",
       "isAsync": false,
       "sentAt": "2026-09-29T06:45:16.499Z"
+    },
+    {
+      "id": "mail_1790694204184",
+      "recipientEmail": "tu.ngo@natcomputer.vn",
+      "orderId": "NAT-998877",
+      "subject": "[NAT COMPUTER] Hóa Đơn Điện Tử Đơn Hàng #NAT-998877",
+      "status": "SENT",
+      "isAsync": false,
+      "sentAt": "2026-09-29T15:03:24.184Z"
+    },
+    {
+      "id": "mail_1790694204729",
+      "recipientEmail": "tu.ngo@natcomputer.vn",
+      "orderId": "NAT-SYNC-TEST",
+      "subject": "[NAT COMPUTER] Hóa Đơn Điện Tử Đơn Hàng #NAT-SYNC-TEST",
+      "status": "SENT",
+      "isAsync": false,
+      "sentAt": "2026-09-29T15:03:24.729Z"
+    },
+    {
+      "id": "mail_1790695300607",
+      "recipientEmail": "tu.ngo@natcomputer.vn",
+      "orderId": "NAT-998877",
+      "subject": "[NAT COMPUTER] Hóa Đơn Điện Tử Đơn Hàng #NAT-998877",
+      "status": "SENT",
+      "isAsync": false,
+      "sentAt": "2026-09-29T15:21:40.607Z"
+    },
+    {
+      "id": "mail_1790695301181",
+      "recipientEmail": "tu.ngo@natcomputer.vn",
+      "orderId": "NAT-SYNC-TEST",
+      "subject": "[NAT COMPUTER] Hóa Đơn Điện Tử Đơn Hàng #NAT-SYNC-TEST",
+      "status": "SENT",
+      "isAsync": false,
+      "sentAt": "2026-09-29T15:21:41.181Z"
+    },
+    {
+      "id": "mail_1790696674963",
+      "recipientEmail": "tu.ngo@natcomputer.vn",
+      "orderId": "NAT-998877",
+      "subject": "[NAT COMPUTER] Hóa Đơn Điện Tử Đơn Hàng #NAT-998877",
+      "status": "SENT",
+      "isAsync": false,
+      "sentAt": "2026-09-29T15:44:34.963Z"
+    },
+    {
+      "id": "mail_1790696675522",
+      "recipientEmail": "tu.ngo@natcomputer.vn",
+      "orderId": "NAT-SYNC-TEST",
+      "subject": "[NAT COMPUTER] Hóa Đơn Điện Tử Đơn Hàng #NAT-SYNC-TEST",
+      "status": "SENT",
+      "isAsync": false,
+      "sentAt": "2026-09-29T15:44:35.522Z"
+    },
+    {
+      "id": "mail_1790696780120",
+      "recipientEmail": "tu.ngo@natcomputer.vn",
+      "orderId": "NAT-998877",
+      "subject": "[NAT COMPUTER] Hóa Đơn Điện Tử Đơn Hàng #NAT-998877",
+      "status": "SENT",
+      "isAsync": false,
+      "sentAt": "2026-09-29T15:46:20.120Z"
+    },
+    {
+      "id": "mail_1790696780679",
+      "recipientEmail": "tu.ngo@natcomputer.vn",
+      "orderId": "NAT-SYNC-TEST",
+      "subject": "[NAT COMPUTER] Hóa Đơn Điện Tử Đơn Hàng #NAT-SYNC-TEST",
+      "status": "SENT",
+      "isAsync": false,
+      "sentAt": "2026-09-29T15:46:20.679Z"
+    },
+    {
+      "id": "mail_1790696819334",
+      "recipientEmail": "tu.ngo@natcomputer.vn",
+      "orderId": "NAT-998877",
+      "subject": "[NAT COMPUTER] Hóa Đơn Điện Tử Đơn Hàng #NAT-998877",
+      "status": "SENT",
+      "isAsync": false,
+      "sentAt": "2026-09-29T15:46:59.334Z"
+    },
+    {
+      "id": "mail_1790696819878",
+      "recipientEmail": "tu.ngo@natcomputer.vn",
+      "orderId": "NAT-SYNC-TEST",
+      "subject": "[NAT COMPUTER] Hóa Đơn Điện Tử Đơn Hàng #NAT-SYNC-TEST",
+      "status": "SENT",
+      "isAsync": false,
+      "sentAt": "2026-09-29T15:46:59.878Z"
+    },
+    {
+      "id": "mail_1790696971603",
+      "recipientEmail": "tu.ngo@natcomputer.vn",
+      "orderId": "NAT-998877",
+      "subject": "[NAT COMPUTER] Hóa Đơn Điện Tử Đơn Hàng #NAT-998877",
+      "status": "SENT",
+      "isAsync": false,
+      "sentAt": "2026-09-29T15:49:31.603Z"
+    },
+    {
+      "id": "mail_1790696972161",
+      "recipientEmail": "tu.ngo@natcomputer.vn",
+      "orderId": "NAT-SYNC-TEST",
+      "subject": "[NAT COMPUTER] Hóa Đơn Điện Tử Đơn Hàng #NAT-SYNC-TEST",
+      "status": "SENT",
+      "isAsync": false,
+      "sentAt": "2026-09-29T15:49:32.161Z"
     }
   ],
   "notifications": [
+    {
+      "id": "noti_1790696976350",
+      "title": "🔔 Đơn Đặt Hàng Mới #NAT-907860!",
+      "message": "Khách hàng Realtime Tester vừa đặt hàng 32.000.000đ (vietqr).",
+      "type": "order",
+      "isRead": false,
+      "orderId": "NAT-907860",
+      "createdAt": "2026-09-29T15:49:36.355Z"
+    },
+    {
+      "id": "noti_1790696972983",
+      "title": "🔔 Đơn Đặt Hàng Mới #NAT-AUDIT-1790696972946!",
+      "message": "Khách hàng Audit Test Client vừa đặt hàng 45.900.000đ (vietqr).",
+      "type": "order",
+      "isRead": false,
+      "orderId": "NAT-AUDIT-1790696972946",
+      "createdAt": "2026-09-29T15:49:32.990Z"
+    },
+    {
+      "id": "noti_1790696823651",
+      "title": "🔔 Đơn Đặt Hàng Mới #NAT-523953!",
+      "message": "Khách hàng Realtime Tester vừa đặt hàng 32.000.000đ (vietqr).",
+      "type": "order",
+      "isRead": false,
+      "orderId": "NAT-523953",
+      "createdAt": "2026-09-29T15:47:03.686Z"
+    },
+    {
+      "id": "noti_1790696820485",
+      "title": "🔔 Đơn Đặt Hàng Mới #NAT-AUDIT-1790696820466!",
+      "message": "Khách hàng Audit Test Client vừa đặt hàng 45.900.000đ (vietqr).",
+      "type": "order",
+      "isRead": false,
+      "orderId": "NAT-AUDIT-1790696820466",
+      "createdAt": "2026-09-29T15:47:00.490Z"
+    },
+    {
+      "id": "noti_1790696785542",
+      "title": "🔔 Đơn Đặt Hàng Mới #NAT-412721!",
+      "message": "Khách hàng Realtime Tester vừa đặt hàng 32.000.000đ (vietqr).",
+      "type": "order",
+      "isRead": false,
+      "orderId": "NAT-412721",
+      "createdAt": "2026-09-29T15:46:25.547Z"
+    },
+    {
+      "id": "noti_1790696781484",
+      "title": "🔔 Đơn Đặt Hàng Mới #NAT-AUDIT-1790696781456!",
+      "message": "Khách hàng Audit Test Client vừa đặt hàng 45.900.000đ (vietqr).",
+      "type": "order",
+      "isRead": false,
+      "orderId": "NAT-AUDIT-1790696781456",
+      "createdAt": "2026-09-29T15:46:21.492Z"
+    },
+    {
+      "id": "noti_1790696680101",
+      "title": "🔔 Đơn Đặt Hàng Mới #NAT-673232!",
+      "message": "Khách hàng Realtime Tester vừa đặt hàng 32.000.000đ (vietqr).",
+      "type": "order",
+      "isRead": false,
+      "orderId": "NAT-673232",
+      "createdAt": "2026-09-29T15:44:40.113Z"
+    },
+    {
+      "id": "noti_1790696677105",
+      "title": "🔔 Đơn Đặt Hàng Mới #NAT-AUDIT-1790696677078!",
+      "message": "Khách hàng Audit Test Client vừa đặt hàng 45.900.000đ (vietqr).",
+      "type": "order",
+      "isRead": false,
+      "orderId": "NAT-AUDIT-1790696677078",
+      "createdAt": "2026-09-29T15:44:37.111Z"
+    },
+    {
+      "id": "noti_1790695306313",
+      "title": "🔔 Đơn Đặt Hàng Mới #NAT-144196!",
+      "message": "Khách hàng Realtime Tester vừa đặt hàng 32.000.000đ (vietqr).",
+      "type": "order",
+      "isRead": false,
+      "orderId": "NAT-144196",
+      "createdAt": "2026-09-29T15:21:46.320Z"
+    },
+    {
+      "id": "noti_1790695302141",
+      "title": "🔔 Đơn Đặt Hàng Mới #NAT-AUDIT-1790695302108!",
+      "message": "Khách hàng Audit Test Client vừa đặt hàng 45.900.000đ (vietqr).",
+      "type": "order",
+      "isRead": false,
+      "orderId": "NAT-AUDIT-1790695302108",
+      "createdAt": "2026-09-29T15:21:42.148Z"
+    },
+    {
+      "id": "noti_1790695271942",
+      "title": "🔔 Đơn Đặt Hàng Mới #NAT-589725!",
+      "message": "Khách hàng Hoàng Minh Quân vừa đặt hàng 38.900.000đ (Chuyển Khoản QR).",
+      "type": "order",
+      "isRead": true,
+      "orderId": "NAT-589725",
+      "createdAt": "2026-09-29T15:21:11.949Z"
+    },
+    {
+      "id": "noti_1790695263128",
+      "title": "🔔 Đơn Đặt Hàng Mới #NAT-459858!",
+      "message": "Khách hàng Hoàng Minh Quân vừa đặt hàng 38.900.000đ (Chuyển Khoản QR).",
+      "type": "order",
+      "isRead": true,
+      "orderId": "NAT-459858",
+      "createdAt": "2026-09-29T15:21:03.190Z"
+    },
+    {
+      "id": "noti_1790694208077",
+      "title": "🔔 Đơn Đặt Hàng Mới #NAT-719760!",
+      "message": "Khách hàng Realtime Tester vừa đặt hàng 32.000.000đ (vietqr).",
+      "type": "order",
+      "isRead": true,
+      "orderId": "NAT-719760",
+      "createdAt": "2026-09-29T15:03:28.080Z"
+    },
+    {
+      "id": "noti_1790694205479",
+      "title": "🔔 Đơn Đặt Hàng Mới #NAT-AUDIT-1790694205457!",
+      "message": "Khách hàng Audit Test Client vừa đặt hàng 45.900.000đ (vietqr).",
+      "type": "order",
+      "isRead": true,
+      "orderId": "NAT-AUDIT-1790694205457",
+      "createdAt": "2026-09-29T15:03:25.484Z"
+    },
     {
       "id": "noti_1790665272591",
       "title": "🔔 Đơn Đặt Hàng Mới #NAT-ORD-272562!",
       "message": "Khách hàng Tú Ngô vừa đặt hàng 627.000đ (vietqr).",
       "type": "order",
-      "isRead": false,
+      "isRead": true,
       "orderId": "NAT-ORD-272562",
       "createdAt": "2026-09-29T07:01:12.618Z"
     },
@@ -6055,7 +10276,7 @@
       "title": "🔔 Đơn Đặt Hàng Mới #NAT-141644!",
       "message": "Khách hàng Realtime Tester vừa đặt hàng 32.000.000đ (vietqr).",
       "type": "order",
-      "isRead": false,
+      "isRead": true,
       "orderId": "NAT-141644",
       "createdAt": "2026-09-29T06:45:20.959Z"
     },
@@ -6064,7 +10285,7 @@
       "title": "🔔 Đơn Đặt Hàng Mới #NAT-AUDIT-1790664317486!",
       "message": "Khách hàng Audit Test Client vừa đặt hàng 45.900.000đ (vietqr).",
       "type": "order",
-      "isRead": false,
+      "isRead": true,
       "orderId": "NAT-AUDIT-1790664317486",
       "createdAt": "2026-09-29T06:45:17.529Z"
     },
@@ -6073,7 +10294,7 @@
       "title": "🔔 Đơn Đặt Hàng Mới #NAT-AUDIT-1790664273869!",
       "message": "Khách hàng Audit Test Client vừa đặt hàng 45.900.000đ (vietqr).",
       "type": "order",
-      "isRead": false,
+      "isRead": true,
       "orderId": "NAT-AUDIT-1790664273869",
       "createdAt": "2026-09-29T06:44:33.904Z"
     },
@@ -6082,7 +10303,7 @@
       "title": "🔔 Đơn Đặt Hàng Mới #NAT-954364!",
       "message": "Khách hàng Realtime Tester vừa đặt hàng 32.000.000đ (vietqr).",
       "type": "order",
-      "isRead": false,
+      "isRead": true,
       "orderId": "NAT-954364",
       "createdAt": "2026-09-29T06:30:12.769Z"
     },
@@ -6091,7 +10312,7 @@
       "title": "🔔 Đơn Đặt Hàng Mới #NAT-702372!",
       "message": "Khách hàng Realtime Tester vừa đặt hàng 32.000.000đ (vietqr).",
       "type": "order",
-      "isRead": false,
+      "isRead": true,
       "orderId": "NAT-702372",
       "createdAt": "2026-09-29T06:26:56.618Z"
     },
@@ -6100,7 +10321,7 @@
       "title": "🔔 Đơn Đặt Hàng Mới #NAT-112330!",
       "message": "Khách hàng Realtime Tester vừa đặt hàng 32.000.000đ (vietqr).",
       "type": "order",
-      "isRead": false,
+      "isRead": true,
       "orderId": "NAT-112330",
       "createdAt": "2026-09-28T07:47:44.436Z"
     },
@@ -6109,7 +10330,7 @@
       "title": "🔔 Đơn Đặt Hàng Mới #NAT-ORD-551440!",
       "message": "Khách hàng Ngô Anh Tú vừa đặt hàng 15.990.000đ (vietqr).",
       "type": "order",
-      "isRead": false,
+      "isRead": true,
       "orderId": "NAT-ORD-551440",
       "createdAt": "2026-09-28T07:45:51.552Z"
     },
@@ -6118,7 +10339,7 @@
       "title": "🔔 Đơn Đặt Hàng Mới #NAT-ORD-454203!",
       "message": "Khách hàng Ngô Anh Tú vừa đặt hàng 15.990.000đ (vietqr).",
       "type": "order",
-      "isRead": false,
+      "isRead": true,
       "orderId": "NAT-ORD-454203",
       "createdAt": "2026-09-28T07:44:14.254Z"
     },
@@ -6127,7 +10348,7 @@
       "title": "🔔 Đơn Đặt Hàng Mới #NAT-ORD-400480!",
       "message": "Khách hàng tú ngô vừa đặt hàng 58.980.000đ (vietqr).",
       "type": "order",
-      "isRead": false,
+      "isRead": true,
       "orderId": "NAT-ORD-400480",
       "createdAt": "2026-09-28T07:43:20.533Z"
     },
@@ -6136,7 +10357,7 @@
       "title": "🔔 Đơn Đặt Hàng Mới #NAT-927926!",
       "message": "Khách hàng Tú Ngô vừa đặt hàng 627.000đ (vietqr).",
       "type": "order",
-      "isRead": false,
+      "isRead": true,
       "orderId": "NAT-927926",
       "createdAt": "2026-09-28T07:12:37.192Z"
     },
@@ -6145,7 +10366,7 @@
       "title": "🔔 Đơn Đặt Hàng Mới #NAT-201432!",
       "message": "Khách hàng Realtime Tester vừa đặt hàng 32.000.000đ (vietqr).",
       "type": "order",
-      "isRead": false,
+      "isRead": true,
       "orderId": "NAT-201432",
       "createdAt": "2026-09-24T09:49:19.446Z"
     },
@@ -6154,7 +10375,7 @@
       "title": "🔔 Đơn Đặt Hàng Mới #NAT-538369!",
       "message": "Khách hàng tú ngô vừa đặt hàng 627.000đ (vietqr).",
       "type": "order",
-      "isRead": false,
+      "isRead": true,
       "orderId": "NAT-538369",
       "createdAt": "2026-09-24T07:49:32.237Z"
     },
@@ -6163,7 +10384,7 @@
       "title": "🔔 Đơn Đặt Hàng Mới #NAT-630645!",
       "message": "Khách hàng Realtime Tester vừa đặt hàng 32.000.000đ (vietqr).",
       "type": "order",
-      "isRead": false,
+      "isRead": true,
       "orderId": "NAT-630645",
       "createdAt": "2026-09-24T07:40:27.374Z"
     },
@@ -6172,7 +10393,7 @@
       "title": "🔔 Đơn Đặt Hàng Mới #NAT-531116!",
       "message": "Khách hàng tú ngô vừa đặt hàng 627.000đ (vietqr).",
       "type": "order",
-      "isRead": false,
+      "isRead": true,
       "orderId": "NAT-531116",
       "createdAt": "2026-09-24T07:38:48.302Z"
     },
@@ -6181,7 +10402,7 @@
       "title": "🔔 Đơn Đặt Hàng Mới #NAT-139202!",
       "message": "Khách hàng tú ngô vừa đặt hàng 627.000đ (vietqr).",
       "type": "order",
-      "isRead": false,
+      "isRead": true,
       "orderId": "NAT-139202",
       "createdAt": "2026-09-24T07:35:01.895Z"
     },
@@ -6190,7 +10411,7 @@
       "title": "🔔 Đơn Đặt Hàng Mới #NAT-436549!",
       "message": "Khách hàng tú ngô vừa đặt hàng 627.000đ (vietqr).",
       "type": "order",
-      "isRead": false,
+      "isRead": true,
       "orderId": "NAT-436549",
       "createdAt": "2026-09-24T07:34:21.021Z"
     },
@@ -6199,7 +10420,7 @@
       "title": "🔔 Đơn Đặt Hàng Mới #NAT-982469!",
       "message": "Khách hàng tú ngô vừa đặt hàng 627.000đ (vietqr).",
       "type": "order",
-      "isRead": false,
+      "isRead": true,
       "orderId": "NAT-982469",
       "createdAt": "2026-09-24T07:18:25.906Z"
     },
@@ -6208,7 +10429,7 @@
       "title": "🔔 Đơn Đặt Hàng Mới #NAT-464477!",
       "message": "Khách hàng Realtime Tester vừa đặt hàng 32.000.000đ (vietqr).",
       "type": "order",
-      "isRead": false,
+      "isRead": true,
       "orderId": "NAT-464477",
       "createdAt": "2026-09-24T06:48:34.049Z"
     },
@@ -6217,7 +10438,7 @@
       "title": "🔔 Đơn Đặt Hàng Mới #NAT-252707!",
       "message": "Khách hàng Realtime Tester vừa đặt hàng 32.000.000đ (vietqr).",
       "type": "order",
-      "isRead": false,
+      "isRead": true,
       "orderId": "NAT-252707",
       "createdAt": "2026-09-24T05:34:17.569Z"
     },
@@ -6226,7 +10447,7 @@
       "title": "🔔 Đơn Đặt Hàng Mới #NAT-325815!",
       "message": "Khách hàng Realtime Tester vừa đặt hàng 32.000.000đ (vietqr).",
       "type": "order",
-      "isRead": false,
+      "isRead": true,
       "orderId": "NAT-325815",
       "createdAt": "2026-09-24T05:20:27.802Z"
     },
@@ -6235,7 +10456,7 @@
       "title": "🔔 Đơn Đặt Hàng Mới #NAT-973450!",
       "message": "Khách hàng Realtime Tester vừa đặt hàng 32.000.000đ (vietqr).",
       "type": "order",
-      "isRead": false,
+      "isRead": true,
       "orderId": "NAT-973450",
       "createdAt": "2026-09-23T12:22:18.800Z"
     },
@@ -6244,7 +10465,7 @@
       "title": "🔔 Đơn Đặt Hàng Mới #NAT-327699!",
       "message": "Khách hàng Realtime Tester vừa đặt hàng 32.000.000đ (vietqr).",
       "type": "order",
-      "isRead": false,
+      "isRead": true,
       "orderId": "NAT-327699",
       "createdAt": "2026-09-23T11:55:23.658Z"
     },
@@ -6253,7 +10474,7 @@
       "title": "🔔 Đơn Đặt Hàng Mới #NAT-681725!",
       "message": "Khách hàng Realtime Tester vừa đặt hàng 32.000.000đ (vietqr).",
       "type": "order",
-      "isRead": false,
+      "isRead": true,
       "orderId": "NAT-681725",
       "createdAt": "2026-09-23T11:15:03.495Z"
     },
@@ -6262,7 +10483,7 @@
       "title": "🔔 Đơn Đặt Hàng Mới #NAT-359791!",
       "message": "Khách hàng Realtime Tester vừa đặt hàng 32.000.000đ (vietqr).",
       "type": "order",
-      "isRead": false,
+      "isRead": true,
       "orderId": "NAT-359791",
       "createdAt": "2026-09-23T06:57:40.935Z"
     },
@@ -6271,7 +10492,7 @@
       "title": "🔔 Đơn Đặt Hàng Mới #NAT-691388!",
       "message": "Khách hàng Realtime Tester vừa đặt hàng 32.000.000đ (vietqr).",
       "type": "order",
-      "isRead": false,
+      "isRead": true,
       "orderId": "NAT-691388",
       "createdAt": "2026-09-23T06:39:55.387Z"
     },
@@ -6280,7 +10501,7 @@
       "title": "🔔 Đơn Đặt Hàng Mới #NAT-790990!",
       "message": "Khách hàng Tú Ngô vừa đặt hàng 627.000đ (cod).",
       "type": "order",
-      "isRead": false,
+      "isRead": true,
       "orderId": "NAT-790990",
       "createdAt": "2026-09-23T06:28:11.131Z"
     },
@@ -6289,7 +10510,7 @@
       "title": "🔔 Đơn Đặt Hàng Mới #NAT-125487!",
       "message": "Khách hàng Hoàng Minh Quân vừa đặt hàng 38.900.000đ (Chuyển Khoản QR).",
       "type": "order",
-      "isRead": false,
+      "isRead": true,
       "orderId": "NAT-125487",
       "createdAt": "2026-09-23T06:25:31.937Z"
     },
@@ -6298,7 +10519,7 @@
       "title": "🔔 Đơn Đặt Hàng Mới #NAT-559078!",
       "message": "Khách hàng Hoàng Minh Quân vừa đặt hàng 38.900.000đ (Chuyển Khoản QR).",
       "type": "order",
-      "isRead": false,
+      "isRead": true,
       "orderId": "NAT-559078",
       "createdAt": "2026-09-23T06:25:30.343Z"
     },
@@ -6307,7 +10528,7 @@
       "title": "🔔 Đơn Đặt Hàng Mới #NAT-595468!",
       "message": "Khách hàng Hoàng Minh Quân vừa đặt hàng 38.900.000đ (Chuyển Khoản QR).",
       "type": "order",
-      "isRead": false,
+      "isRead": true,
       "orderId": "NAT-595468",
       "createdAt": "2026-09-23T06:25:27.679Z"
     },
@@ -6316,7 +10537,7 @@
       "title": "🔔 Đơn Đặt Hàng Mới #NAT-145717!",
       "message": "Khách hàng Quản Trị Viên (Admin Master) vừa đặt hàng 627.000đ (vietqr).",
       "type": "order",
-      "isRead": false,
+      "isRead": true,
       "orderId": "NAT-145717",
       "createdAt": "2026-09-23T06:24:30.581Z"
     },
@@ -6325,7 +10546,7 @@
       "title": "🔔 Đơn Đặt Hàng Mới #NAT-669308!",
       "message": "Khách hàng Realtime Tester vừa đặt hàng 32.000.000đ (vietqr).",
       "type": "order",
-      "isRead": false,
+      "isRead": true,
       "orderId": "NAT-669308",
       "createdAt": "2026-09-23T06:24:18.125Z"
     },
@@ -6334,7 +10555,7 @@
       "title": "🔔 Đơn Đặt Hàng Mới #NAT-931799!",
       "message": "Khách hàng Tú Ngô vừa đặt hàng 1.290.000đ (vietqr).",
       "type": "order",
-      "isRead": false,
+      "isRead": true,
       "orderId": "NAT-931799",
       "createdAt": "2026-09-22T15:57:21.691Z"
     },
@@ -6343,7 +10564,7 @@
       "title": "🔔 Đơn Đặt Hàng Mới #NAT-807188!",
       "message": "Khách hàng Realtime Tester vừa đặt hàng 32.000.000đ (vietqr).",
       "type": "order",
-      "isRead": false,
+      "isRead": true,
       "orderId": "NAT-807188",
       "createdAt": "2026-09-22T15:54:00.555Z"
     },
@@ -6352,7 +10573,7 @@
       "title": "🔔 Đơn Đặt Hàng Mới #NAT-937634!",
       "message": "Khách hàng Realtime Tester vừa đặt hàng 32.000.000đ (vietqr).",
       "type": "order",
-      "isRead": false,
+      "isRead": true,
       "orderId": "NAT-937634",
       "createdAt": "2026-09-22T15:47:44.376Z"
     },
@@ -6361,7 +10582,7 @@
       "title": "🔔 Đơn Đặt Hàng Mới #NAT-786053!",
       "message": "Khách hàng Tú Ngô vừa đặt hàng 67.980.000đ (vietqr).",
       "type": "order",
-      "isRead": false,
+      "isRead": true,
       "orderId": "NAT-786053",
       "createdAt": "2026-09-22T15:19:19.119Z"
     },
@@ -6370,7 +10591,7 @@
       "title": "🔔 Đơn Đặt Hàng Mới #NAT-435861!",
       "message": "Khách hàng Tú Ngô vừa đặt hàng 58.980.000đ (vietqr).",
       "type": "order",
-      "isRead": false,
+      "isRead": true,
       "orderId": "NAT-435861",
       "createdAt": "2026-09-22T15:19:00.637Z"
     },
@@ -6379,7 +10600,7 @@
       "title": "🔔 Đơn Đặt Hàng Mới #NAT-558855!",
       "message": "Khách hàng Realtime Tester vừa đặt hàng 32.000.000đ (vietqr).",
       "type": "order",
-      "isRead": false,
+      "isRead": true,
       "orderId": "NAT-558855",
       "createdAt": "2026-09-15T08:44:14.654Z"
     },
@@ -6388,7 +10609,7 @@
       "title": "🔔 Đơn Đặt Hàng Mới #NAT-635721!",
       "message": "Khách hàng Tú Ngô vừa đặt hàng 5.950.000đ (vietqr).",
       "type": "order",
-      "isRead": false,
+      "isRead": true,
       "orderId": "NAT-635721",
       "createdAt": "2026-09-12T09:28:08.018Z"
     },
@@ -6397,7 +10618,7 @@
       "title": "🔔 Đơn Đặt Hàng Mới #NAT-112933!",
       "message": "Khách hàng Realtime Tester vừa đặt hàng 32.000.000đ (vietqr).",
       "type": "order",
-      "isRead": false,
+      "isRead": true,
       "orderId": "NAT-112933",
       "createdAt": "2026-09-12T08:51:46.501Z"
     },
@@ -6406,7 +10627,7 @@
       "title": "🔔 Đơn Đặt Hàng Mới #NAT-267848!",
       "message": "Khách hàng Realtime Tester vừa đặt hàng 32.000.000đ (vietqr).",
       "type": "order",
-      "isRead": false,
+      "isRead": true,
       "orderId": "NAT-267848",
       "createdAt": "2026-09-12T08:49:42.998Z"
     },
@@ -6415,7 +10636,7 @@
       "title": "🔔 Đơn Đặt Hàng Mới #NAT-777760!",
       "message": "Khách hàng Tú Ngô vừa đặt hàng 1.290.000đ (vietqr).",
       "type": "order",
-      "isRead": false,
+      "isRead": true,
       "orderId": "NAT-777760",
       "createdAt": "2026-09-10T09:02:38.103Z"
     },
@@ -6424,7 +10645,7 @@
       "title": "🔔 Đơn Đặt Hàng Mới #NAT-246366!",
       "message": "Khách hàng Tú Ngô vừa đặt hàng 67.780.000đ (cod).",
       "type": "order",
-      "isRead": false,
+      "isRead": true,
       "orderId": "NAT-246366",
       "createdAt": "2026-09-10T09:01:52.616Z"
     },
@@ -6433,7 +10654,7 @@
       "title": "🔔 Đơn Đặt Hàng Mới #NAT-589684!",
       "message": "Khách hàng Tuấn Nguyễn vừa đặt hàng 25.000.000đ (MoMo).",
       "type": "order",
-      "isRead": false,
+      "isRead": true,
       "orderId": "NAT-589684",
       "createdAt": "2026-08-30T10:37:38.999Z"
     },
@@ -6442,7 +10663,7 @@
       "title": "🔔 Đơn Đặt Hàng Mới #NAT-585790!",
       "message": "Khách hàng Tuấn Nguyễn vừa đặt hàng 25.000.000đ (MoMo).",
       "type": "order",
-      "isRead": false,
+      "isRead": true,
       "orderId": "NAT-585790",
       "createdAt": "2026-08-24T10:32:45.333Z"
     },
@@ -6451,7 +10672,7 @@
       "title": "🔔 Đơn Đặt Hàng Mới #NAT-282095!",
       "message": "Khách hàng Tuấn Nguyễn vừa đặt hàng 25.000.000đ (MoMo).",
       "type": "order",
-      "isRead": false,
+      "isRead": true,
       "orderId": "NAT-282095",
       "createdAt": "2026-08-24T09:33:27.031Z"
     },
@@ -6460,7 +10681,7 @@
       "title": "🔔 Đơn Đặt Hàng Mới #NAT-473255!",
       "message": "Khách hàng Tuấn Nguyễn vừa đặt hàng 25.000.000đ (MoMo).",
       "type": "order",
-      "isRead": false,
+      "isRead": true,
       "orderId": "NAT-473255",
       "createdAt": "2026-08-24T09:20:12.120Z"
     }

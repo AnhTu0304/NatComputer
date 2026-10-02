@@ -4,6 +4,7 @@ import Footer from './Footer';
 import CartDrawer from '../components/CartDrawer';
 import AuthModal from '../components/AuthModal';
 import FloatingContactButtons from '../components/FloatingContactButtons';
+import CustomerTrustSection from '../components/CustomerTrustSection';
 
 export default function MainLayout({
   children,
@@ -37,6 +38,9 @@ export default function MainLayout({
       <main className="layout-main-content">
         {children}
       </main>
+
+      {/* ── Shared 4 Trust Pillars & 100% Satisfaction Guarantee Accordion ── */}
+      <CustomerTrustSection />
 
       {/* ── Sleek Dark Footer ── */}
       <Footer />

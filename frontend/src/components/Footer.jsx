@@ -1,4 +1,30 @@
 import React, { useRef } from 'react';
+import { MapPin, Phone, Clock, Navigation } from 'lucide-react';
+
+/* Static showroom data */
+const SHOWROOMS = [
+  {
+    city: 'HÀ NỘI',
+    name: 'Showroom Cầu Giấy - Hà Nội',
+    address: '456 Trần Duy Hưng, Phường Trung Hòa, Cầu Giấy, Hà Nội',
+    phone: '024.3456.7890',
+    hours: '08:30 - 21:30 (Cả CN & Ngày Lễ)',
+  },
+  {
+    city: 'TP. HỒ CHÍ MINH',
+    name: 'Showroom Quận 7 - TP. HCM',
+    address: '123 Nguyễn Văn Linh, Phường Tân Phong, Quận 7, TP. HCM',
+    phone: '028.3456.7890',
+    hours: '08:30 - 21:30 (Cả CN & Ngày Lễ)',
+  },
+  {
+    city: 'ĐÀ NẴNG',
+    name: 'Showroom Hải Châu - Đà Nẵng',
+    address: '789 Nguyễn Văn Linh, Phường Nam Dương, Hải Châu, TP. Đà Nẵng',
+    phone: '0236.3456.7890',
+    hours: '08:30 - 21:30 (Cả CN & Ngày Lễ)',
+  },
+];
 
 /* Static footer columns — hoisted */
 const FOOTER_COLS = {
@@ -12,6 +38,56 @@ export default function Footer() {
 
   return (
     <div ref={rootRef}>
+      {/* ── Upper Showroom Band with Soft Background ── */}
+      <section id="showroom" className="footer-showroom-band">
+        <div className="wrap">
+          <div className="footer-showroom-header">
+            <span className="footer-showroom-badge">HỆ THỐNG TRẢI NGHIỆM</span>
+            <h3 className="footer-showroom-title">HỆ THỐNG SHOWROOM NAT COMPUTER</h3>
+            <p className="footer-showroom-sub">Đến và trải nghiệm thực tế dàn máy PC Gaming & Workstation cao cấp</p>
+          </div>
+
+          <div className="footer-showroom-grid">
+            {SHOWROOMS.map((sr) => (
+              <div key={sr.city} className="footer-showroom-card">
+                <div className="footer-showroom-card-head">
+                  <div className="footer-showroom-pin">
+                    <MapPin size={18} />
+                  </div>
+                  <div>
+                    <h4 className="footer-showroom-city">{sr.city}</h4>
+                    <span className="footer-showroom-name">{sr.name}</span>
+                  </div>
+                </div>
+
+                <p className="footer-showroom-addr">{sr.address}</p>
+
+                <div className="footer-showroom-meta">
+                  <div className="footer-showroom-meta-item">
+                    <Phone size={14} className="meta-icon" />
+                    <span>Hotline: <strong>{sr.phone}</strong></span>
+                  </div>
+                  <div className="footer-showroom-meta-item">
+                    <Clock size={14} className="meta-icon" />
+                    <span>{sr.hours}</span>
+                  </div>
+                </div>
+
+                <a
+                  href={`https://maps.google.com/?q=${encodeURIComponent(sr.address)}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="footer-showroom-direction-btn"
+                >
+                  <Navigation size={13} />
+                  <span>Xem chỉ đường Google Maps</span>
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── Footer — sleek dark ── */}
       <footer id="footer" className="footer-root">
 

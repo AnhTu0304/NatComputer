@@ -9,8 +9,10 @@ class ProductModel {
         const conditions = [];
 
         if (category) {
-          params.push(category);
-          conditions.push(`category_id = $${params.length}`);
+          const cleanCat = category.toLowerCase();
+          const altCat = cleanCat.startsWith('cat_') ? cleanCat.replace('cat_', '') : `cat_${cleanCat}`;
+          params.push(cleanCat, altCat);
+          conditions.push(`(LOWER(category_id) = $${params.length - 1} OR LOWER(category_id) = $${params.length})`);
         }
         if (search) {
           params.push(`%${search}%`);
@@ -31,21 +33,26 @@ class ProductModel {
         }
 
         const result = await dbModule.query(queryText, params);
-        return result.rows.map(r => ({
-          id: r.id,
-          name: r.name,
-          category: r.category_id || 'gaming',
-          price: parseFloat(r.price),
-          originalPrice: parseFloat(r.original_price || r.price),
-          stockQuantity: parseInt(r.stock_quantity || 10, 10),
-          rating: parseFloat(r.rating || 5.0),
-          reviewsCount: parseInt(r.reviews_count || 0, 10),
-          badge: r.badge,
-          image: r.image_url,
-          description: r.description || '',
-          specs: typeof r.specs_json === 'string' ? JSON.parse(r.specs_json) : (r.specs_json || {}),
-          updatedAt: r.updated_at
-        }));
+        return result.rows.map(r => {
+          const parsedSpecs = typeof r.specs_json === 'string' ? JSON.parse(r.specs_json) : (r.specs_json || {});
+          const gallery = Array.isArray(parsedSpecs?.gallery) ? parsedSpecs.gallery : [];
+          return {
+            id: r.id,
+            name: r.name,
+            category: r.category_id || 'gaming',
+            price: parseFloat(r.price),
+            originalPrice: parseFloat(r.original_price || r.price),
+            stockQuantity: parseInt(r.stock_quantity || 10, 10),
+            rating: parseFloat(r.rating || 5.0),
+            reviewsCount: parseInt(r.reviews_count || 0, 10),
+            badge: r.badge,
+            image: r.image_url,
+            images: [r.image_url, ...gallery],
+            description: r.description || '',
+            specs: parsedSpecs,
+            updatedAt: r.updated_at
+          };
+        });
       } catch (err) {
         console.error('PostgreSQL products error:', err.message);
       }
@@ -55,7 +62,12 @@ class ProductModel {
     let items = db.products || [];
 
     if (category) {
-      items = items.filter(p => p.category === category);
+      const cleanCat = category.toLowerCase();
+      const altCat = cleanCat.startsWith('cat_') ? cleanCat.replace('cat_', '') : `cat_${cleanCat}`;
+      items = items.filter(p => {
+        const pCat = (p.category || '').toLowerCase();
+        return pCat === cleanCat || pCat === altCat;
+      });
     }
     if (search) {
       items = items.filter(p => p.name.toLowerCase().includes(search.toLowerCase()));
@@ -70,6 +82,8 @@ class ProductModel {
         const result = await dbModule.query('SELECT * FROM products WHERE id = $1', [id]);
         if (result.rows.length > 0) {
           const r = result.rows[0];
+          const parsedSpecs = typeof r.specs_json === 'string' ? JSON.parse(r.specs_json) : (r.specs_json || {});
+          const gallery = Array.isArray(parsedSpecs?.gallery) ? parsedSpecs.gallery : [];
           return {
             id: r.id,
             name: r.name,
@@ -81,8 +95,9 @@ class ProductModel {
             reviewsCount: parseInt(r.reviews_count || 0, 10),
             badge: r.badge,
             image: r.image_url,
+            images: [r.image_url, ...gallery],
             description: r.description || '',
-            specs: typeof r.specs_json === 'string' ? JSON.parse(r.specs_json) : (r.specs_json || {}),
+            specs: parsedSpecs,
             updatedAt: r.updated_at
           };
         }

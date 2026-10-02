@@ -274,7 +274,6 @@ export default function ProductDetailPage({ productId: productIdProp, onAddToCar
   // Component state
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
-  const [activeTab, setActiveTab] = useState('description');
 
   // Dynamically compute recommended cross-sell accessories using compatibility matrix
   const recommendedAccessories = useMemo(() => {
@@ -298,13 +297,14 @@ export default function ProductDetailPage({ productId: productIdProp, onAddToCar
   // Format currency helper
   const fmt = v => new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(v);
 
-  // Gallery image list (uses main product image + alternate placeholders for demonstration)
-  const galleryImages = [
-    product.image,
-    'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1547082299-de196ea013d6?auto=format&fit=crop&w=800&q=80',
-  ];
+  // Dynamic gallery image list: Use product images array if available, otherwise single image
+  const galleryImages = useMemo(() => {
+    if (Array.isArray(product.images) && product.images.length > 0) {
+      return product.images.filter(Boolean);
+    }
+    const singleImg = product.image || product.image_url || product.img;
+    return singleImg ? [singleImg] : [];
+  }, [product]);
 
   // Scroll to top on product change
   useEffect(() => {
@@ -507,40 +507,46 @@ export default function ProductDetailPage({ productId: productIdProp, onAddToCar
             {product.badge && <span className="pdp-badge">{product.badge}</span>}
             <img
               ref={mainImageRef}
-              src={galleryImages[selectedImageIndex]}
+              src={galleryImages[selectedImageIndex] || product.image || product.image_url}
               alt={product.name}
               className="pdp-main-img"
             />
-            {/* Gallery Carousel Nav Buttons */}
-            <button
-              className="pdp-gallery-nav pdp-gallery-prev"
-              aria-label="Ảnh trước"
-              onClick={() => handleSelectThumbnail((selectedImageIndex - 1 + galleryImages.length) % galleryImages.length)}
-            >
-              <ChevronLeft size={20} color="#000" />
-            </button>
-            <button
-              className="pdp-gallery-nav pdp-gallery-next"
-              aria-label="Ảnh sau"
-              onClick={() => handleSelectThumbnail((selectedImageIndex + 1) % galleryImages.length)}
-            >
-              <ChevronRight size={20} color="#000" />
-            </button>
-            <span className="pdp-gallery-counter">{selectedImageIndex + 1} / {galleryImages.length}</span>
+            {/* Gallery Carousel Nav Buttons (only when multiple images) */}
+            {galleryImages.length > 1 && (
+              <>
+                <button
+                  className="pdp-gallery-nav pdp-gallery-prev"
+                  aria-label="Ảnh trước"
+                  onClick={() => handleSelectThumbnail((selectedImageIndex - 1 + galleryImages.length) % galleryImages.length)}
+                >
+                  <ChevronLeft size={20} color="#000" />
+                </button>
+                <button
+                  className="pdp-gallery-nav pdp-gallery-next"
+                  aria-label="Ảnh sau"
+                  onClick={() => handleSelectThumbnail((selectedImageIndex + 1) % galleryImages.length)}
+                >
+                  <ChevronRight size={20} color="#000" />
+                </button>
+                <span className="pdp-gallery-counter">{selectedImageIndex + 1} / {galleryImages.length}</span>
+              </>
+            )}
           </div>
 
-          {/* Thumbnails */}
-          <div className="pdp-thumb-row">
-            {galleryImages.map((img, idx) => (
-              <button
-                key={idx}
-                className={`pdp-thumb-btn ${idx === selectedImageIndex ? 'active' : ''}`}
-                onClick={() => handleSelectThumbnail(idx)}
-              >
-                <img src={img} alt={`Thumbnail ${idx + 1}`} />
-              </button>
-            ))}
-          </div>
+          {/* Thumbnails (only when multiple images) */}
+          {galleryImages.length > 1 && (
+            <div className="pdp-thumb-row">
+              {galleryImages.map((img, idx) => (
+                <button
+                  key={idx}
+                  className={`pdp-thumb-btn ${idx === selectedImageIndex ? 'active' : ''}`}
+                  onClick={() => handleSelectThumbnail(idx)}
+                >
+                  <img src={img} alt={`Thumbnail ${idx + 1}`} />
+                </button>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Right Column — Product Information & Sticky Purchase Panel */}
@@ -582,22 +588,19 @@ export default function ProductDetailPage({ productId: productIdProp, onAddToCar
               <span>Bảo hành chính hãng: <strong>{product.warranty || '36 Tháng'}</strong> (1 đổi 1 trong 30 ngày)</span>
             </div>
 
-            {/* Config Summary List */}
-            <div className="pdp-config-box">
-              <h3 className="pdp-box-title">
-                {product.category === 'gear' || product.category === 'accessories' || product.category === 'monitors' || product.category === 'components'
-                  ? 'Thông số kỹ thuật nổi bật'
-                  : 'Cấu hình tóm tắt'}
-              </h3>
-              <ul className="pdp-config-list">
-                {specsList.slice(0, 6).map((spec, i) => (
-                  <li key={i}>
-                    <CheckCircle2 size={15} className="pdp-check-icon" />
-                    <span>{spec}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            {/* Product Description Box (Mô tả sản phẩm kết nối Database) */}
+            {product.description && product.description.trim() ? (
+              <div className="pdp-config-box pdp-desc-box">
+                <h3 className="pdp-box-title">Mô tả sản phẩm</h3>
+                <div className="pdp-desc-text-content">
+                  {product.description.split('\n').filter(Boolean).map((para, idx) => (
+                    <p key={idx} style={{ margin: '0 0 8px 0', fontSize: '13.5px', lineHeight: '1.6', color: '#475569' }}>
+                      {para}
+                    </p>
+                  ))}
+                </div>
+              </div>
+            ) : null}
 
             {/* Promotion Area */}
             <div className="pdp-promo-box">
@@ -749,159 +752,44 @@ export default function ProductDetailPage({ productId: productIdProp, onAddToCar
         </div>
       </section>
 
-      {/* ── 4. PRODUCT DESCRIPTION & DETAILED SPECS TABS ── */}
+      {/* ── 4. DETAILED SPECIFICATIONS (Thông Số Kỹ Thuật Chi Tiết) ── */}
       <section className="pdp-details-section">
-        <div className="pdp-tabs-header">
-          <button
-            className={`pdp-tab-btn ${activeTab === 'description' ? 'active' : ''}`}
-            onClick={() => setActiveTab('description')}
-          >
-            MÔ TẢ SẢN PHẨM
-          </button>
-          <button
-            className={`pdp-tab-btn ${activeTab === 'specs' ? 'active' : ''}`}
-            onClick={() => setActiveTab('specs')}
-          >
-            THÔNG SỐ KỸ THUẬT CHI TIẾT
-          </button>
+        <div className="pdp-section-head" style={{ marginBottom: '20px' }}>
+          <h2 className="pdp-section-title">THÔNG SỐ KỸ THUẬT CHI TIẾT</h2>
+          <p className="pdp-section-sub">Bảng thông tin cấu hình phần cứng và thời hạn bảo hành chính hãng của {product.name}</p>
         </div>
 
-        <div className="pdp-tab-content">
-          {activeTab === 'description' && (
-            <div className="pdp-description-body">
-              <h3>Đánh Giá Chi Tiết {product.name}</h3>
-
-              {product.description ? (
-                <div className="pdp-custom-desc">
-                  {product.description.split('\n').filter(Boolean).map((para, idx) => (
-                    <p key={idx} style={{ marginBottom: '12px', lineHeight: 1.7 }}>
-                      {para}
-                    </p>
-                  ))}
-                </div>
-              ) : (
-                <p>
-                  {isGear ? (
-                    <><strong>{product.name}</strong> là thiết bị Gaming Gear chính hãng cao cấp, mang lại trải nghiệm điều khiển chính xác, tốc độ phản hồi tức thì và độ bền vượt trội cho game thủ và người dùng chuyên nghiệp.</>
-                  ) : isMonitor ? (
-                    <><strong>{product.name}</strong> là màn hình hiển thị cao cấp với độ phân giải sắc nét, màu sắc chân thực và tần số quét cao, tối ưu tuyệt vời cho cả gaming lẫn làm việc đồ họa chuyên sâu.</>
-                  ) : isComponent ? (
-                    <><strong>{product.name}</strong> là linh kiện máy tính chính hãng, được tuyển chọn kỹ lưỡng với độ ổn định cao, tối ưu công suất và tương thích hoàn hảo cho dàn máy của bạn.</>
-                  ) : (
-                    <><strong>{product.name}</strong> là bộ máy tính Gaming cao cấp được tối ưu hiệu năng toàn diện bởi đội ngũ chuyên gia công nghệ tại <strong>NAT Computer</strong>. Đáp ứng hoàn hảo từ các tựa game Esport đỉnh cao như <em>CS2, Valorant, League of Legends</em> cho đến những tựa game AAA hạng nặng ở độ phân giải 2K/4K như <em>Cyberpunk 2077, Black Myth: Wukong, GTA VI ready</em>.</>
-                  )}
-                </p>
-              )}
-
-              {/* Dynamic Highlights by Category */}
-              {isGear ? (
-                <>
-                  <div className="pdp-desc-highlight-grid">
-                    <div className="pdp-desc-card">
-                      <Zap className="pdp-desc-icon" />
-                      <h4>Cảm Biến & Switch Độ Bền Cao</h4>
-                      <p>Trang bị switch cơ học / cảm biến quang học cao cấp với độ trễ cực thấp, mang lại phản hồi tức thì và độ bền hàng chục triệu lần nhấn.</p>
-                    </div>
-                    <div className="pdp-desc-card">
-                      <Sparkles className="pdp-desc-icon" />
-                      <h4>Thiết Kế Công Thái Học & Tinh Tế</h4>
-                      <p>Form dáng tối ưu cho cảm giác cầm nắm hoặc gõ phím thoải mái trong thời gian dài thi đấu, vật liệu cao cấp chống bám mồ hôi.</p>
-                    </div>
-                  </div>
-                  <h4>Kết Nối Đa Dạng & Tùy Biến Độc Đáo</h4>
-                  <p>Hỗ trợ tương thích linh hoạt trên nhiều thiết bị và hệ điều hành. Hệ thống LED RGB bắt mắt cùng phần mềm tùy chỉnh macro chuyên sâu tạo dấu ấn cá nhân.</p>
-                </>
-              ) : isMonitor ? (
-                <>
-                  <div className="pdp-desc-highlight-grid">
-                    <div className="pdp-desc-card">
-                      <Monitor className="pdp-desc-icon" />
-                      <h4>Tấm Nền Sắc Nét & Tần Số Quét Cao</h4>
-                      <p>Góc nhìn rộng 178°, độ phủ màu chuẩn xác cùng tần số quét cao giúp từng khung hình mượt mà, loại bỏ hoàn toàn hiện tượng giật xé hình.</p>
-                    </div>
-                    <div className="pdp-desc-card">
-                      <ShieldCheck className="pdp-desc-icon" />
-                      <h4>Bảo Vệ Thị Giác Toàn Diện</h4>
-                      <p>Tích hợp công nghệ chống nhấp nháy Flicker-Free và lọc ánh sáng xanh Low Blue Light, bảo vệ tối đa đôi mắt khi làm việc hay chơi game lâu.</p>
-                    </div>
-                  </div>
-                  <h4>Thiết Kế Tràn Viền & Chân Đế Công Thái Học</h4>
-                  <p>Viền màn hình siêu mỏng mở rộng không gian hiển thị, hỗ trợ ngàm VESA tiêu chuẩn giúp bạn dễ dàng lắp arm công thái học gọn gàng trên bàn làm việc.</p>
-                </>
-              ) : isComponent ? (
-                <>
-                  <div className="pdp-desc-highlight-grid">
-                    <div className="pdp-desc-card">
-                      <Zap className="pdp-desc-icon" />
-                      <h4>Hiệu Suất Vượt Trội & Ổn Định</h4>
-                      <p>Sản xuất trên quy trình công nghệ tiên tiến, xung nhịp và băng thông cao, đáp ứng mượt mà mọi tác vụ render hay gaming cường độ cao.</p>
-                    </div>
-                    <div className="pdp-desc-card">
-                      <Sparkles className="pdp-desc-icon" />
-                      <h4>Tương Thích Cao & Dễ Nâng Cấp</h4>
-                      <p>Chuẩn giao tiếp thế hệ mới, dễ dàng lắp đặt và đồng bộ hoàn hảo cùng hệ sinh thái linh kiện phần cứng hiện đại.</p>
-                    </div>
-                  </div>
-                  <h4>Độ Bền Đạt Chuẩn Cao Cấp & Tản Nhiệt Tối Ưu</h4>
-                  <p>Linh kiện tuyển chọn với các tụ điện cao cấp và giải pháp giải nhiệt ưu việt, đảm bảo sự an tâm tuyệt đối trong suốt thời gian dài hoạt động.</p>
-                </>
-              ) : (
-                <>
-                  <div className="pdp-desc-highlight-grid">
-                    <div className="pdp-desc-card">
-                      <Sparkles className="pdp-desc-icon" />
-                      <h4>Sức Mạnh Đồ Họa Đột Phá</h4>
-                      <p>Trang bị Card đồ họa NVIDIA RTX Series kiến trúc tiên tiến, hỗ trợ công nghệ Ray Tracing siêu thực & DLSS 3.5 giúp tăng khung hình mượt mà tuyệt đối.</p>
-                    </div>
-                    <div className="pdp-desc-card">
-                      <Zap className="pdp-desc-icon" />
-                      <h4>Bộ Vi Xử Lý Thế Hệ Mới</h4>
-                      <p>CPU đa nhân đa luồng vượt trội, tốc độ xung nhịp cao giúp xử lý tác vụ gaming, livestream và thiết kế đồ họa nặng một cách trơn tru.</p>
-                    </div>
-                  </div>
-                  <h4>Hệ Thống Tản Nhiệt & Tính Thẩm Mỹ Cao</h4>
-                  <p>
-                    Toàn bộ linh kiện được lắp ráp tỉ mỉ trong Vỏ Case kính cường lực Gaming cao cấp, đi kèm hệ thống quạt ARGB đồng bộ màu sắc lộng lẫy và tản nhiệt nước AIO giữ nhiệt độ linh kiện luôn mát mẻ dưới 65°C trong những trận combat kéo dài.
-                  </p>
-                </>
-              )}
-            </div>
-          )}
-
-          {activeTab === 'specs' && (
-            <div className="pdp-specs-table-wrap">
-              <table className="pdp-specs-table">
-                <thead>
-                  <tr>
-                    <th style={{ width: '60px' }}>STT</th>
-                    <th>Thiết Bị / Thông Số</th>
-                    <th>Mô Tả Chi Tiết Thông Số</th>
-                    <th style={{ width: '80px', textAlign: 'center' }}>SL</th>
-                    <th style={{ width: '120px', textAlign: 'center' }}>Bảo Hành</th>
+        <div className="pdp-specs-table-wrap">
+          <table className="pdp-specs-table">
+            <thead>
+              <tr>
+                <th style={{ width: '60px' }}>STT</th>
+                <th>Thiết Bị / Thông Số</th>
+                <th>Mô Tả Chi Tiết Thông Số</th>
+                <th style={{ width: '80px', textAlign: 'center' }}>SL</th>
+                <th style={{ width: '120px', textAlign: 'center' }}>Bảo Hành</th>
+              </tr>
+            </thead>
+            <tbody>
+              {techTableRows.length > 0 ? (
+                techTableRows.map(row => (
+                  <tr key={row.stt}>
+                    <td style={{ textAlign: 'center', fontWeight: 'bold' }}>{row.stt}</td>
+                    <td style={{ fontWeight: '700', color: 'var(--c-ink)' }}>{row.item}</td>
+                    <td>{row.desc}</td>
+                    <td style={{ textAlign: 'center' }}>{row.qty}</td>
+                    <td style={{ textAlign: 'center', color: 'var(--c-green)', fontWeight: 'bold' }}>{row.warranty}</td>
                   </tr>
-                </thead>
-                <tbody>
-                  {techTableRows.length > 0 ? (
-                    techTableRows.map(row => (
-                      <tr key={row.stt}>
-                        <td style={{ textAlign: 'center', fontWeight: 'bold' }}>{row.stt}</td>
-                        <td style={{ fontWeight: '700', color: 'var(--c-ink)' }}>{row.item}</td>
-                        <td>{row.desc}</td>
-                        <td style={{ textAlign: 'center' }}>{row.qty}</td>
-                        <td style={{ textAlign: 'center', color: 'var(--c-green)', fontWeight: 'bold' }}>{row.warranty}</td>
-                      </tr>
-                    ))
-                  ) : (
-                    <tr>
-                      <td colSpan="5" style={{ textAlign: 'center', padding: '24px', color: '#64748b' }}>
-                        Thông số kỹ thuật đang được cập nhật
-                      </td>
-                    </tr>
-                  )}
-                </tbody>
-              </table>
-            </div>
-          )}
+                ))
+              ) : (
+                <tr>
+                  <td colSpan="5" style={{ textAlign: 'center', padding: '24px', color: '#64748b' }}>
+                    Thông số kỹ thuật đang được cập nhật
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
         </div>
       </section>
 

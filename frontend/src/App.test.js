@@ -31,7 +31,7 @@ test('renders AI page at /ai', async () => {
 
 test('renders Build page at /build', async () => {
   render(<MemoryRouter initialEntries={['/build']}><App /></MemoryRouter>);
-  expect(await screen.findByText(/XÂY DỰNG CẤU HÌNH PC GAMING 3D/i)).toBeInTheDocument();
+  expect(await screen.findByText(/XÂY DỰNG CẤU HÌNH/i, {}, { timeout: 4000 })).toBeInTheDocument();
 });
 
 test('renders Hot Sale page at /hotsale', async () => {

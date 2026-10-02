@@ -16,6 +16,11 @@ describe('SePay Automated Payment Webhook & Admin Reconciliation Tests', () => {
   let customerToken = '';
 
   beforeAll(async () => {
+    for (let i = 0; i < 20; i++) {
+      if (dbModule.getIsPostgresConnected()) break;
+      await new Promise(r => setTimeout(r, 100));
+    }
+
     // Authenticate admin
     const adminRes = await request(app)
       .post('/api/auth/login')

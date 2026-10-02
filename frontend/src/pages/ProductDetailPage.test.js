@@ -57,18 +57,12 @@ describe('ProductDetailPage Dynamic Generic Specifications', () => {
       </MemoryRouter>
     );
 
-    // Verify product name and summary box title
+    // Verify product name and description box title
     expect(await screen.findByRole('heading', { level: 1, name: /Chuột Gaming Siêu Nhẹ Không Dây Pro/i })).toBeInTheDocument();
-    expect(screen.getByText('Thông số kỹ thuật nổi bật')).toBeInTheDocument();
+    expect(screen.getByText('Mô tả sản phẩm')).toBeInTheDocument();
+    expect(screen.getByText('Chuột gaming không dây chính hãng')).toBeInTheDocument();
 
-    // Verify summary contains gear specs
-    expect(screen.getByText(/HERO 25K/i)).toBeInTheDocument();
-
-    // Switch to "Thông số kỹ thuật" tab
-    const specsTab = screen.getByRole('button', { name: /Thông số kỹ thuật/i });
-    fireEvent.click(specsTab);
-
-    // Verify custom gear table rows appear
+    // Verify custom gear table rows appear in detailed specs table
     expect(await screen.findByText('Cảm biến (Sensor)')).toBeInTheDocument();
     expect(screen.getByText('HERO 25K (100 - 25.600 DPI)')).toBeInTheDocument();
     expect(screen.getByText('Lightspeed Wireless 1ms & Bluetooth')).toBeInTheDocument();
@@ -90,17 +84,13 @@ describe('ProductDetailPage Dynamic Generic Specifications', () => {
 
     expect(await screen.findByRole('heading', { level: 1, name: /VGA NVIDIA GeForce RTX 5070 Ti 16GB GDDR7/i })).toBeInTheDocument();
 
-    // Switch to "Thông số kỹ thuật" tab
-    const specsTab = screen.getByRole('button', { name: /Thông số kỹ thuật/i });
-    fireEvent.click(specsTab);
-
-    // Verify GPU specs rows appear
+    // Verify GPU specs rows appear in detailed specs table
     expect(await screen.findByText('Chip đồ họa (GPU)')).toBeInTheDocument();
     expect(screen.getByText('16GB GDDR7 256-bit')).toBeInTheDocument();
     expect(screen.getByText('750W trở lên (1x 16-pin 12V-2x6)')).toBeInTheDocument();
   });
 
-  test('renders dynamic description from admin and category-specific highlights for Gaming Gear', async () => {
+  test('renders dynamic description from database for Gaming Gear', async () => {
     render(
       <MemoryRouter initialEntries={['/product/gear-mouse-superlight']}>
         <Routes>
@@ -114,18 +104,14 @@ describe('ProductDetailPage Dynamic Generic Specifications', () => {
     expect(gearBreadcrumb).toBeInTheDocument();
     expect(screen.queryByRole('link', { name: /^PC Gaming$/i })).not.toBeInTheDocument();
 
-    // Verify description tab displays admin description
+    // Verify description displays product description
     expect(screen.getByText('Chuột gaming không dây chính hãng')).toBeInTheDocument();
 
-    // Verify hardcoded PC descriptions are NOT displayed for Gear
-    expect(screen.queryByText(/bộ máy tính Gaming cao cấp/i)).not.toBeInTheDocument();
-    expect(screen.queryByText(/NVIDIA RTX Series/i)).not.toBeInTheDocument();
-
-    // Verify gear highlight cards exist
-    expect(screen.getByText(/Cảm Biến & Switch/i)).toBeInTheDocument();
+    // Verify detailed specs section heading is rendered
+    expect(screen.getByText('THÔNG SỐ KỸ THUẬT CHI TIẾT')).toBeInTheDocument();
   });
 
-  test('renders category-specific breadcrumb, default promotions, and highlights for Monitor', async () => {
+  test('renders category-specific breadcrumb and default promotions for Monitor', async () => {
     const customMonitorProduct = {
       id: 'monitor-27-2k',
       name: 'Màn hình Gaming 27 inch 2K 180Hz Fast IPS',
@@ -150,8 +136,8 @@ describe('ProductDetailPage Dynamic Generic Specifications', () => {
     const monitorBreadcrumb = await screen.findByRole('link', { name: /Màn Hình/i });
     expect(monitorBreadcrumb).toBeInTheDocument();
     expect(screen.getByText(/bao test điểm chết/i)).toBeInTheDocument();
-    expect(screen.getByText(/Tấm Nền Sắc Nét & Tần Số Quét Cao/i)).toBeInTheDocument();
-    expect(screen.queryByText(/NVIDIA RTX Series/i)).not.toBeInTheDocument();
+    expect(screen.getByText('Kích thước')).toBeInTheDocument();
+    expect(screen.getByText('27 inch')).toBeInTheDocument();
   });
 
   describe('Cross-sell & Add-on Recommendation Algorithm ("SẢN PHẨM MUA KÈM GIÁ TỐT")', () => {
@@ -312,6 +298,71 @@ describe('ProductDetailPage Dynamic Generic Specifications', () => {
         expect(addon.comboPrice).toBeLessThan(addon.price);
         expect(addon.comboSavings).toBeGreaterThan(0);
       });
+    });
+  });
+
+  describe('Gallery images dynamic behavior', () => {
+    test('renders only 1 image and hides nav buttons/thumbnails when product has single image', async () => {
+      const singleImageProduct = {
+        id: 'single-img-prod',
+        name: 'Single Image Product',
+        category: 'pc-gaming',
+        price: 15000000,
+        image: 'https://example.com/single.jpg'
+      };
+      api.getProducts.mockResolvedValueOnce({
+        products: [singleImageProduct]
+      });
+
+      render(
+        <MemoryRouter initialEntries={['/product/single-img-prod']}>
+          <Routes>
+            <Route path="/product/:id" element={<ProductDetailPage />} />
+          </Routes>
+        </MemoryRouter>
+      );
+
+      expect(await screen.findByRole('heading', { level: 1, name: /Single Image Product/i })).toBeInTheDocument();
+      // Main image is rendered
+      const img = screen.getByAltText('Single Image Product');
+      expect(img).toHaveAttribute('src', 'https://example.com/single.jpg');
+      // No nav buttons or counter rendered
+      expect(screen.queryByLabelText('Ảnh trước')).not.toBeInTheDocument();
+      expect(screen.queryByLabelText('Ảnh sau')).not.toBeInTheDocument();
+      expect(screen.queryByText(/1 \/ 1/)).not.toBeInTheDocument();
+    });
+
+    test('renders multiple thumbnails and nav buttons when product has multiple images array', async () => {
+      const multiImageProduct = {
+        id: 'multi-img-prod',
+        name: 'Multi Image Product',
+        category: 'pc-gaming',
+        price: 20000000,
+        images: [
+          'https://example.com/img1.jpg',
+          'https://example.com/img2.jpg',
+          'https://example.com/img3.jpg'
+        ]
+      };
+      api.getProducts.mockResolvedValueOnce({
+        products: [multiImageProduct]
+      });
+
+      render(
+        <MemoryRouter initialEntries={['/product/multi-img-prod']}>
+          <Routes>
+            <Route path="/product/:id" element={<ProductDetailPage />} />
+          </Routes>
+        </MemoryRouter>
+      );
+
+      expect(await screen.findByRole('heading', { level: 1, name: /Multi Image Product/i })).toBeInTheDocument();
+      expect(screen.getByLabelText('Ảnh trước')).toBeInTheDocument();
+      expect(screen.getByLabelText('Ảnh sau')).toBeInTheDocument();
+      expect(screen.getByText('1 / 3')).toBeInTheDocument();
+      expect(screen.getByAltText('Thumbnail 1')).toBeInTheDocument();
+      expect(screen.getByAltText('Thumbnail 2')).toBeInTheDocument();
+      expect(screen.getByAltText('Thumbnail 3')).toBeInTheDocument();
     });
   });
 });

@@ -13,6 +13,11 @@ describe('Generic Dynamic Product Specifications Tests', () => {
   let adminToken = '';
 
   beforeAll(async () => {
+    for (let i = 0; i < 20; i++) {
+      if (dbModule.getIsPostgresConnected()) break;
+      await new Promise(r => setTimeout(r, 100));
+    }
+
     const res = await request(app)
       .post('/api/auth/login')
       .send({ email: 'admin', password: '123' });

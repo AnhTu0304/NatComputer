@@ -3,14 +3,15 @@
    ═══════════════════════════════════════════════════════ */
 
 export const HARDWARE_CATEGORIES = [
-  { id: 'cpu', name: 'Vi xử lý (CPU)', icon: 'Cpu' },
-  { id: 'mainboard', name: 'Bo mạch chủ (Mainboard)', icon: 'Layers' },
-  { id: 'vga', name: 'Card màn hình (VGA)', icon: 'Tv' },
-  { id: 'ram', name: 'Bộ nhớ (RAM)', icon: 'Box' },
-  { id: 'ssd', name: 'Ổ cứng (SSD NVMe)', icon: 'HardDrive' },
-  { id: 'cooler', name: 'Tản nhiệt (AIO / Air)', icon: 'Wind' },
-  { id: 'psu', name: 'Nguồn máy tính (PSU)', icon: 'Zap' },
-  { id: 'case', name: 'Vỏ thùng máy (Case)', icon: 'Maximize2' },
+  { id: 'cpu', num: 1, name: 'CPU', fullName: '1. CPU', btnText: '+ Chọn CPU', catKey: 'cat_cpu' },
+  { id: 'mainboard', num: 2, name: 'MAINBOARD', fullName: '2. MAINBOARD', btnText: '+ Chọn Mainboard', catKey: 'cat_mainboard' },
+  { id: 'ram', num: 3, name: 'RAM', fullName: '3. RAM', btnText: '+ Chọn RAM', catKey: 'cat_ram', allowMulti: true },
+  { id: 'vga', num: 4, name: 'CARD ĐỒ HỌA', fullName: '4. CARD ĐỒ HỌA', btnText: '+ Chọn Card Đồ Họa', catKey: 'cat_vga' },
+  { id: 'ssd', num: 5, name: 'Ổ CỨNG', fullName: '5. Ổ CỨNG', btnText: '+ Chọn Ổ Cứng', catKey: 'cat_ssd', allowMulti: true },
+  { id: 'psu', num: 6, name: 'NGUỒN (PSU)', fullName: '6. NGUỒN (PSU)', btnText: '+ Chọn Nguồn (PSU)', catKey: 'cat_psu' },
+  { id: 'cooler', num: 7, name: 'TẢN NHIỆT', fullName: '7. TẢN NHIỆT', btnText: '+ Chọn Tản Nhiệt', catKey: 'cat_cooler' },
+  { id: 'case', num: 8, name: 'VỎ CASE', fullName: '8. VỎ CASE', btnText: '+ Chọn Vỏ Case', catKey: 'cat_case' },
+  { id: 'monitor', num: 9, name: 'MÀN HÌNH', fullName: '9. MÀN HÌNH', btnText: '+ Chọn Màn Hình', catKey: 'cat_monitors' },
 ];
 
 export const HARDWARE_CATALOG = {
@@ -219,6 +220,32 @@ export const HARDWARE_CATALOG = {
       image: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=400&q=80',
       model3d: 'case_h9flow'
     },
+  ],
+  monitor: [
+    {
+      id: 'mon-1',
+      name: 'Màn Hình LG UltraGear 27GR95QE-B 27 inch 2K QHD OLED 240Hz 0.03ms',
+      brand: 'LG',
+      price: 19900000,
+      specs: { brand: 'LG', size: '27 inch', resolution: '2K QHD', refreshRate: '240Hz', warranty: '24 Tháng' },
+      image: 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=400&q=80',
+    },
+    {
+      id: 'mon-2',
+      name: 'Màn Hình Gaming Samsung Odyssey G5 G50D 27 inch 2K QHD IPS 180Hz 1ms',
+      brand: 'Samsung',
+      price: 5490000,
+      specs: { brand: 'Samsung', size: '27 inch', resolution: '2K QHD', refreshRate: '180Hz', warranty: '24 Tháng' },
+      image: 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=400&q=80',
+    },
+    {
+      id: 'mon-3',
+      name: 'Màn Hình AOC 24G2SP 23.8 inch Full HD IPS 165Hz 1ms Gaming',
+      brand: 'AOC',
+      price: 3190000,
+      specs: { brand: 'AOC', size: '23.8 inch', resolution: 'Full HD', refreshRate: '165Hz', warranty: '36 Tháng' },
+      image: 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=400&q=80',
+    }
   ],
 };
 

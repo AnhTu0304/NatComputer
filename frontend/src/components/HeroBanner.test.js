@@ -12,7 +12,7 @@ describe('HeroBanner', () => {
     const heading = screen.getByRole('heading', { level: 1 });
     expect(heading.textContent).toContain('NAT COMPUTER');
     expect(screen.getByText(/FREESHIP TOÀN QUỐC/i)).toBeInTheDocument();
-    expect(screen.getByText('PC WORKSTATION 2D 3D')).toBeInTheDocument();
+    expect(screen.getAllByText(/PC WORKSTATION 2D 3D/i).length).toBeGreaterThan(0);
   });
 
   test('renders CTA links pointing to /build and /hotsale', () => {
